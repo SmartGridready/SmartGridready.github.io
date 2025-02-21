@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'SmartGridready Documentation'
+copyright = '2025, SmartGridready'
+author = 'Hans Furrer'
 
 release = '0.1'
 version = '0.1.0'
@@ -16,7 +16,7 @@ extensions = [
     'sphinx.ext.doctest',
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
-    'sphinx.ext.intersphinx',
+    'sphinx.ext.intersphinx'
 ]
 
 intersphinx_mapping = {
