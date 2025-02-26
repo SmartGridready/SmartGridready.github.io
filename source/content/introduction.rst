@@ -1,10 +1,10 @@
 Introduction
 ============
 
-The goal of SmartGridready is to ensure seamless interoperability between energy management device and energy consuming,
-energy producing and energy measurement devices, allowing an intelligent power management.
+The goal of SmartGridready is to ensure seamless interoperability between energy management devices, energy consuming,
+energy producing and energy measuring devices, allowing an intelligent power management.
 
-SmartGridreay distinguishes between:
+SmartGridready distinguishes between:
 
 *   Controlled devices referred to as :term:`Product`
 
