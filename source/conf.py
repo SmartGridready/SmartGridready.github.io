@@ -44,6 +44,12 @@ html_theme_options = {
     "navigation_depth": 4,         # Ensures deeper levels stay open
 }
 
+# Override CSS to have text wrapping in tables
+html_static_path = ['_static']
+html_css_files = ['custom.css']
+
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
+
+numfig = True

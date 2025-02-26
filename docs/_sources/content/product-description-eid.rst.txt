@@ -1,6 +1,6 @@
-Product Description XML (EID)
------------------------------
-* detailed description of EID XML's
+Product Description XML (:term:`EID`)
+-------------------------------------
+* detailed description of :term:`EID` XML's
 * data format XML, definition XSD
 * howto create an EID
 * examples of current EID's

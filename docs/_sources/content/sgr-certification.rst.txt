@@ -4,6 +4,7 @@ SmartGridready Certification
 * steps to achieve certification
 * checklist
 * external links
+* contact
 
 
 .. toctree::
