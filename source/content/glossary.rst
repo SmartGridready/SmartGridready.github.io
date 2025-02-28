@@ -69,9 +69,9 @@ Glossary
         A system of interconnected solar panels that generate electricity from sunlight.
 
     Product
-        A Product is a device serves the :term:`Communicator`. It exposes its functionalities through a
-        proprietary interface. The SmartGridready :term:`CommHandler` allows the :term:`Communicator` to communicate
-        with the Product through a generic interface, independent of the Product's proprietary implementation.
+        A Product is a device that provides power management related services and exposes its functionalities through a
+        proprietary interface. The SmartGridready :term:`CommHandler` allows the :term:`Communicator` to communicate with
+        the Product through a generic interface, independent of the Product's proprietary implementation.
 
     Products
         Plural form of :term:`Product`
