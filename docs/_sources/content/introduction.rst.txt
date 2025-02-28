@@ -1,5 +1,10 @@
+.. _introduction:
+
 Introduction
 ============
+
+Basic Concepts
+--------------
 
 The goal of SmartGridready is to ensure seamless interoperability between energy management devices, energy consuming,
 energy producing and energy measuring devices, allowing an intelligent power management.
@@ -19,11 +24,14 @@ SmartGridready establishes a standardized framework to enable interoperability b
 :term:`Communicator` devices to communicate with :term:`Product` devices in a unified, standardized manner,
 independent of the :term:`Product` suppliers and their proprietary communication interfaces.
 
-Interoperbility is achieved by :term:`Functional Profile` definitions and :term:`External Interface Definition` (:term:`EID`)
+Interoperability is achieved by :term:`Functional Profile` definitions and :term:`External Interface Definition` (:term:`EID`)
 files in XML that build the core of the SmartGridready specification.
 The :term:`External Interface Definition` files define a set of :term:`Functional Profiles` exposed by a specific
 :term:`Product` and the rules to adapt the communication from the generic SmartGridready interface to the proprietary
 :term:`Product` interface.
+
+Architecture
+------------
 
 :numref:`basic-architecture` illustrates the basic architecture of a SmartGridready environment.
 
@@ -64,10 +72,6 @@ The :term:`External Interface Definition` files define a set of :term:`Functiona
 Further documentation
 ---------------------
 `SmartGridready home page <https://smartgridready.ch/>`_
-
-`SmartGridready 'Functional Profile' and 'External Interface' XML library <https://library.smartgridready.ch/>`_
-
-`SmartGridready home labelling & declaration <https://https://smartgridready.ch/loesungen>`_
 
 `SmartGridready GitHub projects home <https://github.com/SmartGridready>`_
 

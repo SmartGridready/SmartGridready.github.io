@@ -16,6 +16,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=e031e9a9"></script>
         <script src="_static/doctools.js?v=888ff710"></script>
         <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="_static/custom.js?v=e821f123"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="#" />
     <link rel="search" title="Search" href="search.html" /> 
@@ -46,27 +47,49 @@
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="content/introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/introduction.html#basic-concepts">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/introduction.html#architecture">Architecture</a></li>
 <li class="toctree-l2"><a class="reference internal" href="content/introduction.html#further-documentation">Further documentation</a><ul class="simple">
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="content/functional-profiles.html">Functional Profiles</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="content/getting-involved.html">Getting Involved</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/getting-involved.html#planners-and-architects">Planners and Architects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/getting-involved.html#product-suppliers"><span class="xref std std-term">Product</span> suppliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/getting-involved.html#communicator-suppliers"><span class="xref std std-term">Communicator</span> suppliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/getting-involved.html#software-developers">Software Developers</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="content/product-description-eid.html">Product Description XML (<span class="xref std std-term">EID</span>)</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="content/functional-profiles.html">Functional Profiles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/functional-profiles.html#functional-profile-structure">Functional Profile Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/functional-profiles.html#functional-profile-properties"><span class="xref std std-term">Functional Profile</span> Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/functional-profiles.html#datapoint-properties"><span class="xref std std-term">Datapoint</span> Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/functional-profiles.html#functional-profile-release-process"><span class="xref std std-term">Functional Profile</span> Release Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/functional-profiles.html#additional-documentation-on-github">Additional Documentation on GitHub</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="content/sgr-certification.html">SmartGridready Certification</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="content/product-description-eid.html">Product Description XML (<span class="xref std std-term">EID</span>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/product-description-eid.html#product-ei-xml-documentation-on-github">Product EI-XML Documentation on GitHub</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="content/commhandler-libraries.html">SmartGridready Commhandler Libraries</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="content/sgr-certification.html">SmartGridready Certification</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/sgr-certification.html#certification-labels-for-buildings">Certification labels for buildings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/sgr-certification.html#certification-labels-for-products">Certification labels for <span class="xref std std-term">Products</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/sgr-certification.html#certification-labels-for-communicator-devices">Certification labels for <span class="xref std std-term">Communicator</span> devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/sgr-certification.html#certification-authority">Certification Authority</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="content/commhandler-libraries.html">SmartGridready CommHandler Libraries</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="content/commhandler-libraries.html#python-implementation">Python Implementation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="content/commhandler-libraries.html#java-implementation">Java Implementation</a><ul class="simple">
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="content/code-samples.html">SmartGridready Code Samples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="content/device-driver-libraries.html">SmarGridready Device Driver Libraries</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="content/device-driver-libraries.html#python-default-implementations">Python Default Implementations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="content/device-driver-libraries.html#java-default-implentations">Java Default Implentations</a><ul class="simple">
@@ -113,8 +136,10 @@
 
 <div class="genindex-jumpbox">
  <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
  | <a href="#E"><strong>E</strong></a>
  | <a href="#F"><strong>F</strong></a>
+ | <a href="#I"><strong>I</strong></a>
  | <a href="#P"><strong>P</strong></a>
  | <a href="#S"><strong>S</strong></a>
  
@@ -127,6 +152,18 @@
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="content/glossary.html#term-Communicator"><strong>Communicator</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="content/glossary.html#term-Datapoint"><strong>Datapoint</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="content/glossary.html#term-Device-Driver-Adapter"><strong>Device Driver Adapter</strong></a>
 </li>
   </ul></td>
 </tr></table>
@@ -163,6 +200,14 @@
   </ul></td>
 </tr></table>
 
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="content/glossary.html#term-Intermediary"><strong>Intermediary</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -170,6 +215,8 @@
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="content/glossary.html#term-Products"><strong>Products</strong></a>
+</li>
       <li><a href="content/glossary.html#term-PVA"><strong>PVA</strong></a>
 </li>
   </ul></td>
@@ -179,6 +226,10 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="content/glossary.html#term-SGCP"><strong>SGCP</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="content/glossary.html#term-Smart-Meter"><strong>Smart Meter</strong></a>
 </li>
   </ul></td>
 </tr></table>

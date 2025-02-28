@@ -17,10 +17,11 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=e031e9a9"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../_static/custom.js?v=e821f123"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Functional Profiles" href="functional-profiles.html" />
+    <link rel="next" title="Getting Involved" href="getting-involved.html" />
     <link rel="prev" title="Welcome to the SmartGridready documentation!" href="../index.html" /> 
 </head>
 
@@ -49,9 +50,18 @@
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basic-concepts">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#architecture">Architecture</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#further-documentation">Further documentation</a><ul class="simple">
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting-involved.html">Getting Involved</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting-involved.html#planners-and-architects">Planners and Architects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-involved.html#product-suppliers"><span class="xref std std-term">Product</span> suppliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-involved.html#communicator-suppliers"><span class="xref std std-term">Communicator</span> suppliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-involved.html#software-developers">Software Developers</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="functional-profiles.html">Functional Profiles</a><ul class="simple">
@@ -60,16 +70,23 @@
 <li class="toctree-l1"><a class="reference internal" href="product-description-eid.html">Product Description XML (<span class="xref std std-term">EID</span>)</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="sgr-certification.html">SmartGridready Certification</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="sgr-certification.html">SmartGridready Certification</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sgr-certification.html#certification-labels-for-buildings">Certification labels for buildings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sgr-certification.html#certification-labels-for-products">Certification labels for <span class="xref std std-term">Products</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="sgr-certification.html#certification-labels-for-communicator-devices">Certification labels for <span class="xref std std-term">Communicator</span> devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sgr-certification.html#certification-authority">Certification Authority</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="commhandler-libraries.html">SmartGridready Commhandler Libraries</a><ul>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="commhandler-libraries.html">SmartGridready CommHandler Libraries</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="commhandler-libraries.html#python-implementation">Python Implementation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commhandler-libraries.html#java-implementation">Java Implementation</a><ul class="simple">
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="code-samples.html">SmartGridready Code Samples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="device-driver-libraries.html">SmarGridready Device Driver Libraries</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="device-driver-libraries.html#python-default-implementations">Python Default Implementations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="device-driver-libraries.html#java-default-implentations">Java Default Implentations</a><ul class="simple">
@@ -104,7 +121,6 @@
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Introduction</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/content/introduction.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -113,7 +129,9 @@
            <div itemprop="articleBody">
              
   <section id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h1>
+<span id="id1"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h1>
+<section id="basic-concepts">
+<h2>Basic Concepts<a class="headerlink" href="#basic-concepts" title="Permalink to this heading"></a></h2>
 <p>The goal of SmartGridready is to ensure seamless interoperability between energy management devices, energy consuming,
 energy producing and energy measuring devices, allowing an intelligent power management.</p>
 <p>SmartGridready distinguishes between:</p>
@@ -129,20 +147,23 @@ devices operated by power grid operators.</p>
 <p>SmartGridready establishes a standardized framework to enable interoperability between system components, allowing
 <a class="reference internal" href="glossary.html#term-Communicator"><span class="xref std std-term">Communicator</span></a> devices to communicate with <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> devices in a unified, standardized manner,
 independent of the <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> suppliers and their proprietary communication interfaces.</p>
-<p>Interoperbility is achieved by <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> definitions and <a class="reference internal" href="glossary.html#term-External-Interface-Definition"><span class="xref std std-term">External Interface Definition</span></a> (<a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a>)
+<p>Interoperability is achieved by <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> definitions and <a class="reference internal" href="glossary.html#term-External-Interface-Definition"><span class="xref std std-term">External Interface Definition</span></a> (<a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a>)
 files in XML that build the core of the SmartGridready specification.
 The <a class="reference internal" href="glossary.html#term-External-Interface-Definition"><span class="xref std std-term">External Interface Definition</span></a> files define a set of <a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> exposed by a specific
 <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> and the rules to adapt the communication from the generic SmartGridready interface to the proprietary
 <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> interface.</p>
+</section>
+<section id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this heading"></a></h2>
 <p><a class="reference internal" href="#basic-architecture"><span class="std std-numref">Fig. 1</span></a> illustrates the basic architecture of a SmartGridready environment.</p>
-<figure class="align-center" id="id1">
+<figure class="align-center" id="id2">
 <span id="basic-architecture"></span><a class="reference internal image-reference" href="../_images/architecture.png"><img alt="../_images/architecture.png" src="../_images/architecture.png" style="width: 56%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Basic architecture</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Basic architecture</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
-<table class="docutils align-default" id="id2">
-<caption><span class="caption-number">Table 1 </span><span class="caption-text">Component descriptions</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Component descriptions</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 20%" />
 <col style="width: 80%" />
@@ -173,11 +194,10 @@ The <a class="reference internal" href="glossary.html#term-External-Interface-De
 </tr>
 </tbody>
 </table>
+</section>
 <section id="further-documentation">
 <h2>Further documentation<a class="headerlink" href="#further-documentation" title="Permalink to this heading"></a></h2>
 <p><a class="reference external" href="https://smartgridready.ch/">SmartGridready home page</a></p>
-<p><a class="reference external" href="https://library.smartgridready.ch/">SmartGridready ‘Functional Profile’ and ‘External Interface’ XML library</a></p>
-<p><a class="reference external" href="https://https://smartgridready.ch/loesungen">SmartGridready home labelling &amp; declaration</a></p>
 <p><a class="reference external" href="https://github.com/SmartGridready">SmartGridready GitHub projects home</a></p>
 <div class="toctree-wrapper compound">
 </div>
@@ -189,7 +209,7 @@ The <a class="reference internal" href="glossary.html#term-External-Interface-De
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../index.html" class="btn btn-neutral float-left" title="Welcome to the SmartGridready documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="functional-profiles.html" class="btn btn-neutral float-right" title="Functional Profiles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="getting-involved.html" class="btn btn-neutral float-right" title="Getting Involved" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

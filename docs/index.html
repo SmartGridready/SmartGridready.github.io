@@ -17,6 +17,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=e031e9a9"></script>
         <script src="_static/doctools.js?v=888ff710"></script>
         <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="_static/custom.js?v=e821f123"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -48,27 +49,49 @@
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="content/introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/introduction.html#basic-concepts">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/introduction.html#architecture">Architecture</a></li>
 <li class="toctree-l2"><a class="reference internal" href="content/introduction.html#further-documentation">Further documentation</a><ul class="simple">
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="content/functional-profiles.html">Functional Profiles</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="content/getting-involved.html">Getting Involved</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/getting-involved.html#planners-and-architects">Planners and Architects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/getting-involved.html#product-suppliers"><span class="xref std std-term">Product</span> suppliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/getting-involved.html#communicator-suppliers"><span class="xref std std-term">Communicator</span> suppliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/getting-involved.html#software-developers">Software Developers</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="content/product-description-eid.html">Product Description XML (<span class="xref std std-term">EID</span>)</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="content/functional-profiles.html">Functional Profiles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/functional-profiles.html#functional-profile-structure">Functional Profile Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/functional-profiles.html#functional-profile-properties"><span class="xref std std-term">Functional Profile</span> Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/functional-profiles.html#datapoint-properties"><span class="xref std std-term">Datapoint</span> Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/functional-profiles.html#functional-profile-release-process"><span class="xref std std-term">Functional Profile</span> Release Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/functional-profiles.html#additional-documentation-on-github">Additional Documentation on GitHub</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="content/sgr-certification.html">SmartGridready Certification</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="content/product-description-eid.html">Product Description XML (<span class="xref std std-term">EID</span>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/product-description-eid.html#product-ei-xml-documentation-on-github">Product EI-XML Documentation on GitHub</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="content/commhandler-libraries.html">SmartGridready Commhandler Libraries</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="content/sgr-certification.html">SmartGridready Certification</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/sgr-certification.html#certification-labels-for-buildings">Certification labels for buildings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/sgr-certification.html#certification-labels-for-products">Certification labels for <span class="xref std std-term">Products</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/sgr-certification.html#certification-labels-for-communicator-devices">Certification labels for <span class="xref std std-term">Communicator</span> devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/sgr-certification.html#certification-authority">Certification Authority</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="content/commhandler-libraries.html">SmartGridready CommHandler Libraries</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="content/commhandler-libraries.html#python-implementation">Python Implementation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="content/commhandler-libraries.html#java-implementation">Java Implementation</a><ul class="simple">
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="content/code-samples.html">SmartGridready Code Samples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="content/device-driver-libraries.html">SmarGridready Device Driver Libraries</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="content/device-driver-libraries.html#python-default-implementations">Python Default Implementations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="content/device-driver-libraries.html#java-default-implentations">Java Default Implentations</a><ul class="simple">
@@ -103,7 +126,6 @@
       <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Welcome to the SmartGridready documentation!</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -112,58 +134,103 @@
            <div itemprop="articleBody">
              
   <section id="welcome-to-the-smartgridready-documentation">
-<h1>Welcome to the SmartGridready documentation!<a class="headerlink" href="#welcome-to-the-smartgridready-documentation" title="Permalink to this heading"></a></h1>
-<section id="target-audiences">
-<h2>Target Audiences<a class="headerlink" href="#target-audiences" title="Permalink to this heading"></a></h2>
-<ul class="simple">
-<li><p>Product Suppliers</p></li>
-<li><p>Communicator Suppliers</p></li>
-<li><p>Communicator Developers</p></li>
-<li><p>SGr Core Library Developers</p></li>
-<li><p>SGr Driver Library Developers</p></li>
+<span id="index"></span><h1>Welcome to the SmartGridready documentation!<a class="headerlink" href="#welcome-to-the-smartgridready-documentation" title="Permalink to this heading"></a></h1>
+<section id="documentation-overview">
+<h2>Documentation Overview<a class="headerlink" href="#documentation-overview" title="Permalink to this heading"></a></h2>
+<p>The following table gives you a documentation overview and the targeted audience for each section.</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Documentation Overview</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 40%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Chapter</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Target Audience</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="content/introduction.html#introduction"><span class="std std-ref">Introduction</span></a></p></td>
+<td><p>Describes the basic idea and concepts of SmartGridready.</p></td>
+<td><p>Everybody</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="content/getting-involved.html#getting-involved"><span class="std std-ref">Getting Involved</span></a></p></td>
+<td><p>There are many ways to get involved and contribute to the SmartGridready project.
+This chapter how you can participate in SmartGridready projects based on your interests and expertise.</p></td>
+<td><p>Everybody</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="content/functional-profiles.html#functional-profiles"><span class="std std-ref">Functional Profiles</span></a></p></td>
+<td><p>Explains the central role of <a class="reference internal" href="content/glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> in SmartGridready.
+Describes the <a class="reference internal" href="content/glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> in detail.</p>
+<br><p>Provides a link to the official SmartGridready library where all available <a class="reference internal" href="content/glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a>
+are listed.</p>
+</td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="content/glossary.html#term-Product"><span class="xref std std-term">Product</span></a> Suppliers</p></li>
+<li><p>Architects and Planners</p></li>
+<li><p><a class="reference internal" href="content/glossary.html#term-CommHandler"><span class="xref std std-term">CommHandler</span></a> Suppliers</p></li>
+<li><p>All Developers</p></li>
 </ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="content/product-description-eid.html#product-description-eid"><span class="std std-ref">Product Description XML (EID)</span></a></p></td>
+<td><p>Describes the structure of <a class="reference internal" href="content/glossary.html#term-External-Interface-Definition"><span class="xref std std-term">External Interface Definition</span></a> files.
+Gives instructions on how to create an <a class="reference internal" href="content/glossary.html#term-EID"><span class="xref std std-term">EID</span></a> file.</p>
+<br><p>Provides a link to the official SmartGridread libary where all available <a class="reference internal" href="content/glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a>
+are listed.</p>
+</td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="content/glossary.html#term-Product"><span class="xref std std-term">Product</span></a> Suppliers</p></li>
+<li><p>Architects and Planners</p></li>
+<li><p><a class="reference internal" href="content/glossary.html#term-CommHandler"><span class="xref std std-term">CommHandler</span></a> Library Developers</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="content/sgr-certification.html#sgr-certification"><span class="std std-ref">SmartGridready Certification</span></a></p></td>
+<td><p>Guides you through the steps needed to get your <a class="reference internal" href="content/glossary.html#term-Product"><span class="xref std std-term">Product</span></a> SmartGridready certified.</p></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="content/glossary.html#term-Product"><span class="xref std std-term">Product</span></a> Suppliers</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="content/commhandler-libraries.html#commhandler-libraries"><span class="std std-ref">SmartGridready CommHandler Libraries</span></a></p></td>
+<td><p>Describes the <a class="reference internal" href="content/glossary.html#term-CommHandler"><span class="xref std std-term">CommHandler</span></a> libraries and API’s in detail. Provides installation and getting started instructions. There are currently libraries in Python and Java.</p></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="content/glossary.html#term-CommHandler"><span class="xref std std-term">CommHandler</span></a> Developers</p></li>
+<li><p><a class="reference internal" href="content/glossary.html#term-Communicator"><span class="xref std std-term">Communicator</span></a> Developers</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="content/code-samples.html#code-samples"><span class="std std-ref">SmartGridready Code Samples</span></a></p></td>
+<td><p>Provides sample code to help you get started with integrating the <a class="reference internal" href="content/glossary.html#term-CommHandler"><span class="xref std std-term">CommHandler</span></a> libraries into <a class="reference internal" href="content/glossary.html#term-Communicator"><span class="xref std std-term">Communicator</span></a> code.</p></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="content/glossary.html#term-Communicator"><span class="xref std std-term">Communicator</span></a> Developers</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="content/device-driver-libraries.html#device-driver-libraries"><span class="std std-ref">SmarGridready Device Driver Libraries</span></a></p></td>
+<td><p>Describes the <a class="reference internal" href="content/glossary.html#term-Device-Driver-Adapter"><span class="xref std std-term">Device Driver Adapter</span></a> and the device driver adapter API in detail.</p></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="content/glossary.html#term-Product"><span class="xref std std-term">Product</span></a> Suppliers</p></li>
+<li><p><a class="reference internal" href="content/glossary.html#term-CommHandler"><span class="xref std std-term">CommHandler</span></a> Developers</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="content/intermediary.html#intermediary"><span class="std std-ref">SmartGridready Intermediary</span></a></p></td>
+<td><p>Describes the SmartGridready <a class="reference internal" href="content/glossary.html#term-Intermediary"><span class="xref std std-term">Intermediary</span></a>. The intermediary provides a REST service to communicate
+with SmartGridready certified <a class="reference internal" href="content/glossary.html#term-Products"><span class="xref std std-term">Products</span></a> through a REST API. It can be deployed within a Docker container
+and is a good solution where no native library (Python, Java) is available.</p></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="content/glossary.html#term-Communicator"><span class="xref std std-term">Communicator</span></a> Suppliers</p></li>
+<li><p><a class="reference internal" href="content/glossary.html#term-Communicator"><span class="xref std std-term">Communicator</span></a> Developers</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="content/introduction.html">Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="content/introduction.html#further-documentation">Further documentation</a><ul class="simple">
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="content/functional-profiles.html">Functional Profiles</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="content/product-description-eid.html">Product Description XML (<span class="xref std std-term">EID</span>)</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="content/sgr-certification.html">SmartGridready Certification</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="content/commhandler-libraries.html">SmartGridready Commhandler Libraries</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="content/commhandler-libraries.html#python-implementation">Python Implementation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/commhandler-libraries.html#java-implementation">Java Implementation</a><ul class="simple">
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="content/device-driver-libraries.html">SmarGridready Device Driver Libraries</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="content/device-driver-libraries.html#python-default-implementations">Python Default Implementations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/device-driver-libraries.html#java-default-implentations">Java Default Implentations</a><ul class="simple">
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="content/intermediary.html">SmartGridready Intermediary</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="content/glossary.html">Glossary</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="content/contacts.html">Contacts</a><ul class="simple">
-</ul>
-</li>
-</ul>
 </div>
 </section>
 </section>

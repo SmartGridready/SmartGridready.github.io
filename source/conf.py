@@ -45,8 +45,12 @@ html_theme_options = {
 }
 
 # Override CSS to have text wrapping in tables
+html_show_sourcelink = False
 html_static_path = ['_static']
 html_css_files = ['custom.css']
+
+# JS to open new tab for external links
+html_js_files = ['custom.js']
 
 
 # -- Options for EPUB output

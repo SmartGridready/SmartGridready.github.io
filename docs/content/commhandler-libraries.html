@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SmartGridready Commhandler Libraries &mdash; SmartGridready Documentation 0.1 documentation</title>
+  <title>SmartGridready CommHandler Libraries &mdash; SmartGridready Documentation 0.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -17,10 +17,11 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=e031e9a9"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../_static/custom.js?v=e821f123"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="SmarGridready Device Driver Libraries" href="device-driver-libraries.html" />
+    <link rel="next" title="SmartGridready Code Samples" href="code-samples.html" />
     <link rel="prev" title="SmartGridready Certification" href="sgr-certification.html" /> 
 </head>
 
@@ -48,7 +49,19 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#basic-concepts">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#architecture">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#further-documentation">Further documentation</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting-involved.html">Getting Involved</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting-involved.html#planners-and-architects">Planners and Architects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-involved.html#product-suppliers"><span class="xref std std-term">Product</span> suppliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-involved.html#communicator-suppliers"><span class="xref std std-term">Communicator</span> suppliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-involved.html#software-developers">Software Developers</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="functional-profiles.html">Functional Profiles</a><ul class="simple">
@@ -57,16 +70,23 @@
 <li class="toctree-l1"><a class="reference internal" href="product-description-eid.html">Product Description XML (<span class="xref std std-term">EID</span>)</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="sgr-certification.html">SmartGridready Certification</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="sgr-certification.html">SmartGridready Certification</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sgr-certification.html#certification-labels-for-buildings">Certification labels for buildings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sgr-certification.html#certification-labels-for-products">Certification labels for <span class="xref std std-term">Products</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="sgr-certification.html#certification-labels-for-communicator-devices">Certification labels for <span class="xref std std-term">Communicator</span> devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sgr-certification.html#certification-authority">Certification Authority</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">SmartGridready Commhandler Libraries</a><ul>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SmartGridready CommHandler Libraries</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#python-implementation">Python Implementation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#java-implementation">Java Implementation</a><ul class="simple">
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="code-samples.html">SmartGridready Code Samples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="device-driver-libraries.html">SmarGridready Device Driver Libraries</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="device-driver-libraries.html#python-default-implementations">Python Default Implementations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="device-driver-libraries.html#java-default-implentations">Java Default Implentations</a><ul class="simple">
@@ -99,9 +119,8 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">SmartGridready Commhandler Libraries</li>
+      <li class="breadcrumb-item active">SmartGridready CommHandler Libraries</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/content/commhandler-libraries.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -110,11 +129,11 @@
            <div itemprop="articleBody">
              
   <section id="smartgridready-commhandler-libraries">
-<h1>SmartGridready Commhandler Libraries<a class="headerlink" href="#smartgridready-commhandler-libraries" title="Permalink to this heading"></a></h1>
+<span id="commhandler-libraries"></span><h1>SmartGridready CommHandler Libraries<a class="headerlink" href="#smartgridready-commhandler-libraries" title="Permalink to this heading"></a></h1>
 <ul class="simple">
 <li><p>Basic concepts</p></li>
 <li><p>Target audience: Communicator Developers</p></li>
-<li><p>Provide a generic API for the device communictaion</p></li>
+<li><p>Provide a generic API for the device communication</p></li>
 <li><p>Provides default device drivers for Modbus, Webservices and MQTT</p></li>
 <li><p>Provide an API integrate third party device drivers</p></li>
 </ul>
@@ -147,7 +166,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="sgr-certification.html" class="btn btn-neutral float-left" title="SmartGridready Certification" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="device-driver-libraries.html" class="btn btn-neutral float-right" title="SmarGridready Device Driver Libraries" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="code-samples.html" class="btn btn-neutral float-right" title="SmartGridready Code Samples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

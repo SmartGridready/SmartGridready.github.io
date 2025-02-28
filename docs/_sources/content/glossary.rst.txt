@@ -1,3 +1,5 @@
+.. _glossary:
+
 Glossary
 ========
 
@@ -16,6 +18,16 @@ Glossary
         The CommHandler is a software component that reads XML-based interface descriptions, which define conversion
         rules between the generic API used by the :term:`Communicator` and :term:`Product`-specific APIs.
         This allows it to adapt to different Products without requiring manual configuration/daption.
+
+    Datapoint
+        A data point is a read- and/or writeable property of a :term:`Product`. In SmartGridready a :term:`Datapoint`
+        is a child element of a :term:`Functional Profile`. An example for a readable data point is "ActivePowerACL1"
+        of the :term:`Functional Profile` "ActivePowerAC" and is used to measure the AC power consumtion on phase 1.
+
+    Device Driver Adapter
+        Device Driver Adpaters within SmartGridready adapt the API given by the :term:`CommHandler` libraries to
+        a transport layer/technology. SmratGridready provides default adapters for Modbus, Web-Services and MQTT
+        as libraries in Python and Java.
 
     EID
         External Interface Description in XML (also known as EI-XML). The EID defines the conversion rules needed to
@@ -48,15 +60,28 @@ Glossary
     Functional Profiles
         Plural form of :term:`Functional Profile`
 
+    Intermediary
+        The :term:`Intermediary` is a microservice that exposes a REST API that allows seamless communication with
+        SmartGridready compliant :term:`Product`. It can be deployed as a Docker container and is the ideal
+        SmartGridready solution where no :term:`CommHandler` library is available.
+
     PVA
-         A system of interconnected solar panels that generate electricity from sunlight.
+        A system of interconnected solar panels that generate electricity from sunlight.
 
     Product
         A Product is a device serves the :term:`Communicator`. It exposes its functionalities through a
         proprietary interface. The SmartGridready :term:`CommHandler` allows the :term:`Communicator` to communicate
         with the Product through a generic interface, independent of the Product's proprietary implementation.
 
+    Products
+        Plural form of :term:`Product`
+
     SGCP
         Smart Grid Connection Point. A exposing an :term:`SGCP` allows load management by a power grid operator.
 
+    Smart Meter
+        A smart meter is an advanced electric energy meter that automatically records energy consumption and
+        communicates the data to the utility provider in real-time or at scheduled intervals.
+        Unlike traditional meters, smart meters enable remote readings, dynamic pricing, and better energy management,
+        helping both consumers and providers optimize energy use.
 

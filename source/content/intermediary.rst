@@ -1,3 +1,4 @@
+.. _intermediary:
 
 SmartGridready Intermediary
 ---------------------------
