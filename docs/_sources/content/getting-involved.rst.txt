@@ -24,7 +24,7 @@ and :term:`Communicator` devices.
 -------------------------
 
 As a supplier of :term:`Products` that are subject to energy management such as :term:`Smart Meter`, :term:`PVA`,
-heat-pumps, :term:`EVSE` or :term:`EMS`, you can apply for a SmartGridready certification label for your :term:`Product`.
+heat-pumps, :term:`EVSE` or :term:`EMS`, you can apply for a SmartGridready declaration label for your :term:`Product`.
 
 See :ref:`sgr-certification` for detailed instructions.
 
@@ -41,7 +41,7 @@ As a supplier of :term:`Communicator` devices that are subject to energy managem
 * Make use of the :term:`Intermediary` to communicate with SmartGridready :term:`Products` through a generic REST-API.
   See :ref:`intermediary` for details.
 
-* Apply for SmartGridready certification label for your :term:`Communicator` device. See :ref:`sgr-certification` for details.
+* Apply for SmartGridready declaration label for your :term:`Communicator` device. See :ref:`sgr-certification` for details.
 
 Software Developers
 -------------------

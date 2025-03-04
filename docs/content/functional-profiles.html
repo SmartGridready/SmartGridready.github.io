@@ -50,7 +50,8 @@
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#basic-concepts">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#smart-grids-and-energy-management">Smart Grids and Energy Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#smartgridready-concept">SmartGridready Concept</a></li>
 <li class="toctree-l2"><a class="reference internal" href="introduction.html#architecture">Architecture</a></li>
 <li class="toctree-l2"><a class="reference internal" href="introduction.html#further-documentation">Further documentation</a><ul class="simple">
 </ul>
@@ -66,21 +67,24 @@
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Functional Profiles</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#functional-profile-structure">Functional Profile Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#available-functional-profiles">Available <span class="xref std std-term">Functional Profiles</span></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#functional-profile-properties"><span class="xref std std-term">Functional Profile</span> Properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#datapoint-properties"><span class="xref std std-term">Datapoint</span> Properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#functional-profile-release-process"><span class="xref std std-term">Functional Profile</span> Release Process</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#additional-documentation-on-github">Additional Documentation on GitHub</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="product-description-eid.html">Product Description XML (<span class="xref std std-term">EID</span>)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="product-description-eid.html#product-ei-xml-documentation-on-github">Product EI-XML Documentation on GitHub</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="product-description-eid.html">Product Description XML (<span class="xref std std-term">EID</span>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="product-description-eid.html#product-ei-xml-documentation-on-github">Product EI-XML Documentation on GitHub</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="sgr-certification.html">SmartGridready Certification</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sgr-certification.html#certification-labels-for-buildings">Certification labels for buildings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sgr-certification.html#certification-labels-for-products">Certification labels for <span class="xref std std-term">Products</span></a></li>
-<li class="toctree-l2"><a class="reference internal" href="sgr-certification.html#certification-labels-for-communicator-devices">Certification labels for <span class="xref std std-term">Communicator</span> devices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sgr-certification.html#certification-authority">Certification Authority</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sgr-certification.html">SmartGridready Declaration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sgr-certification.html#declaration-labels-for-buildings">Declaration labels for buildings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sgr-certification.html#declaration-labels-for-products">Declaration labels for <span class="xref std std-term">Products</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="sgr-certification.html#declaration-labels-for-communicator-devices">Declaration labels for <span class="xref std std-term">Communicator</span> devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sgr-certification.html#declaration-authority">Declaration Authority</a><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -141,9 +145,11 @@
 SmartGridready compliant <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> through a generic API.</p>
 <section id="functional-profile-structure">
 <h2>Functional Profile Structure<a class="headerlink" href="#functional-profile-structure" title="Permalink to this heading"></a></h2>
+<p>In general, the <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> consists of a set of <a class="reference internal" href="glossary.html#term-Datapoints"><span class="xref std std-term">Datapoints</span></a> that provide read and write
+operations related to the functionality.</p>
 <p>A SmartGridready <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> exposes it’s functionalities in a well structured way.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>PRODUCT
-├── COMMON PRODUCT INFO
+├── COMMON PRODUCT INFO ...
 │
 ├── FUNCTIONAL-PROFILE (ActiveEnergyAC)
 │   ├── DATAPOINT (ActiveEnergyACTot)
@@ -159,21 +165,29 @@ SmartGridready compliant <a class="reference internal" href="glossary.html#term-
     └── DATAPOINT (ActivePowerACL3)
 </pre></div>
 </div>
-<p>The illustration above shows the structure of <a class="reference internal" href="glossary.html#term-External-Interface-Definition"><span class="xref std std-term">External Interface Definition</span></a> in XML (<a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a>) that exposes
+<p>The illustration above shows the structure of a <a class="reference internal" href="glossary.html#term-External-Interface-Definition"><span class="xref std std-term">External Interface Definition</span></a> XML (<a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a>) that exposes
 its functionalities by including two <a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a>. The example shows a simple <a class="reference internal" href="glossary.html#term-Smart-Meter"><span class="xref std std-term">Smart Meter</span></a>
 that exposes AC-energy metering and AC-power measurement functionalities.</p>
-<p>A <a class="reference internal" href="glossary.html#term-Communicator"><span class="xref std std-term">Communicator</span></a> software can read the from the device by addressing the functional profile name and the datapoint
-name. Java code example:</p>
+<p>A <a class="reference internal" href="glossary.html#term-Communicator"><span class="xref std std-term">Communicator</span></a> software can read from or write to the device by addressing the <a class="reference internal" href="glossary.html#term-Datapoint"><span class="xref std std-term">Datapoint</span></a> by
+<a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> name and <a class="reference internal" href="glossary.html#term-Datapoint"><span class="xref std std-term">Datapoint</span></a> name. Java code example:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="n">acPowerTotal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">meteringDevice</span><span class="p">.</span><span class="na">getVal</span><span class="p">(</span><span class="s">&quot;ActiveEnergyAC&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ActiveEnergyACtot&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
+</section>
+<section id="available-functional-profiles">
+<h2>Available <a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a><a class="headerlink" href="#available-functional-profiles" title="Permalink to this heading"></a></h2>
+<p>The SmartGridready library lists the currently available <a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a>:</p>
+<p><a class="reference external" href="https://library.smartgridready.ch/FunctionalProfileTemplate">Functional Profile Library</a></p>
+<p>This list is subject to change and will grow in the future, as new <a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> will be added.</p>
+<p>As a <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> supplier check which <a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> suit your product’s functionalities and add
+the matching <a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> to your <a class="reference internal" href="glossary.html#term-External-Interface-Definition"><span class="xref std std-term">External Interface Definition</span></a> file.</p>
 </section>
 <section id="functional-profile-properties">
 <h2><a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> Properties<a class="headerlink" href="#functional-profile-properties" title="Permalink to this heading"></a></h2>
 <p>The SmartGridready specification defines a set properties for <a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a>:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/SmartGridready/SGrSpecifications/blob/master/doc/FunctionalProfileCategory.md">Functional Profile Category</a></p></li>
-<li><p><a class="reference external" href="https://https://library.smartgridready.ch/FunctionalProfileTemplate">Functional Profile Types</a></p></li>
+<li><p><a class="reference external" href="https://library.smartgridready.ch/FunctionalProfileTemplate">Functional Profile Types</a></p></li>
 <li><p><a class="reference external" href="https://github.com/SmartGridready/SGrSpecifications/blob/master/doc/LevelOfOperation.md">Level of Operation</a></p></li>
 </ul>
 </section>

@@ -50,6 +50,7 @@
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#smart-grids-and-energy-management">Smart Grids and Energy Management</a></li>
 <li class="toctree-l2"><a class="reference internal" href="introduction.html#basic-concepts">Basic Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="introduction.html#architecture">Architecture</a></li>
 <li class="toctree-l2"><a class="reference internal" href="introduction.html#further-documentation">Further documentation</a><ul class="simple">
@@ -66,19 +67,24 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="functional-profiles.html">Functional Profiles</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="functional-profiles.html#functional-profile-structure">Functional Profile Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functional-profiles.html#available-functional-profiles">Available <span class="xref std std-term">Functional Profiles</span></a></li>
 <li class="toctree-l2"><a class="reference internal" href="functional-profiles.html#functional-profile-properties"><span class="xref std std-term">Functional Profile</span> Properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functional-profiles.html#datapoint-properties"><span class="xref std std-term">Datapoint</span> Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functional-profiles.html#functional-profile-release-process"><span class="xref std std-term">Functional Profile</span> Release Process</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functional-profiles.html#additional-documentation-on-github">Additional Documentation on GitHub</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="product-description-eid.html">Product Description XML (<span class="xref std std-term">EID</span>)</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="product-description-eid.html">Product Description XML (<span class="xref std std-term">EID</span>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="product-description-eid.html#product-ei-xml-documentation-on-github">Product EI-XML Documentation on GitHub</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="sgr-certification.html">SmartGridready Certification</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sgr-certification.html#certification-labels-for-buildings">Certification labels for buildings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sgr-certification.html#certification-labels-for-products">Certification labels for <span class="xref std std-term">Products</span></a></li>
-<li class="toctree-l2"><a class="reference internal" href="sgr-certification.html#certification-labels-for-communicator-devices">Certification labels for <span class="xref std std-term">Communicator</span> devices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sgr-certification.html#certification-authority">Certification Authority</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sgr-certification.html">SmartGridready Declaration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sgr-certification.html#declaration-labels-for-buildings">Declaration labels for buildings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sgr-certification.html#declaration-labels-for-products">Declaration labels for <span class="xref std std-term">Products</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="sgr-certification.html#declaration-labels-for-communicator-devices">Declaration labels for <span class="xref std std-term">Communicator</span> devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sgr-certification.html#declaration-authority">Declaration Authority</a><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -149,6 +155,8 @@ This allows it to adapt to different Products without requiring manual configura
 is a child element of a <a class="reference internal" href="#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a>. An example for a readable data point is “ActivePowerACL1”
 of the <a class="reference internal" href="#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> “ActivePowerAC” and is used to measure the AC power consumtion on phase 1.</p>
 </dd>
+<dt id="term-Datapoints">Datapoints<a class="headerlink" href="#term-Datapoints" title="Permalink to this term"></a></dt><dd><p>Plural form of <a class="reference internal" href="#term-Datapoint"><span class="xref std std-term">Datapoint</span></a></p>
+</dd>
 <dt id="term-Device-Driver-Adapter">Device Driver Adapter<a class="headerlink" href="#term-Device-Driver-Adapter" title="Permalink to this term"></a></dt><dd><p>Device Driver Adpaters within SmartGridready adapt the API given by the <a class="reference internal" href="#term-CommHandler"><span class="xref std std-term">CommHandler</span></a> libraries to
 a transport layer/technology. SmratGridready provides default adapters for Modbus, Web-Services and MQTT
 as libraries in Python and Java.</p>
@@ -182,9 +190,13 @@ SmartGridready solution where no <a class="reference internal" href="#term-CommH
 </dd>
 <dt id="term-PVA">PVA<a class="headerlink" href="#term-PVA" title="Permalink to this term"></a></dt><dd><p>A system of interconnected solar panels that generate electricity from sunlight.</p>
 </dd>
-<dt id="term-Product">Product<a class="headerlink" href="#term-Product" title="Permalink to this term"></a></dt><dd><p>A Product is a device serves the <a class="reference internal" href="#term-Communicator"><span class="xref std std-term">Communicator</span></a>. It exposes its functionalities through a
-proprietary interface. The SmartGridready <a class="reference internal" href="#term-CommHandler"><span class="xref std std-term">CommHandler</span></a> allows the <a class="reference internal" href="#term-Communicator"><span class="xref std std-term">Communicator</span></a> to communicate
-with the Product through a generic interface, independent of the Product’s proprietary implementation.</p>
+<dt id="term-PV-Inverter">PV-Inverter<a class="headerlink" href="#term-PV-Inverter" title="Permalink to this term"></a></dt><dd><p>Converts the DC electricity generated by PV solar panels into AC electricity, which is used by household
+appliances and the electrical grid.</p>
+</dd>
+<dt id="term-Product">Product<a class="headerlink" href="#term-Product" title="Permalink to this term"></a></dt><dd><p>A Product is a device that provides power management related services and exposes its functionalities through a
+proprietary interface. The SmartGridready <a class="reference internal" href="#term-CommHandler"><span class="xref std std-term">CommHandler</span></a> allows the <a class="reference internal" href="#term-Communicator"><span class="xref std std-term">Communicator</span></a> to communicate with
+the <a class="reference internal" href="#term-Product"><span class="xref std std-term">Product</span></a> through a generic interface, independent of the Product’s proprietary implementation. Examples for
+<a class="reference internal" href="#term-Products"><span class="xref std std-term">Products</span></a> are smart meters, heat pumps, <a class="reference internal" href="#term-PVA"><span class="xref std std-term">PVA</span></a>, <a class="reference internal" href="#term-EVSE"><span class="xref std std-term">EVSE</span></a>.</p>
 </dd>
 <dt id="term-Products">Products<a class="headerlink" href="#term-Products" title="Permalink to this term"></a></dt><dd><p>Plural form of <a class="reference internal" href="#term-Product"><span class="xref std std-term">Product</span></a></p>
 </dd>
@@ -194,6 +206,8 @@ with the Product through a generic interface, independent of the Product’s pro
 communicates the data to the utility provider in real-time or at scheduled intervals.
 Unlike traditional meters, smart meters enable remote readings, dynamic pricing, and better energy management,
 helping both consumers and providers optimize energy use.</p>
+</dd>
+<dt id="term-VNB">VNB<a class="headerlink" href="#term-VNB" title="Permalink to this term"></a></dt><dd><p>‘Verteilnetz Betreiber’ stands for a power grid operator.</p>
 </dd>
 </dl>
 </section>

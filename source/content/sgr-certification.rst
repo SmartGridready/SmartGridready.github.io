@@ -1,10 +1,10 @@
 .. _sgr-certification:
 
-SmartGridready Certification
-============================
+SmartGridready Declaration
+==========================
 
-Certification labels for buildings
-----------------------------------
+Declaration labels for buildings
+--------------------------------
 
 As an architect and planner for buildings and residential areas you can label your buildings with the SmartGridready
 label. A prerequisite to get the label is:
@@ -16,10 +16,10 @@ label. A prerequisite to get the label is:
 * (Optional) The :term:`EMS` allows load restriction and optimization of energy costs by engaging dynamic tariffs.
 
 
-Certification labels for :term:`Products`
------------------------------------------
+Declaration labels for :term:`Products`
+---------------------------------------
 
-As a :term:`Product` supplier you can certify your :term:`Products` and get the SmartGridready label.
+As a :term:`Product` supplier you can declare your :term:`Products` and get the SmartGridready label.
 
 1.  Define the :term:`Functional Profiles` supported by your products.
 
@@ -32,15 +32,15 @@ As a :term:`Product` supplier you can certify your :term:`Products` and get the 
 
     For detail information about :term:`External Interface Definition` files see :ref:`product-description-eid`
 
-3.  Apply for a SmartGridready certification.
+3.  Apply for a SmartGridready declaration.
 
 
-Certification labels for :term:`Communicator` devices
+Declaration labels for :term:`Communicator` devices
 -----------------------------------------------------
 
-As a :term:`Communicator` supplier you can certify your :term:`Communicator` devices and get the SmartGridready label.
+As a :term:`Communicator` supplier you can declare your :term:`Communicator` devices and get the SmartGridready label.
 
-There are several possibilities to get your product certified.
+There are several possibilities to get your product declared.
 
 1. Integrate SmartGridready capability into your devices. There are several possibilities to achieve this:
 
@@ -54,13 +54,13 @@ There are several possibilities to get your product certified.
 
 2. Implement some functionality that make use of SmartGridready :term:`Functional Profiles`.
 
-3. Apply for SmartGridready certification.
+3. Apply for SmartGridready declaration.
 
 
-Certification Authority
------------------------
+Declaration Authority
+---------------------
 
-For registration, contact and additional information regarding certification go to
+For registration, contact and additional information regarding declaration go to
 `SmartGridready Label&Deklaration <https://smartgridready.ch/loesungen>`_
 
 

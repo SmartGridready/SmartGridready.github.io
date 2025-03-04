@@ -18,12 +18,12 @@ The following table gives you a documentation overview and the targeted audience
 
     *   - :ref:`introduction`
         - Describes the basic idea and concepts of SmartGridready.
-        - Everybody
+        - * Everybody
 
     *   - :ref:`getting-involved`
         - There are many ways to get involved and contribute to the SmartGridready project.
           This chapter how you can participate in SmartGridready projects based on your interests and expertise.
-        - Everybody
+        - * Everybody
 
     *   - :ref:`functional-profiles`
         - Explains the central role of :term:`Functional Profiles` in SmartGridready.
@@ -36,9 +36,11 @@ The following table gives you a documentation overview and the targeted audience
           Provides a link to the official SmartGridready library where all available :term:`Functional Profiles`
           are listed.
 
-        - * :term:`Product` Suppliers
+        -
+          * :term:`Product` Suppliers
+          * :term:`Communicator` Suppliers
           * Architects and Planners
-          * :term:`CommHandler` Suppliers
+          * Network Operators
           * All Developers
 
     *   - :ref:`product-description-eid`
@@ -52,13 +54,16 @@ The following table gives you a documentation overview and the targeted audience
           Provides a link to the official SmartGridread libary where all available :term:`Functional Profiles`
           are listed.
 
-        - * :term:`Product` Suppliers
-          * Architects and Planners
+        - * Architects and Planners
+          * Network Operators
+          * :term:`Product` Suppliers
           * :term:`CommHandler` Library Developers
 
     *   - :ref:`sgr-certification`
-        - Guides you through the steps needed to get your :term:`Product` SmartGridready certified.
+        - Guides you through the steps needed to get your :term:`Product` SmartGridready declared.
         - * :term:`Product` Suppliers
+          * :term:`Communicator` Suppliers
+          * Architects and Planners
 
     *   - :ref:`commhandler-libraries`
         - Describes the :term:`CommHandler` libraries and API's in detail. Provides installation and getting started instructions. There are currently libraries in Python and Java.
@@ -76,7 +81,7 @@ The following table gives you a documentation overview and the targeted audience
 
     *   - :ref:`intermediary`
         - Describes the SmartGridready :term:`Intermediary`. The intermediary provides a REST service to communicate
-          with SmartGridready certified :term:`Products` through a REST API. It can be deployed within a Docker container
+          with SmartGridready declared :term:`Products` through a REST API. It can be deployed within a Docker container
           and is a good solution where no native library (Python, Java) is available.
         - * :term:`Communicator` Suppliers
           * :term:`Communicator` Developers
