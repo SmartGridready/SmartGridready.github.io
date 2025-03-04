@@ -59,7 +59,7 @@ The following table gives you a documentation overview and the targeted audience
           * :term:`Product` Suppliers
           * :term:`CommHandler` Library Developers
 
-    *   - :ref:`sgr-certification`
+    *   - :ref:`sgr-declaration`
         - Guides you through the steps needed to get your :term:`Product` SmartGridready declared.
         - * :term:`Product` Suppliers
           * :term:`Communicator` Suppliers
@@ -97,7 +97,7 @@ The following table gives you a documentation overview and the targeted audience
     content/getting-involved
     content/functional-profiles
     content/product-description-eid
-    content/sgr-certification
+    content/sgr-declaration
     content/commhandler-libraries
     content/code-samples
     content/device-driver-libraries

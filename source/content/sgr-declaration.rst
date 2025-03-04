@@ -1,4 +1,4 @@
-.. _sgr-certification:
+.. _sgr-declaration:
 
 SmartGridready Declaration
 ==========================
