@@ -80,7 +80,7 @@ The list below shows the currently published :term:`Functional Profile Categorie
 description):
 
 .. list-table::
-    :widths: 20 60 20
+    :widths: 23 54 23
     :header-rows: 1
 
     * - Category
@@ -88,7 +88,7 @@ description):
       - Details page
 
     * - **Actuator**
-      - Used with actuator :term:`Products`. Examples for actuator devices are electrical relays or linear servo motors.
+      - Used with actuator :term:`Products`. Examples for actuator devices are electrical relays, servo motors etc.
       - :ref:`actuator`
 
     * - **Battery**
@@ -301,7 +301,7 @@ Level of control defining the complexity
 -----------------------------------------
 Version of the functional profile.
 
-* Changes in primaryVersionNumber indicate breaking changes,
+* changes in primaryVersionNumber indicate breaking changes,
 * changes in secondaryVersionNumber indicate complimentary changes,
 * changes in subReleaseVersionNumber are without impact on the functionality
 
