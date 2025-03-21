@@ -96,7 +96,8 @@ The following table gives you a documentation overview and the targeted audience
     content/introduction
     content/getting-involved
     content/functional-profiles
-    content/product-description-eid
+    content/product-description-file
+    content/communicator-description-file
     content/sgr-declaration
     content/commhandler-libraries
     content/code-samples

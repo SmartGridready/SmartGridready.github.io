@@ -63,10 +63,28 @@ Glossary
     Functional Profiles
         Plural form of :term:`Functional Profile`
 
+    Functional Profile Type
+        The type of a :term:`Functional Profile` defines a specific combination of related :term:`Datapoints`.
+        See :ref:`functional_profile_types`.
+
+    Functional Profile Types
+        Plural form of :term:`Functional Profile Type`.
+
+    Functional Profile Category
+        A :term:`Functional Profile Category` defines the type or usage of the :term:`Product`. Examples are 'Metering'
+        (for term:`Smart Meter`) or 'HeatPumpControl`. See :ref:`functional_profile_category`
+
+    Functional Profile Categories
+        Plural form of :term:`Functional Profile Category`
+
     Intermediary
         The :term:`Intermediary` is a microservice that exposes a REST API that allows seamless communication with
         SmartGridready compliant :term:`Product`. It can be deployed as a Docker container and is the ideal
         SmartGridready solution where no :term:`CommHandler` library is available.
+
+    Level Of Operation
+        :term:`Level Of Operation` is an attribute of a :term:`Functional Profile` that defines the complexity of
+        the a :term:`Functional Profile` operation. See :ref:`level_of_operation`
 
     PVA
         A system of interconnected solar panels that generate electricity from sunlight.

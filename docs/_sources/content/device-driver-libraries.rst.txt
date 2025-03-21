@@ -22,6 +22,3 @@ Java Default Implentations
 * Webservices ApacheHttp
 * Messaging MQTT HiveMQ
 
-.. toctree::
-    :caption: Contents
-    :maxdepth: 3

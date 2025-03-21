@@ -1,7 +1,7 @@
 .. _product-description-eid:
 
-Product Description XML (:term:`EID`)
-=====================================
+Product Description File (:term:`EID`)
+======================================
 * detailed description of :term:`EID` XML's
 * data format XML, definition XSD
 * howto create an EID

@@ -7,6 +7,7 @@
   <title>Functional Profiles &mdash; SmartGridready Documentation 0.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -17,11 +18,14 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=e031e9a9"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script src="../_static/custom.js?v=e821f123"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Product Description XML (EID)" href="product-description-eid.html" />
+    <link rel="next" title="Actuator" href="functional-profile-categories/actuator.html" />
     <link rel="prev" title="Getting Involved" href="getting-involved.html" /> 
 </head>
 
@@ -67,15 +71,53 @@
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Functional Profiles</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#functional-profile-structure">Functional Profile Structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#available-functional-profiles">Available <span class="xref std std-term">Functional Profiles</span></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#functional-profile-properties"><span class="xref std std-term">Functional Profile</span> Properties</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#datapoint-properties"><span class="xref std std-term">Datapoint</span> Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functional-profile-categories"><span class="xref std std-term">Functional Profile Categories</span></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="functional-profile-categories/actuator.html">Actuator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functional-profile-categories/battery.html">Battery</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="functional-profile-categories/battery-system.html">Battery System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functional-profile-categories/device-information.html">Device Information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functional-profile-categories/dynamic-tariff.html">Dynamic Tariff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functional-profile-categories/evse.html"><span class="xref std std-term">EVSE</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="functional-profile-categories/heating-circuit.html">Heating Circuit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functional-profile-categories/heatpump-control.html">Heatpump Control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functional-profile-categories/inverter.html">Inverter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functional-profile-categories/metering.html">Metering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functional-profile-categories/sgcp.html">SGCP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functional-profile-categories/sensor.html">Sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functional-profile-categories/temperature-sensor.html">Temperature Sensor</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#functional-profile-types"><span class="xref std std-term">Functional Profile Types</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#level-of-operation"><span class="xref std std-term">Level of Operation</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functional-profile-version-number"><span class="xref std std-term">Functional Profile</span> Version Number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#datapoints"><span class="xref std std-term">Datapoints</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sub-datapoints">Sub Datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#defining-functional-profiles">Defining Functional Profiles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#file-naming-scheme">File Naming Scheme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#release-notes">Release Notes</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#functional-profile-release-process"><span class="xref std std-term">Functional Profile</span> Release Process</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#additional-documentation-on-github">Additional Documentation on GitHub</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="product-description-eid.html">Product Description XML (<span class="xref std std-term">EID</span>)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="product-description-eid.html#product-ei-xml-documentation-on-github">Product EI-XML Documentation on GitHub</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="product-description-file.html">Product Description File (<span class="xref std std-term">EID</span>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="product-description-file.html#product-ei-xml-documentation-on-github">Product EI-XML Documentation on GitHub</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="communicator-description-file.html"><span class="xref std std-term">Communicator</span> Description File</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="communicator-description-file.html#general-structure">General Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="communicator-description-file.html#communicator-description-file-elements">Communicator Description File Elements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="communicator-description-file.html#release-notes">Release Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="communicator-description-file.html#communicator-information">Communicator Information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="communicator-description-file.html#communicator-attributes">Communicator Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="communicator-description-file.html#descriptions">Descriptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="communicator-description-file.html#transport-services">Transport Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="communicator-description-file.html#functional-profiles">Functional Profiles</a></li>
 </ul>
 </li>
 </ul>
@@ -99,9 +141,7 @@
 <li class="toctree-l1"><a class="reference internal" href="code-samples.html">SmartGridready Code Samples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="device-driver-libraries.html">SmarGridready Device Driver Libraries</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="device-driver-libraries.html#python-default-implementations">Python Default Implementations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="device-driver-libraries.html#java-default-implentations">Java Default Implentations</a><ul class="simple">
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="device-driver-libraries.html#java-default-implentations">Java Default Implentations</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="intermediary.html">SmartGridready Intermediary</a><ul class="simple">
@@ -140,16 +180,30 @@
              
   <section id="functional-profiles">
 <span id="id1"></span><h1>Functional Profiles<a class="headerlink" href="#functional-profiles" title="Permalink to this heading"></a></h1>
-<p>A functional profile describes a set of related functionalities provided by a <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a>.</p>
+<p>A <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> describes a set of related functionalities provided by a <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a>.
+It thereby focuses entirely on the functionality. Any transport-specific details are not part of the functional profile
+(e.g. on how to get or set a <a class="reference internal" href="glossary.html#term-Datapoint"><span class="xref std std-term">Datapoint</span></a> on a specific product).</p>
+<p>The main intent is to allow communicator manufacturers to easily implement their use cases based on logically grouped
+<a class="reference internal" href="glossary.html#term-Datapoints"><span class="xref std std-term">Datapoints</span></a>, while device-specific communication details are handled SmartGridread CommHandler library.</p>
+<p>Any <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> that supports the <a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> required for a specific use case is therefore automatically
+compatible and can be used without changing the <a class="reference internal" href="glossary.html#term-Communicator"><span class="xref std std-term">Communicator</span></a> implementation.</p>
 <p>The <a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> build the foundation of the SmartGridready specification and allow access to any
 SmartGridready compliant <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> through a generic API.</p>
+<p>The SmartGridready library lists the currently available <a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a>:
+See <a class="reference external" href="https://library.smartgridready.ch/FunctionalProfileTemplate">Functional Profile Library</a></p>
+<p>This list of <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> definitions is subject to change and will grow in the future, as new
+<a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> will be added.</p>
+<p>As a <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> supplier you need check which <a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> suit your <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a>’s functionalities
+and add the matching <a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> to the <a class="reference internal" href="glossary.html#term-External-Interface-Definition"><span class="xref std std-term">External Interface Definition</span></a> file.</p>
 <section id="functional-profile-structure">
 <h2>Functional Profile Structure<a class="headerlink" href="#functional-profile-structure" title="Permalink to this heading"></a></h2>
-<p>In general, the <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> consists of a set of <a class="reference internal" href="glossary.html#term-Datapoints"><span class="xref std std-term">Datapoints</span></a> that provide read and write
-operations related to the functionality.</p>
-<p>A SmartGridready <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> exposes it’s functionalities in a well structured way.</p>
+<p>A <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> is part of a <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> description and includes the:</p>
+<ul class="simple">
+<li><p>Definition of the <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> with identification and description.</p></li>
+<li><p><a class="reference internal" href="glossary.html#term-Datapoints"><span class="xref std std-term">Datapoints</span></a> defining access points to measure and control data on the <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a>.</p></li>
+</ul>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>PRODUCT
-├── COMMON PRODUCT INFO ...
+├── DEFINITION (Generic product info ...)
 │
 ├── FUNCTIONAL-PROFILE (ActiveEnergyAC)
 │   ├── DATAPOINT (ActiveEnergyACTot)
@@ -165,39 +219,360 @@ operations related to the functionality.</p>
     └── DATAPOINT (ActivePowerACL3)
 </pre></div>
 </div>
-<p>The illustration above shows the structure of a <a class="reference internal" href="glossary.html#term-External-Interface-Definition"><span class="xref std std-term">External Interface Definition</span></a> XML (<a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a>) that exposes
-its functionalities by including two <a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a>. The example shows a simple <a class="reference internal" href="glossary.html#term-Smart-Meter"><span class="xref std std-term">Smart Meter</span></a>
-that exposes AC-energy metering and AC-power measurement functionalities.</p>
+<p>The illustration above shows a sample for the structure of a <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> description file in XML (<a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a>).
+The <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> description exposes its functionalities by including two <a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a>.
+The example shows a simple <a class="reference internal" href="glossary.html#term-Smart-Meter"><span class="xref std std-term">Smart Meter</span></a> that exposes AC-energy metering and AC-power measurement functionalities.</p>
 <p>A <a class="reference internal" href="glossary.html#term-Communicator"><span class="xref std std-term">Communicator</span></a> software can read from or write to the device by addressing the <a class="reference internal" href="glossary.html#term-Datapoint"><span class="xref std std-term">Datapoint</span></a> by
 <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> name and <a class="reference internal" href="glossary.html#term-Datapoint"><span class="xref std std-term">Datapoint</span></a> name. Java code example:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="n">acPowerTotal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">meteringDevice</span><span class="p">.</span><span class="na">getVal</span><span class="p">(</span><span class="s">&quot;ActiveEnergyAC&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ActiveEnergyACtot&quot;</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="n">acPowerTotal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">meteringDevice</span><span class="p">.</span><span class="na">getVal</span><span class="p">(</span><span class="s">&quot;ActiveEnergyAC&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ActiveEnergyACTot&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-</section>
-<section id="available-functional-profiles">
-<h2>Available <a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a><a class="headerlink" href="#available-functional-profiles" title="Permalink to this heading"></a></h2>
-<p>The SmartGridready library lists the currently available <a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a>:</p>
-<p><a class="reference external" href="https://library.smartgridready.ch/FunctionalProfileTemplate">Functional Profile Library</a></p>
-<p>This list is subject to change and will grow in the future, as new <a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> will be added.</p>
-<p>As a <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> supplier check which <a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> suit your product’s functionalities and add
-the matching <a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> to your <a class="reference internal" href="glossary.html#term-External-Interface-Definition"><span class="xref std std-term">External Interface Definition</span></a> file.</p>
-</section>
-<section id="functional-profile-properties">
-<h2><a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> Properties<a class="headerlink" href="#functional-profile-properties" title="Permalink to this heading"></a></h2>
-<p>The SmartGridready specification defines a set properties for <a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a>:</p>
+<p>A functional profile is defined/identified by:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/SmartGridready/SGrSpecifications/blob/master/doc/FunctionalProfileCategory.md">Functional Profile Category</a></p></li>
-<li><p><a class="reference external" href="https://library.smartgridready.ch/FunctionalProfileTemplate">Functional Profile Types</a></p></li>
-<li><p><a class="reference external" href="https://github.com/SmartGridready/SGrSpecifications/blob/master/doc/LevelOfOperation.md">Level of Operation</a></p></li>
+<li><p><strong>Functional Profile Category:</strong> see <a class="reference internal" href="#functional-profile-category"><span class="std std-ref">Functional Profile Categories</span></a></p></li>
+<li><p><strong>Functional Profile Type:</strong> see: <a class="reference internal" href="#functional-profile-types"><span class="std std-ref">Functional Profile Types</span></a></p></li>
+<li><p><strong>Level Of Operation:</strong> see <a class="reference internal" href="#level-of-operation"><span class="std std-ref">Level of Operation</span></a></p></li>
+<li><p><strong>Version Number:</strong> see <a class="reference internal" href="#version-number"><span class="std std-ref">Functional Profile Version Number</span></a></p></li>
 </ul>
 </section>
-<section id="datapoint-properties">
-<h2><a class="reference internal" href="glossary.html#term-Datapoint"><span class="xref std std-term">Datapoint</span></a> Properties<a class="headerlink" href="#datapoint-properties" title="Permalink to this heading"></a></h2>
-<p>TODO</p>
+<section id="functional-profile-categories">
+<span id="functional-profile-category"></span><h2><a class="reference internal" href="glossary.html#term-Functional-Profile-Categories"><span class="xref std std-term">Functional Profile Categories</span></a><a class="headerlink" href="#functional-profile-categories" title="Permalink to this heading"></a></h2>
+<p>The <a class="reference internal" href="glossary.html#term-Functional-Profile-Category"><span class="xref std std-term">Functional Profile Category</span></a> is related the type of a <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> and its functionalities.</p>
+<p>The list below shows the currently published <a class="reference internal" href="glossary.html#term-Functional-Profile-Categories"><span class="xref std std-term">Functional Profile Categories</span></a> (follow the links for a detailed
+description):</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Category</p></th>
+<th class="head"><p>Assigned to <a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> used with <a class="reference internal" href="glossary.html#term-Products"><span class="xref std std-term">Products</span></a> of type:</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Actuator</strong></p>
+<p>details see <a class="reference internal" href="functional-profile-categories/actuator.html#actuator"><span class="std std-ref">Actuator</span></a></p>
+</td>
+<td><p>Used with actuator <a class="reference internal" href="glossary.html#term-Products"><span class="xref std std-term">Products</span></a>. Examples for actuator devices are electrical relays or linear servo motors.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Battery</strong></p>
+<p>details see <a class="reference internal" href="functional-profile-categories/battery.html#battery"><span class="std std-ref">Battery</span></a></p>
+</td>
+<td><p>Used with battery <a class="reference internal" href="glossary.html#term-Products"><span class="xref std std-term">Products</span></a>, e.g. batteries that store electrical energy produced by a <a class="reference internal" href="glossary.html#term-PVA"><span class="xref std std-term">PVA</span></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>BatterSystem</strong></p>
+<p>details see <a class="reference internal" href="functional-profile-categories/battery-system.html#battery-system"><span class="std std-ref">Battery System</span></a></p>
+</td>
+<td><p>Used with combined systems that consist of a battery and an <a class="reference internal" href="functional-profile-categories/inverter.html#inverter"><span class="std std-ref">Inverter</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>DeviceInformation</strong></p>
+<p>details see <a class="reference internal" href="functional-profile-categories/device-information.html#device-information"><span class="std std-ref">Device Information</span></a></p>
+</td>
+<td><p>Has no predefined <a class="reference internal" href="glossary.html#term-Datapoints"><span class="xref std std-term">Datapoints</span></a>. Used to provide device information and add manufacturer proprietary
+<a class="reference internal" href="glossary.html#term-Datapoints"><span class="xref std std-term">Datapoints</span></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>DynamicTariff</strong></p>
+<p>details see <a class="reference internal" href="functional-profile-categories/dynamic-tariff.html#dynamic-tariff"><span class="std std-ref">Dynamic Tariff</span></a></p>
+</td>
+<td><p>Used to query dynamic tariff information from a power grid operator system.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>EVSE</strong></p>
+<p>details see <a class="reference internal" href="functional-profile-categories/evse.html#evse"><span class="std std-ref">EVSE</span></a></p>
+</td>
+<td><p>Used for Electrical Vehicle Supply Equipment (<a class="reference internal" href="glossary.html#term-EVSE"><span class="xref std std-term">EVSE</span></a>) <a class="reference internal" href="glossary.html#term-Products"><span class="xref std std-term">Products</span></a> like charging stations.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>HeatingCircuit</strong></p>
+<p>details see <a class="reference internal" href="functional-profile-categories/heating-circuit.html#heating-circuit"><span class="std std-ref">Heating Circuit</span></a>.</p>
+</td>
+<td><p>Used with <a class="reference internal" href="glossary.html#term-Products"><span class="xref std std-term">Products</span></a> that allow reading information from a heating circuit, such as temperature.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>HeatPumpControl</strong></p>
+<p>details see <a class="reference internal" href="functional-profile-categories/heatpump-control.html#heatpump-control"><span class="std std-ref">Heatpump Control</span></a></p>
+</td>
+<td><p>Used with <a class="reference internal" href="glossary.html#term-Products"><span class="xref std std-term">Products</span></a> that allow controlling heat pumps and reading information from heat pumps.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Inverter</strong></p>
+<p>details see <a class="reference internal" href="functional-profile-categories/inverter.html#inverter"><span class="std std-ref">Inverter</span></a></p>
+</td>
+<td><p>Used with <a class="reference internal" href="glossary.html#term-Products"><span class="xref std std-term">Products</span></a> that allow controlling and reading status from <a class="reference internal" href="glossary.html#term-PV-Inverter"><span class="xref std std-term">PV-Inverter</span></a> devices.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Metering</strong></p>
+<p>details see <a class="reference internal" href="functional-profile-categories/metering.html#metering"><span class="std std-ref">Metering</span></a></p>
+</td>
+<td><p>Used with <a class="reference internal" href="glossary.html#term-Products"><span class="xref std std-term">Products</span></a> that provide metering an measurement functionalities like electrical power or energy
+consumption, for example smart meter devices.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>SGCP</strong></p>
+<p>details see <a class="reference internal" href="functional-profile-categories/sgcp.html#sgcp"><span class="std std-ref">SGCP</span></a></p>
+</td>
+<td><p>Used for Smart Grid Connection Point (<a class="reference internal" href="glossary.html#term-SGCP"><span class="xref std std-term">SGCP</span></a>) <a class="reference internal" href="glossary.html#term-Products"><span class="xref std std-term">Products</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Sensor</strong></p>
+<p>details see <a class="reference internal" href="functional-profile-categories/sensor.html#sensor"><span class="std std-ref">Sensor</span></a></p>
+</td>
+<td><p>Used with <a class="reference internal" href="glossary.html#term-Products"><span class="xref std std-term">Products</span></a> that allow reading data from sensor devices, for example a humidity sensor.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>TemperatureSensor</strong></p>
+<p>details see <a class="reference internal" href="functional-profile-categories/temperature-sensor.html#temperature-sensor"><span class="std std-ref">Temperature Sensor</span></a></p>
+</td>
+<td><p>Used with <a class="reference internal" href="glossary.html#term-Products"><span class="xref std std-term">Products</span></a> that measure temperatures.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="functional-profile-types">
+<span id="id2"></span><h2><a class="reference internal" href="glossary.html#term-Functional-Profile-Types"><span class="xref std std-term">Functional Profile Types</span></a><a class="headerlink" href="#functional-profile-types" title="Permalink to this heading"></a></h2>
+<p>The <a class="reference internal" href="glossary.html#term-Functional-Profile-Types"><span class="xref std std-term">Functional Profile Types</span></a> are assigned to a <a class="reference internal" href="glossary.html#term-Functional-Profile-Category"><span class="xref std std-term">Functional Profile Category</span></a> and define a set of related
+functionalities and associated <a class="reference internal" href="glossary.html#term-Datapoints"><span class="xref std std-term">Datapoints</span></a>.</p>
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-number">Table 4 </span><span class="caption-text"><a class="reference internal" href="glossary.html#term-Functional-Profile-Types"><span class="xref std std-term">Functional Profile Types</span></a></span><a class="headerlink" href="#id5" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 50%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><a class="reference internal" href="glossary.html#term-Functional-Profile-Type"><span class="xref std std-term">Functional Profile Type</span></a></p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Associated <a class="reference internal" href="glossary.html#term-Functional-Profile-Category"><span class="xref std std-term">Functional Profile Category</span></a></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ActiveEnergyAC</p></td>
+<td><p>Provides AC energy metering <a class="reference internal" href="glossary.html#term-Datapoints"><span class="xref std std-term">Datapoints</span></a> for single phase, multi phase and total energy consumption.</p></td>
+<td><p><a class="reference internal" href="functional-profile-categories/metering.html#metering"><span class="std std-ref">Metering</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ActiveEnergyBalanceAC</p></td>
+<td><p>Provides energy balance metering <a class="reference internal" href="glossary.html#term-Datapoints"><span class="xref std std-term">Datapoints</span></a> providing data for imported, exported and net energy towards
+the power grid.</p></td>
+<td><p><a class="reference internal" href="functional-profile-categories/metering.html#metering"><span class="std std-ref">Metering</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>ActivePowerAC</p></td>
+<td><p>Provides AC power measurement for single phase, multi phase and total power consumption.</p></td>
+<td><p><a class="reference internal" href="functional-profile-categories/metering.html#metering"><span class="std std-ref">Metering</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ApparentEnergyAC</p></td>
+<td><p>Provides <a class="reference internal" href="glossary.html#term-Datapoints"><span class="xref std std-term">Datapoints</span></a> for AC apparent energy metering. Supports single phase, multi phase and total
+apparent energy metering.</p></td>
+<td><p><a class="reference internal" href="functional-profile-categories/metering.html#metering"><span class="std std-ref">Metering</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>ApparentPowerAC</p></td>
+<td><p>Provides <a class="reference internal" href="glossary.html#term-Datapoints"><span class="xref std std-term">Datapoints</span></a> for AC apparent power measurement. Supports single phase, multi phase and total
+apparent power measurements.</p></td>
+<td><p><a class="reference internal" href="functional-profile-categories/metering.html#metering"><span class="std std-ref">Metering</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>BiDirFlexMgmt</p></td>
+<td><p>Functional profile for Energy Management Systems (EMS) that feature a bidirectional communication interface with
+a flexibility manager (e.g., utility company / grid operator). The interface allows both the retrieval of
+current data and the targeted control of power at the grid connection point via defined data points.</p></td>
+<td><p><a class="reference internal" href="functional-profile-categories/sgcp.html#sgcp"><span class="std std-ref">SGCP</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>BufferStorageCtrl</p></td>
+<td><p>This <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> type extends the <strong>HeatPumpBase</strong> <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> type. It provides
+<a class="reference internal" href="glossary.html#term-Datapoints"><span class="xref std std-term">Datapoints</span></a> to read temperature from and control heat pump buffer storage devices.</p></td>
+<td><p><a class="reference internal" href="functional-profile-categories/heatpump-control.html#heatpump-control"><span class="std std-ref">Heatpump Control</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>CurrentAC</p></td>
+<td><p>Provides <a class="reference internal" href="glossary.html#term-Datapoints"><span class="xref std std-term">Datapoints</span></a> for AC current measurements. Supports single phase, multi phase and current
+against the neutral conductor measurements.</p></td>
+<td><p><a class="reference internal" href="functional-profile-categories/metering.html#metering"><span class="std std-ref">Metering</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>CurrentDC</p></td>
+<td><p>Defines a single <a class="reference internal" href="glossary.html#term-Datapoint"><span class="xref std std-term">Datapoint</span></a> to measure DC current.</p></td>
+<td><p><a class="reference internal" href="functional-profile-categories/metering.html#metering"><span class="std std-ref">Metering</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>DeviceInformation</p></td>
+<td><p>Empty functional profile without data points that can be used for vendor specific information and data points.
+It allows the handling of data points, which are valid for the whole device.</p></td>
+<td><p><a class="reference internal" href="functional-profile-categories/device-information.html#device-information"><span class="std std-ref">Device Information</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>DomHotWaterCtrl</p></td>
+<td><p>This <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> type extends the <strong>HeatPumpBase</strong> <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a>. It provides
+<a class="reference internal" href="glossary.html#term-Datapoints"><span class="xref std std-term">Datapoints</span></a> that are available for controlling a domestic hot water circuit.</p></td>
+<td><p><a class="reference internal" href="functional-profile-categories/heatpump-control.html#heatpump-control"><span class="std std-ref">Heatpump Control</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>EMS_Current_Limit</p></td>
+<td><p>This <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> type enables a controller to set a current limitation for a charging station
+(Electric Vehicle Supply Equipment, <a class="reference internal" href="glossary.html#term-EVSE"><span class="xref std std-term">EVSE</span></a>).</p></td>
+<td><p><a class="reference internal" href="functional-profile-categories/evse.html#evse"><span class="std std-ref">EVSE</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>ESVEState</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> for reading the status of the connector of an electric vehicle charging station
+(<a class="reference internal" href="glossary.html#term-EVSE"><span class="xref std std-term">EVSE</span></a>).</p></td>
+<td><p><a class="reference internal" href="functional-profile-categories/evse.html#evse"><span class="std std-ref">EVSE</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>EnergyMonitor</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> that supports <a class="reference internal" href="glossary.html#term-Datapoints"><span class="xref std std-term">Datapoints</span></a> to read operating data such as energy consumption
+from a <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a>.</p></td>
+<td><p><a class="reference internal" href="functional-profile-categories/heatpump-control.html#heatpump-control"><span class="std std-ref">Heatpump Control</span></a>, <a class="reference internal" href="functional-profile-categories/battery.html#battery"><span class="std std-ref">Battery</span></a>, <a class="reference internal" href="functional-profile-categories/battery-system.html#battery-system"><span class="std std-ref">Battery System</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>FlexMgmt</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> for Energy Management Systems (EMS) that feature a bidirectional communication
+interface with a flexibility manager (e.g., utility company / grid operator). The interface allows both the
+retrieval of current data and the targeted control of power at the grid connection point via defined data points.</p></td>
+<td><p><a class="reference internal" href="functional-profile-categories/sgcp.html#sgcp"><span class="std std-ref">SGCP</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Frequency</p></td>
+<td><p>Defines a single <a class="reference internal" href="glossary.html#term-Datapoint"><span class="xref std std-term">Datapoint</span></a> to measure AC frequency.</p></td>
+<td><p><a class="reference internal" href="functional-profile-categories/metering.html#metering"><span class="std std-ref">Metering</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>HeatCoolCtrl</p></td>
+<td><p>This <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> type extends the <strong>HeatPumpBase</strong> <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a>. It provides
+<a class="reference internal" href="glossary.html#term-Datapoints"><span class="xref std std-term">Datapoints</span></a> that are available for controlling a heat pump heating and cooling circuit.</p></td>
+<td><p><a class="reference internal" href="functional-profile-categories/heatpump-control.html#heatpump-control"><span class="std std-ref">Heatpump Control</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HeatPumpBase</p></td>
+<td><p>This is the basic <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> for heat pumps. It allows operation mode control and reading operation
+status and measure temperature etc.</p></td>
+<td><p><a class="reference internal" href="functional-profile-categories/heatpump-control.html#heatpump-control"><span class="std std-ref">Heatpump Control</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Humidity</p></td>
+<td><p>Defines a single <a class="reference internal" href="glossary.html#term-Datapoint"><span class="xref std std-term">Datapoint</span></a> to measure humidity.</p></td>
+<td><p><a class="reference internal" href="functional-profile-categories/sensor.html#sensor"><span class="std std-ref">Sensor</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>LoadManagement</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> type for Energy Management Systems (EMS) with a communication interface to the the
+flexibility manager (to power suppliers, pooling providers or similar) that is controllable via two relay contacts.</p></td>
+<td><p><a class="reference internal" href="functional-profile-categories/sgcp.html#sgcp"><span class="std std-ref">SGCP</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>LoadReduction_EVSE</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> type to control load reduction of Electrical Vehicle Supply Equipement <a class="reference internal" href="glossary.html#term-EVSE"><span class="xref std std-term">EVSE</span></a>.</p></td>
+<td><p><a class="reference internal" href="functional-profile-categories/evse.html#evse"><span class="std std-ref">EVSE</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>PowerCtrl</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> type to control the power consumption of heat pumps by controlling parameters
+like compressor power consumption or compressor rotations per minute.</p></td>
+<td><p><a class="reference internal" href="functional-profile-categories/heatpump-control.html#heatpump-control"><span class="std std-ref">Heatpump Control</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>PowerFactor</p></td>
+<td><p>Provides <a class="reference internal" href="glossary.html#term-Datapoints"><span class="xref std std-term">Datapoints</span></a> to read the power factor defined as:</p>
+<div class="math notranslate nohighlight">
+\[PowerFactor = \frac{ActivePower}{ApparentPower}\]</div>
+<p>It supports single phase, multi phase and overall measurement.</p>
+</td>
+<td><p><a class="reference internal" href="functional-profile-categories/metering.html#metering"><span class="std std-ref">Metering</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="level-of-operation">
+<span id="id3"></span><h2><a class="reference internal" href="glossary.html#term-Level-Of-Operation"><span class="xref std std-term">Level of Operation</span></a><a class="headerlink" href="#level-of-operation" title="Permalink to this heading"></a></h2>
+<p>Level of control defining the complexity</p>
+</section>
+<section id="functional-profile-version-number">
+<span id="version-number"></span><h2><a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> Version Number<a class="headerlink" href="#functional-profile-version-number" title="Permalink to this heading"></a></h2>
+<p>Version of the functional profile.</p>
 <ul class="simple">
-<li><p>reference detail doc.md’s in Github (attributes, RW, 2m …)</p></li>
-<li><p>reference functional profiles list in library</p></li>
+<li><p>Changes in primaryVersionNumber indicate breaking changes,</p></li>
+<li><p>changes in secondaryVersionNumber indicate complimentary changes,</p></li>
+<li><p>changes in subReleaseVersionNumber are without impact on the functionality</p></li>
 </ul>
+</section>
+<section id="datapoints">
+<h2><a class="reference internal" href="glossary.html#term-Datapoints"><span class="xref std std-term">Datapoints</span></a><a class="headerlink" href="#datapoints" title="Permalink to this heading"></a></h2>
+<p>A <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> mainly defines a set of <a class="reference internal" href="glossary.html#term-Datapoints"><span class="xref std std-term">Datapoints</span></a>. The <a class="reference internal" href="glossary.html#term-Datapoints"><span class="xref std std-term">Datapoints</span></a> define access points to values
+that can be read from or written to the product.</p>
+<p>The <a class="reference internal" href="glossary.html#term-Datapoints"><span class="xref std std-term">Datapoints</span></a> are defined by the following attributes:</p>
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-number">Table 5 </span><span class="caption-text"><a class="reference internal" href="glossary.html#term-Datapoint"><span class="xref std std-term">Datapoint</span></a> Attributes</span><a class="headerlink" href="#id6" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Element</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="glossary.html#term-Datapoint"><span class="xref std std-term">Datapoint</span></a> Name</p></td>
+<td><p>Name of the <a class="reference internal" href="glossary.html#term-Datapoint"><span class="xref std std-term">Datapoint</span></a>. Should be unique within the functional profile.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Direction</p></td>
+<td><ul class="simple">
+<li><p>‘R’ if <a class="reference internal" href="glossary.html#term-Datapoint"><span class="xref std std-term">Datapoint</span></a> can be read</p></li>
+<li><p>‘W` if <a class="reference internal" href="glossary.html#term-Datapoint"><span class="xref std std-term">Datapoint</span></a> can be written</p></li>
+<li><p>‘P` if <a class="reference internal" href="glossary.html#term-Datapoint"><span class="xref std std-term">Datapoint</span></a> is persisted</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Presence Level</p></td>
+<td><p>Datapoint availability within an <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> that implements the <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a>:
+* Mandatory
+* Recommended
+* Optional</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Type</p></td>
+<td><p>Data type of the <a class="reference internal" href="glossary.html#term-Datapoint"><span class="xref std std-term">Datapoint</span></a> value. (e.g. float32, int, string…)</p></td>
+</tr>
+<tr class="row-even"><td><p>Alternative Names</p></td>
+<td><p>A list of relevant name spaces list for to display names used in different standards like
+EEBUS, IEC6850, SAREF4ENER etc.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Legible Description</p></td>
+<td><p>Optional, can occur once per language. Contains details concerning the intended use case of the functional profile.</p></td>
+</tr>
+</tbody>
+</table>
+<p>If a <a class="reference internal" href="glossary.html#term-Datapoint"><span class="xref std std-term">Datapoint</span></a> is defined as mandatory in the functional profile, it must also be present in the product implementing
+this functional profile.</p>
+<p>If no <a class="reference internal" href="glossary.html#term-Datapoint"><span class="xref std std-term">Datapoint</span></a> is mandatory in the functional profile, then at least one <a class="reference internal" href="glossary.html#term-Datapoint"><span class="xref std std-term">Datapoint</span></a> must be recommended and at least
+one of the recommended <a class="reference internal" href="glossary.html#term-Datapoints"><span class="xref std std-term">Datapoints</span></a> must be presentin the product implementing this <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a>.</p>
+</section>
+<section id="sub-datapoints">
+<h2>Sub Datapoints<a class="headerlink" href="#sub-datapoints" title="Permalink to this heading"></a></h2>
+<p>Datapoints that are connected to other <a class="reference internal" href="glossary.html#term-Datapoints"><span class="xref std std-term">Datapoints</span></a> can be modeled as sub <a class="reference internal" href="glossary.html#term-Datapoints"><span class="xref std std-term">Datapoints</span></a>.
+The connection between <a class="reference internal" href="glossary.html#term-Datapoint"><span class="xref std std-term">Datapoint</span></a> and sub <a class="reference internal" href="glossary.html#term-Datapoint"><span class="xref std std-term">Datapoint</span></a> are defined with naming conventions. If e.g. a <a class="reference internal" href="glossary.html#term-Datapoint"><span class="xref std std-term">Datapoint</span></a> has the
+name “MainDatapoint” and is connected with a sub <a class="reference internal" href="glossary.html#term-Datapoint"><span class="xref std std-term">Datapoint</span></a> “SubDatapoint” the sub <a class="reference internal" href="glossary.html#term-Datapoint"><span class="xref std std-term">Datapoint</span></a> name has the name
+“MainDatapoint.SubDatapoint” - this means, the sub <a class="reference internal" href="glossary.html#term-Datapoint"><span class="xref std std-term">Datapoint</span></a> name is appended to the main <a class="reference internal" href="glossary.html#term-Datapoint"><span class="xref std std-term">Datapoint</span></a> name separated
+with a dot.</p>
+<p>An example for a sub <a class="reference internal" href="glossary.html#term-Datapoint"><span class="xref std std-term">Datapoint</span></a> is “Voltage.Precision” as the precision of the <a class="reference internal" href="glossary.html#term-Datapoint"><span class="xref std std-term">Datapoint</span></a> “Voltage”.</p>
+</section>
+<section id="defining-functional-profiles">
+<h2>Defining Functional Profiles<a class="headerlink" href="#defining-functional-profiles" title="Permalink to this heading"></a></h2>
+<section id="file-naming-scheme">
+<h3>File Naming Scheme<a class="headerlink" href="#file-naming-scheme" title="Permalink to this heading"></a></h3>
+<p>Functional profiles should have the following file naming conventions:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>FP_[specificationOwnerIdentification]_[FunctionalProfileCategory]_[FunctionalProfileType]_[levelOfOperation]_[majorVerion].[minorVerion].xml
+</pre></div>
+</div>
+<p><strong>Writing Descriptions</strong>
+Functional profile descriptions should be structured as follows:
+* Image indicating the typical use of the functional profile, together with an easily understandable title
+* Short explanation (i.e. long version of the title)
+* Detailed explanation, including very attribute.
+* Description on how to apply the functional profile concerning presence level (i.e. how to handle recommended and optional <a class="reference internal" href="glossary.html#term-Datapoints"><span class="xref std std-term">Datapoints</span></a>)</p>
+</section>
+<section id="release-notes">
+<h3>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this heading"></a></h3>
+<p>The release notes section contains meta data that describe history and current state of the functional profile.</p>
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-number">Table 6 </span><span class="caption-text">Releas Notes</span><a class="headerlink" href="#id7" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Element</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Status</p></td>
+<td><p>One of ‘Draft’, ‘Review’, ‘Released’, ‘Revoked’</p></td>
+</tr>
+<tr class="row-odd"><td><p>Remarks</p></td>
+<td><p>Optional, text with remarks e.g. can be useful during the draft phase for todo’s etc.</p></td>
+</tr>
+<tr class="row-even"><td><p>Change Log</p></td>
+<td><p>Optional, can occur multiple times. Contains release notes to the version concerned</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 <section id="functional-profile-release-process">
 <h2><a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> Release Process<a class="headerlink" href="#functional-profile-release-process" title="Permalink to this heading"></a></h2>
@@ -205,7 +580,7 @@ the matching <a class="reference internal" href="glossary.html#term-Functional-P
 </section>
 <section id="additional-documentation-on-github">
 <h2>Additional Documentation on GitHub<a class="headerlink" href="#additional-documentation-on-github" title="Permalink to this heading"></a></h2>
-<p><a class="reference external" href="https://github.com/SmartGridready/SGrSpecifications/blob/master/doc/functionalProfile.md">Functional Profile Documentation</a></p>
+<p>See <a class="reference external" href="https://github.com/SmartGridready/SGrSpecifications/blob/master/doc/functionalProfile.md">Functional Profile Documentation</a></p>
 </section>
 </section>
 
@@ -214,7 +589,7 @@ the matching <a class="reference internal" href="glossary.html#term-Functional-P
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="getting-involved.html" class="btn btn-neutral float-left" title="Getting Involved" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="product-description-eid.html" class="btn btn-neutral float-right" title="Product Description XML (EID)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="functional-profile-categories/actuator.html" class="btn btn-neutral float-right" title="Actuator" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

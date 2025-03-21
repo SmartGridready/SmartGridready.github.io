@@ -6,6 +6,7 @@
   <title>Index &mdash; SmartGridready Documentation 0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
@@ -16,6 +17,8 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=e031e9a9"></script>
         <script src="_static/doctools.js?v=888ff710"></script>
         <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="_static/copybutton.js?v=f281be69"></script>
         <script src="_static/custom.js?v=e821f123"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="#" />
@@ -64,15 +67,53 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="content/functional-profiles.html">Functional Profiles</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="content/functional-profiles.html#functional-profile-structure">Functional Profile Structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/functional-profiles.html#available-functional-profiles">Available <span class="xref std std-term">Functional Profiles</span></a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/functional-profiles.html#functional-profile-properties"><span class="xref std std-term">Functional Profile</span> Properties</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/functional-profiles.html#datapoint-properties"><span class="xref std std-term">Datapoint</span> Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/functional-profiles.html#functional-profile-categories"><span class="xref std std-term">Functional Profile Categories</span></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="content/functional-profile-categories/actuator.html">Actuator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="content/functional-profile-categories/battery.html">Battery</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="content/functional-profile-categories/battery-system.html">Battery System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="content/functional-profile-categories/device-information.html">Device Information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="content/functional-profile-categories/dynamic-tariff.html">Dynamic Tariff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="content/functional-profile-categories/evse.html"><span class="xref std std-term">EVSE</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="content/functional-profile-categories/heating-circuit.html">Heating Circuit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="content/functional-profile-categories/heatpump-control.html">Heatpump Control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="content/functional-profile-categories/inverter.html">Inverter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="content/functional-profile-categories/metering.html">Metering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="content/functional-profile-categories/sgcp.html">SGCP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="content/functional-profile-categories/sensor.html">Sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="content/functional-profile-categories/temperature-sensor.html">Temperature Sensor</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="content/functional-profiles.html#functional-profile-types"><span class="xref std std-term">Functional Profile Types</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/functional-profiles.html#level-of-operation"><span class="xref std std-term">Level of Operation</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/functional-profiles.html#functional-profile-version-number"><span class="xref std std-term">Functional Profile</span> Version Number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/functional-profiles.html#datapoints"><span class="xref std std-term">Datapoints</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/functional-profiles.html#sub-datapoints">Sub Datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/functional-profiles.html#defining-functional-profiles">Defining Functional Profiles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="content/functional-profiles.html#file-naming-scheme">File Naming Scheme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="content/functional-profiles.html#release-notes">Release Notes</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="content/functional-profiles.html#functional-profile-release-process"><span class="xref std std-term">Functional Profile</span> Release Process</a></li>
 <li class="toctree-l2"><a class="reference internal" href="content/functional-profiles.html#additional-documentation-on-github">Additional Documentation on GitHub</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="content/product-description-eid.html">Product Description XML (<span class="xref std std-term">EID</span>)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="content/product-description-eid.html#product-ei-xml-documentation-on-github">Product EI-XML Documentation on GitHub</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="content/product-description-file.html">Product Description File (<span class="xref std std-term">EID</span>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/product-description-file.html#product-ei-xml-documentation-on-github">Product EI-XML Documentation on GitHub</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="content/communicator-description-file.html"><span class="xref std std-term">Communicator</span> Description File</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/communicator-description-file.html#general-structure">General Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/communicator-description-file.html#communicator-description-file-elements">Communicator Description File Elements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="content/communicator-description-file.html#release-notes">Release Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="content/communicator-description-file.html#communicator-information">Communicator Information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="content/communicator-description-file.html#communicator-attributes">Communicator Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="content/communicator-description-file.html#descriptions">Descriptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="content/communicator-description-file.html#transport-services">Transport Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="content/communicator-description-file.html#functional-profiles">Functional Profiles</a></li>
 </ul>
 </li>
 </ul>
@@ -96,9 +137,7 @@
 <li class="toctree-l1"><a class="reference internal" href="content/code-samples.html">SmartGridready Code Samples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="content/device-driver-libraries.html">SmarGridready Device Driver Libraries</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="content/device-driver-libraries.html#python-default-implementations">Python Default Implementations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/device-driver-libraries.html#java-default-implentations">Java Default Implentations</a><ul class="simple">
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="content/device-driver-libraries.html#java-default-implentations">Java Default Implentations</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="content/intermediary.html">SmartGridready Intermediary</a><ul class="simple">
@@ -144,6 +183,7 @@
  | <a href="#E"><strong>E</strong></a>
  | <a href="#F"><strong>F</strong></a>
  | <a href="#I"><strong>I</strong></a>
+ | <a href="#L"><strong>L</strong></a>
  | <a href="#P"><strong>P</strong></a>
  | <a href="#S"><strong>S</strong></a>
  | <a href="#V"><strong>V</strong></a>
@@ -198,9 +238,17 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="content/glossary.html#term-Flexibility-Manager"><strong>Flexibility Manager</strong></a>
 </li>
+      <li><a href="content/glossary.html#term-Functional-Profile"><strong>Functional Profile</strong></a>
+</li>
+      <li><a href="content/glossary.html#term-Functional-Profile-Categories"><strong>Functional Profile Categories</strong></a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="content/glossary.html#term-Functional-Profile"><strong>Functional Profile</strong></a>
+      <li><a href="content/glossary.html#term-Functional-Profile-Category"><strong>Functional Profile Category</strong></a>
+</li>
+      <li><a href="content/glossary.html#term-Functional-Profile-Type"><strong>Functional Profile Type</strong></a>
+</li>
+      <li><a href="content/glossary.html#term-Functional-Profile-Types"><strong>Functional Profile Types</strong></a>
 </li>
       <li><a href="content/glossary.html#term-Functional-Profiles"><strong>Functional Profiles</strong></a>
 </li>
@@ -211,6 +259,14 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="content/glossary.html#term-Intermediary"><strong>Intermediary</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="content/glossary.html#term-Level-Of-Operation"><strong>Level Of Operation</strong></a>
 </li>
   </ul></td>
 </tr></table>

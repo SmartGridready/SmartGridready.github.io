@@ -25,6 +25,10 @@ if errorlevel 9009 (
 	exit /b 1
 )
 
+%SPHINXBUILD% -M clean %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
+
+rd /s /q docs
+
 %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
 
 xcopy .\build\html\* docs /E /I /Y
