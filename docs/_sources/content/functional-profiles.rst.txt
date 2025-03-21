@@ -80,91 +80,68 @@ The list below shows the currently published :term:`Functional Profile Categorie
 description):
 
 .. list-table::
-    :widths: 30 70
+    :widths: 20 60 20
     :header-rows: 1
 
     * - Category
       - Assigned to :term:`Functional Profiles` used with :term:`Products` of type:
+      - Details page
 
     * - **Actuator**
-
-        details see :ref:`actuator`
-
       - Used with actuator :term:`Products`. Examples for actuator devices are electrical relays or linear servo motors.
+      - :ref:`actuator`
 
     * - **Battery**
-
-        details see :ref:`battery`
-
       - Used with battery :term:`Products`, e.g. batteries that store electrical energy produced by a :term:`PVA`.
+      - :ref:`battery`
 
     * - **BatterSystem**
-
-        details see :ref:`battery-system`
-
       - Used with combined systems that consist of a battery and an :ref:`Inverter`
+      - :ref:`battery-system`
+
 
     * - **DeviceInformation**
-
-        details see :ref:`device-information`
-
       - Has no predefined :term:`Datapoints`. Used to provide device information and add manufacturer proprietary
         :term:`Datapoints`.
+      - :ref:`device-information`
 
     * - **DynamicTariff**
-
-        details see :ref:`dynamic-tariff`
-
       - Used to query dynamic tariff information from a power grid operator system.
+      - :ref:`device-information`
 
     * - **EVSE**
-
-        details see :ref:`evse`
-
       - Used for Electrical Vehicle Supply Equipment (:term:`EVSE`) :term:`Products` like charging stations.
+      - :ref:`device-information`
 
     * - **HeatingCircuit**
-
-        details see :ref:`heating-circuit`.
-
       - Used with :term:`Products` that allow reading information from a heating circuit, such as temperature.
+      - :ref:`heating-circuit`
 
     * - **HeatPumpControl**
-
-        details see :ref:`heatpump-control`
-
       - Used with :term:`Products` that allow controlling heat pumps and reading information from heat pumps.
+      - :ref:`heating-circuit`
+
 
     * - **Inverter**
-
-        details see :ref:`inverter`
-
       - Used with :term:`Products` that allow controlling and reading status from :term:`PV-Inverter` devices.
+      - :ref:`inverter`
 
     * - **Metering**
-
-        details see :ref:`metering`
-
       - Used with :term:`Products` that provide metering an measurement functionalities like electrical power or energy
         consumption, for example smart meter devices.
+      - :ref:`metering`
 
     * - **SGCP**
-
-        details see :ref:`SGCP`
-
       - Used for Smart Grid Connection Point (:term:`SGCP`) :term:`Products`.
+      - :ref:`metering`
 
     * - **Sensor**
-
-        details see :ref:`sensor`
-
       - Used with :term:`Products` that allow reading data from sensor devices, for example a humidity sensor.
+      - :ref:`sensor`
 
     * - **TemperatureSensor**
-
-        details see :ref:`temperature-sensor`
-
       - Used with :term:`Products` that measure temperatures.
+      - :ref:`temperature-sensor`
 
 
 .. toctree::
