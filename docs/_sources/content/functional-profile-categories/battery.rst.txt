@@ -3,7 +3,11 @@
 Battery
 -------
 
-TODO
+.. figure:: ../images/wip.png
+    :align: center
+    :figwidth: 40%
+
+
 
 .. raw:: html
 

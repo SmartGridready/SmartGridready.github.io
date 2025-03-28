@@ -25,13 +25,24 @@ This list of :term:`Functional Profile` definitions is subject to change and wil
 As a :term:`Product` supplier you need check which :term:`Functional Profiles` suit your :term:`Product`'s functionalities
 and add the matching :term:`Functional Profiles` to the :term:`External Interface Definition` file.
 
-Functional Profile Structure
-----------------------------
+:term:`Functional Profile` Structure
+------------------------------------
+
+Figure :ref:`figure_functional_profile_structure` shows the basic structure of a :term:`Functional Profile`
+
+.. _figure_functional_profile_structure:
+
+.. figure:: images/functionalProfile.drawio.png
+   :alt: :term:`Functional Profile` Structure
+
+   Functional Profile Structure
 
 A :term:`Functional Profile` is part of a :term:`Product` description and includes the:
 
 * Definition of the :term:`Functional Profile` with identification and description.
 * :term:`Datapoints` defining access points to measure and control data on the :term:`Product`.
+
+Example:
 
 .. code-block:: none
 
@@ -177,7 +188,7 @@ functionalities and associated :term:`Datapoints`.
 
     * - :term:`Functional Profile Type`
       - Description
-      - Associated :term:`Functional Profile Category`
+      - Used with :term:`Functional Profile Category`
     * - ActiveEnergyAC
       - Provides AC energy metering :term:`Datapoints` for single phase, multi phase and total energy consumption.
       - :ref:`metering`
@@ -273,27 +284,96 @@ functionalities and associated :term:`Datapoints`.
       - :ref:`metering`
 
 
-..  Comments regarding functional profile category and profile types:
-    - FP-Category seems to be oriented on the type of the product HeatPump, EVSE, SGCP, Smart Meter etc.
-      However: Metering category is more related to many types of products that allow of metering (Zähler) and measuring (messen).
-
-    - FP-type seems to be oriented on concrete functionalities like measure ActivePowerAC, HeatCoolCtrl, LoadCtrl
-      There are functional profile types that are used within multiple categories:
-      type EnergyMonitor -> categories battery, battery system and heatpump-control
-
-    - LoadReduction_EVSE vs. EMS_Current_Limit: would level of operation be sufficient to distinguish them?
-
-    - BiDirFlexMgmt vs. FlexMgmt: The FP template description for BiDirFlex says nothing about BiDir, however the
-      description of FlexMgmt does.
-
-
-
 .. _level_of_operation:
 
 :term:`Level of Operation`
 ---------------------------
 
-Level of control defining the complexity
+LevelOfOperation defines a complexity level of the :term:`Product` device controls:
+
++--------------+---------------------------------+--------------------+
+| Level        | Description                     | Details            |
++==============+=================================+====================+
+| m            | Monitoring                      | Pure monitoring    |
+|              |                                 | applications,      |
+|              |                                 | e.g., for a meter, |
+|              |                                 | are marked as      |
+|              |                                 | “0.m”. A charging  |
+|              |                                 | station at Stage 4 |
+|              |                                 | with monitoring is |
+|              |                                 | labeled as “4.m”.  |
++--------------+---------------------------------+--------------------+
+| 1            | On-Off                          | The interface      |
+|              |                                 | allows switching   |
+|              |                                 | between two        |
+|              |                                 | discrete operating |
+|              |                                 | states.            |
++--------------+---------------------------------+--------------------+
+| 2            | Discrete values                 | The interface      |
+|              |                                 | allows switching   |
+|              |                                 | between multiple   |
+|              |                                 | discrete operating |
+|              |                                 | states.            |
++--------------+---------------------------------+--------------------+
+| 3            | Set of characteristic curves    | The interface      |
+|              |                                 | enables the        |
+|              |                                 | activation of      |
+|              |                                 | various            |
+|              |                                 | pre-configured     |
+|              |                                 | characteristic     |
+|              |                                 | curves. (Discrete, |
+|              |                                 | as there is a      |
+|              |                                 | limited number of  |
+|              |                                 | characteristic     |
+|              |                                 | curves).           |
+|              |                                 | Grid-friendly      |
+|              |                                 | characteristic     |
+|              |                                 | curves, which can  |
+|              |                                 | react to grid      |
+|              |                                 | voltage, are also  |
+|              |                                 | assigned to this   |
+|              |                                 | level without      |
+|              |                                 | communication via  |
+|              |                                 | the SmartGridready |
+|              |                                 | interface.         |
++--------------+---------------------------------+--------------------+
+| 4            | dynamic set values              | The interface      |
+|              |                                 | allows the setting |
+|              |                                 | of continuous      |
+|              |                                 | setpoints. This    |
+|              |                                 | stage builds upon  |
+|              |                                 | level 2.           |
++--------------+---------------------------------+--------------------+
+| 5            | dynamically changeable          | The interface      |
+|              | characteristics tables          | allows the setting |
+|              |                                 | of continuous      |
+|              |                                 | control parameters |
+|              |                                 | or characteristic  |
+|              |                                 | curve values. This |
+|              |                                 | stage builds upon  |
+|              |                                 | level 3.           |
++--------------+---------------------------------+--------------------+
+| 6            | prediction based systems        | The interface      |
+|              |                                 | allows the setting |
+|              |                                 | of new setpoints   |
+|              |                                 | and control        |
+|              |                                 | parameters /       |
+|              |                                 | characteristic     |
+|              |                                 | curve values based |
+|              |                                 | on energy          |
+|              |                                 | production or load |
+|              |                                 | forecasts, up to   |
+|              |                                 | the inclusion of a |
+|              |                                 | digital twin.      |
++--------------+---------------------------------+--------------------+
+
+Levels 1-6 can be combined with a the monitoring (m) level if they offer
+read-only data points
+
+(see
+`FunctionalProfileDescription.xsd <https://github.com/SmartGridready/SGrSpecifications/blob/master/SchemaDatabase/SGr/Generic/BaseType_LevelOfOperationType.xsd>`__
+for details…)
+
 
 .. _version_number:
 
@@ -321,9 +401,9 @@ The :term:`Datapoints` are defined by the following attributes:
     * - :term:`Datapoint` Name
       - Name of the :term:`Datapoint`. Should be unique within the functional profile.
     * - Data Direction
-      - * 'R' if :term:`Datapoint` can be read
-        * 'W` if :term:`Datapoint` can be written
-        * 'P` if :term:`Datapoint` is persisted
+      - * R : :term:`Datapoint` can be read
+        * W : :term:`Datapoint` can be written
+        * P : :term:`Datapoint` is persisted
     * - Presence Level
       - Datapoint availability within an :term:`Product` that implements the :term:`Functional Profile`:
         * Mandatory
@@ -355,12 +435,13 @@ with a dot.
 
 An example for a sub :term:`Datapoint` is "Voltage.Precision" as the precision of the :term:`Datapoint` "Voltage".
 
-Defining Functional Profiles
-----------------------------
+Defining :term:`Functional Profiles`
+------------------------------------
 
 File Naming Scheme
 ^^^^^^^^^^^^^^^^^^
-Functional profiles should have the following file naming conventions:
+
+:term:`Functional Profiles` should have the following file naming convention:
 
 .. code-block:: none
 
@@ -396,13 +477,140 @@ The release notes section contains meta data that describe history and current s
 :term:`Functional Profile` Release Process
 ------------------------------------------
 
-See `Functional Profile Release Process <https://github.com/SmartGridready/SGrSpecifications/blob/master/doc/functionalProfile_process.md>`_
+Scope
+^^^^^
+
+This document structures the process for the life-cycle of functional
+profiles.
+
+States
+^^^^^^
+
+A term:`Functional Profile` cycles through the following states:
+
+.. figure:: images/functionalProfile_process.drawio.png
+   :alt: SGr Functional Profile Process
+
+   SGr Functional Profile Process
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 55 20
+
+    * - Action
+      - Description
+      - Next Status
+    * - Inception
+      - A demand for a new :term:`Functional Profile` arises. The new :term:`Functional Profile` is created in state “Draft”
+      - Draft
+    * - Ready for Review
+      - The :term:`Functional Profile` has been developed and is ready for review by its relevant stakeholders.
+      - Review
+    * - Publish
+      - The :term:`Functional Profile` has passed the review and is ready to be used.
+      - Published
+    * - Revoke
+      - A :term:`Functional Profile` has passed its usefulness and is not needed any more. Any state can be directly revoked.
+      - Revoked
 
 
+Creating new :term:`Functional Profiles`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+If the term:`Functional Profile` interest groups sees requirements for a new or
+improved functionality, it will create a new :term:`Functional Profile` XML with
+state “draft”. A new issue will be created for this :term:`Functional Profile`.
+The issue has
 
-Additional Documentation on GitHub
-----------------------------------
+- a self-evident description covering
 
-See `Functional Profile Documentation <https://github.com/SmartGridready/SGrSpecifications/blob/master/doc/functionalProfile.md>`_
+  - context in which the need for this :term:`Functional Profile` has arisen
+  - purpose of this :term:`Functional Profile`
+
+- a label of the :term:`Functional Profile` interest group concerned
+- the project “:term:`Functional Profile` Interest Group” assigned, with status
+  “draft”
+
+Any documentation, discussion, and work on the elaboration of this
+:term:`Functional Profile` will be tracked in this github issue.
+
+The team then works directly on the XML.
+
+Ready for review
+^^^^^^^^^^^^^^^^
+
+When a new :term:`Functional Profile` is considered ready it switches the state
+to review. The following criteria must be met for this step
+
+1. Purpose and functionality of the :term:`Functional Profile` is defined
+2. level of operation is defined
+3. Data points are defined, including mandatory/recommended/optional,
+   units, type and read/write
+4. Generic attributes for the :term:`Functional Profile` and/or its data points
+   are defined
+
+Publish
+^^^^^^^
+
+To publish a :term:`Functional Profile` the following criteria must be met:
+
+1. The version is set correctly according to the versioning scheme (see
+   below).
+2. All stakeholders concerned are happy with the content of the
+   :term:`Functional Profile`, and have given their formal consent.
+3. “SGr Deklarationsstelle” has been informed about the upcoming
+   publication.
+4. The :term:`Functional Profile` has been tested by at least one product.
+
+Published :term:`Functional Profiles` will not change anymore. If a change is
+requested, a new :term:`Functional Profile` with increased version number will
+be created (see versioning scheme below). Therefore, only the release
+note structure of the :term:`Functional Profile` can be updated on publishing.
+
+Revoke
+^^^^^^
+
+If a :term:`Functional Profile` shall not be used anymore it can be revoked.
+Only the note structure of the :term:`Functional Profile` can be updated on
+publishing.
+
+Revoked :term:`Functional Profiles` are obsolete and shall not be used for
+further declarations of products and communicators. However, they will
+remain the data base for legacy reasons.
+
+Versioning Scheme
+^^^^^^^^^^^^^^^^^
+
+:term:`Functional Profiles` are numbered as follows: ``Major.Minor.Build``
+
++--------------------------+-------------------------------------------+
+| Number                   | Description                               |
++==========================+===========================================+
+| ``Major``                | Describes the major functionality family. |
+|                          | Breaking changes implies an increment of  |
+|                          | the major number                          |
++--------------------------+-------------------------------------------+
+| ``Minor``                | Describes a backward compatible           |
+|                          | evolution. Only new functionality is      |
+|                          | added, but remaining functionality is     |
+|                          | never changed                             |
++--------------------------+-------------------------------------------+
+| ``Build``                | The functionality remains identical, but  |
+|                          | minor non-functional details change, such |
+|                          | as descriptions, translations, remarks    |
++--------------------------+-------------------------------------------+
+
+..  TODO's
+..  Comments regarding functional profile category and profile types:
+    - FP-Category seems to be oriented on the type of the product HeatPump, EVSE, SGCP, Smart Meter etc.
+      However: Metering category is more related to many types of products that allow of metering (Zähler) and measuring (messen).
+
+    - FP-type seems to be oriented on concrete functionalities like measure ActivePowerAC, HeatCoolCtrl, LoadCtrl
+      There are functional profile types that are used within multiple categories:
+      type EnergyMonitor -> categories battery, battery system and heatpump-control
+
+    - LoadReduction_EVSE vs. EMS_Current_Limit: would level of operation be sufficient to distinguish them?
+
+    - BiDirFlexMgmt vs. FlexMgmt: The FP template description for BiDirFlex says nothing about BiDir, however the
+      description of FlexMgmt does.
 
