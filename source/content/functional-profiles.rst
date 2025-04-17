@@ -5,10 +5,10 @@ Functional Profiles
 
 A :term:`Functional Profile` describes a set of related functionalities provided by a :term:`Product`.
 It thereby focuses entirely on the functionality. Any transport-specific details are not part of the functional profile
-(e.g. on how to get or set a :term:`Datapoint` on a specific product).
+(e.g. on how to get or set a :term:`Data Point` on a specific product).
 
 The main intent is to allow communicator manufacturers to easily implement their use cases based on logically grouped
-:term:`Datapoints`, while device-specific communication details are handled SmartGridread CommHandler library.
+:term:`Data Points`, while device-specific communication details are handled SmartGridread CommHandler library.
 
 Any :term:`Product` that supports the :term:`Functional Profiles` required for a specific use case is therefore automatically
 compatible and can be used without changing the :term:`Communicator` implementation.
@@ -40,7 +40,7 @@ Figure :ref:`figure_functional_profile_structure` shows the basic structure of a
 A :term:`Functional Profile` is part of a :term:`Product` description and includes the:
 
 * Definition of the :term:`Functional Profile` with identification and description.
-* :term:`Datapoints` defining access points to measure and control data on the :term:`Product`.
+* :term:`Data Points` defining access points to measure and control data on the :term:`Product`.
 
 Example:
 
@@ -66,8 +66,8 @@ The illustration above shows a sample for the structure of a :term:`Product` des
 The :term:`Product` description exposes its functionalities by including two :term:`Functional Profiles`.
 The example shows a simple :term:`Smart Meter` that exposes AC-energy metering and AC-power measurement functionalities.
 
-A :term:`Communicator` software can read from or write to the device by addressing the :term:`Datapoint` by
-:term:`Functional Profile` name and :term:`Datapoint` name. Java code example:
+A :term:`Communicator` software can read from or write to the device by addressing the :term:`Data Point` by
+:term:`Functional Profile` name and :term:`Data Point` name. Java code example:
 
 .. code-block:: java
 
@@ -112,8 +112,8 @@ description):
 
 
     * - **DeviceInformation**
-      - Has no predefined :term:`Datapoints`. Used to provide device information and add manufacturer proprietary
-        :term:`Datapoints`.
+      - Has no predefined :term:`Data Points`. Used to provide device information and add manufacturer proprietary
+        :term:`Data Points`.
       - :ref:`device-information`
 
     * - **DynamicTariff**
@@ -180,7 +180,7 @@ description):
 --------------------------------
 
 The :term:`Functional Profile Types` are assigned to a :term:`Functional Profile Category` and define a set of related
-functionalities and associated :term:`Datapoints`.
+functionalities and associated :term:`Data Points`.
 
 .. list-table:: :term:`Functional Profile Types`
     :header-rows: 1
@@ -190,21 +190,21 @@ functionalities and associated :term:`Datapoints`.
       - Description
       - Used with :term:`Functional Profile Category`
     * - ActiveEnergyAC
-      - Provides AC energy metering :term:`Datapoints` for single phase, multi phase and total energy consumption.
+      - Provides AC energy metering :term:`Data Points` for single phase, multi phase and total energy consumption.
       - :ref:`metering`
     * - ActiveEnergyBalanceAC
-      - Provides energy balance metering :term:`Datapoints` providing data for imported, exported and net energy towards
+      - Provides energy balance metering :term:`Data Points` providing data for imported, exported and net energy towards
         the power grid.
       - :ref:`metering`
     * - ActivePowerAC
       - Provides AC power measurement for single phase, multi phase and total power consumption.
       - :ref:`metering`
     * - ApparentEnergyAC
-      - Provides :term:`Datapoints` for AC apparent energy metering. Supports single phase, multi phase and total
+      - Provides :term:`Data Points` for AC apparent energy metering. Supports single phase, multi phase and total
         apparent energy metering.
       - :ref:`metering`
     * - ApparentPowerAC
-      - Provides :term:`Datapoints` for AC apparent power measurement. Supports single phase, multi phase and total
+      - Provides :term:`Data Points` for AC apparent power measurement. Supports single phase, multi phase and total
         apparent power measurements.
       - :ref:`metering`
     * - BiDirFlexMgmt
@@ -214,14 +214,14 @@ functionalities and associated :term:`Datapoints`.
       - :ref:`sgcp`
     * - BufferStorageCtrl
       - This :term:`Functional Profile` type extends the **HeatPumpBase** :term:`Functional Profile` type. It provides
-        :term:`Datapoints` to read temperature from and control heat pump buffer storage devices.
+        :term:`Data Points` to read temperature from and control heat pump buffer storage devices.
       - :ref:`heatpump-control`
     * - CurrentAC
-      - Provides :term:`Datapoints` for AC current measurements. Supports single phase, multi phase and current
+      - Provides :term:`Data Points` for AC current measurements. Supports single phase, multi phase and current
         against the neutral conductor measurements.
       - :ref:`metering`
     * - CurrentDC
-      - Defines a single :term:`Datapoint` to measure DC current.
+      - Defines a single :term:`Data Point` to measure DC current.
       - :ref:`metering`
     * - DeviceInformation
       - Empty functional profile without data points that can be used for vendor specific information and data points.
@@ -229,7 +229,7 @@ functionalities and associated :term:`Datapoints`.
       - :ref:`device-information`
     * - DomHotWaterCtrl
       - This :term:`Functional Profile` type extends the **HeatPumpBase** :term:`Functional Profile`. It provides
-        :term:`Datapoints` that are available for controlling a domestic hot water circuit.
+        :term:`Data Points` that are available for controlling a domestic hot water circuit.
       - :ref:`heatpump-control`
     * - EMS_Current_Limit
       - This :term:`Functional Profile` type enables a controller to set a current limitation for a charging station
@@ -240,7 +240,7 @@ functionalities and associated :term:`Datapoints`.
         (:term:`EVSE`).
       - :ref:`evse`
     * - EnergyMonitor
-      - :term:`Functional Profile` that supports :term:`Datapoints` to read operating data such as energy consumption
+      - :term:`Functional Profile` that supports :term:`Data Points` to read operating data such as energy consumption
         from a :term:`Product`.
       - :ref:`heatpump-control`, :ref:`battery`, :ref:`battery-system`
     * - FlexMgmt
@@ -249,18 +249,18 @@ functionalities and associated :term:`Datapoints`.
         retrieval of current data and the targeted control of power at the grid connection point via defined data points.
       - :ref:`SGCP`
     * - Frequency
-      - Defines a single :term:`Datapoint` to measure AC frequency.
+      - Defines a single :term:`Data Point` to measure AC frequency.
       - :ref:`metering`
     * - HeatCoolCtrl
       - This :term:`Functional Profile` type extends the **HeatPumpBase** :term:`Functional Profile`. It provides
-        :term:`Datapoints` that are available for controlling a heat pump heating and cooling circuit.
+        :term:`Data Points` that are available for controlling a heat pump heating and cooling circuit.
       - :ref:`heatpump-control`
     * - HeatPumpBase
       - This is the basic :term:`Functional Profile` for heat pumps. It allows operation mode control and reading operation
         status and measure temperature etc.
       - :ref:`heatpump-control`
     * - Humidity
-      - Defines a single :term:`Datapoint` to measure humidity.
+      - Defines a single :term:`Data Point` to measure humidity.
       - :ref:`Sensor`
     * - LoadManagement
       - :term:`Functional Profile` type for Energy Management Systems (EMS) with a communication interface to the the
@@ -274,7 +274,7 @@ functionalities and associated :term:`Datapoints`.
         like compressor power consumption or compressor rotations per minute.
       - :ref:`heatpump-control`
     * - PowerFactor
-      - Provides :term:`Datapoints` to read the power factor defined as:
+      - Provides :term:`Data Points` to read the power factor defined as:
 
         .. math::
 
@@ -640,55 +640,55 @@ to curtailment or home energy management systems.
 +---------------------+---------------+------------------+------------+
 
 
-:term:`Datapoints`
+:term:`Data Points`
 -------------------
-A :term:`Functional Profile` mainly defines a set of :term:`Datapoints`. The :term:`Datapoints` define access points to values
+A :term:`Functional Profile` mainly defines a set of :term:`Data Points`. The :term:`Data Points` define access points to values
 that can be read from or written to the product.
 
-The :term:`Datapoints` are defined by the following attributes:
+The :term:`Data Points` are defined by the following attributes:
 
-.. list-table:: :term:`Datapoint` Attributes
+.. list-table:: :term:`Data Point` Attributes
     :header-rows: 1
     :widths: 30 70
 
     * - Element
       - Description
-    * - :term:`Datapoint` Name
-      - Name of the :term:`Datapoint`. Should be unique within the functional profile.
+    * - :term:`Data Point` Name
+      - Name of the :term:`Data Point`. Should be unique within the functional profile.
     * - Data Direction
-      - * R : :term:`Datapoint` can be read
-        * W : :term:`Datapoint` can be written
-        * P : :term:`Datapoint` is persisted
+      - * R : :term:`Data Point` can be read
+        * W : :term:`Data Point` can be written
+        * P : :term:`Data Point` is persisted
     * - Presence Level
-      - Datapoint availability within an :term:`Product` that implements the :term:`Functional Profile`:
+      - Data Point availability within an :term:`Product` that implements the :term:`Functional Profile`:
         * Mandatory
         * Recommended
         * Optional
     * - Data Type
-      - Data type of the :term:`Datapoint` value. (e.g. float32, int, string...)
+      - Data type of the :term:`Data Point` value. (e.g. float32, int, string...)
     * - Alternative Names
       - A list of relevant name spaces list for to display names used in different standards like
         EEBUS, IEC6850, SAREF4ENER etc.
     * - Legible Description
       - Optional, can occur once per language. Contains details concerning the intended use case of the functional profile.
 
-If a :term:`Datapoint` is defined as mandatory in the functional profile, it must also be present in the product implementing
+If a :term:`Data Point` is defined as mandatory in the functional profile, it must also be present in the product implementing
 this functional profile.
 
-If no :term:`Datapoint` is mandatory in the functional profile, then at least one :term:`Datapoint` must be recommended and at least
-one of the recommended :term:`Datapoints` must be presentin the product implementing this :term:`Functional Profile`.
+If no :term:`Data Point` is mandatory in the functional profile, then at least one :term:`Data Point` must be recommended and at least
+one of the recommended :term:`Data Points` must be presentin the product implementing this :term:`Functional Profile`.
 
 
-Sub Datapoints
---------------
+Sub Data Points
+---------------
 
-Datapoints that are connected to other :term:`Datapoints` can be modeled as sub :term:`Datapoints`.
-The connection between :term:`Datapoint` and sub :term:`Datapoint` are defined with naming conventions. If e.g. a :term:`Datapoint` has the
-name "MainDatapoint" and is connected with a sub :term:`Datapoint` "SubDatapoint" the sub :term:`Datapoint` name has the name
-"MainDatapoint.SubDatapoint" - this means, the sub :term:`Datapoint` name is appended to the main :term:`Datapoint` name separated
+Data Points that are connected to other :term:`Data Points` can be modeled as sub :term:`Data Points`.
+The connection between :term:`Data Point` and sub :term:`Data Point` are defined with naming conventions. If e.g. a :term:`Data Point` has the
+name "MainDatapoint" and is connected with a sub :term:`Data Point` "SubDatapoint" the sub :term:`Data Point` name has the name
+"MainDatapoint.SubDatapoint" - this means, the sub :term:`Data Point` name is appended to the main :term:`Data Point` name separated
 with a dot.
 
-An example for a sub :term:`Datapoint` is "Voltage.Precision" as the precision of the :term:`Datapoint` "Voltage".
+An example for a sub :term:`Data Point` is "Voltage.Precision" as the precision of the :term:`Data Point` "Voltage".
 
 Defining :term:`Functional Profiles`
 ------------------------------------
@@ -707,7 +707,7 @@ Functional profile descriptions should be structured as follows:
 * Image indicating the typical use of the functional profile, together with an easily understandable title
 * Short explanation (i.e. long version of the title)
 * Detailed explanation, including very attribute.
-* Description on how to apply the functional profile concerning presence level (i.e. how to handle recommended and optional :term:`Datapoints`)
+* Description on how to apply the functional profile concerning presence level (i.e. how to handle recommended and optional :term:`Data Points`)
 
 .. _version_number:
 

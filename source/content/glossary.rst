@@ -19,13 +19,13 @@ Glossary
         rules between the generic API used by the :term:`Communicator` and :term:`Product`-specific APIs.
         This allows it to adapt to different Products without requiring manual configuration/daption.
 
-    Datapoint
-        A data point is a read- and/or writeable property of a :term:`Product`. In SmartGridready a :term:`Datapoint`
+    Data Point
+        A data point is a read- and/or writeable property of a :term:`Product`. In SmartGridready a :term:`Data Point`
         is a child element of a :term:`Functional Profile`. An example for a readable data point is "ActivePowerACL1"
         of the :term:`Functional Profile` "ActivePowerAC" and is used to measure the AC power consumtion on phase 1.
 
-    Datapoints
-        Plural form of :term:`Datapoint`
+    Data Points
+        Plural form of :term:`Data Point`
 
     Device Driver Adapter
         Device Driver Adpaters within SmartGridready adapt the API given by the :term:`CommHandler` libraries to
@@ -64,7 +64,7 @@ Glossary
         Plural form of :term:`Functional Profile`
 
     Functional Profile Type
-        The type of a :term:`Functional Profile` defines a specific combination of related :term:`Datapoints`.
+        The type of a :term:`Functional Profile` defines a specific combination of related :term:`Data Points`.
         See :ref:`functional_profile_types`.
 
     Functional Profile Types

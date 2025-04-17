@@ -138,8 +138,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#curtailment">Curtailment</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#datapoints"><span class="xref std std-term">Datapoints</span></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#sub-datapoints">Sub Datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#data-points"><span class="xref std std-term">Data Points</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#sub-data-points">Sub Data Points</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#defining-functional-profiles">Defining <span class="xref std std-term">Functional Profiles</span></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#file-naming-scheme">File Naming Scheme</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#functional-profile-version-number"><span class="xref std std-term">Functional Profile</span> Version Number</a></li>
@@ -259,7 +259,7 @@ used for Minergie® Monitoring or other applications.</p>
 <p>The high level profiles are listed on the right side. Currently they are
 on level 4, which means that a dynamic changing of setpoints is
 possible. As mentioned, the manufacturer must provide the HeatPumpBase
-profile, which contains some basic <a class="reference internal" href="../glossary.html#term-Datapoints"><span class="xref std std-term">Datapoints</span></a> for setting and reading
+profile, which contains some basic <a class="reference internal" href="../glossary.html#term-Data-Points"><span class="xref std std-term">Data Points</span></a> for setting and reading
 the operation mode of the heat pump as well as reading basic data. Note
 that the operation mode is typically controlled by the heat pump itself
 (e.g. “heating”, “hot water production”, “cooling”, etc.). However, it
@@ -275,7 +275,7 @@ modules are described in the Section below.</p>
 </section>
 <section id="heat-pump-functional-profiles-in-hydraulic-scheme-general-overview">
 <h1>Heat Pump <a class="reference internal" href="../glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> in Hydraulic Scheme (General Overview)<a class="headerlink" href="#heat-pump-functional-profiles-in-hydraulic-scheme-general-overview" title="Permalink to this heading"></a></h1>
-<p>The <strong>HeatCoolCtrl</strong> profile provides <a class="reference internal" href="../glossary.html#term-Datapoints"><span class="xref std std-term">Datapoints</span></a> for a hydraulic heating or
+<p>The <strong>HeatCoolCtrl</strong> profile provides <a class="reference internal" href="../glossary.html#term-Data-Points"><span class="xref std std-term">Data Points</span></a> for a hydraulic heating or
 cooling cycle. There may exist one or several of these profiles for each
 cycle in a real plant. Generally the heating cycles provide hot water to
 the building. They can also run as cooling cycles, when the heat pump is
@@ -287,7 +287,7 @@ controls the temperature of one group. With this profile, the setpoints
 of the supply temperatures may be influenced. For example more heat may
 be provided to the building by increasing the setpoint (which results to
 a thermal storage of energy in the building mass).</p>
-<p>The <strong>BufferStorageCtrl</strong> profile provides <a class="reference internal" href="../glossary.html#term-Datapoints"><span class="xref std std-term">Datapoints</span></a> for a hydraulic
+<p>The <strong>BufferStorageCtrl</strong> profile provides <a class="reference internal" href="../glossary.html#term-Data-Points"><span class="xref std std-term">Data Points</span></a> for a hydraulic
 buffer storage tank. Typically one buffer storage tank exists. With this
 profile, the temperature setpoint of the buffer storage tank may be
 influenced. A typical application is the increase of the storage

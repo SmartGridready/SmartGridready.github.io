@@ -31,7 +31,7 @@ used for Minergie® Monitoring or other applications.
 The high level profiles are listed on the right side. Currently they are
 on level 4, which means that a dynamic changing of setpoints is
 possible. As mentioned, the manufacturer must provide the HeatPumpBase
-profile, which contains some basic :term:`Datapoints` for setting and reading
+profile, which contains some basic :term:`Data Points` for setting and reading
 the operation mode of the heat pump as well as reading basic data. Note
 that the operation mode is typically controlled by the heat pump itself
 (e.g. “heating”, “hot water production”, “cooling”, etc.). However, it
@@ -51,7 +51,7 @@ modules are described in the Section below.
 Heat Pump :term:`Functional Profiles` in Hydraulic Scheme (General Overview)
 ----------------------------------------------------------------------------
 
-The **HeatCoolCtrl** profile provides :term:`Datapoints` for a hydraulic heating or
+The **HeatCoolCtrl** profile provides :term:`Data Points` for a hydraulic heating or
 cooling cycle. There may exist one or several of these profiles for each
 cycle in a real plant. Generally the heating cycles provide hot water to
 the building. They can also run as cooling cycles, when the heat pump is
@@ -64,7 +64,7 @@ of the supply temperatures may be influenced. For example more heat may
 be provided to the building by increasing the setpoint (which results to
 a thermal storage of energy in the building mass).
 
-The **BufferStorageCtrl** profile provides :term:`Datapoints` for a hydraulic
+The **BufferStorageCtrl** profile provides :term:`Data Points` for a hydraulic
 buffer storage tank. Typically one buffer storage tank exists. With this
 profile, the temperature setpoint of the buffer storage tank may be
 influenced. A typical application is the increase of the storage
