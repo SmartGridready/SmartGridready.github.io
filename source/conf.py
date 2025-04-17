@@ -45,6 +45,8 @@ html_theme_options = {
     "navigation_depth": 4,         # Ensures deeper levels stay open
 }
 
+html_logo = "_static/SGr-Logo.svg"
+
 # Override CSS to have text wrapping in tables
 html_show_sourcelink = False
 html_static_path = ['_static']

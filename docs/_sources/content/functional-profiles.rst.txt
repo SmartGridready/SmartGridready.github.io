@@ -291,81 +291,42 @@ functionalities and associated :term:`Datapoints`.
 
 LevelOfOperation defines a complexity level of the :term:`Product` device controls:
 
-+--------------+---------------------------------+--------------------+
-| Level        | Description                     | Details            |
-+==============+=================================+====================+
-| m            | Monitoring                      | Pure monitoring    |
-|              |                                 | applications,      |
-|              |                                 | e.g., for a meter, |
-|              |                                 | are marked as      |
-|              |                                 | “0.m”. A charging  |
-|              |                                 | station at Stage 4 |
-|              |                                 | with monitoring is |
-|              |                                 | labeled as “4.m”.  |
-+--------------+---------------------------------+--------------------+
-| 1            | On-Off                          | The interface      |
-|              |                                 | allows switching   |
-|              |                                 | between two        |
-|              |                                 | discrete operating |
-|              |                                 | states.            |
-+--------------+---------------------------------+--------------------+
-| 2            | Discrete values                 | The interface      |
-|              |                                 | allows switching   |
-|              |                                 | between multiple   |
-|              |                                 | discrete operating |
-|              |                                 | states.            |
-+--------------+---------------------------------+--------------------+
-| 3            | Set of characteristic curves    | The interface      |
-|              |                                 | enables the        |
-|              |                                 | activation of      |
-|              |                                 | various            |
-|              |                                 | pre-configured     |
-|              |                                 | characteristic     |
-|              |                                 | curves. (Discrete, |
-|              |                                 | as there is a      |
-|              |                                 | limited number of  |
-|              |                                 | characteristic     |
-|              |                                 | curves).           |
-|              |                                 | Grid-friendly      |
-|              |                                 | characteristic     |
-|              |                                 | curves, which can  |
-|              |                                 | react to grid      |
-|              |                                 | voltage, are also  |
-|              |                                 | assigned to this   |
-|              |                                 | level without      |
-|              |                                 | communication via  |
-|              |                                 | the SmartGridready |
-|              |                                 | interface.         |
-+--------------+---------------------------------+--------------------+
-| 4            | dynamic set values              | The interface      |
-|              |                                 | allows the setting |
-|              |                                 | of continuous      |
-|              |                                 | setpoints. This    |
-|              |                                 | stage builds upon  |
-|              |                                 | level 2.           |
-+--------------+---------------------------------+--------------------+
-| 5            | dynamically changeable          | The interface      |
-|              | characteristics tables          | allows the setting |
-|              |                                 | of continuous      |
-|              |                                 | control parameters |
-|              |                                 | or characteristic  |
-|              |                                 | curve values. This |
-|              |                                 | stage builds upon  |
-|              |                                 | level 3.           |
-+--------------+---------------------------------+--------------------+
-| 6            | prediction based systems        | The interface      |
-|              |                                 | allows the setting |
-|              |                                 | of new setpoints   |
-|              |                                 | and control        |
-|              |                                 | parameters /       |
-|              |                                 | characteristic     |
-|              |                                 | curve values based |
-|              |                                 | on energy          |
-|              |                                 | production or load |
-|              |                                 | forecasts, up to   |
-|              |                                 | the inclusion of a |
-|              |                                 | digital twin.      |
-+--------------+---------------------------------+--------------------+
+.. list-table:: Level of Operation
+    :header-rows: 1
+    :widths: 10 30 60
+
+    * - Level
+      - Description
+      - Details
+    * - m
+      - Monitoring
+      - Supports reading of values and settings
+    * - 1
+      - On-Off
+      - The interface allows switching between two discrete operating states
+    * - 2
+      - Discrete values
+      - The interface allows switching between two multiple discrete operating states
+    * - 3
+      - Set of characteristic curves
+      - The interface enables the selection of various pre-configured characteristic
+        curves (Discrete, as there is a limited number of characteristic curves).
+        Grid-friendly characteristic curves, which can react to grid voltage, are also
+        assigned to this level without communication via the SmartGridready interface.
+    * - 4
+      - Continuous values
+      - The interface allows the setting of continuous values. This stage builds upon
+        level 2.
+    * - 5
+      - Dynamically changeable characteristics tables
+      - The interface allows the setting of continuous control parameters or characteristic
+        curve values. This stage builds upon level 3.
+    * - 6
+      - Prediction based systems
+      - The interface allows the setting of new setpoints and control parameters /
+        characteristic curve values based on energy production or load forecasts, up to
+        the inclusion of a digital twin.
+
 
 Levels 1-6 can be combined with a the monitoring (m) level if they offer
 read-only data points
@@ -375,15 +336,309 @@ read-only data points
 for details…)
 
 
-.. _version_number:
+.. _generic_attributes:
 
-:term:`Functional Profile` Version Number
------------------------------------------
-Version of the functional profile.
+Generic Attributes
+------------------
 
-* changes in primaryVersionNumber indicate breaking changes,
-* changes in secondaryVersionNumber indicate complimentary changes,
-* changes in subReleaseVersionNumber are without impact on the functionality
+Generic attributes incorporate hierarchical inheritance as follows:
+
+- Generic attributes always apply to the data point
+- Generic attributes defined on functional profile level apply to all data points of the same
+  functional profile.
+- Generic attributes defined on device level apply to all functional profiles, and thus to all
+  data points of the device If the same attribute is defined on multiple levels the most specific
+  definition supersedes any other definition (i.e. data point over functional profile over).
+
+.. _static_datapoint_attributes:
+
+Static Data Point Attributes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+These values describe the measurement limits for data points. Depending
+on the definition level they apply either to a specific data point,
+every data point of a functional profile, or the the entire device.
+
+These attributes are generally used to search for devices that fulfill a
+set of minimum requirements to support a specific use case.
+
++---------------------+---------------+------------------+------------+
+| SGr Attribute       | Data Type     | Description      | Example    |
++=====================+===============+==================+============+
+| MeasuredValueType   | enum          | Me               | value      |
+|                     |               | asuredValueType: |            |
+|                     |               | type of          |            |
+|                     |               | measurement.     |            |
+|                     |               | Possible values  |            |
+|                     |               | are “value”,     |            |
+|                     |               | “min”, max”,     |            |
+|                     |               | “average”,       |            |
+|                     |               | “stdDev”         |            |
++---------------------+---------------+------------------+------------+
+| Specia              | string        | indicates        | METAS      |
+| lQualityRequirement |               | Quality          |            |
+|                     |               | requirements     |            |
+|                     |               | fulfilled like   |            |
+|                     |               | formal           |            |
+|                     |               | certifications   |            |
++---------------------+---------------+------------------+------------+
+| PrecisionPercent    | float32       | the precision of | 2.0%       |
+|                     |               | a measurement,   |            |
+|                     |               | calculation      |            |
+|                     |               | result or result |            |
+|                     |               | of a controls    |            |
+|                     |               | process          |            |
++---------------------+---------------+------------------+------------+
+| MaximumLatencyTime  | float         | Maximum time in  | 10 ms      |
+|                     |               | milliseconds     |            |
+|                     |               | from capturing   |            |
+|                     |               | of measured      |            |
+|                     |               | value until      |            |
+|                     |               | ready at the     |            |
+|                     |               | product          |            |
+|                     |               | interface        |            |
+|                     |               | (i.e             |            |
+|                     |               | analog-digital   |            |
+|                     |               | conversion time) |            |
++---------------------+---------------+------------------+------------+
+| SampleRate          | unsignedLong  | SampleRate in    | 200 ms     |
+|                     |               | milliseconds     |            |
++---------------------+---------------+------------------+------------+
+
+.. _stability_fallback:
+
+Stability Fallback
+^^^^^^^^^^^^^^^^^^
+
+A consumer or a generating system receives the permit for a load change
+for a certain period of time. This time is always set to 0 each time a
+confirmation message is received (HeartBeat).
+
+The figure below depicts the typical flow 1. the device starts at
+initial value. 2. regular communication starts. The communicator
+periodically sets new set values. 3. communication breaks. The device
+receives its last set value. 4. after reaching the timeout the device
+automatically sets the fallback value.
+
+.. figure:: images/genAttributes_sstabilityFallback.drawio.png
+   :alt: SGr Stability Fallback
+
+   SGr Stability Fallback
+
++---------------------+---------------+------------------+------------+
+| Stability Fallback  | Data Type     | Description      | Example    |
+| Value               |               |                  |            |
++=====================+===============+==================+============+
+| maxReceiveTime      | float         | If the device    | 3600.0 s   |
+|                     |               | does not receive |            |
+|                     |               | any              |            |
+|                     |               | communication    |            |
+|                     |               | within this time |            |
+|                     |               | the device       |            |
+|                     |               | applies the      |            |
+|                     |               | fallback.        |            |
++---------------------+---------------+------------------+------------+
+| initValue           | float         | Initial value    | 6.0 A      |
+|                     |               | the device       |            |
+|                     |               | before the       |            |
+|                     |               | communicator     |            |
+|                     |               | sets this value  |            |
+|                     |               | (e.g.at          |            |
+|                     |               | startup, or      |            |
+|                     |               | beginning of     |            |
+|                     |               | cycle).          |            |
++---------------------+---------------+------------------+------------+
+| fallbackValue       | float         | Value the device | 6.0 A      |
+|                     |               | uses in case of  |            |
+|                     |               | a fallback       |            |
++---------------------+---------------+------------------+------------+
+
+.. _smooth_transition:
+
+Smooth Transition
+^^^^^^^^^^^^^^^^^
+
+The time behavior of a transition from a power adjustment (positive as
+well as negative) can be determined by several time values, so that this
+starts with a random time delay, changes via a ramp and an expiry time
+with return to the initial value. To avoid return to the initial value
+the device must either specify the revert time to zero (i.e. no return),
+or the communicator must repeat the target value before the revert time
+window expires.
+
+The figure below depicts the typical flow 1. the command for the new
+target value is received 2. the device randomly starts the ramp, but
+latest after winTms 3. the ramp reaches the new target value after
+rmpTms 4. if no new target value is received, the device starts
+returning to the old target value after rvtTms 5. the ramp reaches the
+old target value after rmpTms
+
+.. figure:: images/genAttributes_smoothTransition.drawio.png
+   :alt: SGr Smooth Transition
+
+   SGr Smooth Transition
+
++---------------------+---------------+------------------+------------+
+| Smooth Transition   | Data Type     | Description      | Example    |
+| Value               |               |                  |            |
++=====================+===============+==================+============+
+| winTms              | unsigned long | indicates a time | 300 s      |
+|                     |               | window in which  |            |
+|                     |               | the new          |            |
+|                     |               | operating mode   |            |
+|                     |               | is started       |            |
+|                     |               | randomly. The    |            |
+|                     |               | time window      |            |
+|                     |               | begins with the  |            |
+|                     |               | start command of |            |
+|                     |               | the operating    |            |
+|                     |               | mode. The value  |            |
+|                     |               | 0 means          |            |
+|                     |               | immediate        |            |
++---------------------+---------------+------------------+------------+
+| rmpTms              | unsigned long | specifies how    | 450 s      |
+|                     |               | quickly the      |            |
+|                     |               | changes should   |            |
+|                     |               | be made. The     |            |
+|                     |               | corresponding    |            |
+|                     |               | value is         |            |
+|                     |               | gradually        |            |
+|                     |               | changed from the |            |
+|                     |               | old to the new   |            |
+|                     |               | value in the     |            |
+|                     |               | specified time.  |            |
++---------------------+---------------+------------------+------------+
+| rvrtTms             | unsigned long | determines how   | 7’200 s    |
+|                     |               | long the         |            |
+|                     |               | operating mode   |            |
+|                     |               | should be        |            |
+|                     |               | active. When the |            |
+|                     |               | time has         |            |
+|                     |               | elapsed, the     |            |
+|                     |               | operating mode   |            |
+|                     |               | is automatically |            |
+|                     |               | terminated. If   |            |
+|                     |               | rvrtTms = 0      |            |
+|                     |               | (standard        |            |
+|                     |               | value), the      |            |
+|                     |               | operating mode   |            |
+|                     |               | remains active   |            |
+|                     |               | until a new      |            |
+|                     |               | command is       |            |
+|                     |               | received.        |            |
++---------------------+---------------+------------------+------------+
+
+.. _datapoint_quality:
+
+Data Point Quality
+^^^^^^^^^^^^^^^^^^
+
+SGr has attributes to denote the quality of the measured value. The
+presence of any quality attributes either on functional profile or data
+point level indicate that the com handler will provide these dynamic
+attributes at run time (see documentation of SGr com handler libs)
+
++---------------------+---------------+------------------+------------+
+| SGr Attribute       | Data Type     | Description      | Example    |
++=====================+===============+==================+============+
+| MeasuredValueSource | enum          | Value source     | mea        |
+|                     |               | kind related to  | suredValue |
+|                     |               | SGr level 6      |            |
+|                     |               | applications.    |            |
+|                     |               | Potential values |            |
+|                     |               | are              |            |
+|                     |               | measuredValue,   |            |
+|                     |               | calculatedValue, |            |
+|                     |               | empiricalValue   |            |
++---------------------+---------------+------------------+------------+
+
+.. _curtailment:
+
+Curtailment
+^^^^^^^^^^^
+
+Various function profiles require boundaries to set points with respect
+to curtailment or home energy management systems.
+
++---------------------+---------------+------------------+------------+
+| SGr Attribute       | Data Type     | Description      | Example    |
++=====================+===============+==================+============+
+| Curtailment         | float         | Used in          | 40%        |
+|                     |               | state-based      |            |
+|                     |               | reduction        |            |
+|                     |               | schemes. This    |            |
+|                     |               | value specifies  |            |
+|                     |               | the reduction in |            |
+|                     |               | percent for the  |            |
+|                     |               | reduced          |            |
+|                     |               | operation mode.  |            |
++---------------------+---------------+------------------+------------+
+| MimimumLoad         | float         | Used in          | 2 kW       |
+|                     |               | state-based      |            |
+|                     |               | reduction        |            |
+|                     |               | schemes. In      |            |
+|                     |               | locked mode the  |            |
+|                     |               | product will not |            |
+|                     |               | reduce its load  |            |
+|                     |               | below this       |            |
+|                     |               | minimum value    |            |
++---------------------+---------------+------------------+------------+
+| MaximumLockTime     | float         | used in          | 20 min     |
+|                     |               | state-based      |            |
+|                     |               | reduction        |            |
+|                     |               | schemes. A       |            |
+|                     |               | reduction        |            |
+|                     |               | command to       |            |
+|                     |               | reduced or       |            |
+|                     |               | locked mode      |            |
+|                     |               | shall not be     |            |
+|                     |               | applied longer   |            |
+|                     |               | than this        |            |
+|                     |               | specified        |            |
+|                     |               | duration         |            |
++---------------------+---------------+------------------+------------+
+| MinimumRunTime      | float         | Used in          | 15 min     |
+|                     |               | state-based      |            |
+|                     |               | reduction        |            |
+|                     |               | schemes. When    |            |
+|                     |               | returning to     |            |
+|                     |               | normal mode the  |            |
+|                     |               | normal mode must |            |
+|                     |               | be guaranteed    |            |
+|                     |               | for at least the |            |
+|                     |               | specified        |            |
+|                     |               | duration         |            |
++---------------------+---------------+------------------+------------+
+| ValueByTimeTable    | float         | Used for time    | 1 min      |
+|                     |               | tables to        |            |
+|                     |               | specify the      |            |
+|                     |               | temporal         |            |
+|                     |               | separation of    |            |
+|                     |               | data curve       |            |
+|                     |               | points           |            |
++---------------------+---------------+------------------+------------+
+| FlexAssistance      | sgr:F         | Systems with     |            |
+|                     | lexAssistance | more than One    |            |
+|                     |               | communicator     |            |
+|                     |               | need a           |            |
+|                     |               | definition of    |            |
+|                     |               | the priority of  |            |
+|                     |               | the commands /   |            |
+|                     |               | demands for a    |            |
+|                     |               | flexibility      |            |
+|                     |               | requirement.     |            |
+|                     |               | This element     |            |
+|                     |               | defines the kind |            |
+|                     |               | of a such a      |            |
+|                     |               | command          |            |
+|                     |               | (serviceable for |            |
+|                     |               | net (DSO),       |            |
+|                     |               | energy or system |            |
+|                     |               | (TNO)) and its   |            |
+|                     |               | priority (SHALL  |            |
+|                     |               | / SHOULD / MAY)  |            |
++---------------------+---------------+------------------+------------+
+
 
 :term:`Datapoints`
 -------------------
@@ -454,24 +709,15 @@ Functional profile descriptions should be structured as follows:
 * Detailed explanation, including very attribute.
 * Description on how to apply the functional profile concerning presence level (i.e. how to handle recommended and optional :term:`Datapoints`)
 
+.. _version_number:
 
-Release Notes
-^^^^^^^^^^^^^^
-The release notes section contains meta data that describe history and current state of the functional profile.
+:term:`Functional Profile` Version Number
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Version of the functional profile.
 
-.. list-table:: Releas Notes
-    :header-rows: 1
-    :widths: 30 70
-
-    * - Element
-      - Description
-    * - Status
-      - One of 'Draft', 'Review', 'Released', 'Revoked'
-    * - Remarks
-      - Optional, text with remarks e.g. can be useful during the draft phase for todo's etc.
-    * - Change Log
-      - Optional, can occur multiple times. Contains release notes to the version concerned
-
+* changes in primaryVersionNumber indicate breaking changes,
+* changes in secondaryVersionNumber indicate complimentary changes,
+* changes in subReleaseVersionNumber are without impact on the functionality
 
 
 :term:`Functional Profile` Release Process
@@ -486,7 +732,7 @@ profiles.
 States
 ^^^^^^
 
-A term:`Functional Profile` cycles through the following states:
+A :term:`Functional Profile` cycles through the following states:
 
 .. figure:: images/functionalProfile_process.drawio.png
    :alt: SGr Functional Profile Process
@@ -517,7 +763,7 @@ A term:`Functional Profile` cycles through the following states:
 Creating new :term:`Functional Profiles`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If the term:`Functional Profile` interest groups sees requirements for a new or
+If the :term:`Functional Profile` interest groups sees requirements for a new or
 improved functionality, it will create a new :term:`Functional Profile` XML with
 state “draft”. A new issue will be created for this :term:`Functional Profile`.
 The issue has
@@ -599,6 +845,25 @@ Versioning Scheme
 |                          | minor non-functional details change, such |
 |                          | as descriptions, translations, remarks    |
 +--------------------------+-------------------------------------------+
+
+Release Notes
+^^^^^^^^^^^^^^
+The release notes section contains meta data that describe history and current state of the functional profile.
+
+.. list-table:: Releas Notes
+    :header-rows: 1
+    :widths: 30 70
+
+    * - Element
+      - Description
+    * - Status
+      - One of 'Draft', 'Review', 'Released', 'Revoked'
+    * - Remarks
+      - Optional, text with remarks e.g. can be useful during the draft phase for todo's etc.
+    * - Change Log
+      - Optional, can occur multiple times. Contains release notes to the version concerned
+
+
 
 ..  TODO's
 ..  Comments regarding functional profile category and profile types:

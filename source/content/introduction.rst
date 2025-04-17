@@ -8,14 +8,15 @@ Smart Grids and Energy Management
 
 A smart power grid is an advanced electricity network that optimizes energy distribution using digital technology,
 automation, and real-time data. It enables bi-directional energy flow, integrates renewable energy sources, and enhances
-grid stability through automated load balancing and demand response.
+grid stability through automated load balancing and response to energy demand.
 
-Energy management in buildings focuses on monitoring, controlling, and optimizing energy consumption. Smart buildings
-use energy management devices that read metering and measurement devices and control power consumers within the building,
-thereby reducing costs.
+Energy management in buildings focuses on monitoring, controlling, and optimizing energy consumption. Smart buildings,
+residential areas and industrial areas use energy management devices that read metering and measurement devices and
+control power consumers within the building, thereby reducing costs.
 
-Smart buildings interact with smart grids by feeding excess renewable energy into the grid and adjusting energy usage based on pricing or demand.
-Microgrids and decentralized energy systems further enhance energy resilience and self-sufficiency.
+Smart buildings and areas interact with smart grids by feeding excess renewable energy into the grid and adjusting energy
+usage based on pricing or demand. Microgrids and decentralized energy systems further enhance energy resilience and
+self-sufficiency.
 
 The benefits are: Lower costs, reduced carbon footprint, increased reliability, and more consumer control.
 
@@ -69,14 +70,14 @@ SmartGridready distinguishes between:
 
 *   Controlled devices referred to as :term:`Product`
 
-    Examples for :term:`Product` devices are smart-meters, heat pumps, :term:`EVSE` charging stations, term:`PVA` inverters.
+    Examples for :term:`Product` devices are smart-meters, heat pumps, :term:`EVSE` charging stations, :term:`PVA` inverters.
 
 *   Controlling devices referred to as :term:`Communicator`
 
     Examples for :term:`Communicator` devices are Energy Management Systems (:term:`EMS`) and :term:`Flexibility Manager`
     devices operated by power grid operators.
 
-SmartGridready establishes a standardized framework to enable interoperability between system components, allowing
+SmartGridready establishes a abstract common framework to enable interoperability between system components, allowing
 :term:`Communicator` devices to communicate with :term:`Product` devices in a unified, standardized manner,
 independent of the :term:`Product` suppliers and their proprietary communication interfaces.
 

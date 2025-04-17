@@ -3,4 +3,9 @@ document.addEventListener("DOMContentLoaded", function() {
         link.setAttribute('target', '_blank');
         link.setAttribute('rel', 'noopener noreferrer');
     });
+
+    document.querySelectorAll("a.reference.external").forEach(function (link) {
+        link.setAttribute("target", "_blank");
+        link.setAttribute("rel", "noopener noreferrer");
+    });
 });

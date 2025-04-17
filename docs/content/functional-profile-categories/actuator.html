@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Actuator &mdash; SmartGridready Documentation 0.1 documentation</title>
@@ -20,7 +20,7 @@
         <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
         <script src="../../_static/copybutton.js?v=f281be69"></script>
-        <script src="../../_static/custom.js?v=e821f123"></script>
+        <script src="../../_static/custom.js?v=5fb28dec"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -38,6 +38,7 @@
           
           <a href="../../index.html" class="icon icon-home">
             SmartGridready Documentation
+              <img src="../../_static/SGr-Logo.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
                 0.1.0
@@ -86,7 +87,14 @@
 <li class="toctree-l3"><a class="reference internal" href="dynamic-tariff.html">Dynamic Tariff</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="evse.html"><span class="xref std std-term">EVSE</span></a><ul class="simple">
+<li class="toctree-l3"><a class="reference internal" href="evse.html"><span class="xref std std-term">EVSE</span></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="evse.html#electric-vehicle-supply-equipment-evse">Electric Vehicle Supply Equipment (<span class="xref std std-term">EVSE</span>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="evse.html#evse-current-limit"><span class="xref std std-term">EVSE</span> Current Limit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="evse.html#main-data-points">Main Data Points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="evse.html#feedback-sub-data-points">Feedback Sub Data Points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="evse.html#smoothtransition-sub-data-points">SmoothTransition Sub Data Points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="evse.html#evse-state"><span class="xref std std-term">EVSE</span> State</a></li>
+<li class="toctree-l4"><a class="reference internal" href="evse.html#evse-loadreduction"><span class="xref std std-term">EVSE</span> LoadReduction</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="heating-circuit.html">Heating Circuit</a><ul class="simple">
@@ -122,12 +130,19 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#functional-profile-types"><span class="xref std std-term">Functional Profile Types</span></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#level-of-operation"><span class="xref std std-term">Level of Operation</span></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#functional-profile-version-number"><span class="xref std std-term">Functional Profile</span> Version Number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#generic-attributes">Generic Attributes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#static-data-point-attributes">Static Data Point Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#stability-fallback">Stability Fallback</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#smooth-transition">Smooth Transition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#data-point-quality">Data Point Quality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#curtailment">Curtailment</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#datapoints"><span class="xref std std-term">Datapoints</span></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#sub-datapoints">Sub Datapoints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#defining-functional-profiles">Defining <span class="xref std std-term">Functional Profiles</span></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#file-naming-scheme">File Naming Scheme</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#release-notes">Release Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#functional-profile-version-number"><span class="xref std std-term">Functional Profile</span> Version Number</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#functional-profile-release-process"><span class="xref std std-term">Functional Profile</span> Release Process</a><ul>
@@ -138,11 +153,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#publish">Publish</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#revoke">Revoke</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#versioning-scheme">Versioning Scheme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#release-notes">Release Notes</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../product-description-file.html">Product Description File (<span class="xref std std-term">EID</span>)</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../product-description-file.html">Product Description File</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../product-description-file.html#product-ei-xml-documentation-on-github">Product EI-XML Documentation on GitHub</a><ul class="simple">
 </ul>
 </li>

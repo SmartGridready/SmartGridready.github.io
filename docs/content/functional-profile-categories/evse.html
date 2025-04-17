@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EVSE &mdash; SmartGridready Documentation 0.1 documentation</title>
@@ -20,7 +20,7 @@
         <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
         <script src="../../_static/copybutton.js?v=f281be69"></script>
-        <script src="../../_static/custom.js?v=e821f123"></script>
+        <script src="../../_static/custom.js?v=5fb28dec"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -38,6 +38,7 @@
           
           <a href="../../index.html" class="icon icon-home">
             SmartGridready Documentation
+              <img src="../../_static/SGr-Logo.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
                 0.1.0
@@ -86,7 +87,14 @@
 <li class="toctree-l3"><a class="reference internal" href="dynamic-tariff.html">Dynamic Tariff</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#"><span class="xref std std-term">EVSE</span></a><ul class="simple">
+<li class="toctree-l3 current"><a class="current reference internal" href="#"><span class="xref std std-term">EVSE</span></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#electric-vehicle-supply-equipment-evse">Electric Vehicle Supply Equipment (<span class="xref std std-term">EVSE</span>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evse-current-limit"><span class="xref std std-term">EVSE</span> Current Limit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main-data-points">Main Data Points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#feedback-sub-data-points">Feedback Sub Data Points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#smoothtransition-sub-data-points">SmoothTransition Sub Data Points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evse-state"><span class="xref std std-term">EVSE</span> State</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evse-loadreduction"><span class="xref std std-term">EVSE</span> LoadReduction</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="heating-circuit.html">Heating Circuit</a><ul class="simple">
@@ -122,12 +130,19 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#functional-profile-types"><span class="xref std std-term">Functional Profile Types</span></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#level-of-operation"><span class="xref std std-term">Level of Operation</span></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#functional-profile-version-number"><span class="xref std std-term">Functional Profile</span> Version Number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#generic-attributes">Generic Attributes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#static-data-point-attributes">Static Data Point Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#stability-fallback">Stability Fallback</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#smooth-transition">Smooth Transition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#data-point-quality">Data Point Quality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#curtailment">Curtailment</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#datapoints"><span class="xref std std-term">Datapoints</span></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#sub-datapoints">Sub Datapoints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#defining-functional-profiles">Defining <span class="xref std std-term">Functional Profiles</span></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#file-naming-scheme">File Naming Scheme</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#release-notes">Release Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#functional-profile-version-number"><span class="xref std std-term">Functional Profile</span> Version Number</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#functional-profile-release-process"><span class="xref std std-term">Functional Profile</span> Release Process</a><ul>
@@ -138,11 +153,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#publish">Publish</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#revoke">Revoke</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#versioning-scheme">Versioning Scheme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#release-notes">Release Notes</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../product-description-file.html">Product Description File (<span class="xref std std-term">EID</span>)</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../product-description-file.html">Product Description File</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../product-description-file.html#product-ei-xml-documentation-on-github">Product EI-XML Documentation on GitHub</a><ul class="simple">
 </ul>
 </li>
@@ -220,15 +236,191 @@
              
   <section id="evse">
 <span id="id1"></span><h1><a class="reference internal" href="../glossary.html#term-EVSE"><span class="xref std std-term">EVSE</span></a><a class="headerlink" href="#evse" title="Permalink to this heading"></a></h1>
-<figure class="align-center" style="width: 40%">
-<img alt="../../_images/wip.png" src="../../_images/wip.png" />
-</figure>
+<section id="electric-vehicle-supply-equipment-evse">
+<h2>Electric Vehicle Supply Equipment (<a class="reference internal" href="../glossary.html#term-EVSE"><span class="xref std std-term">EVSE</span></a>)<a class="headerlink" href="#electric-vehicle-supply-equipment-evse" title="Permalink to this heading"></a></h2>
+<p>Currently, there are three types of <a class="reference internal" href="../glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> for the <a class="reference internal" href="../glossary.html#term-EVSE"><span class="xref std std-term">EVSE</span></a></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#evse-current-limit"><span class="std std-ref">EVSE Current Limit</span></a> : Enables a controller to set a current limitation for an <a class="reference internal" href="../glossary.html#term-EVSE"><span class="xref std std-term">EVSE</span></a>.</p></li>
+<li><p><a class="reference internal" href="#evse-state"><span class="std std-ref">EVSE State</span></a> : Reads the status of the connector of an <a class="reference internal" href="../glossary.html#term-EVSE"><span class="xref std std-term">EVSE</span></a></p></li>
+<li><p><a class="reference internal" href="#evse-load-reduction"><span class="std std-ref">EVSE LoadReduction</span></a> : Sets the operation mode of the <a class="reference internal" href="../glossary.html#term-EVSE"><span class="xref std std-term">EVSE</span></a>.</p></li>
+</ul>
+</section>
+<section id="evse-current-limit">
+<span id="id2"></span><h2><a class="reference internal" href="../glossary.html#term-EVSE"><span class="xref std std-term">EVSE</span></a> Current Limit<a class="headerlink" href="#evse-current-limit" title="Permalink to this heading"></a></h2>
+<p>The functional profile enables a controller to set a current limitation
+for an Electric Vehicle Supply Equipment (<a class="reference internal" href="../glossary.html#term-EVSE"><span class="xref std std-term">EVSE</span></a>).</p>
+<p>The charging station’s current limit is dynamically regulated by an
+external Energy Management System (<a class="reference internal" href="../glossary.html#term-EMS"><span class="xref std std-term">EMS</span></a>), with the data point
+EMSCurrentLimit expressed in amps. This data point enables real-time
+monitoring and control of the consumption limit of the charging station.
+This specific parameter is designed to be easily adjusted by an Energy
+Manager, allowing for efficient and tailored control of the charging
+process.</p>
+<p>This functional profile can be utilized in conjunction with the <a class="reference internal" href="#evse-state"><span class="std std-ref">EVSE State</span></a> functional profile.</p>
+</section>
+<section id="main-data-points">
+<h2>Main Data Points<a class="headerlink" href="#main-data-points" title="Permalink to this heading"></a></h2>
+<p>The functional profile covers the following main data points</p>
+<ul class="simple">
+<li><p><strong>EMSCurrentLimit</strong> (mandatory): The maximum current allowed for the
+charging station at this moment.</p></li>
+<li><p><strong>SafeCurrent</strong> (recommended): In the event of a communication
+interruption with the <a class="reference internal" href="../glossary.html#term-EMS"><span class="xref std std-term">EMS</span></a>, the <a class="reference internal" href="../glossary.html#term-EVSE"><span class="xref std std-term">EVSE</span></a> automatically adjusts its current
+limit to the Safe Current value.</p></li>
+<li><p><strong>MaxReceiveTimeSec</strong> (recommended): The MaxReceiveTimeSec datapoint
+signifies the timeout for the stability fallback. If the <a class="reference internal" href="../glossary.html#term-EVSE"><span class="xref std std-term">EVSE</span></a> does not
+receive communication within the specified MaxReceiveTimeSec, it will
+automatically limit the current to the SafeCurrent value.</p></li>
+<li><p><strong>HWCurrentLimit</strong> (optional): The maximum current allowed for the
+EVSE is determined by the electrical installation of the charging
+station and cannot be changed during operation.</p></li>
+</ul>
+</section>
+<section id="feedback-sub-data-points">
+<h2>Feedback Sub Data Points<a class="headerlink" href="#feedback-sub-data-points" title="Permalink to this heading"></a></h2>
+<p>If the controller requires different datapoints to write and read the
+values EMSCurrentLimit, SafeCurrent, and MaxReceiveTimeSec, the data
+direction of can be changed from RW to W and an additional sub data
+point Feedback can be used to read the current value</p>
+<ul class="simple">
+<li><p>EMSCurrentLimit.Feedback for EMSCurrentLimit</p></li>
+<li><p>SafeCurrent.Feedback for SafeCurrent</p></li>
+<li><p>MaxReceiveTimeSec.Feedback for MaxReceiveTimeSec</p></li>
+</ul>
+<p>These sub data points should not be used if the controller sets and
+reads the value from the same data point.</p>
+</section>
+<section id="smoothtransition-sub-data-points">
+<h2>SmoothTransition Sub Data Points<a class="headerlink" href="#smoothtransition-sub-data-points" title="Permalink to this heading"></a></h2>
+<p>The <a class="reference internal" href="../functional-profiles.html#smooth-transition"><span class="std std-ref">Smooth Transition</span></a> sub
+data points are utilized to specify the transition process following the
+reception of a new value for the data points EMSCurrentLimit and
+SafeCurrent. The transition process is defined with three sub data
+points for both main data points</p>
+<ul class="simple">
+<li><p>SmoothTransition_Window: Indicates a time window in which the new
+operating mode is started randomly. The time window begins with the
+start command of the operating mode. The value 0 means immediate (see
+winTms <a class="reference internal" href="../functional-profiles.html#smooth-transition"><span class="std std-ref">Smooth Transition</span></a>.</p></li>
+<li><p>SmoothTransition_Delay: Specifies how quickly the changes should be
+made. The corresponding value is gradually changed from the old to the
+new value in the specified time. (see rmpTms
+<a class="reference internal" href="../functional-profiles.html#smooth-transition"><span class="std std-ref">Smooth Transition</span></a>).</p></li>
+<li><p>SmoothTransition_Duration: Determines how long the operating mode
+should be active. When the time has elapsed, the operating mode is
+automatically terminated. If set to 0 (standard value), the operating
+mode remains active until a new command is received. (see rvrtTms
+<a class="reference internal" href="../functional-profiles.html#smooth-transition"><span class="std std-ref">Smooth Transition</span></a>).</p></li>
+</ul>
+<p>Accordingly, the sub data points</p>
+<ul class="simple">
+<li><p>for EMSCurrentLimit are</p>
+<ul>
+<li><p>EMSCurrentLimit.SmoothTransition_Window</p></li>
+<li><p>EMSCurrentLimit.SmoothTransition_Delay</p></li>
+<li><p>EMSCurrentLimit.SmoothTransition_Duration</p></li>
+</ul>
+</li>
+<li><p>for SafeCurrent are</p>
+<ul>
+<li><p>SafeCurrent.SmoothTransition_Window</p></li>
+<li><p>SafeCurrent.SmoothTransition_Delay</p></li>
+<li><p>SafeCurrent.SmoothTransition_Duration</p></li>
+</ul>
+</li>
+</ul>
+<p>All six sub data point can be implemented in the device as constant data
+points if the value is constant or as regular datapoint if it can be
+read from the device.</p>
+</section>
+<section id="evse-state">
+<span id="id3"></span><h2><a class="reference internal" href="../glossary.html#term-EVSE"><span class="xref std std-term">EVSE</span></a> State<a class="headerlink" href="#evse-state" title="Permalink to this heading"></a></h2>
+<p>Functional profile for reading the status of the connector of an
+electric vehicle charging station (<a class="reference internal" href="../glossary.html#term-EVSE"><span class="xref std std-term">EVSE</span></a>).</p>
+<p>The current state of the wallbox can be read using the data point
+ocppState with following values corresponding to the OCPP standard (Open
+Charge Point Protocol):</p>
+<ul class="simple">
+<li><p><strong>AVAILABLE</strong>: The charge point is operational and available for a new
+customer to start a charging session.</p></li>
+<li><p><strong>CHARGING</strong>: A vehicle is currently charging.</p></li>
+<li><p><strong>PREPARING</strong>: The charge point is preparing for a charging session
+after the driver has been authorized.</p></li>
+<li><p><strong>FINISHING</strong>: The charging process is being concluded (e.g., the
+vehicle has reached a full charge and the session is being
+terminated).</p></li>
+<li><p><strong>RESERVED</strong>: The charge point has been reserved for a particular EV
+driver and is not available to other users.</p></li>
+<li><p><strong>UNAVAILABLE</strong>: The charge point is not in operation and cannot be
+used to charge a vehicle.</p></li>
+<li><p><strong>FAULTED</strong>: There is a fault in the charge point, requiring
+maintenance or repair.</p></li>
+<li><p><strong>SUSPENDED_EV_SE</strong>: The charging process has been suspended due to
+some hardware limitations of the Electric Vehicle Supply Equipment
+(<a class="reference internal" href="../glossary.html#term-EVSE"><span class="xref std std-term">EVSE</span></a>).</p></li>
+<li><p><strong>SUSPENDED_EV</strong>: The charging process has been suspended due to some
+conditions on the vehicle side.</p></li>
+</ul>
+<p>The status of the connector indicates, for example, whether a car is
+connected to the charging station, if it is currently charging, or if
+the connector is not connected to the electric vehicle. The function
+profile refers to the states offered by the OCPP 1.6 protocol under
+ocppState.</p>
+<p>Knowing the status of the charging station allows an external controller
+to influence the charging of the car, for example, through the
+EMS_Current_Limit functional profile. reserved for a particular EV
+driver and is not available to other users.</p>
+</section>
+<section id="evse-loadreduction">
+<span id="evse-load-reduction"></span><h2><a class="reference internal" href="../glossary.html#term-EVSE"><span class="xref std std-term">EVSE</span></a> LoadReduction<a class="headerlink" href="#evse-loadreduction" title="Permalink to this heading"></a></h2>
+<p>The LoadReduction functional profile sets the operation mode of the
+<a class="reference internal" href="../glossary.html#term-EVSE"><span class="xref std std-term">EVSE</span></a>. Depending on the equipment of the controller one of the following
+functional profiles apply</p>
+<ul class="simple">
+<li><p>SGr level of operation 1 - controllers with one switch with the
+switching states</p>
+<ul>
+<li><p>Switching state <strong>0</strong>: Normal operation, charging according to the
+configured connection power without any restrictions.</p></li>
+<li><p>Switching state <strong>1</strong>: Minimum charging (AC charging at 6 A, DC
+charging at 10 kW).</p></li>
+</ul>
+</li>
+<li><p>SGr level of operation 2 - controllers with two switches with the
+switching states</p>
+<ul>
+<li><p>Switching state <strong>0,0</strong>: Normal operation, charging according to the
+configured connection power without any restrictions.</p></li>
+<li><p>Switching state <strong>0,1</strong>: Reduced charging (e.g. 50 % of the maximum
+charging power, but never below 6 A).</p></li>
+<li><p>Switching state <strong>1,0</strong>: Minimum charging (e.g. AC charging at 6 A,
+DC charging at 10 kW).</p></li>
+<li><p>Switching state <strong>1,1</strong>: Charging paused (if bidirectional charging
+is supported maximum feed-in for Vehicle to Infrastructure V2X).</p></li>
+</ul>
+</li>
+<li><p>SGr level of operation 2m - controllers with the operating states
+(states can be set and optionally be read)</p>
+<ul>
+<li><p><strong>EV_NORMAL</strong>: Normal operation, charging without any restrictions
+based on the configured connection power.</p></li>
+<li><p><strong>EV_REDUCED</strong>: Reduces charging (e.g. to 50 % of the maximum
+charging power, but not below 6 A).</p></li>
+<li><p><strong>EV_NONE_OR_FEEDIN</strong>: Charging interrupted (if bidirectional
+charging is supported maximum feed-in for vehicle to infrastructure
+V2X).</p></li>
+<li><p><strong>EV_MINIMAL</strong>: Minimum charging (e.g. AC charging at 6 A, DC
+charging at 10 kW).</p></li>
+</ul>
+</li>
+</ul>
 <a href="../functional-profiles.html#functional-profile-category" class="btn btn-neutral float-left">
     <span class="fa fa-arrow-circle-left" aria-hidden="true"></span>
     Back to Functional Profile Categories
 <a>
 <p><div class="toctree-wrapper compound">
 </div>
+</section>
 </section>
 
 
