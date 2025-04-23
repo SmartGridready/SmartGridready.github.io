@@ -1,14 +1,24 @@
 @ECHO OFF
 
-pushd %~dp0
-
 REM Command file for Sphinx documentation
+REM Call using: make.bat <target>
+REM Example: make.bat html
 
-if "cd " == "" (
-    set SPHINXBUILD=sphinx-build
-)
 set SOURCEDIR=source
 set BUILDDIR=build
+
+if not defined SPHINXBUILD (
+	goto set_sphinxbuild
+)
+else (
+	goto begin
+)
+
+:set_sphinxbuild
+set SPHINXBUILD=sphinx-build
+
+:begin
+pushd %~dp0
 
 if "%1" == "" goto help
 
@@ -31,7 +41,7 @@ rd /s /q docs
 
 %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
 
-xcopy .\build\html\* docs /E /I /Y
+xcopy %BUILDDIR%\html\* docs /E /I /Y
 
 goto end
 
