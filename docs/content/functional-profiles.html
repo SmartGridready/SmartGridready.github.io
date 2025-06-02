@@ -21,7 +21,7 @@
         <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
         <script src="../_static/copybutton.js?v=f281be69"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        <script src="../_static/custom.js?v=5fb28dec"></script>
+        <script src="../_static/custom.js?v=59736732"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -54,6 +54,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../home.html">Documentation Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="introduction.html#smart-grids-and-energy-management">Smart Grids and Energy Management</a></li>
 <li class="toctree-l2"><a class="reference internal" href="introduction.html#smartgridready-concept">SmartGridready Concept</a></li>
@@ -65,8 +66,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="getting-involved.html">Getting Involved</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="getting-involved.html#planners-and-architects">Planners and Architects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting-involved.html#product-suppliers"><span class="xref std std-term">Product</span> suppliers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting-involved.html#communicator-suppliers"><span class="xref std std-term">Communicator</span> suppliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-involved.html#product-suppliers"><span class="xref std std-term">Product</span> Suppliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-involved.html#communicator-suppliers"><span class="xref std std-term">Communicator</span> Suppliers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-involved.html#software-developers">Software Developers</a></li>
 </ul>
 </li>
@@ -143,7 +144,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#sub-data-points">Sub Data Points</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#defining-functional-profiles">Defining <span class="xref std std-term">Functional Profiles</span></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#file-naming-scheme">File Naming Scheme</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#functional-profile-version-number"><span class="xref std std-term">Functional Profile</span> Version Number</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#functional-profile-release-process"><span class="xref std std-term">Functional Profile</span> Release Process</a><ul>
@@ -165,19 +165,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="communicator-description-file.html"><span class="xref std std-term">Communicator</span> Description File</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="communicator-description-file.html#general-structure">General Structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="communicator-description-file.html#communicator-description-file-elements">Communicator Description File Elements</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="communicator-description-file.html#release-notes">Release Notes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="communicator-description-file.html#communicator-information">Communicator Information</a></li>
-<li class="toctree-l3"><a class="reference internal" href="communicator-description-file.html#communicator-attributes">Communicator Attributes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="communicator-description-file.html#descriptions">Descriptions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="communicator-description-file.html#transport-services">Transport Services</a></li>
-<li class="toctree-l3"><a class="reference internal" href="communicator-description-file.html#functional-profiles">Functional Profiles</a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="sgr-declaration.html">SmartGridready Declaration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="sgr-declaration.html#declaration-labels-for-buildings">Declaration labels for buildings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sgr-declaration.html#declaration-labels-for-products">Declaration labels for <span class="xref std std-term">Products</span></a></li>
@@ -187,7 +174,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="commhandler-libraries.html">SmartGridready CommHandler Libraries</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="commhandler-libraries.html">SmartGridready Communication Handler Libraries</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="commhandler-libraries.html#python-implementation">Python Implementation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commhandler-libraries.html#java-implementation">Java Implementation</a><ul class="simple">
 </ul>
@@ -195,7 +182,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="code-samples.html">SmartGridready Code Samples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="device-driver-libraries.html">SmarGridready Device Driver Libraries</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="device-driver-libraries.html">SmartGridready Device Driver Libraries</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="device-driver-libraries.html#python-default-implementations">Python Default Implementations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="device-driver-libraries.html#java-default-implentations">Java Default Implentations</a></li>
 </ul>
@@ -240,7 +227,7 @@
 It thereby focuses entirely on the functionality. Any transport-specific details are not part of the functional profile
 (e.g. on how to get or set a <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> on a specific product).</p>
 <p>The main intent is to allow communicator manufacturers to easily implement their use cases based on logically grouped
-<a class="reference internal" href="glossary.html#term-Data-Points"><span class="xref std std-term">Data Points</span></a>, while device-specific communication details are handled SmartGridread CommHandler library.</p>
+<a class="reference internal" href="glossary.html#term-Data-Points"><span class="xref std std-term">Data Points</span></a>, while device-specific communication details are handled SmartGridread Communication Handler library.</p>
 <p>Any <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> that supports the <a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> required for a specific use case is therefore automatically
 compatible and can be used without changing the <a class="reference internal" href="glossary.html#term-Communicator"><span class="xref std std-term">Communicator</span></a> implementation.</p>
 <p>The <a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> build the foundation of the SmartGridready specification and allow access to any
@@ -296,7 +283,7 @@ The example shows a simple <a class="reference internal" href="glossary.html#ter
 <li><p><strong>Functional Profile Category:</strong> see <a class="reference internal" href="#functional-profile-category"><span class="std std-ref">Functional Profile Categories</span></a></p></li>
 <li><p><strong>Functional Profile Type:</strong> see: <a class="reference internal" href="#functional-profile-types"><span class="std std-ref">Functional Profile Types</span></a></p></li>
 <li><p><strong>Level Of Operation:</strong> see <a class="reference internal" href="#level-of-operation"><span class="std std-ref">Level of Operation</span></a></p></li>
-<li><p><strong>Version Number:</strong> see <a class="reference internal" href="#version-number"><span class="std std-ref">Functional Profile Version Number</span></a></p></li>
+<li><p><strong>Version Number:</strong> see <a class="reference internal" href="#version-number"><span class="std std-ref">Versioning Scheme</span></a></p></li>
 </ul>
 </section>
 <section id="functional-profile-categories">
@@ -325,7 +312,7 @@ description):</p>
 <td><p>Used with battery <a class="reference internal" href="glossary.html#term-Products"><span class="xref std std-term">Products</span></a>, e.g. batteries that store electrical energy produced by a <a class="reference internal" href="glossary.html#term-PVA"><span class="xref std std-term">PVA</span></a>.</p></td>
 <td><p><a class="reference internal" href="functional-profile-categories/battery.html#battery"><span class="std std-ref">Battery</span></a></p></td>
 </tr>
-<tr class="row-even"><td><p><strong>BatterSystem</strong></p></td>
+<tr class="row-even"><td><p><strong>BatterySystem</strong></p></td>
 <td><p>Used with combined systems that consist of a battery and an <a class="reference internal" href="functional-profile-categories/inverter.html#inverter"><span class="std std-ref">Inverter</span></a></p></td>
 <td><p><a class="reference internal" href="functional-profile-categories/battery-system.html#battery-system"><span class="std std-ref">Battery System</span></a></p></td>
 </tr>
@@ -351,8 +338,8 @@ description):</p>
 <td><p><a class="reference internal" href="functional-profile-categories/heating-circuit.html#heating-circuit"><span class="std std-ref">Heating Circuit</span></a></p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Inverter</strong></p></td>
-<td><p>Used with <a class="reference internal" href="glossary.html#term-Products"><span class="xref std std-term">Products</span></a> that allow controlling and reading status from <a class="reference internal" href="glossary.html#term-PV-Inverter"><span class="xref std std-term">PV-Inverter</span></a> devices.</p></td>
-<td><p><a class="reference internal" href="functional-profile-categories/inverter.html#inverter"><span class="std std-ref">Inverter</span></a></p></td>
+<td><p>Used with <a class="reference internal" href="glossary.html#term-Products"><span class="xref std std-term">Products</span></a> that allow controlling and reading status from <a class="reference internal" href="glossary.html#term-PV-Inverter"><span class="xref std std-term">PV-Inverter</span></a> devices</p></td>
+<td><p><a class="reference internal" href="functional-profile-categories/inverter.html#inverter"><span class="std std-ref">Inverter</span></a> and <a class="reference internal" href="functional-profile-categories/battery-system.html#battery-system"><span class="std std-ref">Battery System</span></a> devices.</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>Metering</strong></p></td>
 <td><p>Used with <a class="reference internal" href="glossary.html#term-Products"><span class="xref std std-term">Products</span></a> that provide metering an measurement functionalities like electrical power or energy
@@ -378,8 +365,19 @@ consumption, for example smart meter devices.</p></td>
 </section>
 <section id="functional-profile-types">
 <span id="id2"></span><h2><a class="reference internal" href="glossary.html#term-Functional-Profile-Types"><span class="xref std std-term">Functional Profile Types</span></a><a class="headerlink" href="#functional-profile-types" title="Permalink to this heading"></a></h2>
-<p>The <a class="reference internal" href="glossary.html#term-Functional-Profile-Types"><span class="xref std std-term">Functional Profile Types</span></a> are assigned to a <a class="reference internal" href="glossary.html#term-Functional-Profile-Category"><span class="xref std std-term">Functional Profile Category</span></a> and define a set of related
-functionalities and associated <a class="reference internal" href="glossary.html#term-Data-Points"><span class="xref std std-term">Data Points</span></a>.</p>
+<p>The <a class="reference internal" href="glossary.html#term-Functional-Profile-Type"><span class="xref std std-term">Functional Profile Type</span></a> defines the set of functionalities provided by a <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a>.
+<a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> of a given type can appear in multiple <a class="reference internal" href="glossary.html#term-Functional-Profile-Categories"><span class="xref std std-term">Functional Profile Categories</span></a>.
+For example, the EnergyMonitor <a class="reference internal" href="glossary.html#term-Functional-Profile-Type"><span class="xref std std-term">Functional Profile Type</span></a> may be implemented by devices in the
+<a class="reference internal" href="functional-profile-categories/heatpump-control.html#heatpump-control"><span class="std std-ref">Heatpump Controls</span></a>, <a class="reference internal" href="functional-profile-categories/battery.html#battery"><span class="std std-ref">Battery</span></a>, and <a class="reference internal" href="functional-profile-categories/battery-system.html#battery-system"><span class="std std-ref">Battery System</span></a> categories.</p>
+<p>Even if a <a class="reference internal" href="glossary.html#term-Functional-Profile-Type"><span class="xref std std-term">Functional Profile Type</span></a> defines a distinct set of functionalities the the functional profile
+can come in different flavours defined by the <a class="reference internal" href="#functional-profile-category"><span class="std std-ref">Functional Profile Categories</span></a> and <a class="reference internal" href="#level-of-operation"><span class="std std-ref">Level of Operation</span></a>.</p>
+<p>Therefore a <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> is uniquely defined by:</p>
+<ul class="simple">
+<li><p>Functional Profile Category: see <a class="reference internal" href="#functional-profile-category"><span class="std std-ref">Functional Profile Categories</span></a></p></li>
+<li><p>Functional Profile Type: see: <a class="reference internal" href="#functional-profile-types"><span class="std std-ref">Functional Profile Types</span></a></p></li>
+<li><p>Level Of Operation: see <a class="reference internal" href="#level-of-operation"><span class="std std-ref">Level of Operation</span></a></p></li>
+<li><p>Version Number: see <a class="reference internal" href="#version-number"><span class="std std-ref">Versioning Scheme</span></a></p></li>
+</ul>
 <table class="docutils align-default" id="id9">
 <caption><span class="caption-number">Table 4 </span><span class="caption-text"><a class="reference internal" href="glossary.html#term-Functional-Profile-Types"><span class="xref std std-term">Functional Profile Types</span></a></span><a class="headerlink" href="#id9" title="Permalink to this table"></a></caption>
 <colgroup>
@@ -508,12 +506,65 @@ like compressor power consumption or compressor rotations per minute.</p></td>
 </td>
 <td><p><a class="reference internal" href="functional-profile-categories/metering.html#metering"><span class="std std-ref">Metering</span></a></p></td>
 </tr>
+<tr class="row-odd"><td><p>Recative Power AC</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-Functional-Profile-Type"><span class="xref std std-term">Functional Profile Type</span></a> to measure the reactive power. Supports single phase and multiphase reactive
+power measurement.</p></td>
+<td><p><a class="reference internal" href="functional-profile-categories/metering.html#metering"><span class="std std-ref">Metering</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>SG-ReadyStates</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-Functional-Profile-Type"><span class="xref std std-term">Functional Profile Type</span></a> for heat pumps that support four operation modes. The operating states are
+defined from SG ready - Bundesverband Wärmepumpe e.V. (bwp):</p>
+<ul class="simple">
+<li><p>HP_LOCKED: Heat pump blocked - for example fixed blocking by time.</p></li>
+<li><p>HP_NORMAL: Heat pump in normal operation.</p></li>
+<li><p>HP_INTENSIFIED: Switch-on recommendations for increased operation.</p></li>
+<li><p>HP_FORCED: Forced start-up command (as far as this is possible within the control settings of the heat pump).</p></li>
+</ul>
+</td>
+<td><p><a class="reference internal" href="functional-profile-categories/heatpump-control.html#heatpump-control"><span class="std std-ref">Heatpump Controls</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>SG-ReadyStates_bwp</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-Functional-Profile-Type"><span class="xref std std-term">Functional Profile Type</span></a> for heat pumps that support two operation modes. The operating states are
+defined from SG ready - Bundesverband Wärmepumpe e.V. (bwp):</p>
+<ul class="simple">
+<li><p>HP_LOCKED: Heat pump blocked - for example fixed blocking by time (operation mode 1 from SG Ready bwp).</p></li>
+<li><p>HP_NORMAL: Heat pump in normal operation mode (operation mode 2 from SG Ready bwp).</p></li>
+</ul>
+</td>
+<td><p><a class="reference internal" href="functional-profile-categories/heatpump-control.html#heatpump-control"><span class="std std-ref">Heatpump Controls</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>UniDirFlexFeedInMgmt</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-Functional-Profile-Type"><span class="xref std std-term">Functional Profile Type</span></a> for Energy Management Systems (<a class="reference internal" href="glossary.html#term-EMS"><span class="xref std std-term">EMS</span></a>) that regulate feed-in
+and have a communication interface to power grid operator by controlling different operation modes:</p>
+<ul class="simple">
+<li><p>FI_NORMAL: The load management optimizes feed-in according to user-defined criteria within the allowed power range.</p></li>
+<li><p>FI_REDUCED: In reduced operation, feed-in power is reduced by an agreed-upon amount in percentage (curtailment).</p></li>
+<li><p>FI_MAX: In maximum operation, the load management allows for maximum feed-in power.</p></li>
+<li><p>FI_LOCKED: In the “locked” operating mode, no energy is allowed to be fed into the grid.</p></li>
+</ul>
+</td>
+<td><p><a class="reference internal" href="functional-profile-categories/sgcp.html#sgcp"><span class="std std-ref">SGCP</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>UniDirFlexLoadMgmt</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-Functional-Profile-Type"><span class="xref std std-term">Functional Profile Type</span></a> for Energy Management Sytems (<a class="reference internal" href="glossary.html#term-EMS"><span class="xref std std-term">EMS</span></a>) that allow controlling the power
+consumption by the power grid operator through a communication interface. The profile supports for operation
+modes:</p>
+<ul class="simple">
+<li><p>LD_NORMAL: The <a class="reference internal" href="glossary.html#term-EMS"><span class="xref std std-term">EMS</span></a> optimizes power consumption according to user-defined criteria within the allowed power range.</p></li>
+<li><p>LD_REDUCED: Power consumption is reduced by an agreed-upon amount in percentage (curtailment) if possible.</p></li>
+<li><p>LD_MAX: The <a class="reference internal" href="glossary.html#term-EMS"><span class="xref std std-term">EMS</span></a> allows for maximum power consumption</p></li>
+<li><p>LD_LOCKED: No or a defined minimum energy (minLoad) is allowed to be drawn from the grid.
+This can be achieved through a reduction in power consumption during a maximum duration (maxLockTimeMinutes).</p></li>
+</ul>
+</td>
+<td><p><a class="reference internal" href="functional-profile-categories/sgcp.html#sgcp"><span class="std std-ref">SGCP</span></a></p></td>
+</tr>
 </tbody>
 </table>
 </section>
 <section id="level-of-operation">
 <span id="id3"></span><h2><a class="reference internal" href="glossary.html#term-Level-Of-Operation"><span class="xref std std-term">Level of Operation</span></a><a class="headerlink" href="#level-of-operation" title="Permalink to this heading"></a></h2>
-<p>LevelOfOperation defines a complexity level of the <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> device controls:</p>
+<p>Level Of Operation defines a complexity level of the <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> device controls:</p>
 <table class="docutils align-default" id="id10">
 <caption><span class="caption-number">Table 5 </span><span class="caption-text">Level of Operation</span><a class="headerlink" href="#id10" title="Permalink to this table"></a></caption>
 <colgroup>
@@ -530,7 +581,14 @@ like compressor power consumption or compressor rotations per minute.</p></td>
 <tbody>
 <tr class="row-even"><td><p>m</p></td>
 <td><p>Monitoring</p></td>
-<td><p>Supports reading of values and settings</p></td>
+<td><p>Has <a class="reference internal" href="glossary.html#term-Data-Points"><span class="xref std std-term">Data Points</span></a> that provide read functionality.  ‘m’ can be used on its own or combined with one of the
+levels 1-6:</p>
+<ul class="simple">
+<li><p>When ‘m’ stands alone, the <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> requires only read operations to be supported.</p></li>
+<li><p>When ‘m’ is combined with a number (e.g. 1m, 2m, 4m), the <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> requires both read and
+write operations to be supported for the value type corresponding to the level.</p></li>
+</ul>
+</td>
 </tr>
 <tr class="row-odd"><td><p>1</p></td>
 <td><p>On-Off</p></td>
@@ -565,8 +623,6 @@ the inclusion of a digital twin.</p></td>
 </tr>
 </tbody>
 </table>
-<p>Levels 1-6 can be combined with a the monitoring (m) level if they offer
-read-only data points</p>
 <p>(see
 <a class="reference external" href="https://github.com/SmartGridready/SGrSpecifications/blob/master/SchemaDatabase/SGr/Generic/BaseType_LevelOfOperationType.xsd">FunctionalProfileDescription.xsd</a>
 for details…)</p>
@@ -589,7 +645,14 @@ on the definition level they apply either to a specific data point,
 every data point of a functional profile, or the the entire device.</p>
 <p>These attributes are generally used to search for devices that fulfill a
 set of minimum requirements to support a specific use case.</p>
-<table class="docutils align-default">
+<table class="docutils align-default" id="id11">
+<caption><span class="caption-number">Table 6 </span><span class="caption-text">Level of Operation</span><a class="headerlink" href="#id11" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 32.0%" />
+<col style="width: 14.0%" />
+<col style="width: 34.0%" />
+<col style="width: 20.0%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>SGr Attribute</p></th>
 <th class="head"><p>Data Type</p></th>
@@ -598,60 +661,31 @@ set of minimum requirements to support a specific use case.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>MeasuredValueType</p></td>
+<tr class="row-even"><td><p>&lt;MeasuredValueType&gt;</p></td>
 <td><p>enum</p></td>
-<td><p>Me
-asuredValueType:
-type of
-measurement.
-Possible values
-are “value”,
-“min”, max”,
-“average”,
-“stdDev”</p></td>
-<td><p>value</p></td>
+<td><p>Kind of the measured value, possible values are ‘value’, ‘min’, ‘max’, ‘average’, ‘stdDev’ (standard deviation)</p></td>
+<td><p>value, max ..</p></td>
 </tr>
-<tr class="row-odd"><td><p>Specia
-lQualityRequirement</p></td>
+<tr class="row-odd"><td><p>&lt;SpecialQualityRequirement&gt;</p></td>
 <td><p>string</p></td>
-<td><p>indicates
-Quality
-requirements
-fulfilled like
-formal
-certifications</p></td>
+<td><p>Indicates the quality requirements fullfilled by the product.</p></td>
 <td><p>METAS</p></td>
 </tr>
-<tr class="row-even"><td><p>PrecisionPercent</p></td>
+<tr class="row-even"><td><p>&lt;PrecisionPercent&gt;</p></td>
 <td><p>float32</p></td>
-<td><p>the precision of
-a measurement,
-calculation
-result or result
-of a controls
-process</p></td>
+<td><p>The precision of the measurement, calculated result or the result of a process.</p></td>
 <td><p>2.0%</p></td>
 </tr>
-<tr class="row-odd"><td><p>MaximumLatencyTime</p></td>
+<tr class="row-odd"><td><p>&lt;MaximumLatencyTime&gt;</p></td>
 <td><p>float</p></td>
-<td><p>Maximum time in
-milliseconds
-from capturing
-of measured
-value until
-ready at the
-product
-interface
-(i.e
-analog-digital
-conversion time)</p></td>
-<td><p>10 ms</p></td>
+<td><p>Maximum time in milliseconds from capturing of measured value until available at the product interface.
+(e.g. AD conversion time)</p></td>
+<td><p>10ms</p></td>
 </tr>
-<tr class="row-even"><td><p>SampleRate</p></td>
-<td><p>unsignedLong</p></td>
-<td><p>SampleRate in
-milliseconds</p></td>
-<td><p>200 ms</p></td>
+<tr class="row-even"><td><p>&lt;SampleRate&gt;</p></td>
+<td><p>unsigned long</p></td>
+<td><p>Sampling rate in millisecond</p></td>
+<td><p>200ms</p></td>
 </tr>
 </tbody>
 </table>
@@ -666,52 +700,41 @@ initial value. 2. regular communication starts. The communicator
 periodically sets new set values. 3. communication breaks. The device
 receives its last set value. 4. after reaching the timeout the device
 automatically sets the fallback value.</p>
-<figure class="align-default" id="id11">
+<figure class="align-default" id="id12">
 <img alt="SGr Stability Fallback" src="../_images/genAttributes_sstabilityFallback.drawio.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 10 </span><span class="caption-text">SGr Stability Fallback</span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">SGr Stability Fallback</span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
-<table class="docutils align-default">
+<table class="docutils align-default" id="id13">
+<caption><span class="caption-number">Table 7 </span><span class="caption-text">Stability Fallback</span><a class="headerlink" href="#id13" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 26.0%" />
+<col style="width: 10.0%" />
+<col style="width: 50.0%" />
+<col style="width: 14.0%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>Stability Fallback
-Value</p></th>
+<tr class="row-odd"><th class="head"><p>Stabiltiy Fallback Value</p></th>
 <th class="head"><p>Data Type</p></th>
 <th class="head"><p>Description</p></th>
 <th class="head"><p>Example</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>maxReceiveTime</p></td>
+<tr class="row-even"><td><p>&lt;maxReceiveTime&gt;</p></td>
 <td><p>float</p></td>
-<td><p>If the device
-does not receive
-any
-communication
-within this time
-the device
-applies the
-fallback.</p></td>
+<td><p>If the device does not receive any communication within this time the device applies the fallback.</p></td>
 <td><p>3600.0 s</p></td>
 </tr>
-<tr class="row-odd"><td><p>initValue</p></td>
+<tr class="row-odd"><td><p>&lt;initValue&gt;</p></td>
 <td><p>float</p></td>
-<td><p>Initial value
-the device
-before the
-communicator
-sets this value
-(e.g.at
-startup, or
-beginning of
-cycle).</p></td>
+<td><p>Initial value the device before the communicator sets this value (e.g.at   startup, obeginning cycle).</p></td>
 <td><p>6.0 A</p></td>
 </tr>
-<tr class="row-even"><td><p>fallbackValue</p></td>
+<tr class="row-even"><td><p>&lt;fallbackValue&gt;</p></td>
 <td><p>float</p></td>
-<td><p>Value the device
-uses in case of
-a fallback</p></td>
+<td><p>Value the device uses in case of a fallback.</p></td>
 <td><p>6.0 A</p></td>
 </tr>
 </tbody>
@@ -732,75 +755,43 @@ latest after winTms 3. the ramp reaches the new target value after
 rmpTms 4. if no new target value is received, the device starts
 returning to the old target value after rvtTms 5. the ramp reaches the
 old target value after rmpTms</p>
-<figure class="align-default" id="id12">
+<figure class="align-default">
 <img alt="SGr Smooth Transition" src="../_images/genAttributes_smoothTransition.drawio.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 11 </span><span class="caption-text">SGr Smooth Transition</span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
-</figcaption>
 </figure>
 <table class="docutils align-default">
+<colgroup>
+<col style="width: 26.0%" />
+<col style="width: 14.0%" />
+<col style="width: 50.0%" />
+<col style="width: 10.0%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>Smooth Transition
-Value</p></th>
+<tr class="row-odd"><th class="head"><p>Smooth Transition Value</p></th>
 <th class="head"><p>Data Type</p></th>
 <th class="head"><p>Description</p></th>
 <th class="head"><p>Example</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>winTms</p></td>
+<tr class="row-even"><td><p>&lt;winTms&gt;</p></td>
 <td><p>unsigned long</p></td>
-<td><p>indicates a time
-window in which
-the new
-operating mode
-is started
-randomly. The
-time window
-begins with the
-start command of
-the operating
-mode. The value
-0 means
-immediate</p></td>
+<td><p>indicates a time window in which the new operating mode is started randomly.
+The time window begins with the start command of the operating mode.
+The value 0 means immediate.</p></td>
 <td><p>300 s</p></td>
 </tr>
-<tr class="row-odd"><td><p>rmpTms</p></td>
+<tr class="row-odd"><td><p>&lt;rmpTms&gt;</p></td>
 <td><p>unsigned long</p></td>
-<td><p>specifies how
-quickly the
-changes should
-be made. The
-corresponding
-value is
-gradually
-changed from the
-old to the new
-value in the
-specified time.</p></td>
+<td><p>Specifies how quickly the changes should be made.
+The corresponding value is gradually changed from the old to the new value in the specified time.</p></td>
 <td><p>450 s</p></td>
 </tr>
-<tr class="row-even"><td><p>rvrtTms</p></td>
+<tr class="row-even"><td><p>&lt;rvrtTms&gt;</p></td>
 <td><p>unsigned long</p></td>
-<td><p>determines how
-long the
-operating mode
-should be
-active. When the
-time has
-elapsed, the
-operating mode
-is automatically
-terminated. If
-rvrtTms = 0
-(standard
-value), the
-operating mode
-remains active
-until a new
-command is
-received.</p></td>
-<td><p>7’200 s</p></td>
+<td><p>Determines how long the operating mode should be active. When the time has elapsed, the operating
+mode is automatically terminated. If rvrtTms = 0 (standard value), the operating mode remains active
+until a new command is received.</p></td>
+<td><p>600 s</p></td>
 </tr>
 </tbody>
 </table>
@@ -811,28 +802,33 @@ received.</p></td>
 presence of any quality attributes either on functional profile or data
 point level indicate that the com handler will provide these dynamic
 attributes at run time (see documentation of SGr com handler libs)</p>
-<table class="docutils align-default">
+<table class="docutils align-default" id="id14">
+<caption><span class="caption-number">Table 8 </span><span class="caption-text">Data Point Quality</span><a class="headerlink" href="#id14" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 28.0%" />
+<col style="width: 10.0%" />
+<col style="width: 40.0%" />
+<col style="width: 22.0%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>SGr Attribute</p></th>
+<tr class="row-odd"><th class="head"><p>SGrAttribute</p></th>
 <th class="head"><p>Data Type</p></th>
 <th class="head"><p>Description</p></th>
 <th class="head"><p>Example</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>MeasuredValueSource</p></td>
+<tr class="row-even"><td><p>&lt;MeasuredValueSource&gt;</p></td>
 <td><p>enum</p></td>
-<td><p>Value source
-kind related to
-SGr level 6
-applications.
-Potential values
-are
-measuredValue,
-calculatedValue,
-empiricalValue</p></td>
-<td><p>mea
-suredValue</p></td>
+<td><p>Value source kind related to SGr level 6 applications.
+Potential values are:</p>
+<ul class="simple">
+<li><p>measuredValue</p></li>
+<li><p>calculatedValue</p></li>
+<li><p>empiricalValue</p></li>
+</ul>
+</td>
+<td><p>measuredValue</p></td>
 </tr>
 </tbody>
 </table>
@@ -842,6 +838,12 @@ suredValue</p></td>
 <p>Various function profiles require boundaries to set points with respect
 to curtailment or home energy management systems.</p>
 <table class="docutils align-default">
+<colgroup>
+<col style="width: 24.0%" />
+<col style="width: 24.0%" />
+<col style="width: 32.0%" />
+<col style="width: 20.0%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>SGr Attribute</p></th>
 <th class="head"><p>Data Type</p></th>
@@ -850,99 +852,46 @@ to curtailment or home energy management systems.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Curtailment</p></td>
+<tr class="row-even"><td><p>&lt;Curtailment&gt;</p></td>
 <td><p>float</p></td>
-<td><p>Used in
-state-based
-reduction
-schemes. This
-value specifies
-the reduction in
-percent for the
-reduced
-operation mode.</p></td>
+<td><p>Used in state-based reduction schemes.
+This value specifies the reduction in percent for the reduced operation mode.</p></td>
 <td><p>40%</p></td>
 </tr>
-<tr class="row-odd"><td><p>MimimumLoad</p></td>
+<tr class="row-odd"><td><p>&lt;MimimumLoad&gt;</p></td>
 <td><p>float</p></td>
-<td><p>Used in
-state-based
-reduction
-schemes. In
-locked mode the
-product will not
-reduce its load
-below this
-minimum value</p></td>
+<td><p>Used in state-based reduction schemes.
+In locked mode the product will not reduce its load below this minimum value.</p></td>
 <td><p>2 kW</p></td>
 </tr>
-<tr class="row-even"><td><p>MaximumLockTime</p></td>
+<tr class="row-even"><td><p>&lt;MaximumLockTime&gt;</p></td>
 <td><p>float</p></td>
-<td><p>used in
-state-based
-reduction
-schemes. A
-reduction
-command to
-reduced or
-locked mode
-shall not be
-applied longer
-than this
-specified
-duration</p></td>
+<td><p>used in state-based reduction schemes. A reduction command to reduced or locked mode
+shall not be applied longer than this specified duration.</p></td>
 <td><p>20 min</p></td>
 </tr>
-<tr class="row-odd"><td><p>MinimumRunTime</p></td>
+<tr class="row-odd"><td><p>&lt;MinimumRunTime&gt;</p></td>
 <td><p>float</p></td>
-<td><p>Used in
-state-based
-reduction
-schemes. When
-returning to
-normal mode the
-normal mode must
-be guaranteed
-for at least the
-specified
-duration</p></td>
+<td><p>Used in state-based reduction schemes. When returning to normal mode the normal mode
+must be guaranteed for at least the specified duration.</p></td>
 <td><p>15 min</p></td>
 </tr>
-<tr class="row-even"><td><p>ValueByTimeTable</p></td>
+<tr class="row-even"><td><p>&lt;ValueByTimeTable&gt;</p></td>
 <td><p>float</p></td>
-<td><p>Used for time
-tables to
-specify the
-temporal
-separation of
-data curve
-points</p></td>
+<td><p>Used for time tables to specify the temporal separation of data curve points</p></td>
 <td><p>1 min</p></td>
 </tr>
-<tr class="row-odd"><td><p>FlexAssistance</p></td>
-<td><p>sgr:F
-lexAssistance</p></td>
-<td><p>Systems with
-more than One
-communicator
-need a
-definition of
-the priority of
-the commands /
-demands for a
-flexibility
-requirement.
-This element
-defines the kind
-of a such a
-command
-(serviceable for
-net (DSO),
-energy or system
-(TNO)) and its
-priority (SHALL
-/ SHOULD / MAY)</p></td>
-<td></td>
+<tr class="row-odd"><td><p>&lt;FlexAssistance&gt;</p></td>
+<td><p>&lt;sgr:FlexAssistance&gt;</p></td>
+<td><p>Systems with more than One communicator need a definition of the priority of the
+commands/demands for a flexibility requirement. This element defines the kind
+of a such a command:</p>
+<ul class="simple">
+<li><p>serviceable by: <a class="reference internal" href="glossary.html#term-DSO"><span class="xref std std-term">DSO</span></a> / <a class="reference internal" href="glossary.html#term-TNO"><span class="xref std std-term">TNO</span></a></p></li>
+<li><p>the priority SHALL / SHOULD / MAY.</p></li>
+</ul>
+</td>
+<td><p>DSO SHOULD, obligedTo: 3600 sec</p></td>
 </tr>
 </tbody>
 </table>
@@ -953,8 +902,8 @@ priority (SHALL
 <p>A <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> mainly defines a set of <a class="reference internal" href="glossary.html#term-Data-Points"><span class="xref std std-term">Data Points</span></a>. The <a class="reference internal" href="glossary.html#term-Data-Points"><span class="xref std std-term">Data Points</span></a> define access points to values
 that can be read from or written to the product.</p>
 <p>The <a class="reference internal" href="glossary.html#term-Data-Points"><span class="xref std std-term">Data Points</span></a> are defined by the following attributes:</p>
-<table class="docutils align-default" id="id13">
-<caption><span class="caption-number">Table 6 </span><span class="caption-text"><a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> Attributes</span><a class="headerlink" href="#id13" title="Permalink to this table"></a></caption>
+<table class="docutils align-default" id="id15">
+<caption><span class="caption-number">Table 9 </span><span class="caption-text"><a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> Attributes</span><a class="headerlink" href="#id15" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 30.0%" />
 <col style="width: 70.0%" />
@@ -1023,15 +972,6 @@ Functional profile descriptions should be structured as follows:
 * Detailed explanation, including very attribute.
 * Description on how to apply the functional profile concerning presence level (i.e. how to handle recommended and optional <a class="reference internal" href="glossary.html#term-Data-Points"><span class="xref std std-term">Data Points</span></a>)</p>
 </section>
-<section id="functional-profile-version-number">
-<span id="version-number"></span><h3><a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> Version Number<a class="headerlink" href="#functional-profile-version-number" title="Permalink to this heading"></a></h3>
-<p>Version of the functional profile.</p>
-<ul class="simple">
-<li><p>changes in primaryVersionNumber indicate breaking changes,</p></li>
-<li><p>changes in secondaryVersionNumber indicate complimentary changes,</p></li>
-<li><p>changes in subReleaseVersionNumber are without impact on the functionality</p></li>
-</ul>
-</section>
 </section>
 <section id="functional-profile-release-process">
 <h2><a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> Release Process<a class="headerlink" href="#functional-profile-release-process" title="Permalink to this heading"></a></h2>
@@ -1043,10 +983,10 @@ profiles.</p>
 <section id="states">
 <h3>States<a class="headerlink" href="#states" title="Permalink to this heading"></a></h3>
 <p>A <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> cycles through the following states:</p>
-<figure class="align-default" id="id14">
+<figure class="align-default" id="id16">
 <img alt="SGr Functional Profile Process" src="../_images/functionalProfile_process.drawio.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text">SGr Functional Profile Process</span><a class="headerlink" href="#id14" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">SGr Functional Profile Process</span><a class="headerlink" href="#id16" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <table class="docutils align-default">
@@ -1142,7 +1082,7 @@ further declarations of products and communicators. However, they will
 remain the data base for legacy reasons.</p>
 </section>
 <section id="versioning-scheme">
-<h3>Versioning Scheme<a class="headerlink" href="#versioning-scheme" title="Permalink to this heading"></a></h3>
+<span id="version-number"></span><h3>Versioning Scheme<a class="headerlink" href="#versioning-scheme" title="Permalink to this heading"></a></h3>
 <p><a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> are numbered as follows: <code class="docutils literal notranslate"><span class="pre">Major.Minor.Build</span></code></p>
 <table class="docutils align-default">
 <thead>
@@ -1173,8 +1113,8 @@ as descriptions, translations, remarks</p></td>
 <section id="release-notes">
 <h3>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this heading"></a></h3>
 <p>The release notes section contains meta data that describe history and current state of the functional profile.</p>
-<table class="docutils align-default" id="id15">
-<caption><span class="caption-number">Table 7 </span><span class="caption-text">Releas Notes</span><a class="headerlink" href="#id15" title="Permalink to this table"></a></caption>
+<table class="docutils align-default" id="id17">
+<caption><span class="caption-number">Table 10 </span><span class="caption-text">Releas Notes</span><a class="headerlink" href="#id17" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 30.0%" />
 <col style="width: 70.0%" />

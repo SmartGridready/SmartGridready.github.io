@@ -8,7 +8,7 @@ It thereby focuses entirely on the functionality. Any transport-specific details
 (e.g. on how to get or set a :term:`Data Point` on a specific product).
 
 The main intent is to allow communicator manufacturers to easily implement their use cases based on logically grouped
-:term:`Data Points`, while device-specific communication details are handled SmartGridread CommHandler library.
+:term:`Data Points`, while device-specific communication details are handled SmartGridread Communication Handler library.
 
 Any :term:`Product` that supports the :term:`Functional Profiles` required for a specific use case is therefore automatically
 compatible and can be used without changing the :term:`Communicator` implementation.
@@ -106,10 +106,9 @@ description):
       - Used with battery :term:`Products`, e.g. batteries that store electrical energy produced by a :term:`PVA`.
       - :ref:`battery`
 
-    * - **BatterSystem**
+    * - **BatterySystem**
       - Used with combined systems that consist of a battery and an :ref:`Inverter`
       - :ref:`battery-system`
-
 
     * - **DeviceInformation**
       - Has no predefined :term:`Data Points`. Used to provide device information and add manufacturer proprietary
@@ -132,10 +131,9 @@ description):
       - Used with :term:`Products` that allow controlling heat pumps and reading information from heat pumps.
       - :ref:`heating-circuit`
 
-
     * - **Inverter**
-      - Used with :term:`Products` that allow controlling and reading status from :term:`PV-Inverter` devices.
-      - :ref:`inverter`
+      - Used with :term:`Products` that allow controlling and reading status from :term:`PV-Inverter` devices
+      - :ref:`inverter` and :ref:`battery-system` devices.
 
     * - **Metering**
       - Used with :term:`Products` that provide metering an measurement functionalities like electrical power or energy
@@ -179,8 +177,20 @@ description):
 :term:`Functional Profile Types`
 --------------------------------
 
-The :term:`Functional Profile Types` are assigned to a :term:`Functional Profile Category` and define a set of related
-functionalities and associated :term:`Data Points`.
+The :term:`Functional Profile Type` defines the set of functionalities provided by a :term:`Functional Profile`.
+:term:`Functional Profiles` of a given type can appear in multiple :term:`Functional Profile Categories`.
+For example, the EnergyMonitor :term:`Functional Profile Type` may be implemented by devices in the
+:ref:`heatpump-control`, :ref:`battery`, and :ref:`battery-system` categories.
+
+Even if a :term:`Functional Profile Type` defines a distinct set of functionalities the the functional profile
+can come in different flavours defined by the :ref:`functional_profile_category` and :ref:`level_of_operation`.
+
+Therefore a :term:`Functional Profile` is uniquely defined by:
+
+* Functional Profile Category: see :ref:`functional_profile_category`
+* Functional Profile Type: see: :ref:`functional_profile_types`
+* Level Of Operation: see :ref:`level_of_operation`
+* Version Number: see :ref:`version_number`
 
 .. list-table:: :term:`Functional Profile Types`
     :header-rows: 1
@@ -282,6 +292,52 @@ functionalities and associated :term:`Data Points`.
 
         It supports single phase, multi phase and overall measurement.
       - :ref:`metering`
+    * - Recative Power AC
+      - :term:`Functional Profile Type` to measure the reactive power. Supports single phase and multiphase reactive
+        power measurement.
+      - :ref:`metering`
+    * - SG-ReadyStates
+      - :term:`Functional Profile Type` for heat pumps that support four operation modes. The operating states are
+        defined from SG ready - Bundesverband Wärmepumpe e.V. (bwp):
+
+        * HP_LOCKED: Heat pump blocked - for example fixed blocking by time.
+        * HP_NORMAL: Heat pump in normal operation.
+        * HP_INTENSIFIED: Switch-on recommendations for increased operation.
+        * HP_FORCED: Forced start-up command (as far as this is possible within the control settings of the heat pump).
+
+      - :ref:`heatpump-control`
+
+    * - SG-ReadyStates_bwp
+      - :term:`Functional Profile Type` for heat pumps that support two operation modes. The operating states are
+        defined from SG ready - Bundesverband Wärmepumpe e.V. (bwp):
+
+        * HP_LOCKED: Heat pump blocked - for example fixed blocking by time (operation mode 1 from SG Ready bwp).
+        * HP_NORMAL: Heat pump in normal operation mode (operation mode 2 from SG Ready bwp).
+
+      - :ref:`heatpump-control`
+    * - UniDirFlexFeedInMgmt
+      - :term:`Functional Profile Type` for Energy Management Systems (:term:`EMS`) that regulate feed-in
+        and have a communication interface to power grid operator by controlling different operation modes:
+
+        * FI_NORMAL: The load management optimizes feed-in according to user-defined criteria within the allowed power range.
+        * FI_REDUCED: In reduced operation, feed-in power is reduced by an agreed-upon amount in percentage (curtailment).
+        * FI_MAX: In maximum operation, the load management allows for maximum feed-in power.
+        * FI_LOCKED: In the "locked" operating mode, no energy is allowed to be fed into the grid.
+
+      - :ref:`sgcp`
+    * - UniDirFlexLoadMgmt
+      - :term:`Functional Profile Type` for Energy Management Sytems (:term:`EMS`) that allow controlling the power
+        consumption by the power grid operator through a communication interface. The profile supports for operation
+        modes:
+
+        * LD_NORMAL: The :term:`EMS` optimizes power consumption according to user-defined criteria within the allowed power range.
+        * LD_REDUCED: Power consumption is reduced by an agreed-upon amount in percentage (curtailment) if possible.
+        * LD_MAX: The :term:`EMS` allows for maximum power consumption
+        * LD_LOCKED: No or a defined minimum energy (minLoad) is allowed to be drawn from the grid.
+          This can be achieved through a reduction in power consumption during a maximum duration (maxLockTimeMinutes).
+
+      - :ref:`sgcp`
+
 
 
 .. _level_of_operation:
@@ -289,7 +345,7 @@ functionalities and associated :term:`Data Points`.
 :term:`Level of Operation`
 ---------------------------
 
-LevelOfOperation defines a complexity level of the :term:`Product` device controls:
+Level Of Operation defines a complexity level of the :term:`Product` device controls:
 
 .. list-table:: Level of Operation
     :header-rows: 1
@@ -300,7 +356,13 @@ LevelOfOperation defines a complexity level of the :term:`Product` device contro
       - Details
     * - m
       - Monitoring
-      - Supports reading of values and settings
+      - Has :term:`Data Points` that provide read functionality.  'm' can be used on its own or combined with one of the
+        levels 1-6:
+
+        * When 'm' stands alone, the :term:`Functional Profile` requires only read operations to be supported.
+        * When 'm' is combined with a number (e.g. 1m, 2m, 4m), the :term:`Functional Profile` requires both read and
+          write operations to be supported for the value type corresponding to the level.
+
     * - 1
       - On-Off
       - The interface allows switching between two discrete operating states
@@ -326,10 +388,6 @@ LevelOfOperation defines a complexity level of the :term:`Product` device contro
       - The interface allows the setting of new setpoints and control parameters /
         characteristic curve values based on energy production or load forecasts, up to
         the inclusion of a digital twin.
-
-
-Levels 1-6 can be combined with a the monitoring (m) level if they offer
-read-only data points
 
 (see
 `FunctionalProfileDescription.xsd <https://github.com/SmartGridready/SGrSpecifications/blob/master/SchemaDatabase/SGr/Generic/BaseType_LevelOfOperationType.xsd>`__
@@ -362,48 +420,36 @@ every data point of a functional profile, or the the entire device.
 These attributes are generally used to search for devices that fulfill a
 set of minimum requirements to support a specific use case.
 
-+---------------------+---------------+------------------+------------+
-| SGr Attribute       | Data Type     | Description      | Example    |
-+=====================+===============+==================+============+
-| MeasuredValueType   | enum          | Me               | value      |
-|                     |               | asuredValueType: |            |
-|                     |               | type of          |            |
-|                     |               | measurement.     |            |
-|                     |               | Possible values  |            |
-|                     |               | are “value”,     |            |
-|                     |               | “min”, max”,     |            |
-|                     |               | “average”,       |            |
-|                     |               | “stdDev”         |            |
-+---------------------+---------------+------------------+------------+
-| Specia              | string        | indicates        | METAS      |
-| lQualityRequirement |               | Quality          |            |
-|                     |               | requirements     |            |
-|                     |               | fulfilled like   |            |
-|                     |               | formal           |            |
-|                     |               | certifications   |            |
-+---------------------+---------------+------------------+------------+
-| PrecisionPercent    | float32       | the precision of | 2.0%       |
-|                     |               | a measurement,   |            |
-|                     |               | calculation      |            |
-|                     |               | result or result |            |
-|                     |               | of a controls    |            |
-|                     |               | process          |            |
-+---------------------+---------------+------------------+------------+
-| MaximumLatencyTime  | float         | Maximum time in  | 10 ms      |
-|                     |               | milliseconds     |            |
-|                     |               | from capturing   |            |
-|                     |               | of measured      |            |
-|                     |               | value until      |            |
-|                     |               | ready at the     |            |
-|                     |               | product          |            |
-|                     |               | interface        |            |
-|                     |               | (i.e             |            |
-|                     |               | analog-digital   |            |
-|                     |               | conversion time) |            |
-+---------------------+---------------+------------------+------------+
-| SampleRate          | unsignedLong  | SampleRate in    | 200 ms     |
-|                     |               | milliseconds     |            |
-+---------------------+---------------+------------------+------------+
+.. list-table:: Level of Operation
+    :header-rows: 1
+    :widths: 32 14 34 20
+
+    * - SGr Attribute
+      - Data Type
+      - Description
+      - Example
+    * - <MeasuredValueType>
+      - enum
+      - Kind of the measured value, possible values are 'value', 'min', 'max', 'average', 'stdDev' (standard deviation)
+      - value, max ..
+    * - <SpecialQualityRequirement>
+      - string
+      - Indicates the quality requirements fullfilled by the product.
+      - METAS
+    * - <PrecisionPercent>
+      - float32
+      - The precision of the measurement, calculated result or the result of a process.
+      - 2.0%
+    * - <MaximumLatencyTime>
+      - float
+      - Maximum time in milliseconds from capturing of measured value until available at the product interface.
+        (e.g. AD conversion time)
+      - 10ms
+    * - <SampleRate>
+      - unsigned long
+      - Sampling rate in millisecond
+      - 200ms
+
 
 .. _stability_fallback:
 
@@ -425,33 +471,27 @@ automatically sets the fallback value.
 
    SGr Stability Fallback
 
-+---------------------+---------------+------------------+------------+
-| Stability Fallback  | Data Type     | Description      | Example    |
-| Value               |               |                  |            |
-+=====================+===============+==================+============+
-| maxReceiveTime      | float         | If the device    | 3600.0 s   |
-|                     |               | does not receive |            |
-|                     |               | any              |            |
-|                     |               | communication    |            |
-|                     |               | within this time |            |
-|                     |               | the device       |            |
-|                     |               | applies the      |            |
-|                     |               | fallback.        |            |
-+---------------------+---------------+------------------+------------+
-| initValue           | float         | Initial value    | 6.0 A      |
-|                     |               | the device       |            |
-|                     |               | before the       |            |
-|                     |               | communicator     |            |
-|                     |               | sets this value  |            |
-|                     |               | (e.g.at          |            |
-|                     |               | startup, or      |            |
-|                     |               | beginning of     |            |
-|                     |               | cycle).          |            |
-+---------------------+---------------+------------------+------------+
-| fallbackValue       | float         | Value the device | 6.0 A      |
-|                     |               | uses in case of  |            |
-|                     |               | a fallback       |            |
-+---------------------+---------------+------------------+------------+
+.. list-table:: Stability Fallback
+    :header-rows: 1
+    :widths: 26 10 50 14
+
+    * - Stabiltiy Fallback Value
+      - Data Type
+      - Description
+      - Example
+    * - <maxReceiveTime>
+      - float
+      - If the device does not receive any communication within this time the device applies the fallback.
+      - 3600.0 s
+    * - <initValue>
+      - float
+      - Initial value the device before the communicator sets this value (e.g.at   startup, obeginning cycle).
+      - 6.0 A
+    * - <fallbackValue>
+      - float
+      - Value the device uses in case of a fallback.
+      - 6.0 A
+
 
 .. _smooth_transition:
 
@@ -476,57 +516,32 @@ old target value after rmpTms
 .. figure:: images/genAttributes_smoothTransition.drawio.png
    :alt: SGr Smooth Transition
 
-   SGr Smooth Transition
+.. list-table::
+    :header-rows: 1
+    :widths: 26 14 50 10
 
-+---------------------+---------------+------------------+------------+
-| Smooth Transition   | Data Type     | Description      | Example    |
-| Value               |               |                  |            |
-+=====================+===============+==================+============+
-| winTms              | unsigned long | indicates a time | 300 s      |
-|                     |               | window in which  |            |
-|                     |               | the new          |            |
-|                     |               | operating mode   |            |
-|                     |               | is started       |            |
-|                     |               | randomly. The    |            |
-|                     |               | time window      |            |
-|                     |               | begins with the  |            |
-|                     |               | start command of |            |
-|                     |               | the operating    |            |
-|                     |               | mode. The value  |            |
-|                     |               | 0 means          |            |
-|                     |               | immediate        |            |
-+---------------------+---------------+------------------+------------+
-| rmpTms              | unsigned long | specifies how    | 450 s      |
-|                     |               | quickly the      |            |
-|                     |               | changes should   |            |
-|                     |               | be made. The     |            |
-|                     |               | corresponding    |            |
-|                     |               | value is         |            |
-|                     |               | gradually        |            |
-|                     |               | changed from the |            |
-|                     |               | old to the new   |            |
-|                     |               | value in the     |            |
-|                     |               | specified time.  |            |
-+---------------------+---------------+------------------+------------+
-| rvrtTms             | unsigned long | determines how   | 7’200 s    |
-|                     |               | long the         |            |
-|                     |               | operating mode   |            |
-|                     |               | should be        |            |
-|                     |               | active. When the |            |
-|                     |               | time has         |            |
-|                     |               | elapsed, the     |            |
-|                     |               | operating mode   |            |
-|                     |               | is automatically |            |
-|                     |               | terminated. If   |            |
-|                     |               | rvrtTms = 0      |            |
-|                     |               | (standard        |            |
-|                     |               | value), the      |            |
-|                     |               | operating mode   |            |
-|                     |               | remains active   |            |
-|                     |               | until a new      |            |
-|                     |               | command is       |            |
-|                     |               | received.        |            |
-+---------------------+---------------+------------------+------------+
+    * - Smooth Transition Value
+      - Data Type
+      - Description
+      - Example
+    * - <winTms>
+      - unsigned long
+      - indicates a time window in which the new operating mode is started randomly.
+        The time window begins with the start command of the operating mode.
+        The value 0 means immediate.
+      - 300 s
+    * - <rmpTms>
+      - unsigned long
+      - Specifies how quickly the changes should be made.
+        The corresponding value is gradually changed from the old to the new value in the specified time.
+      - 450 s
+    * - <rvrtTms>
+      - unsigned long
+      - Determines how long the operating mode should be active. When the time has elapsed, the operating
+        mode is automatically terminated. If rvrtTms = 0 (standard value), the operating mode remains active
+        until a new command is received.
+      - 600 s
+
 
 .. _datapoint_quality:
 
@@ -538,19 +553,26 @@ presence of any quality attributes either on functional profile or data
 point level indicate that the com handler will provide these dynamic
 attributes at run time (see documentation of SGr com handler libs)
 
-+---------------------+---------------+------------------+------------+
-| SGr Attribute       | Data Type     | Description      | Example    |
-+=====================+===============+==================+============+
-| MeasuredValueSource | enum          | Value source     | mea        |
-|                     |               | kind related to  | suredValue |
-|                     |               | SGr level 6      |            |
-|                     |               | applications.    |            |
-|                     |               | Potential values |            |
-|                     |               | are              |            |
-|                     |               | measuredValue,   |            |
-|                     |               | calculatedValue, |            |
-|                     |               | empiricalValue   |            |
-+---------------------+---------------+------------------+------------+
+
+.. list-table:: Data Point Quality
+    :header-rows: 1
+    :widths: 28 10 40 22
+
+    * - SGrAttribute
+      - Data Type
+      - Description
+      - Example
+    * - <MeasuredValueSource>
+      - enum
+      - Value source kind related to SGr level 6 applications.
+        Potential values are:
+
+        * measuredValue
+        * calculatedValue
+        * empiricalValue
+
+      - measuredValue
+
 
 .. _curtailment:
 
@@ -560,84 +582,48 @@ Curtailment
 Various function profiles require boundaries to set points with respect
 to curtailment or home energy management systems.
 
-+---------------------+---------------+------------------+------------+
-| SGr Attribute       | Data Type     | Description      | Example    |
-+=====================+===============+==================+============+
-| Curtailment         | float         | Used in          | 40%        |
-|                     |               | state-based      |            |
-|                     |               | reduction        |            |
-|                     |               | schemes. This    |            |
-|                     |               | value specifies  |            |
-|                     |               | the reduction in |            |
-|                     |               | percent for the  |            |
-|                     |               | reduced          |            |
-|                     |               | operation mode.  |            |
-+---------------------+---------------+------------------+------------+
-| MimimumLoad         | float         | Used in          | 2 kW       |
-|                     |               | state-based      |            |
-|                     |               | reduction        |            |
-|                     |               | schemes. In      |            |
-|                     |               | locked mode the  |            |
-|                     |               | product will not |            |
-|                     |               | reduce its load  |            |
-|                     |               | below this       |            |
-|                     |               | minimum value    |            |
-+---------------------+---------------+------------------+------------+
-| MaximumLockTime     | float         | used in          | 20 min     |
-|                     |               | state-based      |            |
-|                     |               | reduction        |            |
-|                     |               | schemes. A       |            |
-|                     |               | reduction        |            |
-|                     |               | command to       |            |
-|                     |               | reduced or       |            |
-|                     |               | locked mode      |            |
-|                     |               | shall not be     |            |
-|                     |               | applied longer   |            |
-|                     |               | than this        |            |
-|                     |               | specified        |            |
-|                     |               | duration         |            |
-+---------------------+---------------+------------------+------------+
-| MinimumRunTime      | float         | Used in          | 15 min     |
-|                     |               | state-based      |            |
-|                     |               | reduction        |            |
-|                     |               | schemes. When    |            |
-|                     |               | returning to     |            |
-|                     |               | normal mode the  |            |
-|                     |               | normal mode must |            |
-|                     |               | be guaranteed    |            |
-|                     |               | for at least the |            |
-|                     |               | specified        |            |
-|                     |               | duration         |            |
-+---------------------+---------------+------------------+------------+
-| ValueByTimeTable    | float         | Used for time    | 1 min      |
-|                     |               | tables to        |            |
-|                     |               | specify the      |            |
-|                     |               | temporal         |            |
-|                     |               | separation of    |            |
-|                     |               | data curve       |            |
-|                     |               | points           |            |
-+---------------------+---------------+------------------+------------+
-| FlexAssistance      | sgr:F         | Systems with     |            |
-|                     | lexAssistance | more than One    |            |
-|                     |               | communicator     |            |
-|                     |               | need a           |            |
-|                     |               | definition of    |            |
-|                     |               | the priority of  |            |
-|                     |               | the commands /   |            |
-|                     |               | demands for a    |            |
-|                     |               | flexibility      |            |
-|                     |               | requirement.     |            |
-|                     |               | This element     |            |
-|                     |               | defines the kind |            |
-|                     |               | of a such a      |            |
-|                     |               | command          |            |
-|                     |               | (serviceable for |            |
-|                     |               | net (DSO),       |            |
-|                     |               | energy or system |            |
-|                     |               | (TNO)) and its   |            |
-|                     |               | priority (SHALL  |            |
-|                     |               | / SHOULD / MAY)  |            |
-+---------------------+---------------+------------------+------------+
+.. list-table::
+    :header-rows: 1
+    :widths: 24 24 32 20
+
+    * - SGr Attribute
+      - Data Type
+      - Description
+      - Example
+    * - <Curtailment>
+      - float
+      - Used in state-based reduction schemes.
+        This value specifies the reduction in percent for the reduced operation mode.
+      - 40%
+    * - <MimimumLoad>
+      - float
+      - Used in state-based reduction schemes.
+        In locked mode the product will not reduce its load below this minimum value.
+      - 2 kW
+    * - <MaximumLockTime>
+      - float
+      - used in state-based reduction schemes. A reduction command to reduced or locked mode
+        shall not be applied longer than this specified duration.
+      - 20 min
+    * - <MinimumRunTime>
+      - float
+      - Used in state-based reduction schemes. When returning to normal mode the normal mode
+        must be guaranteed for at least the specified duration.
+      - 15 min
+    * - <ValueByTimeTable>
+      - float
+      - Used for time tables to specify the temporal separation of data curve points
+      - 1 min
+    * - <FlexAssistance>
+      - <sgr:FlexAssistance>
+      - Systems with more than One communicator need a definition of the priority of the
+        commands/demands for a flexibility requirement. This element defines the kind
+        of a such a command:
+
+        * serviceable by: :term:`DSO` / :term:`TNO`
+        * the priority SHALL / SHOULD / MAY.
+
+      - DSO SHOULD, obligedTo: 3600 sec
 
 
 :term:`Data Points`
@@ -709,15 +695,6 @@ Functional profile descriptions should be structured as follows:
 * Detailed explanation, including very attribute.
 * Description on how to apply the functional profile concerning presence level (i.e. how to handle recommended and optional :term:`Data Points`)
 
-.. _version_number:
-
-:term:`Functional Profile` Version Number
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Version of the functional profile.
-
-* changes in primaryVersionNumber indicate breaking changes,
-* changes in secondaryVersionNumber indicate complimentary changes,
-* changes in subReleaseVersionNumber are without impact on the functionality
 
 
 :term:`Functional Profile` Release Process
@@ -823,6 +800,8 @@ publishing.
 Revoked :term:`Functional Profiles` are obsolete and shall not be used for
 further declarations of products and communicators. However, they will
 remain the data base for legacy reasons.
+
+.. _version_number:
 
 Versioning Scheme
 ^^^^^^^^^^^^^^^^^

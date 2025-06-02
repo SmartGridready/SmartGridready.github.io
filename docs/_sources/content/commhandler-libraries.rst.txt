@@ -1,7 +1,7 @@
 .. _commhandler-libraries:
 
-SmartGridready CommHandler Libraries
-====================================
+SmartGridready Communication Handler Libraries
+==============================================
 
 * Basic concepts
 * Target audience: Communicator Developers

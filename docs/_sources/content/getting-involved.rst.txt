@@ -5,6 +5,15 @@ Getting Involved
 
 There are many ways to get involved and contribute to the SmartGridready project.
 This chapter outlines the steps to participate based on your interests and expertise.
+Get involved as
+
+* :ref:`planner_architects`
+* :ref:`product_suppliers`
+* :ref:`communicator_suppliers`
+* :ref:`software_developers`
+
+
+.. _planner_architects:
 
 Planners and Architects
 -----------------------
@@ -19,8 +28,9 @@ You can then label your building(s) with the SmartGridready label. See :ref:`sgr
 Refer to the `SmartGridready Library <https:library.smartgridready.com>`_ to get a list of SmartGridready :term:`Products`
 and :term:`Communicator` devices.
 
+.. _product_suppliers:
 
-:term:`Product` suppliers
+:term:`Product` Suppliers
 -------------------------
 
 As a supplier of :term:`Products` that are subject to energy management such as :term:`Smart Meter`, :term:`PVA`,
@@ -29,19 +39,24 @@ heat-pumps, :term:`EVSE` or :term:`EMS`, you can apply for a SmartGridready decl
 See :ref:`sgr-declaration` for detailed instructions.
 
 
-:term:`Communicator` suppliers
+.. _communicator_suppliers:
+
+:term:`Communicator` Suppliers
 ------------------------------
 
 As a supplier of :term:`Communicator` devices that are subject to energy management such as :term:`EMS` or
 :term:`Flexibility Manager` systems you can:
 
-* Integrate the :term:`CommHandler` library into your device software to communicate with SmartGridready :term:`Products`
+* Integrate the :term:`Communication Handler` library into your device software to communicate with SmartGridready :term:`Products`
   using a generic API. See :ref:`commhandler-libraries` for details.
 
 * Make use of the :term:`Intermediary` to communicate with SmartGridready :term:`Products` through a generic REST-API.
   See :ref:`intermediary` for details.
 
 * Apply for SmartGridready declaration label for your :term:`Communicator` device. See :ref:`sgr-declaration` for details.
+
+
+.. _software_developers:
 
 Software Developers
 -------------------

@@ -10,9 +10,7 @@ set BUILDDIR=build
 if not defined SPHINXBUILD (
 	goto set_sphinxbuild
 )
-else (
-	goto begin
-)
+goto begin
 
 :set_sphinxbuild
 set SPHINXBUILD=sphinx-build

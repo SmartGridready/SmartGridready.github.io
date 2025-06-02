@@ -14,8 +14,8 @@ Glossary
         leverages a generic API to seamlessly communicate with :term:`Product` devices. A common example for a
         Communicator is an energy manager device.
 
-    CommHandler
-        The CommHandler is a software component that reads XML-based interface descriptions, which define conversion
+    Communication Handler
+        The Communication Handler is a software component that reads XML-based interface descriptions, which define conversion
         rules between the generic API used by the :term:`Communicator` and :term:`Product`-specific APIs.
         This allows it to adapt to different Products without requiring manual configuration/daption.
 
@@ -28,9 +28,15 @@ Glossary
         Plural form of :term:`Data Point`
 
     Device Driver Adapter
-        Device Driver Adpaters within SmartGridready adapt the API given by the :term:`CommHandler` libraries to
+        Device Driver Adpaters within SmartGridready adapt the API given by the :term:`Communication Handler` libraries to
         a transport layer/technology. SmratGridready provides default adapters for Modbus, Web-Services and MQTT
         as libraries in Python and Java.
+
+    DSO
+        A Distribution System Operator is a company or entity responsible for operating, maintaining, and developing
+        the electricity distribution network — typically the lower-voltage part of the grid that delivers electricity
+        from transmission systems to end consumers (homes, businesses, etc.). See also :term:`TSO` who operates
+        the higher-voltage part of the gris.
 
     EID
         External Interface Description in XML (also known as EI-XML). The EID defines the conversion rules needed to
@@ -80,7 +86,7 @@ Glossary
     Intermediary
         The :term:`Intermediary` is a microservice that exposes a REST API that allows seamless communication with
         SmartGridready compliant :term:`Product`. It can be deployed as a Docker container and is the ideal
-        SmartGridready solution where no :term:`CommHandler` library is available.
+        SmartGridready solution where no :term:`Communication Handler` library is available.
 
     Level Of Operation
         :term:`Level Of Operation` is an attribute of a :term:`Functional Profile` that defines the complexity of
@@ -95,7 +101,7 @@ Glossary
 
     Product
         A Product is a device that provides power management related services and exposes its functionalities through a
-        proprietary interface. The SmartGridready :term:`CommHandler` allows the :term:`Communicator` to communicate with
+        proprietary interface. The SmartGridready :term:`Communication Handler` allows the :term:`Communicator` to communicate with
         the :term:`Product` through a generic interface, independent of the Product's proprietary implementation. Examples for
         :term:`Products` are smart meters, heat pumps, :term:`PVA`, :term:`EVSE`.
 
@@ -111,6 +117,11 @@ Glossary
         Unlike traditional meters, smart meters enable remote readings, dynamic pricing, and better energy management,
         helping both consumers and providers optimize energy use.
 
-    VNB
-        'Verteilnetz Betreiber' stands for a power grid operator.
+    TNO
+        A transmission net operator. Synonym of :term:`TSO`
+
+    TSO
+        A Transmission System Operator is an entity responsible for the transport of electricity over
+        high-voltage transmission networks from power producers to distribution networks or large industrial
+        consumers. TSOs operate the backbone of the electrical power grid.
 

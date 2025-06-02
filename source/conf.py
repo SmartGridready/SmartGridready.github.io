@@ -60,3 +60,6 @@ html_js_files = ['custom.js']
 epub_show_urls = 'footnote'
 
 numfig = True
+
+# sources that are not published yet
+exclude_patterns = ['content/communicator-description-file.rst']

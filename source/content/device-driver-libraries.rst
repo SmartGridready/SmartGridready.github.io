@@ -1,7 +1,7 @@
 .. _device-driver-libraries:
 
-SmarGridready Device Driver Libraries
-=====================================
+SmartGridready Device Driver Libraries
+======================================
 
 * Basic concepts
 * Description

@@ -44,12 +44,12 @@ There are several possibilities to get your product declared.
 
 1. Integrate SmartGridready capability into your devices. There are several possibilities to achieve this:
 
-    *   You integrate one of the :term:`CommHandler` libraries into your product in order to be able to control
+    *   You integrate one of the :term:`Communication Handler` libraries into your product in order to be able to control
         SmartGridready compliant :term:`Products`. See :ref:`commhandler-libraries`.
 
     *   You use the :term:`Intermediary` service to communicate with SmartGridready compliant :term:`Products`.
 
-    *   You develop your custom :term:`CommHandler` software that is able to load :term:`External Interface Definition` files
+    *   You develop your custom :term:`Communication Handler` software that is able to load :term:`External Interface Definition` files
         to able to communicate with SmartGridready compliant :term:`Products`.
 
 2. Implement some functionality that make use of SmartGridready :term:`Functional Profiles`.
