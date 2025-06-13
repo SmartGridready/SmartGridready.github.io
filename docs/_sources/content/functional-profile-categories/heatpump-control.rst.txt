@@ -2,7 +2,6 @@
 
 Heatpump Controls
 -----------------
-**Functional Profiles, State March 2025**
 
 The :term:`Functional Profiles` for the heat pumps are organized in a
 modular way. The manufacturer decides, which :term:`Functional Profiles`

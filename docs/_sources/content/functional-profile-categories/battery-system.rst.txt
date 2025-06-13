@@ -3,8 +3,6 @@
 Battery System
 --------------
 
-** Functional Profiles, Status June 2025 **
-
 The :ref:`functional_profile_category` refers to systems that combine a :ref:`Battery` with an :ref:`Inverter`
 device.
 
