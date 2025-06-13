@@ -72,7 +72,7 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../functional-profiles.html">Functional Profiles</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#functional-profile-structure"><span class="xref std std-term">Functional Profile</span> Structure</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../functional-profiles.html#functional-profile-categories"><span class="xref std std-term">Functional Profile Categories</span></a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../functional-profiles.html#functional-profile-category"><span class="xref std std-term">Functional Profile Category</span></a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="actuator.html">Actuator</a><ul class="simple">
 </ul>
 </li>
@@ -112,7 +112,11 @@
 <li class="toctree-l3"><a class="reference internal" href="heatpump-control.html#heat-pump-functional-profiles-in-stiebel-eltron-product-eid">Heat Pump Functional Profiles in Stiebel Eltron Product (EID)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="heatpump-control.html#heat-pump-functional-profiles-in-cta-product-eid">Heat Pump Functional Profiles in CTA Product (EID)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="heatpump-control.html#heat-pump-functional-profiles-in-hoval-product-eid">Heat Pump <span class="xref std std-term">Functional Profiles</span> in Hoval Product (EID)</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Inverter</a><ul class="simple">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Inverter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#general-description">General Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sunspec">SunSpec</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#maximum-power-point-tracking-mppt">Maximum Power Point Tracking (MPPT)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anti-islanding-protection">Anti-Islanding Protection</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="metering.html">Metering</a><ul class="simple">
@@ -129,7 +133,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#functional-profile-types"><span class="xref std std-term">Functional Profile Types</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#functional-profile-type"><span class="xref std std-term">Functional Profile Type</span></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#level-of-operation"><span class="xref std std-term">Level of Operation</span></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#generic-attributes">Generic Attributes</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#static-data-point-attributes">Static Data Point Attributes</a></li>
@@ -223,15 +227,44 @@
              
   <section id="inverter">
 <span id="id1"></span><h1>Inverter<a class="headerlink" href="#inverter" title="Permalink to this heading"></a></h1>
-<figure class="align-center" style="width: 40%">
-<img alt="../../_images/wip.png" src="../../_images/wip.png" />
-</figure>
+<section id="general-description">
+<h2>General Description<a class="headerlink" href="#general-description" title="Permalink to this heading"></a></h2>
+<p>The <a class="reference internal" href="../functional-profiles.html#functional-profile-category"><span class="std std-ref">Functional Profile Category</span></a> <strong>Inverter</strong> is used for devices that convert direct current (DC) as
+produced by a photovoltaic array (<a class="reference internal" href="../glossary.html#term-PVA"><span class="xref std std-term">PVA</span></a>) or a <a class="reference internal" href="battery.html#battery"><span class="std std-ref">Battery</span></a> into a utility frequency alternating current (AC)
+that can be fed into a commercial electrical grid or used be a local, off-grid electrical network. It is a critical
+system component in a photovoltaic system, allowing the use of ordinary AC-powered equipment.</p>
+<p><a class="reference internal" href="../glossary.html#term-PV-Inverter"><span class="xref std std-term">PV-Inverter</span></a> have special functions adapted for use with photovoltaic arrays, including maximum power
+point tracking and anti-islanding protection.</p>
+<p><a class="reference internal" href="battery.html#battery"><span class="std std-ref">Battery</span></a>  backup inverters are special inverters which are designed to draw energy from a battery, manage
+the battery charge via an onboard charger, and export excess energy to the utility grid. These inverters are capable
+of supplying AC energy to selected loads during a utility outage.</p>
+<p>SmartGridready provides an <strong>Inverter</strong> <a class="reference internal" href="../glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> that allows <a class="reference internal" href="../glossary.html#term-Modbus"><span class="xref std std-term">Modbus</span></a> communication with
+the <a class="reference internal" href="../glossary.html#term-Product"><span class="xref std std-term">Product</span></a> device based on the <strong>SunSpec</strong> specification.</p>
+</section>
+<section id="sunspec">
+<h2>SunSpec<a class="headerlink" href="#sunspec" title="Permalink to this heading"></a></h2>
+<p>The current <a class="reference internal" href="../glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> targets <a class="reference internal" href="../glossary.html#term-Modbus"><span class="xref std std-term">Modbus</span></a> devices that are SunSpec compliant. The Modbus SunSpec
+Specification defines a standardized way to communicate with and monitor solar and energy systems using the Modbus
+protocol. It is published by the SunSpec Alliance, an industry consortium that promotes interoperability among
+distributed energy components.</p>
+<p>See also <a class="reference external" href="https://sunspec.org">SunSpec home</a>.</p>
+</section>
+<section id="maximum-power-point-tracking-mppt">
+<h2>Maximum Power Point Tracking (MPPT)<a class="headerlink" href="#maximum-power-point-tracking-mppt" title="Permalink to this heading"></a></h2>
+<p>This function ensures the inverter continuously adjusts the electrical operating point of the panels to extract
+the most possible power at any moment, depending on light and temperature conditions.</p>
+</section>
+<section id="anti-islanding-protection">
+<h2>Anti-Islanding Protection<a class="headerlink" href="#anti-islanding-protection" title="Permalink to this heading"></a></h2>
+<p>This safety feature prevents the inverter from feeding electricity into the grid when the grid is down (e.g., during a
+power outage). This is critical to protect line workers and equipment.</p>
 <a href="../functional-profiles.html#functional-profile-category" class="btn btn-neutral float-left">
     <span class="fa fa-arrow-circle-left" aria-hidden="true"></span>
     Back to Functional Profile Categories
 <a>
 <p><div class="toctree-wrapper compound">
 </div>
+</section>
 </section>
 
 

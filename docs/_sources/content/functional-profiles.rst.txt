@@ -76,14 +76,14 @@ A :term:`Communicator` software can read from or write to the device by addressi
 A functional profile is defined/identified by:
 
 * **Functional Profile Category:** see :ref:`functional_profile_category`
-* **Functional Profile Type:** see: :ref:`functional_profile_types`
+* **Functional Profile Type:** see: :ref:`functional_profile_type`
 * **Level Of Operation:** see :ref:`level_of_operation`
 * **Version Number:** see :ref:`version_number`
 
 .. _functional_profile_category:
 
-:term:`Functional Profile Categories`
--------------------------------------
+:term:`Functional Profile Category`
+-----------------------------------
 
 The :term:`Functional Profile Category` is related the type of a :term:`Product` and its functionalities.
 
@@ -117,11 +117,11 @@ description):
 
     * - **DynamicTariff**
       - Used to query dynamic tariff information from a power grid operator system.
-      - :ref:`device-information`
+      - :ref:`dynamic-tariff`
 
     * - **EVSE**
       - Used for Electrical Vehicle Supply Equipment (:term:`EVSE`) :term:`Products` like charging stations.
-      - :ref:`device-information`
+      - :ref:`evse`
 
     * - **HeatingCircuit**
       - Used with :term:`Products` that allow reading information from a heating circuit, such as temperature.
@@ -172,10 +172,10 @@ description):
     functional-profile-categories/temperature-sensor
 
 
-.. _functional_profile_types:
+.. _functional_profile_type:
 
-:term:`Functional Profile Types`
---------------------------------
+:term:`Functional Profile Type`
+-------------------------------
 
 The :term:`Functional Profile Type` defines the set of functionalities provided by a :term:`Functional Profile`.
 :term:`Functional Profiles` of a given type can appear in multiple :term:`Functional Profile Categories`.
@@ -188,11 +188,11 @@ can come in different flavours defined by the :ref:`functional_profile_category`
 Therefore a :term:`Functional Profile` is uniquely defined by:
 
 * Functional Profile Category: see :ref:`functional_profile_category`
-* Functional Profile Type: see: :ref:`functional_profile_types`
+* Functional Profile Type: see: :ref:`functional_profile_type`
 * Level Of Operation: see :ref:`level_of_operation`
 * Version Number: see :ref:`version_number`
 
-.. list-table:: :term:`Functional Profile Types`
+.. list-table:: :term:`Functional Profile Type`
     :header-rows: 1
     :widths: 25 50 25
 
@@ -315,6 +315,10 @@ Therefore a :term:`Functional Profile` is uniquely defined by:
         * HP_NORMAL: Heat pump in normal operation mode (operation mode 2 from SG Ready bwp).
 
       - :ref:`heatpump-control`
+    * - Supplier
+      - :term:`Functional Profile Type` for connection points that provide information from the distribution system
+        operator :term:`DSO`.
+      - :ref:`dynamic-tariff`
     * - UniDirFlexFeedInMgmt
       - :term:`Functional Profile Type` for Energy Management Systems (:term:`EMS`) that regulate feed-in
         and have a communication interface to power grid operator by controlling different operation modes:

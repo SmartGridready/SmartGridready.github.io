@@ -3,11 +3,12 @@
 Heating Circuit
 ---------------
 
-.. figure:: ../images/wip.png
-    :align: center
-    :figwidth: 40%
+This :term:`Functional Profile` is intended for heating circuits in both domestic and industrial heating systems.
 
+It provides :term:`Data Points` for setting and reading the target temperature of a thermostat.
 
+Devices may also implement this profile in combination with a :ref:`functional_profile_type` **Temperature Sensor**,
+which enables measurement of the room temperature.
 
 .. raw:: html
 

@@ -72,7 +72,7 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../functional-profiles.html">Functional Profiles</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#functional-profile-structure"><span class="xref std std-term">Functional Profile</span> Structure</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../functional-profiles.html#functional-profile-categories"><span class="xref std std-term">Functional Profile Categories</span></a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../functional-profiles.html#functional-profile-category"><span class="xref std std-term">Functional Profile Category</span></a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="actuator.html">Actuator</a><ul class="simple">
 </ul>
 </li>
@@ -112,7 +112,11 @@
 <li class="toctree-l3"><a class="reference internal" href="heatpump-control.html#heat-pump-functional-profiles-in-stiebel-eltron-product-eid">Heat Pump Functional Profiles in Stiebel Eltron Product (EID)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="heatpump-control.html#heat-pump-functional-profiles-in-cta-product-eid">Heat Pump Functional Profiles in CTA Product (EID)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="heatpump-control.html#heat-pump-functional-profiles-in-hoval-product-eid">Heat Pump <span class="xref std std-term">Functional Profiles</span> in Hoval Product (EID)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="inverter.html">Inverter</a><ul class="simple">
+<li class="toctree-l3"><a class="reference internal" href="inverter.html">Inverter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="inverter.html#general-description">General Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="inverter.html#sunspec">SunSpec</a></li>
+<li class="toctree-l4"><a class="reference internal" href="inverter.html#maximum-power-point-tracking-mppt">Maximum Power Point Tracking (MPPT)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="inverter.html#anti-islanding-protection">Anti-Islanding Protection</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="metering.html">Metering</a><ul class="simple">
@@ -129,7 +133,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#functional-profile-types"><span class="xref std std-term">Functional Profile Types</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#functional-profile-type"><span class="xref std std-term">Functional Profile Type</span></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#level-of-operation"><span class="xref std std-term">Level of Operation</span></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#generic-attributes">Generic Attributes</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#static-data-point-attributes">Static Data Point Attributes</a></li>
@@ -223,9 +227,28 @@
              
   <section id="battery">
 <span id="id1"></span><h1>Battery<a class="headerlink" href="#battery" title="Permalink to this heading"></a></h1>
-<figure class="align-center" style="width: 40%">
-<img alt="../../_images/wip.png" src="../../_images/wip.png" />
-</figure>
+<p>** Functional Profiles, Status June 2025 **</p>
+<p>The <a class="reference internal" href="../functional-profiles.html#functional-profile-category"><span class="std std-ref">Functional Profile Category</span></a> <strong>Battery</strong> refers to energy storage systems (ESS), such as home
+batteries or industrial battery banks, that are designed to interact intelligently with the electrical
+grid. These products are capable not only of storing and supplying power, but also of participating
+in energy management services controlled by an <a class="reference internal" href="../glossary.html#term-EMS"><span class="xref std std-term">EMS</span></a>. The <a class="reference internal" href="../glossary.html#term-EMS"><span class="xref std std-term">EMS</span></a> manages efficient energy
+consumption and coordinates energy supply to the distribution network (<a class="reference internal" href="../glossary.html#term-DSO"><span class="xref std std-term">DSO</span></a>).</p>
+<p>Devices of the <strong>Battery</strong> <a class="reference internal" href="../functional-profiles.html#functional-profile-category"><span class="std std-ref">Functional Profile Category</span></a> support the <strong>EnergyMonitor</strong>
+<a class="reference internal" href="../functional-profiles.html#functional-profile-type"><span class="std std-ref">Functional Profile Type</span></a> that allow the <a class="reference internal" href="../glossary.html#term-EMS"><span class="xref std std-term">EMS</span></a> to read characteristic values from the <strong>Battery</strong>:</p>
+<ul class="simple">
+<li><p>maximum capacity</p></li>
+<li><p>available energy</p></li>
+<li><p>active DC power consumption</p></li>
+<li><p>consumption of energy during the night</p></li>
+<li><p>SoC, state of charge in percent</p></li>
+<li><p>SoH, state of health</p></li>
+</ul>
+<p>and control the <strong>Battery</strong> status:</p>
+<ul class="simple">
+<li><p>maximum discharge limit within a period of time</p></li>
+<li><p>maximum charge limit within a given period of time</p></li>
+<li><p>operation mode for charging</p></li>
+</ul>
 <a href="../functional-profiles.html#functional-profile-category" class="btn btn-neutral float-left">
     <span class="fa fa-arrow-circle-left" aria-hidden="true"></span>
     Back to Functional Profile Categories

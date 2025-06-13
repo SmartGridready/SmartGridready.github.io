@@ -8,7 +8,6 @@ Sensor
     :figwidth: 40%
 
 
-
 .. raw:: html
 
     <a href="../functional-profiles.html#functional-profile-category" class="btn btn-neutral float-left">

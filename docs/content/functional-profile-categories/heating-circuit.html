@@ -72,7 +72,7 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../functional-profiles.html">Functional Profiles</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#functional-profile-structure"><span class="xref std std-term">Functional Profile</span> Structure</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../functional-profiles.html#functional-profile-categories"><span class="xref std std-term">Functional Profile Categories</span></a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../functional-profiles.html#functional-profile-category"><span class="xref std std-term">Functional Profile Category</span></a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="actuator.html">Actuator</a><ul class="simple">
 </ul>
 </li>
@@ -112,7 +112,11 @@
 <li class="toctree-l3"><a class="reference internal" href="heatpump-control.html#heat-pump-functional-profiles-in-stiebel-eltron-product-eid">Heat Pump Functional Profiles in Stiebel Eltron Product (EID)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="heatpump-control.html#heat-pump-functional-profiles-in-cta-product-eid">Heat Pump Functional Profiles in CTA Product (EID)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="heatpump-control.html#heat-pump-functional-profiles-in-hoval-product-eid">Heat Pump <span class="xref std std-term">Functional Profiles</span> in Hoval Product (EID)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="inverter.html">Inverter</a><ul class="simple">
+<li class="toctree-l3"><a class="reference internal" href="inverter.html">Inverter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="inverter.html#general-description">General Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="inverter.html#sunspec">SunSpec</a></li>
+<li class="toctree-l4"><a class="reference internal" href="inverter.html#maximum-power-point-tracking-mppt">Maximum Power Point Tracking (MPPT)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="inverter.html#anti-islanding-protection">Anti-Islanding Protection</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="metering.html">Metering</a><ul class="simple">
@@ -129,7 +133,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#functional-profile-types"><span class="xref std std-term">Functional Profile Types</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#functional-profile-type"><span class="xref std std-term">Functional Profile Type</span></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#level-of-operation"><span class="xref std std-term">Level of Operation</span></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#generic-attributes">Generic Attributes</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#static-data-point-attributes">Static Data Point Attributes</a></li>
@@ -223,9 +227,10 @@
              
   <section id="heating-circuit">
 <span id="id1"></span><h1>Heating Circuit<a class="headerlink" href="#heating-circuit" title="Permalink to this heading"></a></h1>
-<figure class="align-center" style="width: 40%">
-<img alt="../../_images/wip.png" src="../../_images/wip.png" />
-</figure>
+<p>This <a class="reference internal" href="../glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> is intended for heating circuits in both domestic and industrial heating systems.</p>
+<p>It provides <a class="reference internal" href="../glossary.html#term-Data-Points"><span class="xref std std-term">Data Points</span></a> for setting and reading the target temperature of a thermostat.</p>
+<p>Devices may also implement this profile in combination with a <a class="reference internal" href="../functional-profiles.html#functional-profile-type"><span class="std std-ref">Functional Profile Type</span></a> <strong>Temperature Sensor</strong>,
+which enables measurement of the room temperature.</p>
 <a href="../functional-profiles.html#functional-profile-category" class="btn btn-neutral float-left">
     <span class="fa fa-arrow-circle-left" aria-hidden="true"></span>
     Back to Functional Profile Categories
