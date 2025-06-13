@@ -3,7 +3,6 @@
 :term:`EVSE`
 ------------
 
-
 Electric Vehicle Supply Equipment (:term:`EVSE`)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

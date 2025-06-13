@@ -3,8 +3,6 @@
 Device Information
 ------------------
 
-** Functional Profiles, Status June 2025 **
-
 The functional :ref:`functional_profile_category` **DeviceInformation** is associated with the
 :ref:`functional_profile_type` of the same name: **DeviceInformation**.
 

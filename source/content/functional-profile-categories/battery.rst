@@ -3,8 +3,6 @@
 Battery
 -------
 
-** Functional Profiles, Status June 2025 **
-
 The :ref:`functional_profile_category` **Battery** refers to energy storage systems (ESS), such as home
 batteries or industrial battery banks, that are designed to interact intelligently with the electrical
 grid. These products are capable not only of storing and supplying power, but also of participating

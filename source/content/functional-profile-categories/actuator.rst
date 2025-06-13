@@ -2,7 +2,6 @@
 
 Actuator
 --------
-** Functional Profiles, Status June 2025 **
 
 Actuators are devices that convert control signals into physical action. They can be:
 
