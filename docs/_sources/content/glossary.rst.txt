@@ -114,6 +114,12 @@ Glossary
         the :term:`Product` through a generic interface, independent of the Product's proprietary implementation. Examples for
         :term:`Products` are smart meters, heat pumps, :term:`PVA`, :term:`EVSE`.
 
+    Product Description File
+        See :term:`EID`
+
+    Product Description Files
+        Plural of :term:`Product Description File`
+
     Products
         Plural form of :term:`Product`
 

@@ -36,7 +36,7 @@ supply and load conditions, as described in the following example:
         * Current load and device status
 
 4. The local systems automatically:
-    * Turn off or reduce HVAC, water heaters, EV charging, etc.
+    * Turn off or reduce heating, air conditioning, water heaters, EV charging, etc.
     * Shift operation of devices (e.g., delay a washing machine)
     * Possibly export energy from home batteries or solar systems
 

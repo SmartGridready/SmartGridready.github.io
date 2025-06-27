@@ -28,7 +28,7 @@ and add the matching :term:`Functional Profiles` to the :term:`External Interfac
 :term:`Functional Profile` Structure
 ------------------------------------
 
-Figure :ref:`figure_functional_profile_structure` shows the basic structure of a :term:`Functional Profile`
+:numref:`figure_functional_profile_structure` shows the basic structure of a :term:`Functional Profile`
 
 .. _figure_functional_profile_structure:
 

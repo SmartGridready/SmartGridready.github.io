@@ -164,7 +164,22 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Product Description File</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="xref std std-term">Product Description File</span></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#product-description-file-content"><span class="xref std std-term">Product Description File</span> content</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#general-information">General Information</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#devicename">&lt;deviceName&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#manufacturer">&lt;manufacturer&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#releasenotes">&lt;releaseNotes&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deviceinformation">&lt;deviceInformation&gt;</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-list">Configuration List</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#configurationlist">&lt;configurationList&gt;</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#smartgridready-product-library">SmartGridready <span class="xref std std-term">Product</span> Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#product-ei-xml-documentation-on-github">Product EI-XML Documentation on GitHub</a><ul class="simple">
 </ul>
@@ -218,7 +233,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Product Description File</li>
+      <li class="breadcrumb-item active"><span class="xref std std-term">Product Description File</span></li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -227,15 +242,180 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="product-description-file">
-<span id="product-description-eid"></span><h1>Product Description File<a class="headerlink" href="#product-description-file" title="Permalink to this heading"></a></h1>
+  <p>TODO
+* detailed description of <a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a> XML’s
+* data format XML, definition XSD
+* howto create an EID
+* examples of current EID’s
+* external link to the EID library
+* Link and desc to SGrLibrary</p>
+<section id="product-description-file">
+<span id="product-description-eid"></span><h1><a class="reference internal" href="glossary.html#term-Product-Description-File"><span class="xref std std-term">Product Description File</span></a><a class="headerlink" href="#product-description-file" title="Permalink to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<p>The <a class="reference internal" href="glossary.html#term-Product-Description-File"><span class="xref std std-term">Product Description File</span></a> contains the information needed to describe the <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> and use it
+through the generic SmartGridready API.</p>
+<p>This allows potential <a class="reference internal" href="glossary.html#term-Communicator"><span class="xref std std-term">Communicator</span></a> devices such as <a class="reference internal" href="glossary.html#term-EMS"><span class="xref std std-term">EMS</span></a> to easily integrate, implement, or access
+any SmartGridready certified product through a standardized set of functionalities.</p>
+<p>The <a class="reference internal" href="glossary.html#term-Product-Description-File"><span class="xref std std-term">Product Description File</span></a> contains:</p>
 <ul class="simple">
-<li><p>detailed description of <a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a> XML’s</p></li>
-<li><p>data format XML, definition XSD</p></li>
-<li><p>howto create an EID</p></li>
-<li><p>examples of current EID’s</p></li>
-<li><p>external link to the EID library</p></li>
+<li><p>General information about the <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> such as product name, description or the product supplier.</p></li>
+<li><p>The configuration parameters needed to operate the product.</p></li>
+<li><p>The communication interface/protocol that is used to read values from and control the <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a>. Supported
+interfaces/protocols are:</p>
+<ul>
+<li><p>Modbus</p></li>
+<li><p>Http/REST</p></li>
+<li><p>MQTT</p></li>
 </ul>
+</li>
+<li><p>The <a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> that are supported by the <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a></p></li>
+<li><p>The <a class="reference internal" href="glossary.html#term-Data-Points"><span class="xref std std-term">Data Points</span></a> that are provided by the <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a></p></li>
+</ul>
+<p><a class="reference internal" href="#figure-product-description-file-structure"><span class="std std-numref">Fig. 12</span></a> shows the structure of a <a class="reference internal" href="glossary.html#term-Product-Description-File"><span class="xref std std-term">Product Description File</span></a>:</p>
+<figure class="align-default" id="id2">
+<span id="figure-product-description-file-structure"></span><img alt=":term:`Product Description File` Structure" src="../_images/product.drawio.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text"><a class="reference internal" href="glossary.html#term-Product-Description-File"><span class="xref std std-term">Product Description File</span></a> Structure</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The <a class="reference internal" href="glossary.html#term-Product-Description-File"><span class="xref std std-term">Product Description File</span></a> is an XML file, defined by the SmartGridready XML Schema (XSD) which builds
+the core of the SmartGridready Specification. You find the according resources on Github within SmartGridready
+project <a class="reference external" href="https://github.com/SmartGridready/SGrSpecifications/">SGrSpecifications</a>:</p>
+<ul class="simple">
+<li><p>SGr XML Schema (XSD): <a class="reference external" href="https://github.com/SmartGridready/SGrSpecifications/tree/master/SchemaDatabase">Schema Database</a>.</p></li>
+<li><p><a class="reference internal" href="glossary.html#term-Product-Description-Files"><span class="xref std std-term">Product Description Files</span></a> : <a class="reference external" href="https://github.com/SmartGridready/SGrSpecifications/tree/master/XMLInstances/ExtInterfaces">External Interfaces</a></p></li>
+</ul>
+</section>
+<section id="product-description-file-content">
+<h2><a class="reference internal" href="glossary.html#term-Product-Description-File"><span class="xref std std-term">Product Description File</span></a> content<a class="headerlink" href="#product-description-file-content" title="Permalink to this heading"></a></h2>
+<p>The following chapters describe the term:<cite>Product Description File</cite> (<a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a>) content und and are intended provide
+a guide for <a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a> creators.</p>
+<section id="general-information">
+<h3>General Information<a class="headerlink" href="#general-information" title="Permalink to this heading"></a></h3>
+<p>This chapter describes the XML elements that provide general information</p>
+<section id="devicename">
+<h4>&lt;deviceName&gt;<a class="headerlink" href="#devicename" title="Permalink to this heading"></a></h4>
+<p>The name and optionally the model of the device.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">deviceName</span><span class="o">&gt;</span>
+  <span class="n">CLEMAP</span> <span class="n">Energy</span> <span class="n">Monitor</span>
+<span class="o">&lt;/</span><span class="n">deviceName</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="manufacturer">
+<h4>&lt;manufacturer&gt;<a class="headerlink" href="#manufacturer" title="Permalink to this heading"></a></h4>
+<p>The name of the manufacturer</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">manufacturer</span><span class="o">&gt;</span>
+  <span class="n">CLEMAP</span>
+<span class="o">&lt;/</span><span class="n">manufacturer</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="releasenotes">
+<h4>&lt;releaseNotes&gt;<a class="headerlink" href="#releasenotes" title="Permalink to this heading"></a></h4>
+<p>The publication status and release version of the <a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a>, together with the publisher.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">releaseNotes</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">state</span><span class="o">&gt;</span><span class="n">Published</span><span class="o">&lt;/</span><span class="n">state</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">changeLog</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span><span class="mf">1.0.0</span><span class="o">&lt;/</span><span class="n">version</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">date</span><span class="o">&gt;</span><span class="mi">2024</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">24</span><span class="o">&lt;/</span><span class="n">date</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">author</span><span class="o">&gt;</span><span class="n">Jane</span> <span class="n">Doe</span><span class="p">,</span> <span class="n">Acme</span><span class="o">&lt;/</span><span class="n">author</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">comment</span><span class="o">&gt;</span><span class="n">Published</span><span class="o">&lt;/</span><span class="n">comment</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">changeLog</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">releaseNotes</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="deviceinformation">
+<h4>&lt;deviceInformation&gt;<a class="headerlink" href="#deviceinformation" title="Permalink to this heading"></a></h4>
+<p>Common device information, together with a legible description.</p>
+<p>Explanations of specific child elements:</p>
+<ul class="simple">
+<li><p><strong>&lt;legibleDescription&gt;</strong>: The CDATA[[]] container allows formatting text with HTML syntax. This is used for the
+<a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> description text in the <a class="reference external" href="https://library.smartgridready.ch/">SGr library</a>.</p></li>
+<li><p><strong>&lt;deviceCategory&gt;</strong>: The device category consists of an enumerated list of device categories inherited from the
+EEBUS specification.</p></li>
+<li><p><strong>&lt;levelOfOperation&gt;</strong> see <a class="reference internal" href="functional-profiles.html#level-of-operation"><span class="std std-ref">Level of Operation</span></a></p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">deviceInformation</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">legibleDescription</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">textElement</span><span class="o">&gt;</span><span class="n">CDATA</span><span class="p">[[</span><span class="n">Some</span> <span class="n">device</span> <span class="n">description</span> <span class="o">...</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span> <span class="o">...</span> <span class="p">]]</span><span class="o">&lt;/</span><span class="n">textElement</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">language</span><span class="o">&gt;</span><span class="n">de</span><span class="o">&lt;/</span><span class="n">language</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">uri</span><span class="o">&gt;</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">clemap</span><span class="o">.</span><span class="n">com</span><span class="o">/...&lt;/</span><span class="n">uri</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">legibleDescription</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">deviceCategory</span><span class="o">&gt;</span>
+      <span class="n">SubMeterElectricity</span>
+  <span class="o">&lt;/</span><span class="n">deviceCategory</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">isLocalControl</span><span class="o">&gt;</span><span class="n">false</span><span class="o">&lt;/</span><span class="n">isLocalControl</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">softwareRevision</span><span class="o">&gt;</span><span class="mf">1.0.0</span><span class="o">&lt;/</span><span class="n">softwareRevision</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">hardwareRevision</span><span class="o">&gt;</span><span class="mf">1.0.0</span><span class="o">&lt;/</span><span class="n">hardwareRevision</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">manufacturerSpecificationIdentification</span><span class="o">&gt;</span>
+      <span class="n">CLEMAP</span>
+  <span class="o">&lt;/</span><span class="n">manufacturerSpecificationIdentification</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">levelOfOperation</span><span class="o">&gt;</span><span class="n">m</span><span class="o">&lt;/</span><span class="n">levelOfOperation</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">versionNumber</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">primaryVersionNumber</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">primaryVersionNumber</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">secondaryVersionNumber</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">&lt;/</span><span class="n">secondaryVersionNumber</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">subReleaseVersionNumber</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">&lt;/</span><span class="n">subReleaseVersionNumber</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">versionNumber</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">testState</span><span class="o">&gt;</span><span class="n">Verified</span><span class="o">&lt;/</span><span class="n">testState</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">deviceInformation</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="configuration-list">
+<h3>Configuration List<a class="headerlink" href="#configuration-list" title="Permalink to this heading"></a></h3>
+<section id="configurationlist">
+<h4>&lt;configurationList&gt;<a class="headerlink" href="#configurationlist" title="Permalink to this heading"></a></h4>
+<p>The configuration list element lists the configuration values that must be provided for <a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a> when
+installing/instantiating a device.</p>
+<p>Each configuration value listed in the configuration values has somewhere placeholder sibling with the same
+name in the <a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a> which is replaced with the configuration value when installing/instantiating a device
+using the <a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a>.</p>
+<p>As an example, the configuration entry:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">configurationListElement</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">ipaddress</span><span class="o">&lt;/</span><span class="n">name</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">dataType</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">string</span><span class="o">/&gt;</span>
+  <span class="o">&lt;/</span><span class="n">dataType</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">configurationListElement</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>corresponds to a placeholder <code class="docutils literal notranslate"><span class="pre">{{ipaddress}}</span></code> used elsewhere in the <a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a>. This placeholder will be replaced
+with the actual configuration value during installation or instantiation.</p>
+<p>This convention enables the use of the same <a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a> for multiple device instances by parameterizing instance-specific
+values.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">configurationList</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">configurationListElement</span><span class="o">&gt;</span>
+     <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">ipaddress</span><span class="o">&lt;/</span><span class="n">name</span><span class="o">&gt;</span>
+     <span class="o">&lt;</span><span class="n">dataType</span><span class="o">&gt;</span>
+       <span class="o">&lt;</span><span class="n">string</span><span class="o">/&gt;</span>
+     <span class="o">&lt;/</span><span class="n">dataType</span><span class="o">&gt;</span>
+     <span class="o">&lt;</span><span class="n">configurationDescription</span><span class="o">&gt;</span>
+       <span class="o">&lt;</span><span class="n">textElement</span><span class="o">&gt;</span><span class="n">Device</span> <span class="n">IP</span> <span class="n">address</span><span class="o">&lt;/</span><span class="n">textElement</span><span class="o">&gt;</span>
+       <span class="o">&lt;</span><span class="n">language</span><span class="o">&gt;</span><span class="n">en</span><span class="o">&lt;/</span><span class="n">language</span><span class="o">&gt;</span>
+       <span class="o">&lt;</span><span class="n">label</span><span class="o">&gt;</span><span class="n">IP</span> <span class="n">Address</span><span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;</span>
+     <span class="o">&lt;/</span><span class="n">configurationDescription</span><span class="o">&gt;</span>
+     <span class="o">&lt;</span><span class="n">configurationDescription</span><span class="o">&gt;</span>
+       <span class="o">&lt;</span><span class="n">textElement</span><span class="o">&gt;</span><span class="n">IP</span> <span class="n">Adresse</span> <span class="n">des</span> <span class="n">Gerätes</span><span class="o">&lt;/</span><span class="n">textElement</span><span class="o">&gt;</span>
+       <span class="o">&lt;</span><span class="n">language</span><span class="o">&gt;</span><span class="n">de</span><span class="o">&lt;/</span><span class="n">language</span><span class="o">&gt;</span>
+       <span class="o">&lt;</span><span class="n">label</span><span class="o">&gt;</span><span class="n">IP</span> <span class="n">Adresse</span><span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;</span>
+     <span class="o">&lt;/</span><span class="n">configurationDescription</span><span class="o">&gt;</span>
+   <span class="o">&lt;/</span><span class="n">configurationListElement</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">configurationListElement</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">configurationList</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
 <section id="smartgridready-product-library">
 <h2>SmartGridready <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> Library<a class="headerlink" href="#smartgridready-product-library" title="Permalink to this heading"></a></h2>
 <p>The currently available Product Description Files (<a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a>) are listed on the
