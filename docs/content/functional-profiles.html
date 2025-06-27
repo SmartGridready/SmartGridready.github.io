@@ -123,13 +123,14 @@
 <li class="toctree-l3"><a class="reference internal" href="functional-profile-categories/metering.html">Metering</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="functional-profile-categories/sgcp.html">SGCP</a><ul class="simple">
+<li class="toctree-l3"><a class="reference internal" href="functional-profile-categories/sgcp.html">SGCP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="functional-profile-categories/sgcp.html#unidirectional-functional-profiles">Unidirectional <span class="xref std std-term">Functional Profiles</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="functional-profile-categories/sgcp.html#bidirectional-functional-profiles">Bidirectional <span class="xref std std-term">Functional Profiles</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="functional-profile-categories/sgcp.html#level-of-operation-2-2m"><span class="xref std std-ref">level_of_operation</span> 2/2m</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functional-profile-categories/sgcp.html#level-of-operation-4-4m"><span class="xref std std-ref">level_of_operation</span> 4/4m</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="functional-profile-categories/sensor.html">Sensor</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="functional-profile-categories/temperature-sensor.html">Temperature Sensor</a><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -146,6 +147,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#data-points"><span class="xref std std-term">Data Points</span></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sub-data-points">Sub Data Points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#smartgridready-functional-profile-library">SmartGridready <span class="xref std std-term">Functional Profile</span> Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#defining-functional-profiles">Defining <span class="xref std std-term">Functional Profiles</span></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#file-naming-scheme">File Naming Scheme</a></li>
 </ul>
@@ -164,6 +166,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="product-description-file.html">Product Description File</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="product-description-file.html#smartgridready-product-library">SmartGridready <span class="xref std std-term">Product</span> Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="product-description-file.html#product-ei-xml-documentation-on-github">Product EI-XML Documentation on GitHub</a><ul class="simple">
 </ul>
 </li>
@@ -245,10 +248,10 @@ and add the matching <a class="reference internal" href="glossary.html#term-Func
 <section id="functional-profile-structure">
 <h2><a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> Structure<a class="headerlink" href="#functional-profile-structure" title="Permalink to this heading"></a></h2>
 <p>Figure <a class="reference internal" href="#figure-functional-profile-structure"><span class="std std-ref">Functional Profile Structure</span></a> shows the basic structure of a <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a></p>
-<figure class="align-default" id="id9">
+<figure class="align-default" id="id10">
 <span id="figure-functional-profile-structure"></span><img alt=":term:`Functional Profile` Structure" src="../_images/functionalProfile.drawio.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Functional Profile Structure</span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Functional Profile Structure</span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>A <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> is part of a <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> description and includes the:</p>
@@ -352,15 +355,11 @@ consumption, for example smart meter devices.</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>SGCP</strong></p></td>
 <td><p>Used for Smart Grid Connection Point (<a class="reference internal" href="glossary.html#term-SGCP"><span class="xref std std-term">SGCP</span></a>) <a class="reference internal" href="glossary.html#term-Products"><span class="xref std std-term">Products</span></a>.</p></td>
-<td><p><a class="reference internal" href="functional-profile-categories/metering.html#metering"><span class="std std-ref">Metering</span></a></p></td>
+<td><p><a class="reference internal" href="functional-profile-categories/sgcp.html#sgcp"><span class="std std-ref">SGCP</span></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>Sensor</strong></p></td>
 <td><p>Used with <a class="reference internal" href="glossary.html#term-Products"><span class="xref std std-term">Products</span></a> that allow reading data from sensor devices, for example a humidity sensor.</p></td>
 <td><p><a class="reference internal" href="functional-profile-categories/sensor.html#sensor"><span class="std std-ref">Sensor</span></a></p></td>
-</tr>
-<tr class="row-even"><td><p><strong>TemperatureSensor</strong></p></td>
-<td><p>Used with <a class="reference internal" href="glossary.html#term-Products"><span class="xref std std-term">Products</span></a> that measure temperatures.</p></td>
-<td><p><a class="reference internal" href="functional-profile-categories/temperature-sensor.html#temperature-sensor"><span class="std std-ref">Temperature Sensor</span></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -382,8 +381,8 @@ can come in different flavours defined by the <a class="reference internal" href
 <li><p>Level Of Operation: see <a class="reference internal" href="#level-of-operation"><span class="std std-ref">Level of Operation</span></a></p></li>
 <li><p>Version Number: see <a class="reference internal" href="#version-number"><span class="std std-ref">Versioning Scheme</span></a></p></li>
 </ul>
-<table class="docutils align-default" id="id10">
-<caption><span class="caption-number">Table 4 </span><span class="caption-text"><a class="reference internal" href="glossary.html#term-Functional-Profile-Type"><span class="xref std std-term">Functional Profile Type</span></a></span><a class="headerlink" href="#id10" title="Permalink to this table"></a></caption>
+<table class="docutils align-default" id="id11">
+<caption><span class="caption-number">Table 7 </span><span class="caption-text"><a class="reference internal" href="glossary.html#term-Functional-Profile-Type"><span class="xref std std-term">Functional Profile Type</span></a></span><a class="headerlink" href="#id11" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 25.0%" />
 <col style="width: 50.0%" />
@@ -419,79 +418,68 @@ apparent energy metering.</p></td>
 apparent power measurements.</p></td>
 <td><p><a class="reference internal" href="functional-profile-categories/metering.html#metering"><span class="std std-ref">Metering</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><p>BiDirFlexMgmt</p></td>
-<td><p>Functional profile for Energy Management Systems (EMS) that feature a bidirectional communication interface with
-a flexibility manager (e.g., utility company / grid operator). The interface allows both the retrieval of
-current data and the targeted control of power at the grid connection point via defined data points.</p></td>
-<td><p><a class="reference internal" href="functional-profile-categories/sgcp.html#sgcp"><span class="std std-ref">SGCP</span></a></p></td>
-</tr>
-<tr class="row-even"><td><p>BufferStorageCtrl</p></td>
+<tr class="row-odd"><td><p>BufferStorageCtrl</p></td>
 <td><p>This <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> type extends the <strong>HeatPumpBase</strong> <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> type. It provides
 <a class="reference internal" href="glossary.html#term-Data-Points"><span class="xref std std-term">Data Points</span></a> to read temperature from and control heat pump buffer storage devices.</p></td>
 <td><p><a class="reference internal" href="functional-profile-categories/heatpump-control.html#heatpump-control"><span class="std std-ref">Heatpump Controls</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><p>CurrentAC</p></td>
+<tr class="row-even"><td><p>CurrentAC</p></td>
 <td><p>Provides <a class="reference internal" href="glossary.html#term-Data-Points"><span class="xref std std-term">Data Points</span></a> for AC current measurements. Supports single phase, multi phase and current
 against the neutral conductor measurements.</p></td>
 <td><p><a class="reference internal" href="functional-profile-categories/metering.html#metering"><span class="std std-ref">Metering</span></a></p></td>
 </tr>
-<tr class="row-even"><td><p>CurrentDC</p></td>
+<tr class="row-odd"><td><p>CurrentDC</p></td>
 <td><p>Defines a single <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> to measure DC current.</p></td>
 <td><p><a class="reference internal" href="functional-profile-categories/metering.html#metering"><span class="std std-ref">Metering</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><p>DeviceInformation</p></td>
+<tr class="row-even"><td><p>DeviceInformation</p></td>
 <td><p>Empty functional profile without data points that can be used for vendor specific information and data points.
 It allows the handling of data points, which are valid for the whole device.</p></td>
 <td><p><a class="reference internal" href="functional-profile-categories/device-information.html#device-information"><span class="std std-ref">Device Information</span></a></p></td>
 </tr>
-<tr class="row-even"><td><p>DomHotWaterCtrl</p></td>
+<tr class="row-odd"><td><p>DomHotWaterCtrl</p></td>
 <td><p>This <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> type extends the <strong>HeatPumpBase</strong> <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a>. It provides
 <a class="reference internal" href="glossary.html#term-Data-Points"><span class="xref std std-term">Data Points</span></a> that are available for controlling a domestic hot water circuit.</p></td>
 <td><p><a class="reference internal" href="functional-profile-categories/heatpump-control.html#heatpump-control"><span class="std std-ref">Heatpump Controls</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><p>EMS_Current_Limit</p></td>
+<tr class="row-even"><td><p>EMS_Current_Limit</p></td>
 <td><p>This <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> type enables a controller to set a current limitation for a charging station
 (Electric Vehicle Supply Equipment, <a class="reference internal" href="glossary.html#term-EVSE"><span class="xref std std-term">EVSE</span></a>).</p></td>
 <td><p><a class="reference internal" href="functional-profile-categories/evse.html#evse"><span class="std std-ref">EVSE</span></a></p></td>
 </tr>
-<tr class="row-even"><td><p>ESVEState</p></td>
+<tr class="row-odd"><td><p>ESVEState</p></td>
 <td><p><a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> for reading the status of the connector of an electric vehicle charging station
 (<a class="reference internal" href="glossary.html#term-EVSE"><span class="xref std std-term">EVSE</span></a>).</p></td>
 <td><p><a class="reference internal" href="functional-profile-categories/evse.html#evse"><span class="std std-ref">EVSE</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><p>EnergyMonitor</p></td>
+<tr class="row-even"><td><p>EnergyMonitor</p></td>
 <td><p><a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> that supports <a class="reference internal" href="glossary.html#term-Data-Points"><span class="xref std std-term">Data Points</span></a> to read operating data such as energy consumption
 from a <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a>.</p></td>
 <td><p><a class="reference internal" href="functional-profile-categories/heatpump-control.html#heatpump-control"><span class="std std-ref">Heatpump Controls</span></a>, <a class="reference internal" href="functional-profile-categories/battery.html#battery"><span class="std std-ref">Battery</span></a>, <a class="reference internal" href="functional-profile-categories/battery-system.html#battery-system"><span class="std std-ref">Battery System</span></a></p></td>
 </tr>
-<tr class="row-even"><td><p>FlexMgmt</p></td>
-<td><p><a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> for Energy Management Systems (EMS) that feature a bidirectional communication
-interface with a flexibility manager (e.g., utility company / grid operator). The interface allows both the
-retrieval of current data and the targeted control of power at the grid connection point via defined data points.</p></td>
+<tr class="row-odd"><td><p>FlexMgmt</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> for Energy Management Systems (term:<cite>EMS</cite>)that expose an interface towards the
+power grid operator (:term:DSO) to control or specify limits on power consumption from the power grid
+and limits for energy feed-in to the power grid.</p></td>
 <td><p><a class="reference internal" href="functional-profile-categories/sgcp.html#sgcp"><span class="std std-ref">SGCP</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><p>Frequency</p></td>
+<tr class="row-even"><td><p>Frequency</p></td>
 <td><p>Defines a single <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> to measure AC frequency.</p></td>
 <td><p><a class="reference internal" href="functional-profile-categories/metering.html#metering"><span class="std std-ref">Metering</span></a></p></td>
 </tr>
-<tr class="row-even"><td><p>HeatCoolCtrl</p></td>
+<tr class="row-odd"><td><p>HeatCoolCtrl</p></td>
 <td><p>This <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> type extends the <strong>HeatPumpBase</strong> <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a>. It provides
 <a class="reference internal" href="glossary.html#term-Data-Points"><span class="xref std std-term">Data Points</span></a> that are available for controlling a heat pump heating and cooling circuit.</p></td>
 <td><p><a class="reference internal" href="functional-profile-categories/heatpump-control.html#heatpump-control"><span class="std std-ref">Heatpump Controls</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><p>HeatPumpBase</p></td>
+<tr class="row-even"><td><p>HeatPumpBase</p></td>
 <td><p>This is the basic <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> for heat pumps. It allows operation mode control and reading operation
 status and measure temperature etc.</p></td>
 <td><p><a class="reference internal" href="functional-profile-categories/heatpump-control.html#heatpump-control"><span class="std std-ref">Heatpump Controls</span></a></p></td>
 </tr>
-<tr class="row-even"><td><p>Humidity</p></td>
+<tr class="row-odd"><td><p>Humidity</p></td>
 <td><p>Defines a single <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> to measure humidity.</p></td>
 <td><p><a class="reference internal" href="functional-profile-categories/sensor.html#sensor"><span class="std std-ref">Sensor</span></a></p></td>
-</tr>
-<tr class="row-odd"><td><p>LoadManagement</p></td>
-<td><p><a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> type for Energy Management Systems (EMS) with a communication interface to the the
-flexibility manager (to power suppliers, pooling providers or similar) that is controllable via two relay contacts.</p></td>
-<td><p><a class="reference internal" href="functional-profile-categories/sgcp.html#sgcp"><span class="std std-ref">SGCP</span></a></p></td>
 </tr>
 <tr class="row-even"><td><p>LoadReduction_EVSE</p></td>
 <td><p><a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> type to control load reduction of Electrical Vehicle Supply Equipement <a class="reference internal" href="glossary.html#term-EVSE"><span class="xref std std-term">EVSE</span></a>.</p></td>
@@ -543,29 +531,13 @@ operator <a class="reference internal" href="glossary.html#term-DSO"><span class
 <td><p><a class="reference internal" href="functional-profile-categories/dynamic-tariff.html#dynamic-tariff"><span class="std std-ref">Dynamic Tariff</span></a></p></td>
 </tr>
 <tr class="row-odd"><td><p>UniDirFlexFeedInMgmt</p></td>
-<td><p><a class="reference internal" href="glossary.html#term-Functional-Profile-Type"><span class="xref std std-term">Functional Profile Type</span></a> for Energy Management Systems (<a class="reference internal" href="glossary.html#term-EMS"><span class="xref std std-term">EMS</span></a>) that regulate feed-in
-and have a communication interface to power grid operator by controlling different operation modes:</p>
-<ul class="simple">
-<li><p>FI_NORMAL: The load management optimizes feed-in according to user-defined criteria within the allowed power range.</p></li>
-<li><p>FI_REDUCED: In reduced operation, feed-in power is reduced by an agreed-upon amount in percentage (curtailment).</p></li>
-<li><p>FI_MAX: In maximum operation, the load management allows for maximum feed-in power.</p></li>
-<li><p>FI_LOCKED: In the “locked” operating mode, no energy is allowed to be fed into the grid.</p></li>
-</ul>
-</td>
+<td><p><a class="reference internal" href="glossary.html#term-Functional-Profile-Type"><span class="xref std std-term">Functional Profile Type</span></a> for Energy Management Systems (<a class="reference internal" href="glossary.html#term-EMS"><span class="xref std std-term">EMS</span></a>) that expose an interface towards the
+power grid operator (:term:DSO) to control or specify limits on energy feed-in to the power grid.</p></td>
 <td><p><a class="reference internal" href="functional-profile-categories/sgcp.html#sgcp"><span class="std std-ref">SGCP</span></a></p></td>
 </tr>
 <tr class="row-even"><td><p>UniDirFlexLoadMgmt</p></td>
-<td><p><a class="reference internal" href="glossary.html#term-Functional-Profile-Type"><span class="xref std std-term">Functional Profile Type</span></a> for Energy Management Sytems (<a class="reference internal" href="glossary.html#term-EMS"><span class="xref std std-term">EMS</span></a>) that allow controlling the power
-consumption by the power grid operator through a communication interface. The profile supports for operation
-modes:</p>
-<ul class="simple">
-<li><p>LD_NORMAL: The <a class="reference internal" href="glossary.html#term-EMS"><span class="xref std std-term">EMS</span></a> optimizes power consumption according to user-defined criteria within the allowed power range.</p></li>
-<li><p>LD_REDUCED: Power consumption is reduced by an agreed-upon amount in percentage (curtailment) if possible.</p></li>
-<li><p>LD_MAX: The <a class="reference internal" href="glossary.html#term-EMS"><span class="xref std std-term">EMS</span></a> allows for maximum power consumption</p></li>
-<li><p>LD_LOCKED: No or a defined minimum energy (minLoad) is allowed to be drawn from the grid.
-This can be achieved through a reduction in power consumption during a maximum duration (maxLockTimeMinutes).</p></li>
-</ul>
-</td>
+<td><p><a class="reference internal" href="glossary.html#term-Functional-Profile-Type"><span class="xref std std-term">Functional Profile Type</span></a> for Energy Management Sytems (<a class="reference internal" href="glossary.html#term-EMS"><span class="xref std std-term">EMS</span></a>) that expose an interface towards the
+power grid operator (:term:DSO) to control or specify limits on energy consumption from the power grid.</p></td>
 <td><p><a class="reference internal" href="functional-profile-categories/sgcp.html#sgcp"><span class="std std-ref">SGCP</span></a></p></td>
 </tr>
 </tbody>
@@ -574,8 +546,8 @@ This can be achieved through a reduction in power consumption during a maximum d
 <section id="level-of-operation">
 <span id="id4"></span><h2><a class="reference internal" href="glossary.html#term-Level-Of-Operation"><span class="xref std std-term">Level of Operation</span></a><a class="headerlink" href="#level-of-operation" title="Permalink to this heading"></a></h2>
 <p>Level Of Operation defines a complexity level of the <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> device controls:</p>
-<table class="docutils align-default" id="id11">
-<caption><span class="caption-number">Table 5 </span><span class="caption-text">Level of Operation</span><a class="headerlink" href="#id11" title="Permalink to this table"></a></caption>
+<table class="docutils align-default" id="id12">
+<caption><span class="caption-number">Table 8 </span><span class="caption-text">Level of Operation</span><a class="headerlink" href="#id12" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 10.0%" />
 <col style="width: 30.0%" />
@@ -654,8 +626,8 @@ on the definition level they apply either to a specific data point,
 every data point of a functional profile, or the the entire device.</p>
 <p>These attributes are generally used to search for devices that fulfill a
 set of minimum requirements to support a specific use case.</p>
-<table class="docutils align-default" id="id12">
-<caption><span class="caption-number">Table 6 </span><span class="caption-text">Level of Operation</span><a class="headerlink" href="#id12" title="Permalink to this table"></a></caption>
+<table class="docutils align-default" id="id13">
+<caption><span class="caption-number">Table 9 </span><span class="caption-text">Level of Operation</span><a class="headerlink" href="#id13" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 32.0%" />
 <col style="width: 14.0%" />
@@ -709,14 +681,14 @@ initial value. 2. regular communication starts. The communicator
 periodically sets new set values. 3. communication breaks. The device
 receives its last set value. 4. after reaching the timeout the device
 automatically sets the fallback value.</p>
-<figure class="align-default" id="id13">
+<figure class="align-default" id="id14">
 <img alt="SGr Stability Fallback" src="../_images/genAttributes_sstabilityFallback.drawio.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 10 </span><span class="caption-text">SGr Stability Fallback</span><a class="headerlink" href="#id13" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">SGr Stability Fallback</span><a class="headerlink" href="#id14" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
-<table class="docutils align-default" id="id14">
-<caption><span class="caption-number">Table 7 </span><span class="caption-text">Stability Fallback</span><a class="headerlink" href="#id14" title="Permalink to this table"></a></caption>
+<table class="docutils align-default" id="id15">
+<caption><span class="caption-number">Table 10 </span><span class="caption-text">Stability Fallback</span><a class="headerlink" href="#id15" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 26.0%" />
 <col style="width: 10.0%" />
@@ -811,8 +783,8 @@ until a new command is received.</p></td>
 presence of any quality attributes either on functional profile or data
 point level indicate that the com handler will provide these dynamic
 attributes at run time (see documentation of SGr com handler libs)</p>
-<table class="docutils align-default" id="id15">
-<caption><span class="caption-number">Table 8 </span><span class="caption-text">Data Point Quality</span><a class="headerlink" href="#id15" title="Permalink to this table"></a></caption>
+<table class="docutils align-default" id="id16">
+<caption><span class="caption-number">Table 11 </span><span class="caption-text">Data Point Quality</span><a class="headerlink" href="#id16" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 28.0%" />
 <col style="width: 10.0%" />
@@ -911,8 +883,8 @@ of a such a command:</p>
 <p>A <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> mainly defines a set of <a class="reference internal" href="glossary.html#term-Data-Points"><span class="xref std std-term">Data Points</span></a>. The <a class="reference internal" href="glossary.html#term-Data-Points"><span class="xref std std-term">Data Points</span></a> define access points to values
 that can be read from or written to the product.</p>
 <p>The <a class="reference internal" href="glossary.html#term-Data-Points"><span class="xref std std-term">Data Points</span></a> are defined by the following attributes:</p>
-<table class="docutils align-default" id="id16">
-<caption><span class="caption-number">Table 9 </span><span class="caption-text"><a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> Attributes</span><a class="headerlink" href="#id16" title="Permalink to this table"></a></caption>
+<table class="docutils align-default" id="id17">
+<caption><span class="caption-number">Table 12 </span><span class="caption-text"><a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> Attributes</span><a class="headerlink" href="#id17" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 30.0%" />
 <col style="width: 70.0%" />
@@ -966,6 +938,31 @@ name “MainDatapoint” and is connected with a sub <a class="reference interna
 with a dot.</p>
 <p>An example for a sub <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> is “Voltage.Precision” as the precision of the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> “Voltage”.</p>
 </section>
+<section id="smartgridready-functional-profile-library">
+<h2>SmartGridready <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> Library<a class="headerlink" href="#smartgridready-functional-profile-library" title="Permalink to this heading"></a></h2>
+<p>The currently published <a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> are available on the
+<a class="reference external" href="https://library.smartgridready.ch/FunctionalProfileTemplate">SmartGridready Functional Profile Library</a>.</p>
+<p>You can add a serach filter by modifying the base URL and adding query parameters.
+Use the following base URL:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>https://library.smartgridready.ch/FunctionalProfileTemplate
+</pre></div>
+</div>
+<p>and add http query parameters like:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>https://library.smartgridready.ch/FunctionalProfileTemplate?level=2m,4m&amp;category=SGCP
+</pre></div>
+</div>
+<p>Each parameter can contain a comma separated list of filter values:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...&amp;</span><span class="n">level</span><span class="o">=</span><span class="mi">2</span><span class="n">m</span><span class="p">,</span><span class="mi">4</span><span class="n">m</span><span class="o">&amp;...</span>
+</pre></div>
+</div>
+<p>Available parameters are:</p>
+<ul class="simple">
+<li><p>release (aliases: state, releaseState)</p></li>
+<li><p>level (aliases: levelOfOperation)</p></li>
+<li><p>category (aliases: functionalProfileCategory)</p></li>
+<li><p>type (aliases: functionalProfileType)</p></li>
+</ul>
+</section>
 <section id="defining-functional-profiles">
 <h2>Defining <a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a><a class="headerlink" href="#defining-functional-profiles" title="Permalink to this heading"></a></h2>
 <section id="file-naming-scheme">
@@ -992,10 +989,10 @@ profiles.</p>
 <section id="states">
 <h3>States<a class="headerlink" href="#states" title="Permalink to this heading"></a></h3>
 <p>A <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> cycles through the following states:</p>
-<figure class="align-default" id="id17">
+<figure class="align-default" id="id18">
 <img alt="SGr Functional Profile Process" src="../_images/functionalProfile_process.drawio.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 11 </span><span class="caption-text">SGr Functional Profile Process</span><a class="headerlink" href="#id17" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">SGr Functional Profile Process</span><a class="headerlink" href="#id18" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <table class="docutils align-default">
@@ -1122,8 +1119,8 @@ as descriptions, translations, remarks</p></td>
 <section id="release-notes">
 <h3>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this heading"></a></h3>
 <p>The release notes section contains meta data that describe history and current state of the functional profile.</p>
-<table class="docutils align-default" id="id18">
-<caption><span class="caption-number">Table 10 </span><span class="caption-text">Releas Notes</span><a class="headerlink" href="#id18" title="Permalink to this table"></a></caption>
+<table class="docutils align-default" id="id19">
+<caption><span class="caption-number">Table 13 </span><span class="caption-text">Releas Notes</span><a class="headerlink" href="#id19" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 30.0%" />
 <col style="width: 70.0%" />

@@ -142,16 +142,11 @@ description):
 
     * - **SGCP**
       - Used for Smart Grid Connection Point (:term:`SGCP`) :term:`Products`.
-      - :ref:`metering`
+      - :ref:`sgcp`
 
     * - **Sensor**
       - Used with :term:`Products` that allow reading data from sensor devices, for example a humidity sensor.
       - :ref:`sensor`
-
-    * - **TemperatureSensor**
-      - Used with :term:`Products` that measure temperatures.
-      - :ref:`temperature-sensor`
-
 
 .. toctree::
     :maxdepth: 1
@@ -169,7 +164,6 @@ description):
     functional-profile-categories/metering
     functional-profile-categories/sgcp
     functional-profile-categories/sensor
-    functional-profile-categories/temperature-sensor
 
 
 .. _functional_profile_type:
@@ -217,11 +211,6 @@ Therefore a :term:`Functional Profile` is uniquely defined by:
       - Provides :term:`Data Points` for AC apparent power measurement. Supports single phase, multi phase and total
         apparent power measurements.
       - :ref:`metering`
-    * - BiDirFlexMgmt
-      - Functional profile for Energy Management Systems (EMS) that feature a bidirectional communication interface with
-        a flexibility manager (e.g., utility company / grid operator). The interface allows both the retrieval of
-        current data and the targeted control of power at the grid connection point via defined data points.
-      - :ref:`sgcp`
     * - BufferStorageCtrl
       - This :term:`Functional Profile` type extends the **HeatPumpBase** :term:`Functional Profile` type. It provides
         :term:`Data Points` to read temperature from and control heat pump buffer storage devices.
@@ -254,9 +243,9 @@ Therefore a :term:`Functional Profile` is uniquely defined by:
         from a :term:`Product`.
       - :ref:`heatpump-control`, :ref:`battery`, :ref:`battery-system`
     * - FlexMgmt
-      - :term:`Functional Profile` for Energy Management Systems (EMS) that feature a bidirectional communication
-        interface with a flexibility manager (e.g., utility company / grid operator). The interface allows both the
-        retrieval of current data and the targeted control of power at the grid connection point via defined data points.
+      - :term:`Functional Profile` for Energy Management Systems (term:`EMS`)that expose an interface towards the
+        power grid operator (:term:DSO) to control or specify limits on power consumption from the power grid
+        and limits for energy feed-in to the power grid.
       - :ref:`SGCP`
     * - Frequency
       - Defines a single :term:`Data Point` to measure AC frequency.
@@ -272,10 +261,6 @@ Therefore a :term:`Functional Profile` is uniquely defined by:
     * - Humidity
       - Defines a single :term:`Data Point` to measure humidity.
       - :ref:`Sensor`
-    * - LoadManagement
-      - :term:`Functional Profile` type for Energy Management Systems (EMS) with a communication interface to the the
-        flexibility manager (to power suppliers, pooling providers or similar) that is controllable via two relay contacts.
-      - :ref:`SGCP`
     * - LoadReduction_EVSE
       - :term:`Functional Profile` type to control load reduction of Electrical Vehicle Supply Equipement :term:`EVSE`.
       - :ref:`EVSE`
@@ -320,26 +305,12 @@ Therefore a :term:`Functional Profile` is uniquely defined by:
         operator :term:`DSO`.
       - :ref:`dynamic-tariff`
     * - UniDirFlexFeedInMgmt
-      - :term:`Functional Profile Type` for Energy Management Systems (:term:`EMS`) that regulate feed-in
-        and have a communication interface to power grid operator by controlling different operation modes:
-
-        * FI_NORMAL: The load management optimizes feed-in according to user-defined criteria within the allowed power range.
-        * FI_REDUCED: In reduced operation, feed-in power is reduced by an agreed-upon amount in percentage (curtailment).
-        * FI_MAX: In maximum operation, the load management allows for maximum feed-in power.
-        * FI_LOCKED: In the "locked" operating mode, no energy is allowed to be fed into the grid.
-
+      - :term:`Functional Profile Type` for Energy Management Systems (:term:`EMS`) that expose an interface towards the
+        power grid operator (:term:DSO) to control or specify limits on energy feed-in to the power grid.
       - :ref:`sgcp`
     * - UniDirFlexLoadMgmt
-      - :term:`Functional Profile Type` for Energy Management Sytems (:term:`EMS`) that allow controlling the power
-        consumption by the power grid operator through a communication interface. The profile supports for operation
-        modes:
-
-        * LD_NORMAL: The :term:`EMS` optimizes power consumption according to user-defined criteria within the allowed power range.
-        * LD_REDUCED: Power consumption is reduced by an agreed-upon amount in percentage (curtailment) if possible.
-        * LD_MAX: The :term:`EMS` allows for maximum power consumption
-        * LD_LOCKED: No or a defined minimum energy (minLoad) is allowed to be drawn from the grid.
-          This can be achieved through a reduction in power consumption during a maximum duration (maxLockTimeMinutes).
-
+      - :term:`Functional Profile Type` for Energy Management Sytems (:term:`EMS`) that expose an interface towards the
+        power grid operator (:term:DSO) to control or specify limits on energy consumption from the power grid.
       - :ref:`sgcp`
 
 
@@ -679,6 +650,41 @@ name "MainDatapoint" and is connected with a sub :term:`Data Point` "SubDatapoin
 with a dot.
 
 An example for a sub :term:`Data Point` is "Voltage.Precision" as the precision of the :term:`Data Point` "Voltage".
+
+
+SmartGridready :term:`Functional Profile` Library
+-------------------------------------------------
+
+The currently published :term:`Functional Profiles` are available on the
+`SmartGridready Functional Profile Library <https://library.smartgridready.ch/FunctionalProfileTemplate>`_.
+
+You can add a serach filter by modifying the base URL and adding query parameters.
+Use the following base URL:
+
+.. code-block:: text
+
+    https://library.smartgridready.ch/FunctionalProfileTemplate
+
+and add http query parameters like:
+
+.. code-block:: text
+
+    https://library.smartgridready.ch/FunctionalProfileTemplate?level=2m,4m&category=SGCP
+
+Each parameter can contain a comma separated list of filter values:
+
+.. code-block::
+
+    ...&level=2m,4m&...
+
+Available parameters are:
+
+* release (aliases: state, releaseState)
+* level (aliases: levelOfOperation)
+* category (aliases: functionalProfileCategory)
+* type (aliases: functionalProfileType)
+
+
 
 Defining :term:`Functional Profiles`
 ------------------------------------

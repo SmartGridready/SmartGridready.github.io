@@ -39,10 +39,10 @@ Glossary
         the higher-voltage part of the gris.
 
     EID
-        External Interface Description in XML (also known as EI-XML). The EID defines the conversion rules needed to
-        adapt a specific :term:`Product` to the SmartGridready generic API. It contains a list of :term:`Functional
-        Profile`'s that the :term:`Product` supports, together with the conversion rules to adapt the :term:`Product`
-        to the generic API interface.
+        External Interface Description in XML (also known as EI-XML or Product Description File).
+        The EID defines the conversion rules needed to adapt a specific :term:`Product` to the SmartGridready
+        generic API. It contains a list of :term:`Functional Profile`'s that the :term:`Product` supports, together
+        with the conversion rules to adapt the :term:`Product` to the generic API interface.
 
     External Interface Definition
         See :term:`EID`
@@ -58,7 +58,8 @@ Glossary
         See :term:`EMS`
 
     Flexibility Manager
-        The Flexibility Manager acts within a power grid allowing an intelligent load management.
+        The Flexibility Manager acts within a power grid allowing an intelligent load management. It is usually
+        operated by a :term:`DSO`.
 
     Functional Profile
         The Functional Profile describes a set of common functionalities that are exposed trough the generic

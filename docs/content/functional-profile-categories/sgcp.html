@@ -122,13 +122,14 @@
 <li class="toctree-l3"><a class="reference internal" href="metering.html">Metering</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">SGCP</a><ul class="simple">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">SGCP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#unidirectional-functional-profiles">Unidirectional <span class="xref std std-term">Functional Profiles</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bidirectional-functional-profiles">Bidirectional <span class="xref std std-term">Functional Profiles</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#level-of-operation-2-2m"><span class="xref std std-ref">level_of_operation</span> 2/2m</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#level-of-operation-4-4m"><span class="xref std std-ref">level_of_operation</span> 4/4m</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="sensor.html">Sensor</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="temperature-sensor.html">Temperature Sensor</a><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -145,6 +146,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#data-points"><span class="xref std std-term">Data Points</span></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#sub-data-points">Sub Data Points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#smartgridready-functional-profile-library">SmartGridready <span class="xref std std-term">Functional Profile</span> Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../functional-profiles.html#defining-functional-profiles">Defining <span class="xref std std-term">Functional Profiles</span></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../functional-profiles.html#file-naming-scheme">File Naming Scheme</a></li>
 </ul>
@@ -163,6 +165,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../product-description-file.html">Product Description File</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../product-description-file.html#smartgridready-product-library">SmartGridready <span class="xref std std-term">Product</span> Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../product-description-file.html#product-ei-xml-documentation-on-github">Product EI-XML Documentation on GitHub</a><ul class="simple">
 </ul>
 </li>
@@ -227,15 +230,180 @@
              
   <section id="sgcp">
 <span id="id1"></span><h1>SGCP<a class="headerlink" href="#sgcp" title="Permalink to this heading"></a></h1>
-<figure class="align-center" style="width: 40%">
-<img alt="../../_images/wip.png" src="../../_images/wip.png" />
-</figure>
+<p>The <strong>*Smart Grid Connection Point</strong> (<a class="reference internal" href="../glossary.html#term-SGCP"><span class="xref std std-term">SGCP</span></a>) <a class="reference internal" href="../functional-profiles.html#functional-profile-category"><span class="std std-ref">Functional Profile Category</span></a> is used within devices
+that allow a Distribution System Operator <a class="reference internal" href="../glossary.html#term-DSO"><span class="xref std std-term">DSO</span></a> gather information and control the power consumption
+within their network.</p>
+<p>The <a class="reference internal" href="../glossary.html#term-SGCP"><span class="xref std std-term">SGCP</span></a> is a crucial component within a the smart grid (or network) to intelligently
+monitor and manage the generation, distribution, and consumption of electricity.</p>
+<p>It allows a power grid operators (<a class="reference internal" href="../glossary.html#term-DSO"><span class="xref std std-term">DSO</span></a>) managing the power consumption dynamically in response to
+supply and load conditions, as described in the following example:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>The <a class="reference internal" href="../glossary.html#term-DSO"><span class="xref std std-term">DSO</span></a>/<a class="reference internal" href="../glossary.html#term-TSO"><span class="xref std std-term">TSO</span></a> (grid operator) detects:</p>
+<ul class="simple">
+<li><p>High demand</p></li>
+<li><p>Grid instability</p></li>
+<li><p>Supply shortage (e.g., low renewable power generation)</p></li>
+</ul>
+</li>
+</ol>
+</div></blockquote>
+<ol class="arabic" start="2">
+<li><p>The <a class="reference internal" href="../glossary.html#term-Flexibility-Manager"><span class="xref std std-term">Flexibility Manager</span></a> system of the <a class="reference internal" href="../glossary.html#term-DSO"><span class="xref std std-term">DSO</span></a> sends signal to:</p>
+<ul class="simple">
+<li><p>Network Aggregators</p></li>
+<li><p>Directly to Energy Management Systems (<a class="reference internal" href="../glossary.html#term-EMS"><span class="xref std std-term">EMS</span></a>)</p></li>
+</ul>
+<p>Communication is done over a smart grid communication network.</p>
+</li>
+<li><p>The aggregator or consumer <a class="reference internal" href="../glossary.html#term-EMS"><span class="xref std std-term">EMS</span></a>:</p>
+<ul>
+<li><p>Evaluates the demand/response request e.g. curtail load, shift usage</p></li>
+<li><p>Decides what actions to take based on:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Contracts</p></li>
+<li><p>User preferences</p></li>
+<li><p>Current load and device status</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><dl class="simple">
+<dt>The local systems automatically:</dt><dd><ul class="simple">
+<li><p>Turn off or reduce HVAC, water heaters, EV charging, etc.</p></li>
+<li><p>Shift operation of devices (e.g., delay a washing machine)</p></li>
+<li><p>Possibly export energy from home batteries or solar systems</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><a class="reference internal" href="../glossary.html#term-Smart-Meter"><span class="xref std std-term">Smart Meter</span></a> or term:<cite>EMS</cite> report to <a class="reference internal" href="../glossary.html#term-DSO"><span class="xref std std-term">DSO</span></a> and Aggregators:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Actual load reduction</p></li>
+<li><p>Timestamped consumption data</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><dl class="simple">
+<dt>Based on verified reductions, the participant receives:</dt><dd><ul class="simple">
+<li><p>Financial rewards</p></li>
+<li><p>Bill credits</p></li>
+<li><p>Other incentives</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+<p>The following chapters describe the SmartGridready <a class="reference internal" href="../glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> assiciated with the <strong>SGCP</strong>
+<a class="reference internal" href="../functional-profiles.html#functional-profile-category"><span class="std std-ref">Functional Profile Category</span></a>, which is primarily provided by <a class="reference internal" href="../glossary.html#term-EMS"><span class="xref std std-term">EMS</span></a> devices:</p>
+<section id="unidirectional-functional-profiles">
+<h2>Unidirectional <a class="reference internal" href="../glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a><a class="headerlink" href="#unidirectional-functional-profiles" title="Permalink to this heading"></a></h2>
+<p>Unidirectional <a class="reference internal" href="../glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> allow control the device operation mode in just one direction, either
+the power consumption of the consumer from the network or the power feed of the ‘prosumer’ towards the network.</p>
+<p>The related <a class="reference internal" href="../glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> are:
+* <strong>UniDirFlexLoadMgmt</strong> - allows controlling the power consumption of a power consumer.
+* <strong>UniDirFlexFeedInMgmt</strong> - allows controlling the power feed limits towards the power network/grid.</p>
+</section>
+<section id="bidirectional-functional-profiles">
+<h2>Bidirectional <a class="reference internal" href="../glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a><a class="headerlink" href="#bidirectional-functional-profiles" title="Permalink to this heading"></a></h2>
+<p>Bidirectional <a class="reference internal" href="../glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> allow controlling the power consumption from and the power feed into the
+network.</p>
+<p>Functional profiles are:
+* <strong>FlexMgmt</strong> - allows controlling the power power consumption AND the power feed in limits.</p>
+</section>
+<section id="level-of-operation-2-2m">
+<h2><a class="reference internal" href="../functional-profiles.html#level-of-operation"><span class="std std-ref">Level of Operation</span></a> 2/2m<a class="headerlink" href="#level-of-operation-2-2m" title="Permalink to this heading"></a></h2>
+<p>The <a class="reference internal" href="../functional-profiles.html#level-of-operation"><span class="std std-ref">Level of Operation</span></a> 2/2m allow power control by setting the operation mode through 2 digital inputs
+(e.g. two relay contacts). The 4 possible operation modes depend on the <a class="reference internal" href="../glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a>:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../functional-profiles.html#level-of-operation"><span class="std std-ref">Level of Operation</span></a> 2: operation mode can only be set.</p></li>
+<li><p><a class="reference internal" href="../functional-profiles.html#level-of-operation"><span class="std std-ref">Level of Operation</span></a> 2m: current operation mode can be read back.</p></li>
+</ul>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-number">Table 4 </span><span class="caption-text"><strong>UniDirFlexLoadMgmt 2/2m Operation Modes</strong></span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>NORMAL</p></td>
+<td><p>In normal operation, the load management optimizes power consumption according to the user’s criteria, within
+the permitted power range.</p></td>
+</tr>
+<tr class="row-even"><td><p>REDUCED</p></td>
+<td><p>In reduced operation, the power consumption is decreased by an agreed percentage (curtailment), if possible.</p></td>
+</tr>
+<tr class="row-odd"><td><p>MAX</p></td>
+<td><p>In maximum operation, the load management allows for maximum power consumption.</p></td>
+</tr>
+<tr class="row-even"><td><p>LOCKED</p></td>
+<td><p>In the ‘locked’ operating mode, either no energy or only a defined minimum amount (minLoad) may be drawn from t
+he grid. This can be achieved by reducing power consumption for a maximum duration (maxLockTimeMinutes).</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-number">Table 5 </span><span class="caption-text"><strong>UniDirFlexFeedInMgmt 2/2m Operation Modes</strong></span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>NORMAL</p></td>
+<td><p>In normal operation, the load management optimizes the power feed in according the user’s criteria.</p></td>
+</tr>
+<tr class="row-even"><td><p>REDUCED</p></td>
+<td><p>The feed-in power is reduced by an agreed percentage (curtailment), if possible.</p></td>
+</tr>
+<tr class="row-odd"><td><p>MAX</p></td>
+<td><p>The load management allows maximum power feed-in.</p></td>
+</tr>
+<tr class="row-even"><td><p>LOCKED</p></td>
+<td><p>In this operating mode, either no energy or only a defined minimum amount (minLoad) may be fed into the grid.
+This can be achieved by curtailing generation or disabling battery discharge for a maximum duration
+(maxLockTimeMinutes).</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-number">Table 6 </span><span class="caption-text"><strong>FLexMgmt 2/2m Operation Modes</strong></span><a class="headerlink" href="#id4" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>NORMAL</p></td>
+<td><p>No restrictions by the <a class="reference internal" href="../glossary.html#term-DSO"><span class="xref std std-term">DSO</span></a> power consumption or feed-in according the user’s criteria.</p></td>
+</tr>
+<tr class="row-even"><td><p>MAX_LOAD</p></td>
+<td><p>In maximum operation, the load management allows for maximum power consumption.</p></td>
+</tr>
+<tr class="row-odd"><td><p>MAX_FEEDIN</p></td>
+<td><p>The load management allows maximum power feed-in.</p></td>
+</tr>
+<tr class="row-even"><td><p>LOCKED</p></td>
+<td><p>In this operation mode power consumption or power feed-in is zero or limited to a minimum amount (minLoad).</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="level-of-operation-4-4m">
+<h2><a class="reference internal" href="../functional-profiles.html#level-of-operation"><span class="std std-ref">Level of Operation</span></a> 4/4m<a class="headerlink" href="#level-of-operation-4-4m" title="Permalink to this heading"></a></h2>
+<p><a class="reference internal" href="../glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> at <a class="reference internal" href="../functional-profiles.html#level-of-operation"><span class="std std-ref">Level of Operation</span></a> 4/4m enable fine-grained control of power consumption and/or
+feed-in management. They support the configuration of continuous limitation values for both power consumption and/or
+feed-in. Additionally, they may allow the definition of time-based limits to be applied during specific periods.</p>
+<p><a class="reference internal" href="../functional-profiles.html#level-of-operation"><span class="std std-ref">Level of Operation</span></a> 4m <a class="reference internal" href="../glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> also support reading back current configuration settings
+and provide metrics on present operating values.</p>
 <a href="../functional-profiles.html#functional-profile-category" class="btn btn-neutral float-left">
     <span class="fa fa-arrow-circle-left" aria-hidden="true"></span>
     Back to Functional Profile Categories
 <a>
 <p><div class="toctree-wrapper compound">
 </div>
+</section>
 </section>
 
 
