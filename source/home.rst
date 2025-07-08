@@ -19,7 +19,7 @@ The following table gives you a documentation overview and the targeted audience
 
     *   - :ref:`getting-involved`
         - There are many ways to get involved and contribute to the SmartGridready project.
-          This chapter how you can participate in SmartGridready projects based on your interests and expertise.
+          This chapter describes how you can participate in SmartGridready projects based on your interests and expertise.
         - * Everybody
 
     *   - :ref:`functional-profiles`
@@ -48,7 +48,7 @@ The following table gives you a documentation overview and the targeted audience
 
              <br>
 
-          Provides a link to the official SmartGridread libary where all available :term:`Functional Profiles`
+          Provides a link to the official SmartGridready libary where all available :term:`Functional Profiles`
           are listed.
 
         - * Architects and Planners
