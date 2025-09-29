@@ -210,6 +210,8 @@ Example:
 
 
 
+
+
 SmartGridready :term:`Product` Library
 --------------------------------------
 
@@ -238,14 +240,17 @@ Each parameter can contain a comma separated list of filter values:
 Available parameters are:
 
 * release (aliases: state, releaseState)
-* test (aliase: testState)
-* manufacturer (aliase: manufacturerName)
-* device (aliase: deviceName, product, productName)
-* interface (aliase: -)
-* category (aliase: deviceCategory)
-* fpCategory (aliase: functionalProfileCategory)
-* fpType (aliase: functionalProfileType)
-* level (aliase: levelOfOperation)
+* test (aliases: testState)
+* manufacturer (aliases: manufacturerName)
+* device (aliases: deviceName, product, productName)
+* interface (aliases: -)
+* category (aliases: deviceCategory)
+* fpCategory (aliases: functionalProfileCategory)
+* fpType (aliases: functionalProfileType)
+* level (aliases: levelOfOperation)
+
+
+
 
 
 
