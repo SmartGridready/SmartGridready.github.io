@@ -156,6 +156,8 @@ Example:
 Configuration List
 ^^^^^^^^^^^^^^^^^^
 
+.. _<configurationList>:
+
 <configurationList>
 """""""""""""""""""
 
@@ -208,6 +210,350 @@ Example:
  </configurationList>
 
 
+Interface List
+^^^^^^^^^^^^^^
+
+The interface list element lists the communication interfaces supported by the :term:`Product`.
+
+**Supported Interfaces**
+
+* **Modbus**
+
+    * RTU, RTU-ASCII, modbus over serial interface RS232 and RS485.
+    * TCPIP, TCPIP-ASCII
+    * UDPIP, UDPIP-ASCII
+
+* **REST-API** HTTP, HTTPS
+* **Messaging** MQTT
+
+For **Modbus** interfaces, the basic ``<interfaceList>`` is structured as follows:
+
+::
+
+    <interfaceList>
+        <modbusInterface>
+            <modbusInterfaceDescription>
+                ...
+            </modbusInterfaceDescription>
+            <modbusAtttributes>
+                ...
+            </modbusAttributes>
+            <functionalProfileList>
+                ...
+            </functionalProfileList>
+        </modbusInterface>
+    </interfaceList>
+
+* ``<modbusInterfaceDescription>`` describes the details needed to setup the communication with the Modbus device.
+  See :ref:`<modbusInterfaceDescription>`.
+* ``<modbusAttributes>`` contains optional attributes that describe the device's additional properties that
+  might be of interest. See :ref:`<modbusAttributes>`.
+* ``<functionalProfileList>``. Contains a list of supported functional profiles supported by the Modbus interface.
+  See :ref:`<functionalProfileList>`
+
+
+For **REST-API** interfaces, the basic ``<interfaceList>`` is structured as follows:
+
+::
+
+   <interfaceList>
+        <restApiInterface>
+            <restApiInterfaceDescription>
+            ...
+            </restApiInterfaceDescription>
+            <functionalProfileList>
+            ...
+            </functionalProfileList>
+        </restApiInterface>
+   </interfaceList>
+
+* ``<restApiInterfaceDescription>`` describes the details needed to setup the communication with
+  the REST service . See :ref:`<restApiInterfaceDescription>`.
+* ``<functionalProfileList>``. Contains a list of supported functional profiles supported by the REST-API interface.
+  See :ref:`<functionalProfileList>`.
+
+
+
+For **Messaging** interfaces, the basic ``<interfaceList>`` is structured as follows:
+
+::
+
+    <interfaceList>
+        <messagingInterface>
+            <messagingInterfaceDescription>
+            ...
+            </messagingInterfaceDescription>
+            <functionalProfileList>
+            ...
+            </functionalProfileList>
+        </messagingInterface>
+    </interfaceList>
+
+* ``<restApiInterfaceDescription>`` describes the details needed to setup the communication with
+  the Messaging service such as an MQTT message broker. See `<messagingInterfaceDescription>`_.
+* ``<functionalProfileList>``. Contains a list of supported functional profiles supported by the REST-API interface.
+  See :ref:`<functionalProfileList>`
+
+
+
+
+.. note::
+
+    The current :term:`Communication Handler` libraries `SGrJava <https://github.com/SmartGridready/SGrJava>`_ and `SGrPython <https://github.com/SmartGridready/SGrPython>`_ do support only
+    one interface listed within the ``<interfaceList>``.
+
+
+.. _<modbusInterfaceDescription>:
+
+<modbusInterfaceDescription>
+""""""""""""""""""""""""""""
+
+The following basic modbus types can be selected:
+
+* RTU - binary data communication via serial interface RS232 or RS485
+* RTU-ASCII - communication via serial interface RS232 or RS485 using ASCII characters
+* TCPIP - binary data communication via TCP-IP connection
+* TCPIP-ASCII - communication via TCP-IP connection using ASCII characters
+* UDPIP - binary communication via UDP IP connection
+* UDPIP-ASCII - comunication via UDP IP connection using ASCII characters
+
+For **Modbus RTU** and **Modbus RTU-ASCII** the `<modbusInterfaceDescription>` element is structured as follows (sample for
+Modbus RTU):
+
+::
+
+    <modbusInterfaceDescripion>
+        <modbusInterfaceSelection>RTU</modbusInterfaceSelection>
+        <modbusRtu>
+              <slaveAddr>{{slave_id}}</slaveAddr>
+              <portName>{{serial_port}}</portName>
+              <baudRateSelected>{{serial_baudrate}}</baudRateSelected>
+              <byteLenSelected>{{serial_databits}}</byteLenSelected>
+              <paritySelected>{{serial_parity}}</paritySelected>
+              <stopBitLenSelected>{{serial_stopbits}}</stopBitLenSelected>
+              <serialInterfaceCapability>
+                <baudRatesSupported>1200</baudRatesSupported>
+                <baudRatesSupported>2400</baudRatesSupported>
+                <baudRatesSupported>4800</baudRatesSupported>
+                <baudRatesSupported>9600</baudRatesSupported>
+                <baudRatesSupported>19200</baudRatesSupported>
+                <baudRatesSupported>38400</baudRatesSupported>
+                <baudRatesSupported>57600</baudRatesSupported>
+                <baudRatesSupported>115200</baudRatesSupported>
+                <byteLenSupported>8</byteLenSupported>
+                <paritySupported>EVEN</paritySupported>
+                <paritySupported>NONE</paritySupported>
+                <paritySupported>ODD</paritySupported>
+                <stopBitLenSupported>1</stopBitLenSupported>
+              </serialInterfaceCapability>
+        </modbusRtu>
+    </modbusInterfaceDescription>
+
+*   ``<modbusInterfaceSelection``: one of:
+
+    * RTU
+    * RTU-ASCII
+
+*   ``<modbusRtu>``: Container for the serial interface properties.
+*   ``<slaveAddr>``: Defines the Modbus slave address used by the device.
+*   ``<portName>``: Operating system's ame of the serial port to be used (e.g. COM3, /dev/ttyS0)
+*   ``<baudRateSelected>``: The baud rate to be used for the serial communication.
+*   ``<paritySelected>``: The parity calculation method to be used for the serial communication.
+*   ``<stopBitLenSelected>``: The number of stop-bits used for the serial communicaion.
+*   ``<serialInterfaceCapability>``: The baud-rates, byte-length, parity calculation methods and stop-bit numbers that
+    are supported by the device. These are read-only values and provide information about the :term:`Product` capabilities.
+
+
+For **Modbus TCP-IP** and **Modbus UDP-IP** the `<modbusInterfaceDescription>` element is structured as follows (sample
+for Modbus TCP-IP):
+
+::
+
+    <modbusInterfaceDescription>
+        <modbusInterfaceSelection>TCPIP</modbusInterfaceSelection>
+        <modbusTcp>
+            <port>{{ip_port}}</port>
+            <address>{{ip_address}}</address>
+            <slaveId>{{slave_id}}</slaveId>
+        </modbusTcp>
+        <firstRegisterAddressIsOne>false</firstRegisterAddressIsOne>
+        <bitOrder>BigEndian</bitOrder>
+    </modbusInterfaceDescription>
+
+* ``<modbusInterfaceSelection>``: one of:
+
+    * TCPIP
+    * TCPIP-ASCII
+    * UDPIP
+    * UDPIP-ASCII
+
+* ``<modbusTcp>``: Container for the TCP-IP and UDP connection properties.
+* ``<port>{{ip_port}}</port>``: The TCP/UDP IP port,
+* ``<address>{{ip_address}}</address>``: The TCP/UDP IP address (v4, v6).
+* ``<slaveId>``: The modbus slave-ID to be adressed.
+
+
+.. note::
+
+    The values in double brackets like ``{{serial_port}}`` or ``{{ip_address}}`` will be replaced by the configuration
+    value with the name in brackets, in our examples ``serial_port`` and ``ip_address``. See also
+    :ref:`<configurationList>`
+
+
+
+.. _<modbusAttributes>:
+
+<modbusAttributes>
+""""""""""""""""""
+
+The ``<modbusAttributes>`` element is optional, and may contains following optional elements that define additional
+properties of the Modbus interface.
+
+The  ``modbusAttributes`` element is as follows (all elements are optional):
+
+::
+
+    <modbusAttributes>
+        <pollingLatencyMs>500</pollingLatencyMs>
+        <accessProtection>
+            <modbusExceptionCode>IllegalFunction</modbusExceptionCode>
+            <modbusExceptionCode>IllegalAddress</modbusExceptionCode>
+            <isEnabled>true</isEnabled>
+        </accessProtection>
+        <layer6Deviation>
+            <2RegBase1000_L2H/>
+        </layer6Deviation>
+    </modbusAttributes>
+
+* ``<pollingLatencyMs``: Defines the latency (delay between sending a request and receiving a response) of the data read
+  from the :term:`Product` device.
+* ``<accessProtection>``: Modbus datapoints may be protected by execptions. If this is the case, a
+  datapoint may be selected as true with a range of supported exceptions. A NOT listed
+  exception means no XY exception.
+* ``<modbusExceptionCode``: One of:
+
+    * IllegalFunction
+    * IllegalAddress
+    * IllegalDataValue
+    * SlaveFailure
+    * ACK
+    * SlaveBusy
+    * NACK
+    * MemoryParityErr
+    * GtwyPathErr
+    * GtwyTargetErr
+
+* ``<isEnabled>``:
+
+    * if ``true``: the listed exceptions are enabled
+    * if ``false``: the listed exceptions are disabled
+
+* ``<layer6Deviation>``: Is used to correct non standard data representation on the application layer (layer6).
+  Following settings are supported:
+
+    * ``2RegBase1000_L2H`` : 2 registers represent a combined value. As an example a metering value shows kWh at the lower
+      address and MWh at the higher address, where ``higherUnit = 1000 * lowerUnit``.
+    * ``2RegBase1000_H2L`` : 2 registers represent a combined value. As an example a metering value shows MWh at the lower
+      address and kWh at the higher address, where ``higherUnit = 1000 * lowerUnit``.
+
+
+.. _<restApiInterfaceDescription>:
+
+<restApiInterfaceDescription>
+"""""""""""""""""""""""""""""
+
+The ``<restApiInterfaceDescription>`` element is structured as follows:
+
+::
+
+      <restApiInterfaceDescription>
+        <restApiInterfaceSelection>URI</restApiInterfaceSelection>
+        <restApiUri>{{baseUri}}</restApiUri>
+        <restApiAuthenticationMethod>BearerSecurityScheme</restApiAuthenticationMethod>
+        <restApiBearer>
+          <restApiServiceCall>
+            ...
+          </restApiServiceCall>
+        </restApiBearer>
+      </restApiInterfaceDescription>
+
+* ``<restApiInterfaceSelection>``: Selects the type of the addressing used for the communication. The address type
+    is expected suit the address given within the element ``<restApiUri>`` One of:
+
+    * TCPV4
+    * TCPV6
+    * URI
+
+* ``<restApiUri>``: the base URI use to connect to the WEB-service. This value must be common for all :term:"Data Points"
+  listed within the element :ref:`<functionalProfileList>`. Specific endpoint addresses can be configured as path relative
+  to the URI given in ``restApiUri``
+* ``restApiAuthenticationMethod`` the authentication method used to connect to the server. One of
+
+   * NoSecurityScheme : no security is applied
+   * BearerSecurityScheme : a bearer token is needed to authenticate. See :ref:`<restApiBearer>`.
+   * ApiKeySecurityScheme : an API key is used to access the webservice: Add the API key to the http header for each
+     datapoint definition.
+   * BasicSecurityScheme : use username and password. See :ref:`<restApiBasic>`
+   * DigestSecurityScheme : use a digest securty scheme: RFU.
+   * PskSecurityScheme : use a PSK security scheme: RFU.
+   * OAuth2SecurityScheme : use OAuth2 : RFU.
+   * HawkSecurityScheme : use Hawk security scheme : RFU.
+   * AwsSignatureSecurityScheme : use AWS security scheme. Add the API key to the http header for each datapoint definition.
+     See :ref:`add_authentication_header`,
+
+* ``<restApiBearer>``: container for the WEB service call to authenticate and get the bearer token. The received bearer token
+  is then added to the http header for each subsequent WEB service call to read :term:`Data Points`.
+  See :ref:`<restApiServiceCall>` for details.
+* ``<restApiServiceCall>``: defines the WEB service call to get the bearer token. See :ref:`<restApiServiceCall>`.
+
+
+.. _<restApiBearer>:
+
+<restApiBearer>
+"""""""""""""""
+
+TODO
+
+.. _<restApiBasic>:
+
+<restApiBasic>
+""""""""""""""
+
+
+.. _<restApiServiceCall>:
+
+<restApiServiceCall>
+""""""""""""""""""""
+
+
+.. _add_authentication_header:
+
+Add an authentication header to a datapoint
+"""""""""""""""""""""""""""""""""""""""""""
+
+TODO
+
+
+
+.. _<messagingInterfaceDescription>:
+
+<messagingInterfaceDescription>
+"""""""""""""""""""""""""""""""
+
+TODO
+
+
+
+
+
+
+.. _<functionalProfileList>:
+
+<functionalProfileList>
+"""""""""""""""""""""""
+
+TODO
+
 
 
 
@@ -248,8 +594,6 @@ Available parameters are:
 * fpCategory (aliases: functionalProfileCategory)
 * fpType (aliases: functionalProfileType)
 * level (aliases: levelOfOperation)
-
-
 
 
 

@@ -178,6 +178,18 @@
 <li class="toctree-l4"><a class="reference internal" href="#configurationlist">&lt;configurationList&gt;</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#interface-list">Interface List</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#modbusinterfacedescription">&lt;modbusInterfaceDescription&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modbusattributes">&lt;modbusAttributes&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#restapiinterfacedescription">&lt;restApiInterfaceDescription&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#restapibearer">&lt;restApiBearer&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#restapibasic">&lt;restApiBasic&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#restapiservicecall">&lt;restApiServiceCall&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-an-authentication-header-to-a-datapoint">Add an authentication header to a datapoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">&lt;messagingInterfaceDescription&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#functionalprofilelist">&lt;functionalProfileList&gt;</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#smartgridready-product-library">SmartGridready <span class="xref std std-term">Product</span> Library</a></li>
@@ -273,10 +285,10 @@ interfaces/protocols are:</p>
 <li><p>The <a class="reference internal" href="glossary.html#term-Data-Points"><span class="xref std std-term">Data Points</span></a> that are provided by the <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a></p></li>
 </ul>
 <p><a class="reference internal" href="#figure-product-description-file-structure"><span class="std std-numref">Fig. 12</span></a> shows the structure of a <a class="reference internal" href="glossary.html#term-Product-Description-File"><span class="xref std std-term">Product Description File</span></a>:</p>
-<figure class="align-default" id="id2">
+<figure class="align-default" id="id12">
 <span id="figure-product-description-file-structure"></span><img alt=":term:`Product Description File` Structure" src="../_images/product.drawio.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text"><a class="reference internal" href="glossary.html#term-Product-Description-File"><span class="xref std std-term">Product Description File</span></a> Structure</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text"><a class="reference internal" href="glossary.html#term-Product-Description-File"><span class="xref std std-term">Product Description File</span></a> Structure</span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>The <a class="reference internal" href="glossary.html#term-Product-Description-File"><span class="xref std std-term">Product Description File</span></a> is an XML file, defined by the SmartGridready XML Schema (XSD) which builds
@@ -372,7 +384,7 @@ EEBUS specification.</p></li>
 <section id="configuration-list">
 <h3>Configuration List<a class="headerlink" href="#configuration-list" title="Permalink to this heading"></a></h3>
 <section id="configurationlist">
-<h4>&lt;configurationList&gt;<a class="headerlink" href="#configurationlist" title="Permalink to this heading"></a></h4>
+<span id="id1"></span><h4>&lt;configurationList&gt;<a class="headerlink" href="#configurationlist" title="Permalink to this heading"></a></h4>
 <p>The configuration list element lists the configuration values that must be provided for <a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a> when
 installing/instantiating a device.</p>
 <p>Each configuration value listed in the configuration values has somewhere placeholder sibling with the same
@@ -413,6 +425,320 @@ values.</p>
 <span class="o">&lt;/</span><span class="n">configurationList</span><span class="o">&gt;</span>
 </pre></div>
 </div>
+</section>
+</section>
+<section id="interface-list">
+<h3>Interface List<a class="headerlink" href="#interface-list" title="Permalink to this heading"></a></h3>
+<p>The interface list element lists the communication interfaces supported by the <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a>.</p>
+<p><strong>Supported Interfaces</strong></p>
+<ul>
+<li><p><strong>Modbus</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>RTU, RTU-ASCII, modbus over serial interface RS232 and RS485.</p></li>
+<li><p>TCPIP, TCPIP-ASCII</p></li>
+<li><p>UDPIP, UDPIP-ASCII</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>REST-API</strong> HTTP, HTTPS</p></li>
+<li><p><strong>Messaging</strong> MQTT</p></li>
+</ul>
+<p>For <strong>Modbus</strong> interfaces, the basic <code class="docutils literal notranslate"><span class="pre">&lt;interfaceList&gt;</span></code> is structured as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">interfaceList</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">modbusInterface</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">modbusInterfaceDescription</span><span class="o">&gt;</span>
+            <span class="o">...</span>
+        <span class="o">&lt;/</span><span class="n">modbusInterfaceDescription</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">modbusAtttributes</span><span class="o">&gt;</span>
+            <span class="o">...</span>
+        <span class="o">&lt;/</span><span class="n">modbusAttributes</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">functionalProfileList</span><span class="o">&gt;</span>
+            <span class="o">...</span>
+        <span class="o">&lt;/</span><span class="n">functionalProfileList</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">modbusInterface</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">interfaceList</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;modbusInterfaceDescription&gt;</span></code> describes the details needed to setup the communication with the Modbus device.
+See <a class="reference internal" href="#modbusinterfacedescription"><span class="std std-ref">&lt;modbusInterfaceDescription&gt;</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;modbusAttributes&gt;</span></code> contains optional attributes that describe the device’s additional properties that
+might be of interest. See <a class="reference internal" href="#modbusattributes"><span class="std std-ref">&lt;modbusAttributes&gt;</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;functionalProfileList&gt;</span></code>. Contains a list of supported functional profiles supported by the Modbus interface.
+See <a class="reference internal" href="#functionalprofilelist"><span class="std std-ref">&lt;functionalProfileList&gt;</span></a></p></li>
+</ul>
+<p>For <strong>REST-API</strong> interfaces, the basic <code class="docutils literal notranslate"><span class="pre">&lt;interfaceList&gt;</span></code> is structured as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">interfaceList</span><span class="o">&gt;</span>
+     <span class="o">&lt;</span><span class="n">restApiInterface</span><span class="o">&gt;</span>
+         <span class="o">&lt;</span><span class="n">restApiInterfaceDescription</span><span class="o">&gt;</span>
+         <span class="o">...</span>
+         <span class="o">&lt;/</span><span class="n">restApiInterfaceDescription</span><span class="o">&gt;</span>
+         <span class="o">&lt;</span><span class="n">functionalProfileList</span><span class="o">&gt;</span>
+         <span class="o">...</span>
+         <span class="o">&lt;/</span><span class="n">functionalProfileList</span><span class="o">&gt;</span>
+     <span class="o">&lt;/</span><span class="n">restApiInterface</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">interfaceList</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;restApiInterfaceDescription&gt;</span></code> describes the details needed to setup the communication with
+the REST service . See <a class="reference internal" href="#restapiinterfacedescription"><span class="std std-ref">&lt;restApiInterfaceDescription&gt;</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;functionalProfileList&gt;</span></code>. Contains a list of supported functional profiles supported by the REST-API interface.
+See <a class="reference internal" href="#functionalprofilelist"><span class="std std-ref">&lt;functionalProfileList&gt;</span></a>.</p></li>
+</ul>
+<p>For <strong>Messaging</strong> interfaces, the basic <code class="docutils literal notranslate"><span class="pre">&lt;interfaceList&gt;</span></code> is structured as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">interfaceList</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">messagingInterface</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">messagingInterfaceDescription</span><span class="o">&gt;</span>
+        <span class="o">...</span>
+        <span class="o">&lt;/</span><span class="n">messagingInterfaceDescription</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">functionalProfileList</span><span class="o">&gt;</span>
+        <span class="o">...</span>
+        <span class="o">&lt;/</span><span class="n">functionalProfileList</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">messagingInterface</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">interfaceList</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;restApiInterfaceDescription&gt;</span></code> describes the details needed to setup the communication with
+the Messaging service such as an MQTT message broker. See <a class="reference external" href="messagingInterfaceDescription">messagingInterfaceDescription</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;functionalProfileList&gt;</span></code>. Contains a list of supported functional profiles supported by the REST-API interface.
+See <a class="reference internal" href="#functionalprofilelist"><span class="std std-ref">&lt;functionalProfileList&gt;</span></a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The current <a class="reference internal" href="glossary.html#term-Communication-Handler"><span class="xref std std-term">Communication Handler</span></a> libraries <a class="reference external" href="https://github.com/SmartGridready/SGrJava">SGrJava</a> and <a class="reference external" href="https://github.com/SmartGridready/SGrPython">SGrPython</a> do support only
+one interface listed within the <code class="docutils literal notranslate"><span class="pre">&lt;interfaceList&gt;</span></code>.</p>
+</div>
+<section id="modbusinterfacedescription">
+<span id="id2"></span><h4>&lt;modbusInterfaceDescription&gt;<a class="headerlink" href="#modbusinterfacedescription" title="Permalink to this heading"></a></h4>
+<p>The following basic modbus types can be selected:</p>
+<ul class="simple">
+<li><p>RTU - binary data communication via serial interface RS232 or RS485</p></li>
+<li><p>RTU-ASCII - communication via serial interface RS232 or RS485 using ASCII characters</p></li>
+<li><p>TCPIP - binary data communication via TCP-IP connection</p></li>
+<li><p>TCPIP-ASCII - communication via TCP-IP connection using ASCII characters</p></li>
+<li><p>UDPIP - binary communication via UDP IP connection</p></li>
+<li><p>UDPIP-ASCII - comunication via UDP IP connection using ASCII characters</p></li>
+</ul>
+<p>For <strong>Modbus RTU</strong> and <strong>Modbus RTU-ASCII</strong> the <cite>&lt;modbusInterfaceDescription&gt;</cite> element is structured as follows (sample for
+Modbus RTU):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">modbusInterfaceDescripion</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">modbusInterfaceSelection</span><span class="o">&gt;</span><span class="n">RTU</span><span class="o">&lt;/</span><span class="n">modbusInterfaceSelection</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">modbusRtu</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="n">slaveAddr</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">slave_id</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">slaveAddr</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="n">portName</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">serial_port</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">portName</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="n">baudRateSelected</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">serial_baudrate</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">baudRateSelected</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="n">byteLenSelected</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">serial_databits</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">byteLenSelected</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="n">paritySelected</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">serial_parity</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">paritySelected</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="n">stopBitLenSelected</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">serial_stopbits</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">stopBitLenSelected</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="n">serialInterfaceCapability</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span><span class="mi">1200</span><span class="o">&lt;/</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span><span class="mi">2400</span><span class="o">&lt;/</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span><span class="mi">4800</span><span class="o">&lt;/</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span><span class="mi">9600</span><span class="o">&lt;/</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span><span class="mi">19200</span><span class="o">&lt;/</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span><span class="mi">38400</span><span class="o">&lt;/</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span><span class="mi">57600</span><span class="o">&lt;/</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span><span class="mi">115200</span><span class="o">&lt;/</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">byteLenSupported</span><span class="o">&gt;</span><span class="mi">8</span><span class="o">&lt;/</span><span class="n">byteLenSupported</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">paritySupported</span><span class="o">&gt;</span><span class="n">EVEN</span><span class="o">&lt;/</span><span class="n">paritySupported</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">paritySupported</span><span class="o">&gt;</span><span class="n">NONE</span><span class="o">&lt;/</span><span class="n">paritySupported</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">paritySupported</span><span class="o">&gt;</span><span class="n">ODD</span><span class="o">&lt;/</span><span class="n">paritySupported</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">stopBitLenSupported</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">stopBitLenSupported</span><span class="o">&gt;</span>
+          <span class="o">&lt;/</span><span class="n">serialInterfaceCapability</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">modbusRtu</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">modbusInterfaceDescription</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;modbusInterfaceSelection</span></code>: one of:</p>
+<ul>
+<li><p>RTU</p></li>
+<li><p>RTU-ASCII</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;modbusRtu&gt;</span></code>: Container for the serial interface properties.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;slaveAddr&gt;</span></code>: Defines the Modbus slave address used by the device.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;portName&gt;</span></code>: Operating system’s ame of the serial port to be used (e.g. COM3, /dev/ttyS0)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;baudRateSelected&gt;</span></code>: The baud rate to be used for the serial communication.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;paritySelected&gt;</span></code>: The parity calculation method to be used for the serial communication.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;stopBitLenSelected&gt;</span></code>: The number of stop-bits used for the serial communicaion.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;serialInterfaceCapability&gt;</span></code>: The baud-rates, byte-length, parity calculation methods and stop-bit numbers that
+are supported by the device. These are read-only values and provide information about the <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> capabilities.</p></li>
+</ul>
+<p>For <strong>Modbus TCP-IP</strong> and <strong>Modbus UDP-IP</strong> the <cite>&lt;modbusInterfaceDescription&gt;</cite> element is structured as follows (sample
+for Modbus TCP-IP):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">modbusInterfaceDescription</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">modbusInterfaceSelection</span><span class="o">&gt;</span><span class="n">TCPIP</span><span class="o">&lt;/</span><span class="n">modbusInterfaceSelection</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">modbusTcp</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">port</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">ip_port</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">port</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">address</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">ip_address</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">address</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">slaveId</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">slave_id</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">slaveId</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">modbusTcp</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">firstRegisterAddressIsOne</span><span class="o">&gt;</span><span class="n">false</span><span class="o">&lt;/</span><span class="n">firstRegisterAddressIsOne</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">bitOrder</span><span class="o">&gt;</span><span class="n">BigEndian</span><span class="o">&lt;/</span><span class="n">bitOrder</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">modbusInterfaceDescription</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;modbusInterfaceSelection&gt;</span></code>: one of:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>TCPIP</p></li>
+<li><p>TCPIP-ASCII</p></li>
+<li><p>UDPIP</p></li>
+<li><p>UDPIP-ASCII</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;modbusTcp&gt;</span></code>: Container for the TCP-IP and UDP connection properties.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;port&gt;{{ip_port}}&lt;/port&gt;</span></code>: The TCP/UDP IP port,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;address&gt;{{ip_address}}&lt;/address&gt;</span></code>: The TCP/UDP IP address (v4, v6).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;slaveId&gt;</span></code>: The modbus slave-ID to be adressed.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The values in double brackets like <code class="docutils literal notranslate"><span class="pre">{{serial_port}}</span></code> or <code class="docutils literal notranslate"><span class="pre">{{ip_address}}</span></code> will be replaced by the configuration
+value with the name in brackets, in our examples <code class="docutils literal notranslate"><span class="pre">serial_port</span></code> and <code class="docutils literal notranslate"><span class="pre">ip_address</span></code>. See also
+<a class="reference internal" href="#configurationlist"><span class="std std-ref">&lt;configurationList&gt;</span></a></p>
+</div>
+</section>
+<section id="modbusattributes">
+<span id="id3"></span><h4>&lt;modbusAttributes&gt;<a class="headerlink" href="#modbusattributes" title="Permalink to this heading"></a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;modbusAttributes&gt;</span></code> element is optional, and may contains following optional elements that define additional
+properties of the Modbus interface.</p>
+<p>The  <code class="docutils literal notranslate"><span class="pre">modbusAttributes</span></code> element is as follows (all elements are optional):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">modbusAttributes</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">pollingLatencyMs</span><span class="o">&gt;</span><span class="mi">500</span><span class="o">&lt;/</span><span class="n">pollingLatencyMs</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">accessProtection</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">modbusExceptionCode</span><span class="o">&gt;</span><span class="n">IllegalFunction</span><span class="o">&lt;/</span><span class="n">modbusExceptionCode</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">modbusExceptionCode</span><span class="o">&gt;</span><span class="n">IllegalAddress</span><span class="o">&lt;/</span><span class="n">modbusExceptionCode</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">isEnabled</span><span class="o">&gt;</span><span class="n">true</span><span class="o">&lt;/</span><span class="n">isEnabled</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">accessProtection</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">layer6Deviation</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="mi">2</span><span class="n">RegBase1000_L2H</span><span class="o">/&gt;</span>
+    <span class="o">&lt;/</span><span class="n">layer6Deviation</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">modbusAttributes</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;pollingLatencyMs</span></code>: Defines the latency (delay between sending a request and receiving a response) of the data read
+from the <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> device.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;accessProtection&gt;</span></code>: Modbus datapoints may be protected by execptions. If this is the case, a
+datapoint may be selected as true with a range of supported exceptions. A NOT listed
+exception means no XY exception.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;modbusExceptionCode</span></code>: One of:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>IllegalFunction</p></li>
+<li><p>IllegalAddress</p></li>
+<li><p>IllegalDataValue</p></li>
+<li><p>SlaveFailure</p></li>
+<li><p>ACK</p></li>
+<li><p>SlaveBusy</p></li>
+<li><p>NACK</p></li>
+<li><p>MemoryParityErr</p></li>
+<li><p>GtwyPathErr</p></li>
+<li><p>GtwyTargetErr</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;isEnabled&gt;</span></code>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>if <code class="docutils literal notranslate"><span class="pre">true</span></code>: the listed exceptions are enabled</p></li>
+<li><p>if <code class="docutils literal notranslate"><span class="pre">false</span></code>: the listed exceptions are disabled</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;layer6Deviation&gt;</span></code>: Is used to correct non standard data representation on the application layer (layer6).
+Following settings are supported:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">2RegBase1000_L2H</span></code> : 2 registers represent a combined value. As an example a metering value shows kWh at the lower
+address and MWh at the higher address, where <code class="docutils literal notranslate"><span class="pre">higherUnit</span> <span class="pre">=</span> <span class="pre">1000</span> <span class="pre">*</span> <span class="pre">lowerUnit</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2RegBase1000_H2L</span></code> : 2 registers represent a combined value. As an example a metering value shows MWh at the lower
+address and kWh at the higher address, where <code class="docutils literal notranslate"><span class="pre">higherUnit</span> <span class="pre">=</span> <span class="pre">1000</span> <span class="pre">*</span> <span class="pre">lowerUnit</span></code>.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="restapiinterfacedescription">
+<span id="id4"></span><h4>&lt;restApiInterfaceDescription&gt;<a class="headerlink" href="#restapiinterfacedescription" title="Permalink to this heading"></a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;restApiInterfaceDescription&gt;</span></code> element is structured as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">restApiInterfaceDescription</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">restApiInterfaceSelection</span><span class="o">&gt;</span><span class="n">URI</span><span class="o">&lt;/</span><span class="n">restApiInterfaceSelection</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">restApiUri</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">baseUri</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">restApiUri</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">restApiAuthenticationMethod</span><span class="o">&gt;</span><span class="n">BearerSecurityScheme</span><span class="o">&lt;/</span><span class="n">restApiAuthenticationMethod</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">restApiBearer</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">restApiServiceCall</span><span class="o">&gt;</span>
+      <span class="o">...</span>
+    <span class="o">&lt;/</span><span class="n">restApiServiceCall</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">restApiBearer</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">restApiInterfaceDescription</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<ul>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;restApiInterfaceSelection&gt;</span></code>: Selects the type of the addressing used for the communication. The address type</dt><dd><p>is expected suit the address given within the element <code class="docutils literal notranslate"><span class="pre">&lt;restApiUri&gt;</span></code> One of:</p>
+<ul class="simple">
+<li><p>TCPV4</p></li>
+<li><p>TCPV6</p></li>
+<li><p>URI</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;restApiUri&gt;</span></code>: the base URI use to connect to the WEB-service. This value must be common for all :term:”Data Points”
+listed within the element <a class="reference internal" href="#functionalprofilelist"><span class="std std-ref">&lt;functionalProfileList&gt;</span></a>. Specific endpoint addresses can be configured as path relative
+to the URI given in <code class="docutils literal notranslate"><span class="pre">restApiUri</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">restApiAuthenticationMethod</span></code> the authentication method used to connect to the server. One of</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>NoSecurityScheme : no security is applied</p></li>
+<li><p>BearerSecurityScheme : a bearer token is needed to authenticate. See <a class="reference internal" href="#restapibearer"><span class="std std-ref">&lt;restApiBearer&gt;</span></a>.</p></li>
+<li><p>ApiKeySecurityScheme : an API key is used to access the webservice: Add the API key to the http header for each
+datapoint definition.</p></li>
+<li><p>BasicSecurityScheme : use username and password. See <a class="reference internal" href="#restapibasic"><span class="std std-ref">&lt;restApiBasic&gt;</span></a></p></li>
+<li><p>DigestSecurityScheme : use a digest securty scheme: RFU.</p></li>
+<li><p>PskSecurityScheme : use a PSK security scheme: RFU.</p></li>
+<li><p>OAuth2SecurityScheme : use OAuth2 : RFU.</p></li>
+<li><p>HawkSecurityScheme : use Hawk security scheme : RFU.</p></li>
+<li><p>AwsSignatureSecurityScheme : use AWS security scheme. Add the API key to the http header for each datapoint definition.
+See <a class="reference internal" href="#add-authentication-header"><span class="std std-ref">Add an authentication header to a datapoint</span></a>,</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;restApiBearer&gt;</span></code>: container for the WEB service call to authenticate and get the bearer token. The received bearer token
+is then added to the http header for each subsequent WEB service call to read <a class="reference internal" href="glossary.html#term-Data-Points"><span class="xref std std-term">Data Points</span></a>.
+See <a class="reference internal" href="#restapiservicecall"><span class="std std-ref">&lt;restApiServiceCall&gt;</span></a> for details.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;restApiServiceCall&gt;</span></code>: defines the WEB service call to get the bearer token. See <a class="reference internal" href="#restapiservicecall"><span class="std std-ref">&lt;restApiServiceCall&gt;</span></a>.</p></li>
+</ul>
+</section>
+<section id="restapibearer">
+<span id="id5"></span><h4>&lt;restApiBearer&gt;<a class="headerlink" href="#restapibearer" title="Permalink to this heading"></a></h4>
+<p>TODO</p>
+</section>
+<section id="restapibasic">
+<span id="id6"></span><h4>&lt;restApiBasic&gt;<a class="headerlink" href="#restapibasic" title="Permalink to this heading"></a></h4>
+</section>
+<section id="restapiservicecall">
+<span id="id7"></span><h4>&lt;restApiServiceCall&gt;<a class="headerlink" href="#restapiservicecall" title="Permalink to this heading"></a></h4>
+</section>
+<section id="add-an-authentication-header-to-a-datapoint">
+<span id="add-authentication-header"></span><h4>Add an authentication header to a datapoint<a class="headerlink" href="#add-an-authentication-header-to-a-datapoint" title="Permalink to this heading"></a></h4>
+<p>TODO</p>
+</section>
+<section id="id8">
+<span id="id9"></span><h4>&lt;messagingInterfaceDescription&gt;<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h4>
+<p>TODO</p>
+</section>
+<section id="functionalprofilelist">
+<span id="id10"></span><h4>&lt;functionalProfileList&gt;<a class="headerlink" href="#functionalprofilelist" title="Permalink to this heading"></a></h4>
+<p>TODO</p>
 </section>
 </section>
 </section>
