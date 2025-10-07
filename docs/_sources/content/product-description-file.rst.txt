@@ -164,7 +164,7 @@ Configuration List
 The configuration list element lists the configuration values that must be provided for :term:`EID` when
 installing/instantiating a device.
 
-Each configuration value listed in the configuration values has somewhere placeholder sibling with the same
+Each configuration value listed in the configuration values has somewhere a placeholder with the same
 name in the :term:`EID` which is replaced with the configuration value when installing/instantiating a device
 using the :term:`EID`.
 
@@ -246,9 +246,9 @@ For **Modbus** interfaces, the basic ``<interfaceList>`` is structured as follow
 
 * ``<modbusInterfaceDescription>`` describes the details needed to setup the communication with the Modbus device.
   See :ref:`<modbusInterfaceDescription>`.
-* ``<modbusAttributes>`` contains optional attributes that describe the device's additional properties that
-  might be of interest. See :ref:`<modbusAttributes>`.
-* ``<functionalProfileList>``. Contains a list of supported functional profiles supported by the Modbus interface.
+* ``<modbusAttributes>`` contains optional attributes that describe additional modbus properties that
+  might be needed to operate. See :ref:`<modbusAttributes>`.
+* ``<functionalProfileList>``. Contains a list of functional profiles supported by the Modbus interface.
   See :ref:`<functionalProfileList>`
 
 
@@ -268,7 +268,7 @@ For **REST-API** interfaces, the basic ``<interfaceList>`` is structured as foll
    </interfaceList>
 
 * ``<restApiInterfaceDescription>`` describes the details needed to setup the communication with
-  the REST service . See :ref:`<restApiInterfaceDescription>`.
+  the WEB-/REST- service . See :ref:`<restApiInterfaceDescription>`.
 * ``<functionalProfileList>``. Contains a list of supported functional profiles supported by the REST-API interface.
   See :ref:`<functionalProfileList>`.
 
@@ -293,8 +293,6 @@ For **Messaging** interfaces, the basic ``<interfaceList>`` is structured as fol
   the Messaging service such as an MQTT message broker. See `<messagingInterfaceDescription>`_.
 * ``<functionalProfileList>``. Contains a list of supported functional profiles supported by the REST-API interface.
   See :ref:`<functionalProfileList>`
-
-
 
 
 .. note::
@@ -397,7 +395,7 @@ for Modbus TCP-IP):
 
     The values in double brackets like ``{{serial_port}}`` or ``{{ip_address}}`` will be replaced by the configuration
     value with the name in brackets, in our examples ``serial_port`` and ``ip_address``. See also
-    :ref:`<configurationList>`
+    :ref:`<configurationList>`.
 
 
 
@@ -471,9 +469,9 @@ The ``<restApiInterfaceDescription>`` element is structured as follows:
         <restApiUri>{{baseUri}}</restApiUri>
         <restApiAuthenticationMethod>BearerSecurityScheme</restApiAuthenticationMethod>
         <restApiBearer>
-          <restApiServiceCall>
-            ...
-          </restApiServiceCall>
+            <restApiServiceCall>
+                ...
+            </restApiServiceCall>
         </restApiBearer>
       </restApiInterfaceDescription>
 
@@ -484,7 +482,7 @@ The ``<restApiInterfaceDescription>`` element is structured as follows:
     * TCPV6
     * URI
 
-* ``<restApiUri>``: the base URI use to connect to the WEB-service. This value must be common for all :term:"Data Points"
+* ``<restApiUri>``: the base URI use to connect to the web service. This value must be common for all :term:"Data Points"
   listed within the element :ref:`<functionalProfileList>`. Specific endpoint addresses can be configured as path relative
   to the URI given in ``restApiUri``
 * ``restApiAuthenticationMethod`` the authentication method used to connect to the server. One of
@@ -499,12 +497,12 @@ The ``<restApiInterfaceDescription>`` element is structured as follows:
    * OAuth2SecurityScheme : use OAuth2 : RFU.
    * HawkSecurityScheme : use Hawk security scheme : RFU.
    * AwsSignatureSecurityScheme : use AWS security scheme. Add the API key to the http header for each datapoint definition.
-     See :ref:`add_authentication_header`,
+     See the 'Note'in :ref:`<restApiServiceCall>` on how to add an authentication header to the web service call.
 
-* ``<restApiBearer>``: container for the WEB service call to authenticate and get the bearer token. The received bearer token
+* ``<restApiBearer>``: container for the web service call to authenticate and get the bearer token. The received bearer token
   is then added to the http header for each subsequent WEB service call to read :term:`Data Points`.
   See :ref:`<restApiServiceCall>` for details.
-* ``<restApiServiceCall>``: defines the WEB service call to get the bearer token. See :ref:`<restApiServiceCall>`.
+* ``<restApiServiceCall>``: defines the web service call to get the bearer token. See :ref:`<restApiServiceCall>`.
 
 
 .. _<restApiBearer>:
@@ -512,12 +510,99 @@ The ``<restApiInterfaceDescription>`` element is structured as follows:
 <restApiBearer>
 """""""""""""""
 
-TODO
+The ``<restApiBearer>`` element specifies the web service call needed to get a bearer token when the authentication
+scheme ``AuhtenticationSchemeBearer`` is required.
+
+The SGr libraries SGrJava <https://github.com/SmartGridready/SGrJava>`_
+and `SGrPython <https://github.com/SmartGridready/SGrPython>`_ extract the bearer token according the rules defined
+in the ``<restApiServiceCall`` and store it in memory. The token is then automatically added to the https heaser
+as ``Authorization: Bearer <token>`` for all subsequent web service calls that communicate with the :term:`Product`
+device.
+
+For a detailed description of the ``<restApiServiceCall>`` see :ref:`<restApiServiceCall>`.
+
+The following example shows a ``<restApiServiceCall>`` definition that provides login data in the request body and
+extracts the bearer token named 'accessToken' from the response body using a JMESPath expression:
+
+::
+
+    <restApiAuthenticationMethod>BearerSecurityScheme</restApiAuthenticationMethod>
+    <restApiBearer>
+      <restApiServiceCall>
+        <requestHeader>
+          <header>
+            <headerName>Accept</headerName>
+            <value>application/json</value>
+          </header>
+          <header>
+            <headerName>Content-Type</headerName>
+            <value>application/json</value>
+          </header>
+        </requestHeader>
+        <requestMethod>POST</requestMethod>
+        <requestPath>/authentication</requestPath>
+        <requestBody>{"strategy": "local", "email": "{{username}}", "password": "{{password}}"}</requestBody>
+        <responseQuery>
+          <queryType>JMESPathExpression</queryType>
+          <query>accessToken</query>
+        </responseQuery>
+      </restApiServiceCall>
+    </restApiBearer>
+
+.. note::
+
+    For a complete description of all elements used above see :ref:`<restApiServiceCall>`.
+
+.. note::
+
+    Here is a description of the most important elements regarding the :ref:`<restApiServiceCall>` within the
+    :ref:`<restApiBearer>` definition:
+
+    * ``<requestBody>`` defines the request body to be sent in the web service request. Note {{username}} and {{password}}
+      parameters within the double brackets. Username and password are provided as configuration parameters.
+      See also :ref:`<configurationList>`.
+
+    * ``<responseQuery>`` defines the JMESPath query to extract the bearer token from the http response body, named ``accessToken``.
+      The response body could be something like:
+
+      ::
+
+        {
+            "userID" : "JohnDoe",
+            "tokenExpiry" : "2025-04-24T02:35:00Z",
+            "accessToken" : "VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wZWQgb3ZlciB0aGUgeWVsbG93IGJveC4="
+        }
+
+
 
 .. _<restApiBasic>:
 
 <restApiBasic>
 """"""""""""""
+
+Within the :ref:`<restApiBasic>` element you can define basic authentication used for each service call used to read or
+write data for a :term:`Data Point`.
+
+The SGr libraries SGrJava <https://github.com/SmartGridready/SGrJava>`_
+and `SGrPython <https://github.com/SmartGridready/SGrPython>`_ build automatically a base 64 encoded authorization header
+``Authorization: Basic base64( "user:password")`` the is used in all service calls the access a :term:`Data Point`.
+
+Example for a :ref:`<restApiBasic>` element:
+
+::
+
+    <restApiAuthenticationMethod>BasicSecurityScheme</restApiAuthenticationMethod>
+    <restApiBasic>
+      <restBasicUsername>{{username}}</restBasicUsername>
+      <restBasicPassword>{{password}}</restBasicPassword>
+    </restApiBasic>
+
+
+.. note::
+
+    ``{{username}}`` and ``{{password}}`` are placeholder values and are intednded to be replaced by the correct value
+    when loading and initializing the :term:`Communication Handler` libraries. See :ref:`<configurationList>`
+
 
 
 .. _<restApiServiceCall>:
@@ -525,13 +610,67 @@ TODO
 <restApiServiceCall>
 """"""""""""""""""""
 
+The ``<restApiServiceCall`` is used to define the web service call needed to read from a :term:`Data Point` or write
+to a :term:`Data Point`. It is further used to communicate with authentication web services for example to get a
+a bearer token for further authentication (see :ref:`<restApiBearer>`).
 
-.. _add_authentication_header:
+An example for a ``restApiService`` call looks as follows:
 
-Add an authentication header to a datapoint
-"""""""""""""""""""""""""""""""""""""""""""
+::
 
-TODO
+    <restApiServiceCall>
+      <requestHeader>
+        <header>
+          <headerName>Accept</headerName>
+          <value>application/json</value>
+        </header>
+      </requestHeader>
+      <requestMethod>GET</requestMethod>
+      <requestPath>/digitaltwins?sensor_id={{sensor_id}}</requestPath>
+      <responseQuery>
+        <queryType>JMESPathExpression</queryType>
+        <query>sum([[0].ten_sec.p_l1,[0].ten_sec.p_l2,[0].ten_sec.p_l3])</query>
+      </responseQuery>
+    </restApiServiceCall>
+
+* ``<requestHeader>`` : contains a list of ``<header>`` elements that define the http-header added to the
+  http request.
+* ``<header>`` : represents one http-header entry consisting of a ``<headerName>`` / ``<headerValue`` pair.
+* ``<requestMethod>`` the request http-method to be used. One of:
+
+  * GET
+  * POST
+  * PUT
+  * DELETE
+  * PATCH
+* ``<requestPath>`` : determines the path used to access the web service endpoint. The path is concatenated
+  with the base path given by the ``restApiUri`` within the ``<restApiInterfaceDescription>`` (see
+  :ref:`<restApiInterfaceDescription>`.
+* ``<responseQuery>`` : is the container for the query parameters that extract the result value from the
+  webservice response body.
+* ``<queryType>`` : determines the type of the query language. It is one of the following:
+
+  * JMESPathExpression : uses JMESPath to extract a value from a JSON response. See also `JMESPath <https://jmespath.org/>`_.
+  * XPathExpression : uses XPAth to extract the a value from a XML response. See also `XPath <https://en.wikipedia.org/wiki/XPath>`_.
+  * RegularExpression : uses a regular expression to extract the value from a textual response: See also `Regular Expression <https://en.wikipedia.org/wiki/Regular_expression>`_.
+  * JMESPathMapping : used to map and restructure JSON response to another JSON representation: Details see
+    :ref:`JMESPathMapping` for details.
+  * ``<query>`` : contains the query expression in the query language given by ``<queryType>``. The example above shows a
+    JMESPath expression that calulates the sum of three values given by the response.
+
+.. note::
+
+    If you need an API key for web service authentication you can add the API key directly to the ``<requestHeader>``
+    element as a configuration value. For example with the authentication method ``<restApiAuthenticationMethod>``
+    ``ApiKeySecurityScheme`` you can add:
+
+    ::
+
+       <header>
+          <headerName>x-api-key</headerName>
+          <value>AbCdEfGhIjKlMnOpQrStUvWxYz123456</value>
+       </header>
+
 
 
 
@@ -555,7 +694,12 @@ TODO
 TODO
 
 
+.. _JMESPathMapping:
 
+JMESPathMapping
+"""""""""""""""
+
+TODO
 
 
 SmartGridready :term:`Product` Library

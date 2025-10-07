@@ -14,16 +14,18 @@ Python Implementation
 * Description
 * Getting started instructions
 * Basic implementation, code sample
-* Link to the API Doc
-* Link to the Project
+* Link to the API Doc : `SGrCommHandler Python Doc <https://smartgridready.github.io/SGrPython/docs/commhandler/>`_
+* Link to the GitHub Project : `SGrPython Project Repository <https://github.com/SmartGridready/SGrPython/>`_
+
 
 Java Implementation
 -------------------
 * Description
 * Getting started instructions
 * Basic implementation, code sample
-* Link to the API Doc
-* Link to the Project
+* Link to the API Doc : `SGrCommHandler Java Doc <https://smartgridready.github.io/SGrJava/docs/commhandler/index.html>`_
+* Link to the GitHub Project : `SGrJava Project Repository <https://github.com/SmartGridready/SGrJava/>`_
+
 
 .. toctree::
     :caption: Contents

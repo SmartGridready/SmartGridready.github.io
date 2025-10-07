@@ -185,9 +185,9 @@
 <li class="toctree-l4"><a class="reference internal" href="#restapibearer">&lt;restApiBearer&gt;</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#restapibasic">&lt;restApiBasic&gt;</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#restapiservicecall">&lt;restApiServiceCall&gt;</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#add-an-authentication-header-to-a-datapoint">Add an authentication header to a datapoint</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id8">&lt;messagingInterfaceDescription&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">&lt;messagingInterfaceDescription&gt;</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#functionalprofilelist">&lt;functionalProfileList&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#jmespathmapping">JMESPathMapping</a></li>
 </ul>
 </li>
 </ul>
@@ -285,10 +285,10 @@ interfaces/protocols are:</p>
 <li><p>The <a class="reference internal" href="glossary.html#term-Data-Points"><span class="xref std std-term">Data Points</span></a> that are provided by the <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a></p></li>
 </ul>
 <p><a class="reference internal" href="#figure-product-description-file-structure"><span class="std std-numref">Fig. 12</span></a> shows the structure of a <a class="reference internal" href="glossary.html#term-Product-Description-File"><span class="xref std std-term">Product Description File</span></a>:</p>
-<figure class="align-default" id="id12">
+<figure class="align-default" id="id15">
 <span id="figure-product-description-file-structure"></span><img alt=":term:`Product Description File` Structure" src="../_images/product.drawio.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text"><a class="reference internal" href="glossary.html#term-Product-Description-File"><span class="xref std std-term">Product Description File</span></a> Structure</span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text"><a class="reference internal" href="glossary.html#term-Product-Description-File"><span class="xref std std-term">Product Description File</span></a> Structure</span><a class="headerlink" href="#id15" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>The <a class="reference internal" href="glossary.html#term-Product-Description-File"><span class="xref std std-term">Product Description File</span></a> is an XML file, defined by the SmartGridready XML Schema (XSD) which builds
@@ -387,7 +387,7 @@ EEBUS specification.</p></li>
 <span id="id1"></span><h4>&lt;configurationList&gt;<a class="headerlink" href="#configurationlist" title="Permalink to this heading"></a></h4>
 <p>The configuration list element lists the configuration values that must be provided for <a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a> when
 installing/instantiating a device.</p>
-<p>Each configuration value listed in the configuration values has somewhere placeholder sibling with the same
+<p>Each configuration value listed in the configuration values has somewhere a placeholder with the same
 name in the <a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a> which is replaced with the configuration value when installing/instantiating a device
 using the <a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a>.</p>
 <p>As an example, the configuration entry:</p>
@@ -463,9 +463,9 @@ values.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;modbusInterfaceDescription&gt;</span></code> describes the details needed to setup the communication with the Modbus device.
 See <a class="reference internal" href="#modbusinterfacedescription"><span class="std std-ref">&lt;modbusInterfaceDescription&gt;</span></a>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;modbusAttributes&gt;</span></code> contains optional attributes that describe the device’s additional properties that
-might be of interest. See <a class="reference internal" href="#modbusattributes"><span class="std std-ref">&lt;modbusAttributes&gt;</span></a>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;functionalProfileList&gt;</span></code>. Contains a list of supported functional profiles supported by the Modbus interface.
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;modbusAttributes&gt;</span></code> contains optional attributes that describe additional modbus properties that
+might be needed to operate. See <a class="reference internal" href="#modbusattributes"><span class="std std-ref">&lt;modbusAttributes&gt;</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;functionalProfileList&gt;</span></code>. Contains a list of functional profiles supported by the Modbus interface.
 See <a class="reference internal" href="#functionalprofilelist"><span class="std std-ref">&lt;functionalProfileList&gt;</span></a></p></li>
 </ul>
 <p>For <strong>REST-API</strong> interfaces, the basic <code class="docutils literal notranslate"><span class="pre">&lt;interfaceList&gt;</span></code> is structured as follows:</p>
@@ -483,7 +483,7 @@ See <a class="reference internal" href="#functionalprofilelist"><span class="std
 </div>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;restApiInterfaceDescription&gt;</span></code> describes the details needed to setup the communication with
-the REST service . See <a class="reference internal" href="#restapiinterfacedescription"><span class="std std-ref">&lt;restApiInterfaceDescription&gt;</span></a>.</p></li>
+the WEB-/REST- service . See <a class="reference internal" href="#restapiinterfacedescription"><span class="std std-ref">&lt;restApiInterfaceDescription&gt;</span></a>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;functionalProfileList&gt;</span></code>. Contains a list of supported functional profiles supported by the REST-API interface.
 See <a class="reference internal" href="#functionalprofilelist"><span class="std std-ref">&lt;functionalProfileList&gt;</span></a>.</p></li>
 </ul>
@@ -602,7 +602,7 @@ for Modbus TCP-IP):</p>
 <p class="admonition-title">Note</p>
 <p>The values in double brackets like <code class="docutils literal notranslate"><span class="pre">{{serial_port}}</span></code> or <code class="docutils literal notranslate"><span class="pre">{{ip_address}}</span></code> will be replaced by the configuration
 value with the name in brackets, in our examples <code class="docutils literal notranslate"><span class="pre">serial_port</span></code> and <code class="docutils literal notranslate"><span class="pre">ip_address</span></code>. See also
-<a class="reference internal" href="#configurationlist"><span class="std std-ref">&lt;configurationList&gt;</span></a></p>
+<a class="reference internal" href="#configurationlist"><span class="std std-ref">&lt;configurationList&gt;</span></a>.</p>
 </div>
 </section>
 <section id="modbusattributes">
@@ -674,9 +674,9 @@ address and kWh at the higher address, where <code class="docutils literal notra
   <span class="o">&lt;</span><span class="n">restApiUri</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">baseUri</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">restApiUri</span><span class="o">&gt;</span>
   <span class="o">&lt;</span><span class="n">restApiAuthenticationMethod</span><span class="o">&gt;</span><span class="n">BearerSecurityScheme</span><span class="o">&lt;/</span><span class="n">restApiAuthenticationMethod</span><span class="o">&gt;</span>
   <span class="o">&lt;</span><span class="n">restApiBearer</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">restApiServiceCall</span><span class="o">&gt;</span>
-      <span class="o">...</span>
-    <span class="o">&lt;/</span><span class="n">restApiServiceCall</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">restApiServiceCall</span><span class="o">&gt;</span>
+          <span class="o">...</span>
+      <span class="o">&lt;/</span><span class="n">restApiServiceCall</span><span class="o">&gt;</span>
   <span class="o">&lt;/</span><span class="n">restApiBearer</span><span class="o">&gt;</span>
 <span class="o">&lt;/</span><span class="n">restApiInterfaceDescription</span><span class="o">&gt;</span>
 </pre></div>
@@ -692,7 +692,7 @@ address and kWh at the higher address, where <code class="docutils literal notra
 </dd>
 </dl>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;restApiUri&gt;</span></code>: the base URI use to connect to the WEB-service. This value must be common for all :term:”Data Points”
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;restApiUri&gt;</span></code>: the base URI use to connect to the web service. This value must be common for all :term:”Data Points”
 listed within the element <a class="reference internal" href="#functionalprofilelist"><span class="std std-ref">&lt;functionalProfileList&gt;</span></a>. Specific endpoint addresses can be configured as path relative
 to the URI given in <code class="docutils literal notranslate"><span class="pre">restApiUri</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">restApiAuthenticationMethod</span></code> the authentication method used to connect to the server. One of</p>
@@ -708,36 +708,173 @@ datapoint definition.</p></li>
 <li><p>OAuth2SecurityScheme : use OAuth2 : RFU.</p></li>
 <li><p>HawkSecurityScheme : use Hawk security scheme : RFU.</p></li>
 <li><p>AwsSignatureSecurityScheme : use AWS security scheme. Add the API key to the http header for each datapoint definition.
-See <a class="reference internal" href="#add-authentication-header"><span class="std std-ref">Add an authentication header to a datapoint</span></a>,</p></li>
+See the ‘Note’in <a class="reference internal" href="#restapiservicecall"><span class="std std-ref">&lt;restApiServiceCall&gt;</span></a> on how to add an authentication header to the web service call.</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;restApiBearer&gt;</span></code>: container for the WEB service call to authenticate and get the bearer token. The received bearer token
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;restApiBearer&gt;</span></code>: container for the web service call to authenticate and get the bearer token. The received bearer token
 is then added to the http header for each subsequent WEB service call to read <a class="reference internal" href="glossary.html#term-Data-Points"><span class="xref std std-term">Data Points</span></a>.
 See <a class="reference internal" href="#restapiservicecall"><span class="std std-ref">&lt;restApiServiceCall&gt;</span></a> for details.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;restApiServiceCall&gt;</span></code>: defines the WEB service call to get the bearer token. See <a class="reference internal" href="#restapiservicecall"><span class="std std-ref">&lt;restApiServiceCall&gt;</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;restApiServiceCall&gt;</span></code>: defines the web service call to get the bearer token. See <a class="reference internal" href="#restapiservicecall"><span class="std std-ref">&lt;restApiServiceCall&gt;</span></a>.</p></li>
 </ul>
 </section>
 <section id="restapibearer">
 <span id="id5"></span><h4>&lt;restApiBearer&gt;<a class="headerlink" href="#restapibearer" title="Permalink to this heading"></a></h4>
-<p>TODO</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;restApiBearer&gt;</span></code> element specifies the web service call needed to get a bearer token when the authentication
+scheme <code class="docutils literal notranslate"><span class="pre">AuhtenticationSchemeBearer</span></code> is required.</p>
+<p>The SGr libraries SGrJava &lt;<a class="reference external" href="https://github.com/SmartGridready/SGrJava">https://github.com/SmartGridready/SGrJava</a>&gt;`_
+and <a class="reference external" href="https://github.com/SmartGridready/SGrPython">SGrPython</a> extract the bearer token according the rules defined
+in the <code class="docutils literal notranslate"><span class="pre">&lt;restApiServiceCall</span></code> and store it in memory. The token is then automatically added to the https heaser
+as <code class="docutils literal notranslate"><span class="pre">Authorization:</span> <span class="pre">Bearer</span> <span class="pre">&lt;token&gt;</span></code> for all subsequent web service calls that communicate with the <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a>
+device.</p>
+<p>For a detailed description of the <code class="docutils literal notranslate"><span class="pre">&lt;restApiServiceCall&gt;</span></code> see <a class="reference internal" href="#restapiservicecall"><span class="std std-ref">&lt;restApiServiceCall&gt;</span></a>.</p>
+<p>The following example shows a <code class="docutils literal notranslate"><span class="pre">&lt;restApiServiceCall&gt;</span></code> definition that provides login data in the request body and
+extracts the bearer token named ‘accessToken’ from the response body using a JMESPath expression:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">restApiAuthenticationMethod</span><span class="o">&gt;</span><span class="n">BearerSecurityScheme</span><span class="o">&lt;/</span><span class="n">restApiAuthenticationMethod</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">restApiBearer</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">restApiServiceCall</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">requestHeader</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">header</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">headerName</span><span class="o">&gt;</span><span class="n">Accept</span><span class="o">&lt;/</span><span class="n">headerName</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="n">application</span><span class="o">/</span><span class="n">json</span><span class="o">&lt;/</span><span class="n">value</span><span class="o">&gt;</span>
+      <span class="o">&lt;/</span><span class="n">header</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">header</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">headerName</span><span class="o">&gt;</span><span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="o">&lt;/</span><span class="n">headerName</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="n">application</span><span class="o">/</span><span class="n">json</span><span class="o">&lt;/</span><span class="n">value</span><span class="o">&gt;</span>
+      <span class="o">&lt;/</span><span class="n">header</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">requestHeader</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">requestMethod</span><span class="o">&gt;</span><span class="n">POST</span><span class="o">&lt;/</span><span class="n">requestMethod</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">requestPath</span><span class="o">&gt;/</span><span class="n">authentication</span><span class="o">&lt;/</span><span class="n">requestPath</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">requestBody</span><span class="o">&gt;</span><span class="p">{</span><span class="s2">&quot;strategy&quot;</span><span class="p">:</span> <span class="s2">&quot;local&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;{{username}}&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;{{password}}&quot;</span><span class="p">}</span><span class="o">&lt;/</span><span class="n">requestBody</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">responseQuery</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">queryType</span><span class="o">&gt;</span><span class="n">JMESPathExpression</span><span class="o">&lt;/</span><span class="n">queryType</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">query</span><span class="o">&gt;</span><span class="n">accessToken</span><span class="o">&lt;/</span><span class="n">query</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">responseQuery</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">restApiServiceCall</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">restApiBearer</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For a complete description of all elements used above see <a class="reference internal" href="#restapiservicecall"><span class="std std-ref">&lt;restApiServiceCall&gt;</span></a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here is a description of the most important elements regarding the <a class="reference internal" href="#restapiservicecall"><span class="std std-ref">&lt;restApiServiceCall&gt;</span></a> within the
+<a class="reference internal" href="#restapibearer"><span class="std std-ref">&lt;restApiBearer&gt;</span></a> definition:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;requestBody&gt;</span></code> defines the request body to be sent in the web service request. Note {{username}} and {{password}}
+parameters within the double brackets. Username and password are provided as configuration parameters.
+See also <a class="reference internal" href="#configurationlist"><span class="std std-ref">&lt;configurationList&gt;</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;responseQuery&gt;</span></code> defines the JMESPath query to extract the bearer token from the http response body, named <code class="docutils literal notranslate"><span class="pre">accessToken</span></code>.
+The response body could be something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;userID&quot;</span> <span class="p">:</span> <span class="s2">&quot;JohnDoe&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;tokenExpiry&quot;</span> <span class="p">:</span> <span class="s2">&quot;2025-04-24T02:35:00Z&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;accessToken&quot;</span> <span class="p">:</span> <span class="s2">&quot;VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wZWQgb3ZlciB0aGUgeWVsbG93IGJveC4=&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
 </section>
 <section id="restapibasic">
-<span id="id6"></span><h4>&lt;restApiBasic&gt;<a class="headerlink" href="#restapibasic" title="Permalink to this heading"></a></h4>
+<span id="id7"></span><h4>&lt;restApiBasic&gt;<a class="headerlink" href="#restapibasic" title="Permalink to this heading"></a></h4>
+<p>Within the <a class="reference internal" href="#restapibasic"><span class="std std-ref">&lt;restApiBasic&gt;</span></a> element you can define basic authentication used for each service call used to read or
+write data for a <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a>.</p>
+<p>The SGr libraries SGrJava &lt;<a class="reference external" href="https://github.com/SmartGridready/SGrJava">https://github.com/SmartGridready/SGrJava</a>&gt;`_
+and <a class="reference external" href="https://github.com/SmartGridready/SGrPython">SGrPython</a> build automatically a base 64 encoded authorization header
+<code class="docutils literal notranslate"><span class="pre">Authorization:</span> <span class="pre">Basic</span> <span class="pre">base64(</span> <span class="pre">&quot;user:password&quot;)</span></code> the is used in all service calls the access a <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a>.</p>
+<p>Example for a <a class="reference internal" href="#restapibasic"><span class="std std-ref">&lt;restApiBasic&gt;</span></a> element:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">restApiAuthenticationMethod</span><span class="o">&gt;</span><span class="n">BasicSecurityScheme</span><span class="o">&lt;/</span><span class="n">restApiAuthenticationMethod</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">restApiBasic</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">restBasicUsername</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">username</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">restBasicUsername</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">restBasicPassword</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">password</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">restBasicPassword</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">restApiBasic</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">{{username}}</span></code> and <code class="docutils literal notranslate"><span class="pre">{{password}}</span></code> are placeholder values and are intednded to be replaced by the correct value
+when loading and initializing the <a class="reference internal" href="glossary.html#term-Communication-Handler"><span class="xref std std-term">Communication Handler</span></a> libraries. See <a class="reference internal" href="#configurationlist"><span class="std std-ref">&lt;configurationList&gt;</span></a></p>
+</div>
 </section>
 <section id="restapiservicecall">
-<span id="id7"></span><h4>&lt;restApiServiceCall&gt;<a class="headerlink" href="#restapiservicecall" title="Permalink to this heading"></a></h4>
+<span id="id9"></span><h4>&lt;restApiServiceCall&gt;<a class="headerlink" href="#restapiservicecall" title="Permalink to this heading"></a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;restApiServiceCall</span></code> is used to define the web service call needed to read from a <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> or write
+to a <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a>. It is further used to communicate with authentication web services for example to get a
+a bearer token for further authentication (see <a class="reference internal" href="#restapibearer"><span class="std std-ref">&lt;restApiBearer&gt;</span></a>).</p>
+<p>An example for a <code class="docutils literal notranslate"><span class="pre">restApiService</span></code> call looks as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;restApiServiceCall&gt;
+  &lt;requestHeader&gt;
+    &lt;header&gt;
+      &lt;headerName&gt;Accept&lt;/headerName&gt;
+      &lt;value&gt;application/json&lt;/value&gt;
+    &lt;/header&gt;
+  &lt;/requestHeader&gt;
+  &lt;requestMethod&gt;GET&lt;/requestMethod&gt;
+  &lt;requestPath&gt;/digitaltwins?sensor_id={{sensor_id}}&lt;/requestPath&gt;
+  &lt;responseQuery&gt;
+    &lt;queryType&gt;JMESPathExpression&lt;/queryType&gt;
+    &lt;query&gt;sum([[0].ten_sec.p_l1,[0].ten_sec.p_l2,[0].ten_sec.p_l3])&lt;/query&gt;
+  &lt;/responseQuery&gt;
+&lt;/restApiServiceCall&gt;
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;requestHeader&gt;</span></code> : contains a list of <code class="docutils literal notranslate"><span class="pre">&lt;header&gt;</span></code> elements that define the http-header added to the
+http request.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;header&gt;</span></code> : represents one http-header entry consisting of a <code class="docutils literal notranslate"><span class="pre">&lt;headerName&gt;</span></code> / <code class="docutils literal notranslate"><span class="pre">&lt;headerValue</span></code> pair.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;requestMethod&gt;</span></code> the request http-method to be used. One of:</p>
+<ul>
+<li><p>GET</p></li>
+<li><p>POST</p></li>
+<li><p>PUT</p></li>
+<li><p>DELETE</p></li>
+<li><p>PATCH</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;requestPath&gt;</span></code> : determines the path used to access the web service endpoint. The path is concatenated
+with the base path given by the <code class="docutils literal notranslate"><span class="pre">restApiUri</span></code> within the <code class="docutils literal notranslate"><span class="pre">&lt;restApiInterfaceDescription&gt;</span></code> (see
+<a class="reference internal" href="#restapiinterfacedescription"><span class="std std-ref">&lt;restApiInterfaceDescription&gt;</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;responseQuery&gt;</span></code> : is the container for the query parameters that extract the result value from the
+webservice response body.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;queryType&gt;</span></code> : determines the type of the query language. It is one of the following:</p>
+<ul>
+<li><p>JMESPathExpression : uses JMESPath to extract a value from a JSON response. See also <a class="reference external" href="https://jmespath.org/">JMESPath</a>.</p></li>
+<li><p>XPathExpression : uses XPAth to extract the a value from a XML response. See also <a class="reference external" href="https://en.wikipedia.org/wiki/XPath">XPath</a>.</p></li>
+<li><p>RegularExpression : uses a regular expression to extract the value from a textual response: See also <a class="reference external" href="https://en.wikipedia.org/wiki/Regular_expression">Regular Expression</a>.</p></li>
+<li><p>JMESPathMapping : used to map and restructure JSON response to another JSON representation: Details see
+<a class="reference internal" href="#jmespathmapping"><span class="std std-ref">JMESPathMapping</span></a> for details.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;query&gt;</span></code> : contains the query expression in the query language given by <code class="docutils literal notranslate"><span class="pre">&lt;queryType&gt;</span></code>. The example above shows a
+JMESPath expression that calulates the sum of three values given by the response.</p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you need an API key for web service authentication you can add the API key directly to the <code class="docutils literal notranslate"><span class="pre">&lt;requestHeader&gt;</span></code>
+element as a configuration value. For example with the authentication method <code class="docutils literal notranslate"><span class="pre">&lt;restApiAuthenticationMethod&gt;</span></code>
+<code class="docutils literal notranslate"><span class="pre">ApiKeySecurityScheme</span></code> you can add:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">header</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">headerName</span><span class="o">&gt;</span><span class="n">x</span><span class="o">-</span><span class="n">api</span><span class="o">-</span><span class="n">key</span><span class="o">&lt;/</span><span class="n">headerName</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="n">AbCdEfGhIjKlMnOpQrStUvWxYz123456</span><span class="o">&lt;/</span><span class="n">value</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">header</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
 </section>
-<section id="add-an-authentication-header-to-a-datapoint">
-<span id="add-authentication-header"></span><h4>Add an authentication header to a datapoint<a class="headerlink" href="#add-an-authentication-header-to-a-datapoint" title="Permalink to this heading"></a></h4>
-<p>TODO</p>
-</section>
-<section id="id8">
-<span id="id9"></span><h4>&lt;messagingInterfaceDescription&gt;<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h4>
+<section id="id10">
+<span id="id11"></span><h4>&lt;messagingInterfaceDescription&gt;<a class="headerlink" href="#id10" title="Permalink to this heading"></a></h4>
 <p>TODO</p>
 </section>
 <section id="functionalprofilelist">
-<span id="id10"></span><h4>&lt;functionalProfileList&gt;<a class="headerlink" href="#functionalprofilelist" title="Permalink to this heading"></a></h4>
+<span id="id12"></span><h4>&lt;functionalProfileList&gt;<a class="headerlink" href="#functionalprofilelist" title="Permalink to this heading"></a></h4>
+<p>TODO</p>
+</section>
+<section id="jmespathmapping">
+<span id="id13"></span><h4>JMESPathMapping<a class="headerlink" href="#jmespathmapping" title="Permalink to this heading"></a></h4>
 <p>TODO</p>
 </section>
 </section>
