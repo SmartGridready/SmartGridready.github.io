@@ -186,14 +186,16 @@
 <li class="toctree-l4"><a class="reference internal" href="product-description-file.html#restapibearer">&lt;restApiBearer&gt;</a></li>
 <li class="toctree-l4"><a class="reference internal" href="product-description-file.html#restapibasic">&lt;restApiBasic&gt;</a></li>
 <li class="toctree-l4"><a class="reference internal" href="product-description-file.html#restapiservicecall">&lt;restApiServiceCall&gt;</a></li>
-<li class="toctree-l4"><a class="reference internal" href="product-description-file.html#id10">&lt;messagingInterfaceDescription&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="product-description-file.html#id12">&lt;messagingInterfaceDescription&gt;</a></li>
 <li class="toctree-l4"><a class="reference internal" href="product-description-file.html#functionalprofilelist">&lt;functionalProfileList&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="product-description-file.html#functionalprofile">&lt;functionalProfile&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="product-description-file.html#datapointlistelement">&lt;dataPointListElement&gt;</a></li>
 <li class="toctree-l4"><a class="reference internal" href="product-description-file.html#jmespathmapping">JMESPathMapping</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="product-description-file.html#smartgridready-product-library">SmartGridready <span class="xref std std-term">Product</span> Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="product-description-file.html#id23">SmartGridready <span class="xref std std-term">Product</span> Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="product-description-file.html#product-ei-xml-documentation-on-github">Product EI-XML Documentation on GitHub</a><ul class="simple">
 </ul>
 </li>
@@ -1116,7 +1118,7 @@ remain the data base for legacy reasons.</p>
 </section>
 <section id="versioning-scheme">
 <span id="version-number"></span><h3>Versioning Scheme<a class="headerlink" href="#versioning-scheme" title="Permalink to this heading"></a></h3>
-<p><a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> are numbered as follows: <code class="docutils literal notranslate"><span class="pre">Major.Minor.Build</span></code></p>
+<p><a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> are numbered as follows: <code class="docutils literal notranslate"><span class="pre">primaryVersion.secondaryVersion.subReleasVersionNumber</span></code></p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Number</p></th>
@@ -1124,18 +1126,18 @@ remain the data base for legacy reasons.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Major</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">primaryVersion</span></code></p></td>
 <td><p>Describes the major functionality family.
 Breaking changes implies an increment of
 the major number</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Minor</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">secondaryVersion</span></code></p></td>
 <td><p>Describes a backward compatible
 evolution. Only new functionality is
 added, but remaining functionality is
 never changed</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Build</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">subReleaseVersionNumber</span></code></p></td>
 <td><p>The functionality remains identical, but
 minor non-functional details change, such
 as descriptions, translations, remarks</p></td>

@@ -1,4 +1,5 @@
 TODO
+
 * detailed description of :term:`EID` XML's
 * data format XML, definition XSD
 * howto create an EID
@@ -71,7 +72,7 @@ The name and optionally the model of the device.
 
 Example:
 
-::
+.. code-block:: xml
 
   <deviceName>
     CLEMAP Energy Monitor
@@ -85,7 +86,7 @@ The name of the manufacturer
 
 Example:
 
-::
+.. code-block:: xml
 
   <manufacturer>
     CLEMAP
@@ -98,7 +99,7 @@ The publication status and release version of the :term:`EID`, together with the
 
 Example:
 
-::
+.. code-block:: xml
 
   <releaseNotes>
     <state>Published</state>
@@ -125,7 +126,7 @@ Explanations of specific child elements:
 
 Example:
 
-::
+.. code-block:: xml
 
   <deviceInformation>
     <legibleDescription>
@@ -170,7 +171,7 @@ using the :term:`EID`.
 
 As an example, the configuration entry:
 
-::
+.. code-block:: xml
 
     <configurationListElement>
       <name>ipaddress</name>
@@ -187,7 +188,7 @@ values.
 
 Example:
 
-::
+.. code-block:: xml
 
  <configurationList>
     <configurationListElement>
@@ -210,6 +211,8 @@ Example:
  </configurationList>
 
 
+.. _<interfaceList>:
+
 Interface List
 ^^^^^^^^^^^^^^
 
@@ -228,7 +231,7 @@ The interface list element lists the communication interfaces supported by the :
 
 For **Modbus** interfaces, the basic ``<interfaceList>`` is structured as follows:
 
-::
+.. code-block:: xml
 
     <interfaceList>
         <modbusInterface>
@@ -254,7 +257,7 @@ For **Modbus** interfaces, the basic ``<interfaceList>`` is structured as follow
 
 For **REST-API** interfaces, the basic ``<interfaceList>`` is structured as follows:
 
-::
+.. code-block:: xml
 
    <interfaceList>
         <restApiInterface>
@@ -276,7 +279,7 @@ For **REST-API** interfaces, the basic ``<interfaceList>`` is structured as foll
 
 For **Messaging** interfaces, the basic ``<interfaceList>`` is structured as follows:
 
-::
+.. code-block:: xml
 
     <interfaceList>
         <messagingInterface>
@@ -318,7 +321,7 @@ The following basic modbus types can be selected:
 For **Modbus RTU** and **Modbus RTU-ASCII** the `<modbusInterfaceDescription>` element is structured as follows (sample for
 Modbus RTU):
 
-::
+.. code-block:: xml
 
     <modbusInterfaceDescripion>
         <modbusInterfaceSelection>RTU</modbusInterfaceSelection>
@@ -365,7 +368,7 @@ Modbus RTU):
 For **Modbus TCP-IP** and **Modbus UDP-IP** the `<modbusInterfaceDescription>` element is structured as follows (sample
 for Modbus TCP-IP):
 
-::
+.. code-block:: xml
 
     <modbusInterfaceDescription>
         <modbusInterfaceSelection>TCPIP</modbusInterfaceSelection>
@@ -404,12 +407,18 @@ for Modbus TCP-IP):
 <modbusAttributes>
 """"""""""""""""""
 
-The ``<modbusAttributes>`` element is optional, and may contains following optional elements that define additional
+The ``<modbusAttributes>`` element is optional, and may contain following optional elements that define additional
 properties of the Modbus interface.
+
+.. note::
+
+   ``<modbusAttributes>`` are not supported by the current libraries `SGrJava <https://github.com/SmartGridready/SGrJava>`_
+   and `SGrPython <https://github.com/SmartGridready/SGrPython>`_
+
 
 The  ``modbusAttributes`` element is as follows (all elements are optional):
 
-::
+.. code-block:: xml
 
     <modbusAttributes>
         <pollingLatencyMs>500</pollingLatencyMs>
@@ -462,7 +471,7 @@ The  ``modbusAttributes`` element is as follows (all elements are optional):
 
 The ``<restApiInterfaceDescription>`` element is structured as follows:
 
-::
+.. code-block:: xml
 
       <restApiInterfaceDescription>
         <restApiInterfaceSelection>URI</restApiInterfaceSelection>
@@ -524,7 +533,7 @@ For a detailed description of the ``<restApiServiceCall>`` see :ref:`<restApiSer
 The following example shows a ``<restApiServiceCall>`` definition that provides login data in the request body and
 extracts the bearer token named 'accessToken' from the response body using a JMESPath expression:
 
-::
+.. code-block:: xml
 
     <restApiAuthenticationMethod>BearerSecurityScheme</restApiAuthenticationMethod>
     <restApiBearer>
@@ -565,7 +574,7 @@ extracts the bearer token named 'accessToken' from the response body using a JME
     * ``<responseQuery>`` defines the JMESPath query to extract the bearer token from the http response body, named ``accessToken``.
       The response body could be something like:
 
-      ::
+      .. code-block:: json
 
         {
             "userID" : "JohnDoe",
@@ -589,7 +598,7 @@ and `SGrPython <https://github.com/SmartGridready/SGrPython>`_ build automatical
 
 Example for a :ref:`<restApiBasic>` element:
 
-::
+.. code-block:: xml
 
     <restApiAuthenticationMethod>BasicSecurityScheme</restApiAuthenticationMethod>
     <restApiBasic>
@@ -616,7 +625,7 @@ a bearer token for further authentication (see :ref:`<restApiBearer>`).
 
 An example for a ``restApiService`` call looks as follows:
 
-::
+.. code-block:: xml
 
     <restApiServiceCall>
       <requestHeader>
@@ -654,7 +663,7 @@ An example for a ``restApiService`` call looks as follows:
   * XPathExpression : uses XPAth to extract the a value from a XML response. See also `XPath <https://en.wikipedia.org/wiki/XPath>`_.
   * RegularExpression : uses a regular expression to extract the value from a textual response: See also `Regular Expression <https://en.wikipedia.org/wiki/Regular_expression>`_.
   * JMESPathMapping : used to map and restructure JSON response to another JSON representation: Details see
-    :ref:`JMESPathMapping` for details.
+    :ref:`jmes_path_mapping` for details.
   * ``<query>`` : contains the query expression in the query language given by ``<queryType>``. The example above shows a
     JMESPath expression that calulates the sum of three values given by the response.
 
@@ -664,7 +673,7 @@ An example for a ``restApiService`` call looks as follows:
     element as a configuration value. For example with the authentication method ``<restApiAuthenticationMethod>``
     ``ApiKeySecurityScheme`` you can add:
 
-    ::
+    .. code-block:: xml
 
        <header>
           <headerName>x-api-key</headerName>
@@ -679,10 +688,76 @@ An example for a ``restApiService`` call looks as follows:
 <messagingInterfaceDescription>
 """""""""""""""""""""""""""""""
 
-TODO
+The ``<messagingInterfaceDescription>`` is structured as follows:
+
+.. code-block:: xml
+
+    <messageingInterface>
+      <messagingInterfaceDescription>
+        <platform>MQTT5</platform>
+        <messageBrokerList>
+          <messageBrokerListElement>
+            <host>{{broker_host}}</host>
+            <port>{{broker_port}}</port>
+            <tls>{{broker_tls}}</tls>
+            <tlsVerifyCertificate>{{broker_tls_verify}}</tlsVerifyCertificate>
+          </messageBrokerListElement>
+        </messageBrokerList>
+        <messageBrokerAuthentication>
+          <basicAuthentication>
+            <username>{{broker_username}}</username>
+            <password>{{broker_password}}</password>
+          </basicAuthentication>
+        </messageBrokerAuthentication>
+      </messagingInterfaceDescription>
+    </messagingInterface>
 
 
+* ``<messagingInterface>`` : container for the messaging interface configuration.
+* ``<platform>`` : the messaging platform used. One of:
 
+    * MQTT5 is supported by the current libraries `SGrJava <https://github.com/SmartGridready/SGrJava>`_
+      and `SGrPython <https://github.com/SmartGridready/SGrPython>`_
+    * Kafka not supported by the current libraries `SGrJava <https://github.com/SmartGridready/SGrJava>`_
+      and `SGrPython <https://github.com/SmartGridready/SGrPython>`_
+
+* ``<messageBrokerList>`` : a list of message `<messageBrokerListElements>`. Each element contains a list of
+  message broker service connections.
+* ``<host>`` : the host name or IP address of the message broker
+* ``<port>`` : the listening port of the message broker
+* ``<tls>`` : if `true` SSL/TLS is used to secure the connection. Default is `false`.
+* ``<tlsVerifyCertificate>`` : If `true` the server certificate is verified on the client side. If `false` the
+  server certificate is ignored.
+* ``<messageBrokerAuthentication>`` : container for the message broker authentication parameters it contains one
+  of :
+
+  * ``<basicAuthentication>`` : uses username and password for authentication.
+  * ``<clientCertificateAuthentication>`` : uses a SSL/TLS client certificate for authentication. Not supported by the
+    current :term:`Communication Handler` libraries yet (see Notebelow).
+
+    The structure is as follows:
+
+    .. code-block:: xml
+
+        <clientCertificateAuthentication>
+            <keystorePath>{{key_store_path}}</keystorePath>
+            <keystorePassword>{{key_store_password}}</keystorePassword>
+            <truststorePath>{{trust_store_path}}</truststorePath>
+            <truststorePassword>{{trust_store_password}}</truststorePassword>
+          </clientCertificateAuthentication>
+
+
+    * ``<keyStorePath>`` : the path to the keystore file where the the client private key and certificate is stored.
+    * ``<keyStorePassword>`` : password to access the keystore
+    * ``<trustStorePath>`` : the path to the truststore where the trusted root/intermediate certificates reside to verify the
+      server certificate.
+    * ``<trustStorePassword>`` : password to access the truststore
+
+
+.. note::
+
+    The ``<clientCertificateAuthentication>`` is currently not supported by the `SGrJava <https://github.com/SmartGridready/SGrJava>`_
+    and `SGrPython <https://github.com/SmartGridready/SGrPython>`_ libraries.
 
 
 
@@ -691,10 +766,118 @@ TODO
 <functionalProfileList>
 """""""""""""""""""""""
 
+The ``<functionalProfileList>`` lists all :term:`Functional Profiles` that are supported by the :term:`Product` device
+through the interface that contains the ``<functionalProfileList>`` (remind the structure, see :ref:`<interfaceList>` ).
+
+The ``<functionalProfileList>`` is structured as follows:
+
+.. code-block:: xml
+
+    <functionalProfileList>
+        <functionalProfileListElement>
+          <functionalProfile>
+            ...
+          </functionalProfile>
+          <dataPointList>
+            <dataPointListElement>
+                ...
+            </dataPointListElement>
+          </dataPointList>
+        </functionalProfileListElement>
+    </functionalProfileList>
+
+* ``<functionalProfileListElement>`` : container for one :term:`Functional Profile` and a list of :term:`Data Points`
+  supported by the :term:`Functional Profile`.
+* ``<functionalProfile>`` : contains the identifaction and general description of the :term:`Functional Profile`. For
+  details see :ref:`<functionalProfile>`.
+* ``<dataPointList>`` : container for all ``<dataPointListElement>`` 's supported by this :term:`Functional Profile`.
+
+
+.. _<functionalProfile>:
+
+<functionalProfile>
+"""""""""""""""""""
+
+The ``<functionalProfile>`` element contains the identification, the properties and the general description of the
+:term:`Functional Profile`. The available :term:`Functional Profiles` are defined within the
+`SmartGridready library <https://library.smartgridready.ch/FunctionalProfileTemplate>`_ . For a detailed documentation
+of the :term:`Functional Profile` concept see :ref:`functional-profiles` .
+
+The ``<functionalProfile>`` element structure is independent of the interface type (Modbus, REST, Messaging):
+
+.. code-block:: xml
+
+     <functionalProfile>
+        <functionalProfileName>ActivePowerAC</functionalProfileName>
+        <functionalProfileIdentification>
+          <specificationOwnerIdentification>0</specificationOwnerIdentification>
+          <functionalProfileCategory>Metering</functionalProfileCategory>
+          <functionalProfileType>ActivePowerAC</functionalProfileType>
+          <levelOfOperation>m</levelOfOperation>
+          <versionNumber>
+            <primaryVersionNumber>1</primaryVersionNumber>
+            <secondaryVersionNumber>1</secondaryVersionNumber>
+            <subReleaseVersionNumber>0</subReleaseVersionNumber>
+          </versionNumber>
+        </functionalProfileIdentification>
+        <legibleDescription>
+          <textElement>
+            <![CDATA[
+                ... valid html description of the functional profile in German ...
+            ]]>
+          </textElement>
+          <language>de</language>
+        </legibleDescription>
+        <legibleDescription>
+          <textElement>
+            <![CDATA[
+                ... valid html description of the functional profile in English ...
+            ]]>
+          </textElement>
+          <language>en</language>
+        </legibleDescription>
+      </functionalProfile>
+
+
+* ``<functionalProfileName>`` : Name of the functional profile.
+
+  The name can be arbitrary but it should be chosen such that the functionality of the :term:`Functional Profile` is
+  easy recognizable:
+
+  If you have only one :term:`Functional Profile` with the same ``<functionalProfileType>`` within your device then it
+  is recommended to use the ``<functionalProfileType>`` as ``<functionalProfileName``. If you have several
+  :term:`Functional Profiles` of the same ``<functionalProfileType`` within your device you could use
+  ``functionalProfilName`` 's as follows: `ActivePowerAC_1`, `ActivePowerAC_2` ...
+* ``<functionalProfileIdentification>`` : Container for the :term:`Functional Profile` identification values:
+    ``<specificationOwnerIdentification>``, ``<functionalProfileCategory>``, ``<functionalProfileType`` and
+    ``<levelOfOperation>``
+* ``<specificationOwnerIdentification>`` : This number identifies the organization that owns the specification. The number
+  ``0`` is reserved for the specification owned by SmartGridready, any other company will receive a number by the
+  SmartGridready 'Deklarationsstelle'.
+* ``<functionalProfileCategory>`` : Provides the categorisatation of the :term:`Functional Profile`. To determine the
+  appropriate value see :ref:`functional_profile_category`.
+* ``<functionalProfileType>`` : Defines the :term:`Functional Profile` type. To determine the appropriate type see
+  :ref:`functional_profile_type`.
+* ``<levelOfOperation>`` : Defines the level of operation for this :term:`Functional Profile`. See :ref:`level_of_operation`
+  for a detailed description of the operation level.
+* ``<versionNumber>`` : Container for the version number elements that define the :term:`Functional Profile` version.
+  ``<primaryVersion>``, ``<secondaryVersion>`` and ``<subReleaseVersionNumber>`` are according the version
+  number definition :ref:`version_number`.
+* ``<legibleDescription>`` Contains a list of :term:`Functional Profile` descriptions, translated to different languages.
+* ``<textElement>`` : Is a XML ``<![CDATA[ ... ]]>`` block that must contain valid HTML. The HTML description is
+  rendered when displaying the :term:`Product` device :term:`EID` within the `SmartGridready Product Library <https://library.smartgridready.ch/Device>`_
+  Example: see `Clemap Energy Monitor Cloud <https://library.smartgridready.ch/SGr_00_0018_CLEMAP_EnergyMonitor_RestAPICloud_V1.1.xml?viewDevice>`_.
+* ``<language>`` : The language of the description text, on of: `en`, `de`, `fr`, `it`.
+
+
+.. _<dataPointListElement>:
+
+<dataPointListElement>
+""""""""""""""""""""""
+
 TODO
 
-
-.. _JMESPathMapping:
+.. _jmes_path_mapping:
 
 JMESPathMapping
 """""""""""""""

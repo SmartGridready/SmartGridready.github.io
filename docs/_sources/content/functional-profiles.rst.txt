@@ -816,24 +816,24 @@ remain the data base for legacy reasons.
 Versioning Scheme
 ^^^^^^^^^^^^^^^^^
 
-:term:`Functional Profiles` are numbered as follows: ``Major.Minor.Build``
+:term:`Functional Profiles` are numbered as follows: ``primaryVersion.secondaryVersion.subReleasVersionNumber``
 
-+--------------------------+-------------------------------------------+
-| Number                   | Description                               |
-+==========================+===========================================+
-| ``Major``                | Describes the major functionality family. |
-|                          | Breaking changes implies an increment of  |
-|                          | the major number                          |
-+--------------------------+-------------------------------------------+
-| ``Minor``                | Describes a backward compatible           |
-|                          | evolution. Only new functionality is      |
-|                          | added, but remaining functionality is     |
-|                          | never changed                             |
-+--------------------------+-------------------------------------------+
-| ``Build``                | The functionality remains identical, but  |
-|                          | minor non-functional details change, such |
-|                          | as descriptions, translations, remarks    |
-+--------------------------+-------------------------------------------+
++-----------------------------+-------------------------------------------+
+| Number                      | Description                               |
++=============================+===========================================+
+| ``primaryVersion``          | Describes the major functionality family. |
+|                             | Breaking changes implies an increment of  |
+|                             | the major number                          |
++-----------------------------+-------------------------------------------+
+| ``secondaryVersion``        | Describes a backward compatible           |
+|                             | evolution. Only new functionality is      |
+|                             | added, but remaining functionality is     |
+|                             | never changed                             |
++-----------------------------+-------------------------------------------+
+| ``subReleaseVersionNumber`` | The functionality remains identical, but  |
+|                             | minor non-functional details change, such |
+|                             | as descriptions, translations, remarks    |
++-----------------------------+-------------------------------------------+
 
 Release Notes
 ^^^^^^^^^^^^^^

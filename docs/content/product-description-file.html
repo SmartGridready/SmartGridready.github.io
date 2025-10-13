@@ -185,14 +185,16 @@
 <li class="toctree-l4"><a class="reference internal" href="#restapibearer">&lt;restApiBearer&gt;</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#restapibasic">&lt;restApiBasic&gt;</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#restapiservicecall">&lt;restApiServiceCall&gt;</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id10">&lt;messagingInterfaceDescription&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">&lt;messagingInterfaceDescription&gt;</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#functionalprofilelist">&lt;functionalProfileList&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#functionalprofile">&lt;functionalProfile&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#datapointlistelement">&lt;dataPointListElement&gt;</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#jmespathmapping">JMESPathMapping</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#smartgridready-product-library">SmartGridready <span class="xref std std-term">Product</span> Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id23">SmartGridready <span class="xref std std-term">Product</span> Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#product-ei-xml-documentation-on-github">Product EI-XML Documentation on GitHub</a><ul class="simple">
 </ul>
 </li>
@@ -254,13 +256,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <p>TODO
-* detailed description of <a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a> XML’s
-* data format XML, definition XSD
-* howto create an EID
-* examples of current EID’s
-* external link to the EID library
-* Link and desc to SGrLibrary</p>
+  <p>TODO</p>
+<ul class="simple">
+<li><p>detailed description of <a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a> XML’s</p></li>
+<li><p>data format XML, definition XSD</p></li>
+<li><p>howto create an EID</p></li>
+<li><p>examples of current EID’s</p></li>
+<li><p>external link to the EID library</p></li>
+<li><p>Link and desc to SGrLibrary</p></li>
+</ul>
 <section id="product-description-file">
 <span id="product-description-eid"></span><h1><a class="reference internal" href="glossary.html#term-Product-Description-File"><span class="xref std std-term">Product Description File</span></a><a class="headerlink" href="#product-description-file" title="Permalink to this heading"></a></h1>
 <section id="introduction">
@@ -285,10 +289,10 @@ interfaces/protocols are:</p>
 <li><p>The <a class="reference internal" href="glossary.html#term-Data-Points"><span class="xref std std-term">Data Points</span></a> that are provided by the <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a></p></li>
 </ul>
 <p><a class="reference internal" href="#figure-product-description-file-structure"><span class="std std-numref">Fig. 12</span></a> shows the structure of a <a class="reference internal" href="glossary.html#term-Product-Description-File"><span class="xref std std-term">Product Description File</span></a>:</p>
-<figure class="align-default" id="id15">
+<figure class="align-default" id="id25">
 <span id="figure-product-description-file-structure"></span><img alt=":term:`Product Description File` Structure" src="../_images/product.drawio.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text"><a class="reference internal" href="glossary.html#term-Product-Description-File"><span class="xref std std-term">Product Description File</span></a> Structure</span><a class="headerlink" href="#id15" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text"><a class="reference internal" href="glossary.html#term-Product-Description-File"><span class="xref std std-term">Product Description File</span></a> Structure</span><a class="headerlink" href="#id25" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>The <a class="reference internal" href="glossary.html#term-Product-Description-File"><span class="xref std std-term">Product Description File</span></a> is an XML file, defined by the SmartGridready XML Schema (XSD) which builds
@@ -310,9 +314,9 @@ a guide for <a class="reference internal" href="glossary.html#term-EID"><span cl
 <h4>&lt;deviceName&gt;<a class="headerlink" href="#devicename" title="Permalink to this heading"></a></h4>
 <p>The name and optionally the model of the device.</p>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">deviceName</span><span class="o">&gt;</span>
-  <span class="n">CLEMAP</span> <span class="n">Energy</span> <span class="n">Monitor</span>
-<span class="o">&lt;/</span><span class="n">deviceName</span><span class="o">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;deviceName&gt;</span>
+<span class="w">  </span>CLEMAP<span class="w"> </span>Energy<span class="w"> </span>Monitor
+<span class="nt">&lt;/deviceName&gt;</span>
 </pre></div>
 </div>
 </section>
@@ -320,9 +324,9 @@ a guide for <a class="reference internal" href="glossary.html#term-EID"><span cl
 <h4>&lt;manufacturer&gt;<a class="headerlink" href="#manufacturer" title="Permalink to this heading"></a></h4>
 <p>The name of the manufacturer</p>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">manufacturer</span><span class="o">&gt;</span>
-  <span class="n">CLEMAP</span>
-<span class="o">&lt;/</span><span class="n">manufacturer</span><span class="o">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;manufacturer&gt;</span>
+<span class="w">  </span>CLEMAP
+<span class="nt">&lt;/manufacturer&gt;</span>
 </pre></div>
 </div>
 </section>
@@ -330,15 +334,15 @@ a guide for <a class="reference internal" href="glossary.html#term-EID"><span cl
 <h4>&lt;releaseNotes&gt;<a class="headerlink" href="#releasenotes" title="Permalink to this heading"></a></h4>
 <p>The publication status and release version of the <a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a>, together with the publisher.</p>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">releaseNotes</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">state</span><span class="o">&gt;</span><span class="n">Published</span><span class="o">&lt;/</span><span class="n">state</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">changeLog</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span><span class="mf">1.0.0</span><span class="o">&lt;/</span><span class="n">version</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="n">date</span><span class="o">&gt;</span><span class="mi">2024</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">24</span><span class="o">&lt;/</span><span class="n">date</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="n">author</span><span class="o">&gt;</span><span class="n">Jane</span> <span class="n">Doe</span><span class="p">,</span> <span class="n">Acme</span><span class="o">&lt;/</span><span class="n">author</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="n">comment</span><span class="o">&gt;</span><span class="n">Published</span><span class="o">&lt;/</span><span class="n">comment</span><span class="o">&gt;</span>
-  <span class="o">&lt;/</span><span class="n">changeLog</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">releaseNotes</span><span class="o">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;releaseNotes&gt;</span>
+<span class="w">  </span><span class="nt">&lt;state&gt;</span>Published<span class="nt">&lt;/state&gt;</span>
+<span class="w">  </span><span class="nt">&lt;changeLog&gt;</span>
+<span class="w">      </span><span class="nt">&lt;version&gt;</span>1.0.0<span class="nt">&lt;/version&gt;</span>
+<span class="w">      </span><span class="nt">&lt;date&gt;</span>2024-01-24<span class="nt">&lt;/date&gt;</span>
+<span class="w">      </span><span class="nt">&lt;author&gt;</span>Jane<span class="w"> </span>Doe,<span class="w"> </span>Acme<span class="nt">&lt;/author&gt;</span>
+<span class="w">      </span><span class="nt">&lt;comment&gt;</span>Published<span class="nt">&lt;/comment&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/changeLog&gt;</span>
+<span class="nt">&lt;/releaseNotes&gt;</span>
 </pre></div>
 </div>
 </section>
@@ -354,29 +358,29 @@ EEBUS specification.</p></li>
 <li><p><strong>&lt;levelOfOperation&gt;</strong> see <a class="reference internal" href="functional-profiles.html#level-of-operation"><span class="std std-ref">Level of Operation</span></a></p></li>
 </ul>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">deviceInformation</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">legibleDescription</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">textElement</span><span class="o">&gt;</span><span class="n">CDATA</span><span class="p">[[</span><span class="n">Some</span> <span class="n">device</span> <span class="n">description</span> <span class="o">...</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span> <span class="o">...</span> <span class="p">]]</span><span class="o">&lt;/</span><span class="n">textElement</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">language</span><span class="o">&gt;</span><span class="n">de</span><span class="o">&lt;/</span><span class="n">language</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">uri</span><span class="o">&gt;</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">clemap</span><span class="o">.</span><span class="n">com</span><span class="o">/...&lt;/</span><span class="n">uri</span><span class="o">&gt;</span>
-  <span class="o">&lt;/</span><span class="n">legibleDescription</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">deviceCategory</span><span class="o">&gt;</span>
-      <span class="n">SubMeterElectricity</span>
-  <span class="o">&lt;/</span><span class="n">deviceCategory</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">isLocalControl</span><span class="o">&gt;</span><span class="n">false</span><span class="o">&lt;/</span><span class="n">isLocalControl</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">softwareRevision</span><span class="o">&gt;</span><span class="mf">1.0.0</span><span class="o">&lt;/</span><span class="n">softwareRevision</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">hardwareRevision</span><span class="o">&gt;</span><span class="mf">1.0.0</span><span class="o">&lt;/</span><span class="n">hardwareRevision</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">manufacturerSpecificationIdentification</span><span class="o">&gt;</span>
-      <span class="n">CLEMAP</span>
-  <span class="o">&lt;/</span><span class="n">manufacturerSpecificationIdentification</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">levelOfOperation</span><span class="o">&gt;</span><span class="n">m</span><span class="o">&lt;/</span><span class="n">levelOfOperation</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">versionNumber</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">primaryVersionNumber</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">primaryVersionNumber</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">secondaryVersionNumber</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">&lt;/</span><span class="n">secondaryVersionNumber</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">subReleaseVersionNumber</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">&lt;/</span><span class="n">subReleaseVersionNumber</span><span class="o">&gt;</span>
-  <span class="o">&lt;/</span><span class="n">versionNumber</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">testState</span><span class="o">&gt;</span><span class="n">Verified</span><span class="o">&lt;/</span><span class="n">testState</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">deviceInformation</span><span class="o">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;deviceInformation&gt;</span>
+<span class="w">  </span><span class="nt">&lt;legibleDescription&gt;</span>
+<span class="w">    </span><span class="nt">&lt;textElement&gt;</span>CDATA[[Some<span class="w"> </span>device<span class="w"> </span>description<span class="w"> </span>...<span class="w"> </span><span class="nt">&lt;p&gt;</span><span class="w"> </span>...<span class="w"> </span>]]<span class="nt">&lt;/textElement&gt;</span>
+<span class="w">    </span><span class="nt">&lt;language&gt;</span>de<span class="nt">&lt;/language&gt;</span>
+<span class="w">    </span><span class="nt">&lt;uri&gt;</span>https://www.clemap.com/...<span class="nt">&lt;/uri&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/legibleDescription&gt;</span>
+<span class="w">  </span><span class="nt">&lt;deviceCategory&gt;</span>
+<span class="w">      </span>SubMeterElectricity
+<span class="w">  </span><span class="nt">&lt;/deviceCategory&gt;</span>
+<span class="w">  </span><span class="nt">&lt;isLocalControl&gt;</span>false<span class="nt">&lt;/isLocalControl&gt;</span>
+<span class="w">  </span><span class="nt">&lt;softwareRevision&gt;</span>1.0.0<span class="nt">&lt;/softwareRevision&gt;</span>
+<span class="w">  </span><span class="nt">&lt;hardwareRevision&gt;</span>1.0.0<span class="nt">&lt;/hardwareRevision&gt;</span>
+<span class="w">  </span><span class="nt">&lt;manufacturerSpecificationIdentification&gt;</span>
+<span class="w">      </span>CLEMAP
+<span class="w">  </span><span class="nt">&lt;/manufacturerSpecificationIdentification&gt;</span>
+<span class="w">  </span><span class="nt">&lt;levelOfOperation&gt;</span>m<span class="nt">&lt;/levelOfOperation&gt;</span>
+<span class="w">  </span><span class="nt">&lt;versionNumber&gt;</span>
+<span class="w">    </span><span class="nt">&lt;primaryVersionNumber&gt;</span>1<span class="nt">&lt;/primaryVersionNumber&gt;</span>
+<span class="w">    </span><span class="nt">&lt;secondaryVersionNumber&gt;</span>0<span class="nt">&lt;/secondaryVersionNumber&gt;</span>
+<span class="w">    </span><span class="nt">&lt;subReleaseVersionNumber&gt;</span>0<span class="nt">&lt;/subReleaseVersionNumber&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/versionNumber&gt;</span>
+<span class="w">  </span><span class="nt">&lt;testState&gt;</span>Verified<span class="nt">&lt;/testState&gt;</span>
+<span class="nt">&lt;/deviceInformation&gt;</span>
 </pre></div>
 </div>
 </section>
@@ -391,12 +395,12 @@ installing/instantiating a device.</p>
 name in the <a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a> which is replaced with the configuration value when installing/instantiating a device
 using the <a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a>.</p>
 <p>As an example, the configuration entry:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">configurationListElement</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">ipaddress</span><span class="o">&lt;/</span><span class="n">name</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">dataType</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">string</span><span class="o">/&gt;</span>
-  <span class="o">&lt;/</span><span class="n">dataType</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">configurationListElement</span><span class="o">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;configurationListElement&gt;</span>
+<span class="w">  </span><span class="nt">&lt;name&gt;</span>ipaddress<span class="nt">&lt;/name&gt;</span>
+<span class="w">  </span><span class="nt">&lt;dataType&gt;</span>
+<span class="w">    </span><span class="nt">&lt;string/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/dataType&gt;</span>
+<span class="nt">&lt;/configurationListElement&gt;</span>
 </pre></div>
 </div>
 <p>corresponds to a placeholder <code class="docutils literal notranslate"><span class="pre">{{ipaddress}}</span></code> used elsewhere in the <a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a>. This placeholder will be replaced
@@ -404,31 +408,31 @@ with the actual configuration value during installation or instantiation.</p>
 <p>This convention enables the use of the same <a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a> for multiple device instances by parameterizing instance-specific
 values.</p>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">configurationList</span><span class="o">&gt;</span>
-   <span class="o">&lt;</span><span class="n">configurationListElement</span><span class="o">&gt;</span>
-     <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">ipaddress</span><span class="o">&lt;/</span><span class="n">name</span><span class="o">&gt;</span>
-     <span class="o">&lt;</span><span class="n">dataType</span><span class="o">&gt;</span>
-       <span class="o">&lt;</span><span class="n">string</span><span class="o">/&gt;</span>
-     <span class="o">&lt;/</span><span class="n">dataType</span><span class="o">&gt;</span>
-     <span class="o">&lt;</span><span class="n">configurationDescription</span><span class="o">&gt;</span>
-       <span class="o">&lt;</span><span class="n">textElement</span><span class="o">&gt;</span><span class="n">Device</span> <span class="n">IP</span> <span class="n">address</span><span class="o">&lt;/</span><span class="n">textElement</span><span class="o">&gt;</span>
-       <span class="o">&lt;</span><span class="n">language</span><span class="o">&gt;</span><span class="n">en</span><span class="o">&lt;/</span><span class="n">language</span><span class="o">&gt;</span>
-       <span class="o">&lt;</span><span class="n">label</span><span class="o">&gt;</span><span class="n">IP</span> <span class="n">Address</span><span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;</span>
-     <span class="o">&lt;/</span><span class="n">configurationDescription</span><span class="o">&gt;</span>
-     <span class="o">&lt;</span><span class="n">configurationDescription</span><span class="o">&gt;</span>
-       <span class="o">&lt;</span><span class="n">textElement</span><span class="o">&gt;</span><span class="n">IP</span> <span class="n">Adresse</span> <span class="n">des</span> <span class="n">Gerätes</span><span class="o">&lt;/</span><span class="n">textElement</span><span class="o">&gt;</span>
-       <span class="o">&lt;</span><span class="n">language</span><span class="o">&gt;</span><span class="n">de</span><span class="o">&lt;/</span><span class="n">language</span><span class="o">&gt;</span>
-       <span class="o">&lt;</span><span class="n">label</span><span class="o">&gt;</span><span class="n">IP</span> <span class="n">Adresse</span><span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;</span>
-     <span class="o">&lt;/</span><span class="n">configurationDescription</span><span class="o">&gt;</span>
-   <span class="o">&lt;/</span><span class="n">configurationListElement</span><span class="o">&gt;</span>
-   <span class="o">&lt;</span><span class="n">configurationListElement</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">configurationList</span><span class="o">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;configurationList&gt;</span>
+<span class="w">   </span><span class="nt">&lt;configurationListElement&gt;</span>
+<span class="w">     </span><span class="nt">&lt;name&gt;</span>ipaddress<span class="nt">&lt;/name&gt;</span>
+<span class="w">     </span><span class="nt">&lt;dataType&gt;</span>
+<span class="w">       </span><span class="nt">&lt;string/&gt;</span>
+<span class="w">     </span><span class="nt">&lt;/dataType&gt;</span>
+<span class="w">     </span><span class="nt">&lt;configurationDescription&gt;</span>
+<span class="w">       </span><span class="nt">&lt;textElement&gt;</span>Device<span class="w"> </span>IP<span class="w"> </span>address<span class="nt">&lt;/textElement&gt;</span>
+<span class="w">       </span><span class="nt">&lt;language&gt;</span>en<span class="nt">&lt;/language&gt;</span>
+<span class="w">       </span><span class="nt">&lt;label&gt;</span>IP<span class="w"> </span>Address<span class="nt">&lt;/label&gt;</span>
+<span class="w">     </span><span class="nt">&lt;/configurationDescription&gt;</span>
+<span class="w">     </span><span class="nt">&lt;configurationDescription&gt;</span>
+<span class="w">       </span><span class="nt">&lt;textElement&gt;</span>IP<span class="w"> </span>Adresse<span class="w"> </span>des<span class="w"> </span>Gerätes<span class="nt">&lt;/textElement&gt;</span>
+<span class="w">       </span><span class="nt">&lt;language&gt;</span>de<span class="nt">&lt;/language&gt;</span>
+<span class="w">       </span><span class="nt">&lt;label&gt;</span>IP<span class="w"> </span>Adresse<span class="nt">&lt;/label&gt;</span>
+<span class="w">     </span><span class="nt">&lt;/configurationDescription&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/configurationListElement&gt;</span>
+<span class="w">   </span><span class="nt">&lt;configurationListElement&gt;</span>
+<span class="nt">&lt;/configurationList&gt;</span>
 </pre></div>
 </div>
 </section>
 </section>
 <section id="interface-list">
-<h3>Interface List<a class="headerlink" href="#interface-list" title="Permalink to this heading"></a></h3>
+<span id="interfacelist"></span><h3>Interface List<a class="headerlink" href="#interface-list" title="Permalink to this heading"></a></h3>
 <p>The interface list element lists the communication interfaces supported by the <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a>.</p>
 <p><strong>Supported Interfaces</strong></p>
 <ul>
@@ -445,19 +449,19 @@ values.</p>
 <li><p><strong>Messaging</strong> MQTT</p></li>
 </ul>
 <p>For <strong>Modbus</strong> interfaces, the basic <code class="docutils literal notranslate"><span class="pre">&lt;interfaceList&gt;</span></code> is structured as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">interfaceList</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">modbusInterface</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">modbusInterfaceDescription</span><span class="o">&gt;</span>
-            <span class="o">...</span>
-        <span class="o">&lt;/</span><span class="n">modbusInterfaceDescription</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">modbusAtttributes</span><span class="o">&gt;</span>
-            <span class="o">...</span>
-        <span class="o">&lt;/</span><span class="n">modbusAttributes</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">functionalProfileList</span><span class="o">&gt;</span>
-            <span class="o">...</span>
-        <span class="o">&lt;/</span><span class="n">functionalProfileList</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="n">modbusInterface</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">interfaceList</span><span class="o">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;interfaceList&gt;</span>
+<span class="w">    </span><span class="nt">&lt;modbusInterface&gt;</span>
+<span class="w">        </span><span class="nt">&lt;modbusInterfaceDescription&gt;</span>
+<span class="w">            </span>...
+<span class="w">        </span><span class="nt">&lt;/modbusInterfaceDescription&gt;</span>
+<span class="w">        </span><span class="nt">&lt;modbusAtttributes&gt;</span>
+<span class="w">            </span>...
+<span class="w">        </span><span class="nt">&lt;/modbusAttributes&gt;</span>
+<span class="w">        </span><span class="nt">&lt;functionalProfileList&gt;</span>
+<span class="w">            </span>...
+<span class="w">        </span><span class="nt">&lt;/functionalProfileList&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/modbusInterface&gt;</span>
+<span class="nt">&lt;/interfaceList&gt;</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -469,16 +473,16 @@ might be needed to operate. See <a class="reference internal" href="#modbusattri
 See <a class="reference internal" href="#functionalprofilelist"><span class="std std-ref">&lt;functionalProfileList&gt;</span></a></p></li>
 </ul>
 <p>For <strong>REST-API</strong> interfaces, the basic <code class="docutils literal notranslate"><span class="pre">&lt;interfaceList&gt;</span></code> is structured as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">interfaceList</span><span class="o">&gt;</span>
-     <span class="o">&lt;</span><span class="n">restApiInterface</span><span class="o">&gt;</span>
-         <span class="o">&lt;</span><span class="n">restApiInterfaceDescription</span><span class="o">&gt;</span>
-         <span class="o">...</span>
-         <span class="o">&lt;/</span><span class="n">restApiInterfaceDescription</span><span class="o">&gt;</span>
-         <span class="o">&lt;</span><span class="n">functionalProfileList</span><span class="o">&gt;</span>
-         <span class="o">...</span>
-         <span class="o">&lt;/</span><span class="n">functionalProfileList</span><span class="o">&gt;</span>
-     <span class="o">&lt;/</span><span class="n">restApiInterface</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">interfaceList</span><span class="o">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;interfaceList&gt;</span>
+<span class="w">     </span><span class="nt">&lt;restApiInterface&gt;</span>
+<span class="w">         </span><span class="nt">&lt;restApiInterfaceDescription&gt;</span>
+<span class="w">         </span>...
+<span class="w">         </span><span class="nt">&lt;/restApiInterfaceDescription&gt;</span>
+<span class="w">         </span><span class="nt">&lt;functionalProfileList&gt;</span>
+<span class="w">         </span>...
+<span class="w">         </span><span class="nt">&lt;/functionalProfileList&gt;</span>
+<span class="w">     </span><span class="nt">&lt;/restApiInterface&gt;</span>
+<span class="nt">&lt;/interfaceList&gt;</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -488,16 +492,16 @@ the WEB-/REST- service . See <a class="reference internal" href="#restapiinterfa
 See <a class="reference internal" href="#functionalprofilelist"><span class="std std-ref">&lt;functionalProfileList&gt;</span></a>.</p></li>
 </ul>
 <p>For <strong>Messaging</strong> interfaces, the basic <code class="docutils literal notranslate"><span class="pre">&lt;interfaceList&gt;</span></code> is structured as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">interfaceList</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">messagingInterface</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">messagingInterfaceDescription</span><span class="o">&gt;</span>
-        <span class="o">...</span>
-        <span class="o">&lt;/</span><span class="n">messagingInterfaceDescription</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">functionalProfileList</span><span class="o">&gt;</span>
-        <span class="o">...</span>
-        <span class="o">&lt;/</span><span class="n">functionalProfileList</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="n">messagingInterface</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">interfaceList</span><span class="o">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;interfaceList&gt;</span>
+<span class="w">    </span><span class="nt">&lt;messagingInterface&gt;</span>
+<span class="w">        </span><span class="nt">&lt;messagingInterfaceDescription&gt;</span>
+<span class="w">        </span>...
+<span class="w">        </span><span class="nt">&lt;/messagingInterfaceDescription&gt;</span>
+<span class="w">        </span><span class="nt">&lt;functionalProfileList&gt;</span>
+<span class="w">        </span>...
+<span class="w">        </span><span class="nt">&lt;/functionalProfileList&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/messagingInterface&gt;</span>
+<span class="nt">&lt;/interfaceList&gt;</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -524,32 +528,32 @@ one interface listed within the <code class="docutils literal notranslate"><span
 </ul>
 <p>For <strong>Modbus RTU</strong> and <strong>Modbus RTU-ASCII</strong> the <cite>&lt;modbusInterfaceDescription&gt;</cite> element is structured as follows (sample for
 Modbus RTU):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">modbusInterfaceDescripion</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">modbusInterfaceSelection</span><span class="o">&gt;</span><span class="n">RTU</span><span class="o">&lt;/</span><span class="n">modbusInterfaceSelection</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">modbusRtu</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="n">slaveAddr</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">slave_id</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">slaveAddr</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="n">portName</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">serial_port</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">portName</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="n">baudRateSelected</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">serial_baudrate</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">baudRateSelected</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="n">byteLenSelected</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">serial_databits</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">byteLenSelected</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="n">paritySelected</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">serial_parity</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">paritySelected</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="n">stopBitLenSelected</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">serial_stopbits</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">stopBitLenSelected</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="n">serialInterfaceCapability</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span><span class="mi">1200</span><span class="o">&lt;/</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span><span class="mi">2400</span><span class="o">&lt;/</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span><span class="mi">4800</span><span class="o">&lt;/</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span><span class="mi">9600</span><span class="o">&lt;/</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span><span class="mi">19200</span><span class="o">&lt;/</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span><span class="mi">38400</span><span class="o">&lt;/</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span><span class="mi">57600</span><span class="o">&lt;/</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span><span class="mi">115200</span><span class="o">&lt;/</span><span class="n">baudRatesSupported</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">byteLenSupported</span><span class="o">&gt;</span><span class="mi">8</span><span class="o">&lt;/</span><span class="n">byteLenSupported</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">paritySupported</span><span class="o">&gt;</span><span class="n">EVEN</span><span class="o">&lt;/</span><span class="n">paritySupported</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">paritySupported</span><span class="o">&gt;</span><span class="n">NONE</span><span class="o">&lt;/</span><span class="n">paritySupported</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">paritySupported</span><span class="o">&gt;</span><span class="n">ODD</span><span class="o">&lt;/</span><span class="n">paritySupported</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">stopBitLenSupported</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">stopBitLenSupported</span><span class="o">&gt;</span>
-          <span class="o">&lt;/</span><span class="n">serialInterfaceCapability</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="n">modbusRtu</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">modbusInterfaceDescription</span><span class="o">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;modbusInterfaceDescripion&gt;</span>
+<span class="w">    </span><span class="nt">&lt;modbusInterfaceSelection&gt;</span>RTU<span class="nt">&lt;/modbusInterfaceSelection&gt;</span>
+<span class="w">    </span><span class="nt">&lt;modbusRtu&gt;</span>
+<span class="w">          </span><span class="nt">&lt;slaveAddr&gt;</span>{{slave_id}}<span class="nt">&lt;/slaveAddr&gt;</span>
+<span class="w">          </span><span class="nt">&lt;portName&gt;</span>{{serial_port}}<span class="nt">&lt;/portName&gt;</span>
+<span class="w">          </span><span class="nt">&lt;baudRateSelected&gt;</span>{{serial_baudrate}}<span class="nt">&lt;/baudRateSelected&gt;</span>
+<span class="w">          </span><span class="nt">&lt;byteLenSelected&gt;</span>{{serial_databits}}<span class="nt">&lt;/byteLenSelected&gt;</span>
+<span class="w">          </span><span class="nt">&lt;paritySelected&gt;</span>{{serial_parity}}<span class="nt">&lt;/paritySelected&gt;</span>
+<span class="w">          </span><span class="nt">&lt;stopBitLenSelected&gt;</span>{{serial_stopbits}}<span class="nt">&lt;/stopBitLenSelected&gt;</span>
+<span class="w">          </span><span class="nt">&lt;serialInterfaceCapability&gt;</span>
+<span class="w">            </span><span class="nt">&lt;baudRatesSupported&gt;</span>1200<span class="nt">&lt;/baudRatesSupported&gt;</span>
+<span class="w">            </span><span class="nt">&lt;baudRatesSupported&gt;</span>2400<span class="nt">&lt;/baudRatesSupported&gt;</span>
+<span class="w">            </span><span class="nt">&lt;baudRatesSupported&gt;</span>4800<span class="nt">&lt;/baudRatesSupported&gt;</span>
+<span class="w">            </span><span class="nt">&lt;baudRatesSupported&gt;</span>9600<span class="nt">&lt;/baudRatesSupported&gt;</span>
+<span class="w">            </span><span class="nt">&lt;baudRatesSupported&gt;</span>19200<span class="nt">&lt;/baudRatesSupported&gt;</span>
+<span class="w">            </span><span class="nt">&lt;baudRatesSupported&gt;</span>38400<span class="nt">&lt;/baudRatesSupported&gt;</span>
+<span class="w">            </span><span class="nt">&lt;baudRatesSupported&gt;</span>57600<span class="nt">&lt;/baudRatesSupported&gt;</span>
+<span class="w">            </span><span class="nt">&lt;baudRatesSupported&gt;</span>115200<span class="nt">&lt;/baudRatesSupported&gt;</span>
+<span class="w">            </span><span class="nt">&lt;byteLenSupported&gt;</span>8<span class="nt">&lt;/byteLenSupported&gt;</span>
+<span class="w">            </span><span class="nt">&lt;paritySupported&gt;</span>EVEN<span class="nt">&lt;/paritySupported&gt;</span>
+<span class="w">            </span><span class="nt">&lt;paritySupported&gt;</span>NONE<span class="nt">&lt;/paritySupported&gt;</span>
+<span class="w">            </span><span class="nt">&lt;paritySupported&gt;</span>ODD<span class="nt">&lt;/paritySupported&gt;</span>
+<span class="w">            </span><span class="nt">&lt;stopBitLenSupported&gt;</span>1<span class="nt">&lt;/stopBitLenSupported&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/serialInterfaceCapability&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/modbusRtu&gt;</span>
+<span class="nt">&lt;/modbusInterfaceDescription&gt;</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -570,16 +574,16 @@ are supported by the device. These are read-only values and provide information 
 </ul>
 <p>For <strong>Modbus TCP-IP</strong> and <strong>Modbus UDP-IP</strong> the <cite>&lt;modbusInterfaceDescription&gt;</cite> element is structured as follows (sample
 for Modbus TCP-IP):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">modbusInterfaceDescription</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">modbusInterfaceSelection</span><span class="o">&gt;</span><span class="n">TCPIP</span><span class="o">&lt;/</span><span class="n">modbusInterfaceSelection</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">modbusTcp</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">port</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">ip_port</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">port</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">address</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">ip_address</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">address</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">slaveId</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">slave_id</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">slaveId</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="n">modbusTcp</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">firstRegisterAddressIsOne</span><span class="o">&gt;</span><span class="n">false</span><span class="o">&lt;/</span><span class="n">firstRegisterAddressIsOne</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">bitOrder</span><span class="o">&gt;</span><span class="n">BigEndian</span><span class="o">&lt;/</span><span class="n">bitOrder</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">modbusInterfaceDescription</span><span class="o">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;modbusInterfaceDescription&gt;</span>
+<span class="w">    </span><span class="nt">&lt;modbusInterfaceSelection&gt;</span>TCPIP<span class="nt">&lt;/modbusInterfaceSelection&gt;</span>
+<span class="w">    </span><span class="nt">&lt;modbusTcp&gt;</span>
+<span class="w">        </span><span class="nt">&lt;port&gt;</span>{{ip_port}}<span class="nt">&lt;/port&gt;</span>
+<span class="w">        </span><span class="nt">&lt;address&gt;</span>{{ip_address}}<span class="nt">&lt;/address&gt;</span>
+<span class="w">        </span><span class="nt">&lt;slaveId&gt;</span>{{slave_id}}<span class="nt">&lt;/slaveId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/modbusTcp&gt;</span>
+<span class="w">    </span><span class="nt">&lt;firstRegisterAddressIsOne&gt;</span>false<span class="nt">&lt;/firstRegisterAddressIsOne&gt;</span>
+<span class="w">    </span><span class="nt">&lt;bitOrder&gt;</span>BigEndian<span class="nt">&lt;/bitOrder&gt;</span>
+<span class="nt">&lt;/modbusInterfaceDescription&gt;</span>
 </pre></div>
 </div>
 <ul>
@@ -607,20 +611,25 @@ value with the name in brackets, in our examples <code class="docutils literal n
 </section>
 <section id="modbusattributes">
 <span id="id3"></span><h4>&lt;modbusAttributes&gt;<a class="headerlink" href="#modbusattributes" title="Permalink to this heading"></a></h4>
-<p>The <code class="docutils literal notranslate"><span class="pre">&lt;modbusAttributes&gt;</span></code> element is optional, and may contains following optional elements that define additional
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;modbusAttributes&gt;</span></code> element is optional, and may contain following optional elements that define additional
 properties of the Modbus interface.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;modbusAttributes&gt;</span></code> are not supported by the current libraries <a class="reference external" href="https://github.com/SmartGridready/SGrJava">SGrJava</a>
+and <a class="reference external" href="https://github.com/SmartGridready/SGrPython">SGrPython</a></p>
+</div>
 <p>The  <code class="docutils literal notranslate"><span class="pre">modbusAttributes</span></code> element is as follows (all elements are optional):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">modbusAttributes</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">pollingLatencyMs</span><span class="o">&gt;</span><span class="mi">500</span><span class="o">&lt;/</span><span class="n">pollingLatencyMs</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">accessProtection</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">modbusExceptionCode</span><span class="o">&gt;</span><span class="n">IllegalFunction</span><span class="o">&lt;/</span><span class="n">modbusExceptionCode</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">modbusExceptionCode</span><span class="o">&gt;</span><span class="n">IllegalAddress</span><span class="o">&lt;/</span><span class="n">modbusExceptionCode</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">isEnabled</span><span class="o">&gt;</span><span class="n">true</span><span class="o">&lt;/</span><span class="n">isEnabled</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="n">accessProtection</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">layer6Deviation</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="mi">2</span><span class="n">RegBase1000_L2H</span><span class="o">/&gt;</span>
-    <span class="o">&lt;/</span><span class="n">layer6Deviation</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">modbusAttributes</span><span class="o">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;modbusAttributes&gt;</span>
+<span class="w">    </span><span class="nt">&lt;pollingLatencyMs&gt;</span>500<span class="nt">&lt;/pollingLatencyMs&gt;</span>
+<span class="w">    </span><span class="nt">&lt;accessProtection&gt;</span>
+<span class="w">        </span><span class="nt">&lt;modbusExceptionCode&gt;</span>IllegalFunction<span class="nt">&lt;/modbusExceptionCode&gt;</span>
+<span class="w">        </span><span class="nt">&lt;modbusExceptionCode&gt;</span>IllegalAddress<span class="nt">&lt;/modbusExceptionCode&gt;</span>
+<span class="w">        </span><span class="nt">&lt;isEnabled&gt;</span>true<span class="nt">&lt;/isEnabled&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/accessProtection&gt;</span>
+<span class="w">    </span><span class="nt">&lt;layer6Deviation&gt;</span>
+<span class="w">        </span><span class="nt">&lt;2RegBase1000_L2H/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/layer6Deviation&gt;</span>
+<span class="nt">&lt;/modbusAttributes&gt;</span>
 </pre></div>
 </div>
 <ul>
@@ -667,18 +676,18 @@ address and kWh at the higher address, where <code class="docutils literal notra
 </ul>
 </section>
 <section id="restapiinterfacedescription">
-<span id="id4"></span><h4>&lt;restApiInterfaceDescription&gt;<a class="headerlink" href="#restapiinterfacedescription" title="Permalink to this heading"></a></h4>
+<span id="id6"></span><h4>&lt;restApiInterfaceDescription&gt;<a class="headerlink" href="#restapiinterfacedescription" title="Permalink to this heading"></a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">&lt;restApiInterfaceDescription&gt;</span></code> element is structured as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">restApiInterfaceDescription</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">restApiInterfaceSelection</span><span class="o">&gt;</span><span class="n">URI</span><span class="o">&lt;/</span><span class="n">restApiInterfaceSelection</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">restApiUri</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">baseUri</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">restApiUri</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">restApiAuthenticationMethod</span><span class="o">&gt;</span><span class="n">BearerSecurityScheme</span><span class="o">&lt;/</span><span class="n">restApiAuthenticationMethod</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">restApiBearer</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="n">restApiServiceCall</span><span class="o">&gt;</span>
-          <span class="o">...</span>
-      <span class="o">&lt;/</span><span class="n">restApiServiceCall</span><span class="o">&gt;</span>
-  <span class="o">&lt;/</span><span class="n">restApiBearer</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">restApiInterfaceDescription</span><span class="o">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;restApiInterfaceDescription&gt;</span>
+<span class="w">  </span><span class="nt">&lt;restApiInterfaceSelection&gt;</span>URI<span class="nt">&lt;/restApiInterfaceSelection&gt;</span>
+<span class="w">  </span><span class="nt">&lt;restApiUri&gt;</span>{{baseUri}}<span class="nt">&lt;/restApiUri&gt;</span>
+<span class="w">  </span><span class="nt">&lt;restApiAuthenticationMethod&gt;</span>BearerSecurityScheme<span class="nt">&lt;/restApiAuthenticationMethod&gt;</span>
+<span class="w">  </span><span class="nt">&lt;restApiBearer&gt;</span>
+<span class="w">      </span><span class="nt">&lt;restApiServiceCall&gt;</span>
+<span class="w">          </span>...
+<span class="w">      </span><span class="nt">&lt;/restApiServiceCall&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/restApiBearer&gt;</span>
+<span class="nt">&lt;/restApiInterfaceDescription&gt;</span>
 </pre></div>
 </div>
 <ul>
@@ -719,7 +728,7 @@ See <a class="reference internal" href="#restapiservicecall"><span class="std st
 </ul>
 </section>
 <section id="restapibearer">
-<span id="id5"></span><h4>&lt;restApiBearer&gt;<a class="headerlink" href="#restapibearer" title="Permalink to this heading"></a></h4>
+<span id="id7"></span><h4>&lt;restApiBearer&gt;<a class="headerlink" href="#restapibearer" title="Permalink to this heading"></a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">&lt;restApiBearer&gt;</span></code> element specifies the web service call needed to get a bearer token when the authentication
 scheme <code class="docutils literal notranslate"><span class="pre">AuhtenticationSchemeBearer</span></code> is required.</p>
 <p>The SGr libraries SGrJava &lt;<a class="reference external" href="https://github.com/SmartGridready/SGrJava">https://github.com/SmartGridready/SGrJava</a>&gt;`_
@@ -730,28 +739,28 @@ device.</p>
 <p>For a detailed description of the <code class="docutils literal notranslate"><span class="pre">&lt;restApiServiceCall&gt;</span></code> see <a class="reference internal" href="#restapiservicecall"><span class="std std-ref">&lt;restApiServiceCall&gt;</span></a>.</p>
 <p>The following example shows a <code class="docutils literal notranslate"><span class="pre">&lt;restApiServiceCall&gt;</span></code> definition that provides login data in the request body and
 extracts the bearer token named ‘accessToken’ from the response body using a JMESPath expression:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">restApiAuthenticationMethod</span><span class="o">&gt;</span><span class="n">BearerSecurityScheme</span><span class="o">&lt;/</span><span class="n">restApiAuthenticationMethod</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">restApiBearer</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">restApiServiceCall</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">requestHeader</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="n">header</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">headerName</span><span class="o">&gt;</span><span class="n">Accept</span><span class="o">&lt;/</span><span class="n">headerName</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="n">application</span><span class="o">/</span><span class="n">json</span><span class="o">&lt;/</span><span class="n">value</span><span class="o">&gt;</span>
-      <span class="o">&lt;/</span><span class="n">header</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="n">header</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">headerName</span><span class="o">&gt;</span><span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="o">&lt;/</span><span class="n">headerName</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="n">application</span><span class="o">/</span><span class="n">json</span><span class="o">&lt;/</span><span class="n">value</span><span class="o">&gt;</span>
-      <span class="o">&lt;/</span><span class="n">header</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="n">requestHeader</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">requestMethod</span><span class="o">&gt;</span><span class="n">POST</span><span class="o">&lt;/</span><span class="n">requestMethod</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">requestPath</span><span class="o">&gt;/</span><span class="n">authentication</span><span class="o">&lt;/</span><span class="n">requestPath</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">requestBody</span><span class="o">&gt;</span><span class="p">{</span><span class="s2">&quot;strategy&quot;</span><span class="p">:</span> <span class="s2">&quot;local&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;{{username}}&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;{{password}}&quot;</span><span class="p">}</span><span class="o">&lt;/</span><span class="n">requestBody</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">responseQuery</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="n">queryType</span><span class="o">&gt;</span><span class="n">JMESPathExpression</span><span class="o">&lt;/</span><span class="n">queryType</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="n">query</span><span class="o">&gt;</span><span class="n">accessToken</span><span class="o">&lt;/</span><span class="n">query</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="n">responseQuery</span><span class="o">&gt;</span>
-  <span class="o">&lt;/</span><span class="n">restApiServiceCall</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">restApiBearer</span><span class="o">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;restApiAuthenticationMethod&gt;</span>BearerSecurityScheme<span class="nt">&lt;/restApiAuthenticationMethod&gt;</span>
+<span class="nt">&lt;restApiBearer&gt;</span>
+<span class="w">  </span><span class="nt">&lt;restApiServiceCall&gt;</span>
+<span class="w">    </span><span class="nt">&lt;requestHeader&gt;</span>
+<span class="w">      </span><span class="nt">&lt;header&gt;</span>
+<span class="w">        </span><span class="nt">&lt;headerName&gt;</span>Accept<span class="nt">&lt;/headerName&gt;</span>
+<span class="w">        </span><span class="nt">&lt;value&gt;</span>application/json<span class="nt">&lt;/value&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/header&gt;</span>
+<span class="w">      </span><span class="nt">&lt;header&gt;</span>
+<span class="w">        </span><span class="nt">&lt;headerName&gt;</span>Content-Type<span class="nt">&lt;/headerName&gt;</span>
+<span class="w">        </span><span class="nt">&lt;value&gt;</span>application/json<span class="nt">&lt;/value&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/header&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/requestHeader&gt;</span>
+<span class="w">    </span><span class="nt">&lt;requestMethod&gt;</span>POST<span class="nt">&lt;/requestMethod&gt;</span>
+<span class="w">    </span><span class="nt">&lt;requestPath&gt;</span>/authentication<span class="nt">&lt;/requestPath&gt;</span>
+<span class="w">    </span><span class="nt">&lt;requestBody&gt;</span>{&quot;strategy&quot;:<span class="w"> </span>&quot;local&quot;,<span class="w"> </span>&quot;email&quot;:<span class="w"> </span>&quot;{{username}}&quot;,<span class="w"> </span>&quot;password&quot;:<span class="w"> </span>&quot;{{password}}&quot;}<span class="nt">&lt;/requestBody&gt;</span>
+<span class="w">    </span><span class="nt">&lt;responseQuery&gt;</span>
+<span class="w">      </span><span class="nt">&lt;queryType&gt;</span>JMESPathExpression<span class="nt">&lt;/queryType&gt;</span>
+<span class="w">      </span><span class="nt">&lt;query&gt;</span>accessToken<span class="nt">&lt;/query&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/responseQuery&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/restApiServiceCall&gt;</span>
+<span class="nt">&lt;/restApiBearer&gt;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -768,10 +777,10 @@ parameters within the double brackets. Username and password are provided as con
 See also <a class="reference internal" href="#configurationlist"><span class="std std-ref">&lt;configurationList&gt;</span></a>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;responseQuery&gt;</span></code> defines the JMESPath query to extract the bearer token from the http response body, named <code class="docutils literal notranslate"><span class="pre">accessToken</span></code>.
 The response body could be something like:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;userID&quot;</span> <span class="p">:</span> <span class="s2">&quot;JohnDoe&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;tokenExpiry&quot;</span> <span class="p">:</span> <span class="s2">&quot;2025-04-24T02:35:00Z&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;accessToken&quot;</span> <span class="p">:</span> <span class="s2">&quot;VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wZWQgb3ZlciB0aGUgeWVsbG93IGJveC4=&quot;</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;userID&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;JohnDoe&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tokenExpiry&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-04-24T02:35:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;accessToken&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wZWQgb3ZlciB0aGUgeWVsbG93IGJveC4=&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -780,18 +789,18 @@ The response body could be something like:</p>
 </div>
 </section>
 <section id="restapibasic">
-<span id="id7"></span><h4>&lt;restApiBasic&gt;<a class="headerlink" href="#restapibasic" title="Permalink to this heading"></a></h4>
+<span id="id9"></span><h4>&lt;restApiBasic&gt;<a class="headerlink" href="#restapibasic" title="Permalink to this heading"></a></h4>
 <p>Within the <a class="reference internal" href="#restapibasic"><span class="std std-ref">&lt;restApiBasic&gt;</span></a> element you can define basic authentication used for each service call used to read or
 write data for a <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a>.</p>
 <p>The SGr libraries SGrJava &lt;<a class="reference external" href="https://github.com/SmartGridready/SGrJava">https://github.com/SmartGridready/SGrJava</a>&gt;`_
 and <a class="reference external" href="https://github.com/SmartGridready/SGrPython">SGrPython</a> build automatically a base 64 encoded authorization header
 <code class="docutils literal notranslate"><span class="pre">Authorization:</span> <span class="pre">Basic</span> <span class="pre">base64(</span> <span class="pre">&quot;user:password&quot;)</span></code> the is used in all service calls the access a <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a>.</p>
 <p>Example for a <a class="reference internal" href="#restapibasic"><span class="std std-ref">&lt;restApiBasic&gt;</span></a> element:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">restApiAuthenticationMethod</span><span class="o">&gt;</span><span class="n">BasicSecurityScheme</span><span class="o">&lt;/</span><span class="n">restApiAuthenticationMethod</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">restApiBasic</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">restBasicUsername</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">username</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">restBasicUsername</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">restBasicPassword</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">password</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">restBasicPassword</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">restApiBasic</span><span class="o">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;restApiAuthenticationMethod&gt;</span>BasicSecurityScheme<span class="nt">&lt;/restApiAuthenticationMethod&gt;</span>
+<span class="nt">&lt;restApiBasic&gt;</span>
+<span class="w">  </span><span class="nt">&lt;restBasicUsername&gt;</span>{{username}}<span class="nt">&lt;/restBasicUsername&gt;</span>
+<span class="w">  </span><span class="nt">&lt;restBasicPassword&gt;</span>{{password}}<span class="nt">&lt;/restBasicPassword&gt;</span>
+<span class="nt">&lt;/restApiBasic&gt;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -801,25 +810,25 @@ when loading and initializing the <a class="reference internal" href="glossary.h
 </div>
 </section>
 <section id="restapiservicecall">
-<span id="id9"></span><h4>&lt;restApiServiceCall&gt;<a class="headerlink" href="#restapiservicecall" title="Permalink to this heading"></a></h4>
+<span id="id11"></span><h4>&lt;restApiServiceCall&gt;<a class="headerlink" href="#restapiservicecall" title="Permalink to this heading"></a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">&lt;restApiServiceCall</span></code> is used to define the web service call needed to read from a <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> or write
 to a <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a>. It is further used to communicate with authentication web services for example to get a
 a bearer token for further authentication (see <a class="reference internal" href="#restapibearer"><span class="std std-ref">&lt;restApiBearer&gt;</span></a>).</p>
 <p>An example for a <code class="docutils literal notranslate"><span class="pre">restApiService</span></code> call looks as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;restApiServiceCall&gt;
-  &lt;requestHeader&gt;
-    &lt;header&gt;
-      &lt;headerName&gt;Accept&lt;/headerName&gt;
-      &lt;value&gt;application/json&lt;/value&gt;
-    &lt;/header&gt;
-  &lt;/requestHeader&gt;
-  &lt;requestMethod&gt;GET&lt;/requestMethod&gt;
-  &lt;requestPath&gt;/digitaltwins?sensor_id={{sensor_id}}&lt;/requestPath&gt;
-  &lt;responseQuery&gt;
-    &lt;queryType&gt;JMESPathExpression&lt;/queryType&gt;
-    &lt;query&gt;sum([[0].ten_sec.p_l1,[0].ten_sec.p_l2,[0].ten_sec.p_l3])&lt;/query&gt;
-  &lt;/responseQuery&gt;
-&lt;/restApiServiceCall&gt;
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;restApiServiceCall&gt;</span>
+<span class="w">  </span><span class="nt">&lt;requestHeader&gt;</span>
+<span class="w">    </span><span class="nt">&lt;header&gt;</span>
+<span class="w">      </span><span class="nt">&lt;headerName&gt;</span>Accept<span class="nt">&lt;/headerName&gt;</span>
+<span class="w">      </span><span class="nt">&lt;value&gt;</span>application/json<span class="nt">&lt;/value&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/header&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/requestHeader&gt;</span>
+<span class="w">  </span><span class="nt">&lt;requestMethod&gt;</span>GET<span class="nt">&lt;/requestMethod&gt;</span>
+<span class="w">  </span><span class="nt">&lt;requestPath&gt;</span>/digitaltwins?sensor_id={{sensor_id}}<span class="nt">&lt;/requestPath&gt;</span>
+<span class="w">  </span><span class="nt">&lt;responseQuery&gt;</span>
+<span class="w">    </span><span class="nt">&lt;queryType&gt;</span>JMESPathExpression<span class="nt">&lt;/queryType&gt;</span>
+<span class="w">    </span><span class="nt">&lt;query&gt;</span>sum([[0].ten_sec.p_l1,[0].ten_sec.p_l2,[0].ten_sec.p_l3])<span class="nt">&lt;/query&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/responseQuery&gt;</span>
+<span class="nt">&lt;/restApiServiceCall&gt;</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -846,7 +855,7 @@ webservice response body.</p></li>
 <li><p>XPathExpression : uses XPAth to extract the a value from a XML response. See also <a class="reference external" href="https://en.wikipedia.org/wiki/XPath">XPath</a>.</p></li>
 <li><p>RegularExpression : uses a regular expression to extract the value from a textual response: See also <a class="reference external" href="https://en.wikipedia.org/wiki/Regular_expression">Regular Expression</a>.</p></li>
 <li><p>JMESPathMapping : used to map and restructure JSON response to another JSON representation: Details see
-<a class="reference internal" href="#jmespathmapping"><span class="std std-ref">JMESPathMapping</span></a> for details.</p></li>
+<a class="reference internal" href="#jmes-path-mapping"><span class="std std-ref">JMESPathMapping</span></a> for details.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;query&gt;</span></code> : contains the query expression in the query language given by <code class="docutils literal notranslate"><span class="pre">&lt;queryType&gt;</span></code>. The example above shows a
 JMESPath expression that calulates the sum of three values given by the response.</p></li>
 </ul>
@@ -857,30 +866,201 @@ JMESPath expression that calulates the sum of three values given by the response
 <p>If you need an API key for web service authentication you can add the API key directly to the <code class="docutils literal notranslate"><span class="pre">&lt;requestHeader&gt;</span></code>
 element as a configuration value. For example with the authentication method <code class="docutils literal notranslate"><span class="pre">&lt;restApiAuthenticationMethod&gt;</span></code>
 <code class="docutils literal notranslate"><span class="pre">ApiKeySecurityScheme</span></code> you can add:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">header</span><span class="o">&gt;</span>
-   <span class="o">&lt;</span><span class="n">headerName</span><span class="o">&gt;</span><span class="n">x</span><span class="o">-</span><span class="n">api</span><span class="o">-</span><span class="n">key</span><span class="o">&lt;/</span><span class="n">headerName</span><span class="o">&gt;</span>
-   <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="n">AbCdEfGhIjKlMnOpQrStUvWxYz123456</span><span class="o">&lt;/</span><span class="n">value</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">header</span><span class="o">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;header&gt;</span>
+<span class="w">   </span><span class="nt">&lt;headerName&gt;</span>x-api-key<span class="nt">&lt;/headerName&gt;</span>
+<span class="w">   </span><span class="nt">&lt;value&gt;</span>AbCdEfGhIjKlMnOpQrStUvWxYz123456<span class="nt">&lt;/value&gt;</span>
+<span class="nt">&lt;/header&gt;</span>
 </pre></div>
 </div>
 </div>
 </section>
-<section id="id10">
-<span id="id11"></span><h4>&lt;messagingInterfaceDescription&gt;<a class="headerlink" href="#id10" title="Permalink to this heading"></a></h4>
-<p>TODO</p>
+<section id="id12">
+<span id="id13"></span><h4>&lt;messagingInterfaceDescription&gt;<a class="headerlink" href="#id12" title="Permalink to this heading"></a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;messagingInterfaceDescription&gt;</span></code> is structured as follows:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;messageingInterface&gt;</span>
+<span class="w">  </span><span class="nt">&lt;messagingInterfaceDescription&gt;</span>
+<span class="w">    </span><span class="nt">&lt;platform&gt;</span>MQTT5<span class="nt">&lt;/platform&gt;</span>
+<span class="w">    </span><span class="nt">&lt;messageBrokerList&gt;</span>
+<span class="w">      </span><span class="nt">&lt;messageBrokerListElement&gt;</span>
+<span class="w">        </span><span class="nt">&lt;host&gt;</span>{{broker_host}}<span class="nt">&lt;/host&gt;</span>
+<span class="w">        </span><span class="nt">&lt;port&gt;</span>{{broker_port}}<span class="nt">&lt;/port&gt;</span>
+<span class="w">        </span><span class="nt">&lt;tls&gt;</span>{{broker_tls}}<span class="nt">&lt;/tls&gt;</span>
+<span class="w">        </span><span class="nt">&lt;tlsVerifyCertificate&gt;</span>{{broker_tls_verify}}<span class="nt">&lt;/tlsVerifyCertificate&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/messageBrokerListElement&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/messageBrokerList&gt;</span>
+<span class="w">    </span><span class="nt">&lt;messageBrokerAuthentication&gt;</span>
+<span class="w">      </span><span class="nt">&lt;basicAuthentication&gt;</span>
+<span class="w">        </span><span class="nt">&lt;username&gt;</span>{{broker_username}}<span class="nt">&lt;/username&gt;</span>
+<span class="w">        </span><span class="nt">&lt;password&gt;</span>{{broker_password}}<span class="nt">&lt;/password&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/basicAuthentication&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/messageBrokerAuthentication&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/messagingInterfaceDescription&gt;</span>
+<span class="nt">&lt;/messagingInterface&gt;</span>
+</pre></div>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;messagingInterface&gt;</span></code> : container for the messaging interface configuration.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;platform&gt;</span></code> : the messaging platform used. One of:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>MQTT5 is supported by the current libraries <a class="reference external" href="https://github.com/SmartGridready/SGrJava">SGrJava</a>
+and <a class="reference external" href="https://github.com/SmartGridready/SGrPython">SGrPython</a></p></li>
+<li><p>Kafka not supported by the current libraries <a class="reference external" href="https://github.com/SmartGridready/SGrJava">SGrJava</a>
+and <a class="reference external" href="https://github.com/SmartGridready/SGrPython">SGrPython</a></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;messageBrokerList&gt;</span></code> : a list of message <cite>&lt;messageBrokerListElements&gt;</cite>. Each element contains a list of
+message broker service connections.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;host&gt;</span></code> : the host name or IP address of the message broker</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;port&gt;</span></code> : the listening port of the message broker</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;tls&gt;</span></code> : if <cite>true</cite> SSL/TLS is used to secure the connection. Default is <cite>false</cite>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;tlsVerifyCertificate&gt;</span></code> : If <cite>true</cite> the server certificate is verified on the client side. If <cite>false</cite> the
+server certificate is ignored.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;messageBrokerAuthentication&gt;</span></code> : container for the message broker authentication parameters it contains one
+of :</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;basicAuthentication&gt;</span></code> : uses username and password for authentication.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;clientCertificateAuthentication&gt;</span></code> : uses a SSL/TLS client certificate for authentication. Not supported by the
+current <a class="reference internal" href="glossary.html#term-Communication-Handler"><span class="xref std std-term">Communication Handler</span></a> libraries yet (see Notebelow).</p>
+<p>The structure is as follows:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;clientCertificateAuthentication&gt;</span>
+<span class="w">    </span><span class="nt">&lt;keystorePath&gt;</span>{{key_store_path}}<span class="nt">&lt;/keystorePath&gt;</span>
+<span class="w">    </span><span class="nt">&lt;keystorePassword&gt;</span>{{key_store_password}}<span class="nt">&lt;/keystorePassword&gt;</span>
+<span class="w">    </span><span class="nt">&lt;truststorePath&gt;</span>{{trust_store_path}}<span class="nt">&lt;/truststorePath&gt;</span>
+<span class="w">    </span><span class="nt">&lt;truststorePassword&gt;</span>{{trust_store_password}}<span class="nt">&lt;/truststorePassword&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/clientCertificateAuthentication&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;keyStorePath&gt;</span></code> : the path to the keystore file where the the client private key and certificate is stored.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;keyStorePassword&gt;</span></code> : password to access the keystore</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;trustStorePath&gt;</span></code> : the path to the truststore where the trusted root/intermediate certificates reside to verify the
+server certificate.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;trustStorePassword&gt;</span></code> : password to access the truststore</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;clientCertificateAuthentication&gt;</span></code> is currently not supported by the <a class="reference external" href="https://github.com/SmartGridready/SGrJava">SGrJava</a>
+and <a class="reference external" href="https://github.com/SmartGridready/SGrPython">SGrPython</a> libraries.</p>
+</div>
 </section>
 <section id="functionalprofilelist">
-<span id="id12"></span><h4>&lt;functionalProfileList&gt;<a class="headerlink" href="#functionalprofilelist" title="Permalink to this heading"></a></h4>
+<span id="id20"></span><h4>&lt;functionalProfileList&gt;<a class="headerlink" href="#functionalprofilelist" title="Permalink to this heading"></a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;functionalProfileList&gt;</span></code> lists all <a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> that are supported by the <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> device
+through the interface that contains the <code class="docutils literal notranslate"><span class="pre">&lt;functionalProfileList&gt;</span></code> (remind the structure, see <a class="reference internal" href="#interfacelist"><span class="std std-ref">Interface List</span></a> ).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;functionalProfileList&gt;</span></code> is structured as follows:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;functionalProfileList&gt;</span>
+<span class="w">    </span><span class="nt">&lt;functionalProfileListElement&gt;</span>
+<span class="w">      </span><span class="nt">&lt;functionalProfile&gt;</span>
+<span class="w">        </span>...
+<span class="w">      </span><span class="nt">&lt;/functionalProfile&gt;</span>
+<span class="w">      </span><span class="nt">&lt;dataPointList&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dataPointListElement&gt;</span>
+<span class="w">            </span>...
+<span class="w">        </span><span class="nt">&lt;/dataPointListElement&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/dataPointList&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/functionalProfileListElement&gt;</span>
+<span class="nt">&lt;/functionalProfileList&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;functionalProfileListElement&gt;</span></code> : container for one <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> and a list of <a class="reference internal" href="glossary.html#term-Data-Points"><span class="xref std std-term">Data Points</span></a>
+supported by the <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;functionalProfile&gt;</span></code> : contains the identifaction and general description of the <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a>. For
+details see <a class="reference internal" href="#functionalprofile"><span class="std std-ref">&lt;functionalProfile&gt;</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;dataPointList&gt;</span></code> : container for all <code class="docutils literal notranslate"><span class="pre">&lt;dataPointListElement&gt;</span></code> ‘s supported by this <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a>.</p></li>
+</ul>
+</section>
+<section id="functionalprofile">
+<span id="id21"></span><h4>&lt;functionalProfile&gt;<a class="headerlink" href="#functionalprofile" title="Permalink to this heading"></a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;functionalProfile&gt;</span></code> element contains the identification, the properties and the general description of the
+<a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a>. The available <a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> are defined within the
+<a class="reference external" href="https://library.smartgridready.ch/FunctionalProfileTemplate">SmartGridready library</a> . For a detailed documentation
+of the <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> concept see <a class="reference internal" href="functional-profiles.html#functional-profiles"><span class="std std-ref">Functional Profiles</span></a> .</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;functionalProfile&gt;</span></code> element structure is independent of the interface type (Modbus, REST, Messaging):</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;functionalProfile&gt;</span>
+<span class="w">   </span><span class="nt">&lt;functionalProfileName&gt;</span>ActivePowerAC<span class="nt">&lt;/functionalProfileName&gt;</span>
+<span class="w">   </span><span class="nt">&lt;functionalProfileIdentification&gt;</span>
+<span class="w">     </span><span class="nt">&lt;specificationOwnerIdentification&gt;</span>0<span class="nt">&lt;/specificationOwnerIdentification&gt;</span>
+<span class="w">     </span><span class="nt">&lt;functionalProfileCategory&gt;</span>Metering<span class="nt">&lt;/functionalProfileCategory&gt;</span>
+<span class="w">     </span><span class="nt">&lt;functionalProfileType&gt;</span>ActivePowerAC<span class="nt">&lt;/functionalProfileType&gt;</span>
+<span class="w">     </span><span class="nt">&lt;levelOfOperation&gt;</span>m<span class="nt">&lt;/levelOfOperation&gt;</span>
+<span class="w">     </span><span class="nt">&lt;versionNumber&gt;</span>
+<span class="w">       </span><span class="nt">&lt;primaryVersionNumber&gt;</span>1<span class="nt">&lt;/primaryVersionNumber&gt;</span>
+<span class="w">       </span><span class="nt">&lt;secondaryVersionNumber&gt;</span>1<span class="nt">&lt;/secondaryVersionNumber&gt;</span>
+<span class="w">       </span><span class="nt">&lt;subReleaseVersionNumber&gt;</span>0<span class="nt">&lt;/subReleaseVersionNumber&gt;</span>
+<span class="w">     </span><span class="nt">&lt;/versionNumber&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/functionalProfileIdentification&gt;</span>
+<span class="w">   </span><span class="nt">&lt;legibleDescription&gt;</span>
+<span class="w">     </span><span class="nt">&lt;textElement&gt;</span>
+<span class="w">       </span><span class="cp">&lt;![CDATA[</span>
+<span class="cp">           ... valid html description of the functional profile in German ...</span>
+<span class="cp">       ]]&gt;</span>
+<span class="w">     </span><span class="nt">&lt;/textElement&gt;</span>
+<span class="w">     </span><span class="nt">&lt;language&gt;</span>de<span class="nt">&lt;/language&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/legibleDescription&gt;</span>
+<span class="w">   </span><span class="nt">&lt;legibleDescription&gt;</span>
+<span class="w">     </span><span class="nt">&lt;textElement&gt;</span>
+<span class="w">       </span><span class="cp">&lt;![CDATA[</span>
+<span class="cp">           ... valid html description of the functional profile in English ...</span>
+<span class="cp">       ]]&gt;</span>
+<span class="w">     </span><span class="nt">&lt;/textElement&gt;</span>
+<span class="w">     </span><span class="nt">&lt;language&gt;</span>en<span class="nt">&lt;/language&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/legibleDescription&gt;</span>
+<span class="w"> </span><span class="nt">&lt;/functionalProfile&gt;</span>
+</pre></div>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;functionalProfileName&gt;</span></code> : Name of the functional profile.</p>
+<p>The name can be arbitrary but it should be chosen such that the functionality of the <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> is
+easy recognizable:</p>
+<p>If you have only one <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> with the same <code class="docutils literal notranslate"><span class="pre">&lt;functionalProfileType&gt;</span></code> within your device then it
+is recommended to use the <code class="docutils literal notranslate"><span class="pre">&lt;functionalProfileType&gt;</span></code> as <code class="docutils literal notranslate"><span class="pre">&lt;functionalProfileName</span></code>. If you have several
+<a class="reference internal" href="glossary.html#term-Functional-Profiles"><span class="xref std std-term">Functional Profiles</span></a> of the same <code class="docutils literal notranslate"><span class="pre">&lt;functionalProfileType</span></code> within your device you could use
+<code class="docutils literal notranslate"><span class="pre">functionalProfilName</span></code> ‘s as follows: <cite>ActivePowerAC_1</cite>, <cite>ActivePowerAC_2</cite> …</p>
+</li>
+<li><dl>
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;functionalProfileIdentification&gt;</span></code><span class="classifier">Container for the <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> identification values:</span></dt><dd><p><code class="docutils literal notranslate"><span class="pre">&lt;specificationOwnerIdentification&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;functionalProfileCategory&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;functionalProfileType</span></code> and
+<code class="docutils literal notranslate"><span class="pre">&lt;levelOfOperation&gt;</span></code></p>
+</dd>
+</dl>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;specificationOwnerIdentification&gt;</span></code> : This number identifies the organization that owns the specification. The number
+<code class="docutils literal notranslate"><span class="pre">0</span></code> is reserved for the specification owned by SmartGridready, any other company will receive a number by the
+SmartGridready ‘Deklarationsstelle’.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;functionalProfileCategory&gt;</span></code> : Provides the categorisatation of the <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a>. To determine the
+appropriate value see <a class="reference internal" href="functional-profiles.html#functional-profile-category"><span class="std std-ref">Functional Profile Category</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;functionalProfileType&gt;</span></code> : Defines the <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> type. To determine the appropriate type see
+<a class="reference internal" href="functional-profiles.html#functional-profile-type"><span class="std std-ref">Functional Profile Type</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;levelOfOperation&gt;</span></code> : Defines the level of operation for this <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a>. See <a class="reference internal" href="functional-profiles.html#level-of-operation"><span class="std std-ref">Level of Operation</span></a>
+for a detailed description of the operation level.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;versionNumber&gt;</span></code> : Container for the version number elements that define the <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> version.
+<code class="docutils literal notranslate"><span class="pre">&lt;primaryVersion&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;secondaryVersion&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;subReleaseVersionNumber&gt;</span></code> are according the version
+number definition <a class="reference internal" href="functional-profiles.html#version-number"><span class="std std-ref">Versioning Scheme</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;legibleDescription&gt;</span></code> Contains a list of <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a> descriptions, translated to different languages.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;textElement&gt;</span></code> : Is a XML <code class="docutils literal notranslate"><span class="pre">&lt;![CDATA[</span> <span class="pre">...</span> <span class="pre">]]&gt;</span></code> block that must contain valid HTML. The HTML description is
+rendered when displaying the <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> device <a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a> within the <a class="reference external" href="https://library.smartgridready.ch/Device">SmartGridready Product Library</a>
+Example: see <a class="reference external" href="https://library.smartgridready.ch/SGr_00_0018_CLEMAP_EnergyMonitor_RestAPICloud_V1.1.xml?viewDevice">Clemap Energy Monitor Cloud</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;language&gt;</span></code> : The language of the description text, on of: <cite>en</cite>, <cite>de</cite>, <cite>fr</cite>, <cite>it</cite>.</p></li>
+</ul>
+</section>
+<section id="datapointlistelement">
+<span id="id22"></span><h4>&lt;dataPointListElement&gt;<a class="headerlink" href="#datapointlistelement" title="Permalink to this heading"></a></h4>
 <p>TODO</p>
 </section>
 <section id="jmespathmapping">
-<span id="id13"></span><h4>JMESPathMapping<a class="headerlink" href="#jmespathmapping" title="Permalink to this heading"></a></h4>
+<span id="jmes-path-mapping"></span><h4>JMESPathMapping<a class="headerlink" href="#jmespathmapping" title="Permalink to this heading"></a></h4>
 <p>TODO</p>
 </section>
 </section>
 </section>
-<section id="smartgridready-product-library">
-<h2>SmartGridready <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> Library<a class="headerlink" href="#smartgridready-product-library" title="Permalink to this heading"></a></h2>
+<section id="id23">
+<h2>SmartGridready <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> Library<a class="headerlink" href="#id23" title="Permalink to this heading"></a></h2>
 <p>The currently available Product Description Files (<a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a>) are listed on the
 <a class="reference external" href="https://library.smartgridready.ch/Device">SmartGridready Product Library</a></p>
 <p>You can add a serach filter by modifying the base URL and adding query parameters.
