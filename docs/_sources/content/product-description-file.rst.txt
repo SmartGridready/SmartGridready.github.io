@@ -1,13 +1,3 @@
-TODO
-
-* detailed description of :term:`EID` XML's
-* data format XML, definition XSD
-* howto create an EID
-* examples of current EID's
-* external link to the EID library
-* Link and desc to SGrLibrary
-
-
 .. _product-description-eid:
 
 :term:`Product Description File`
@@ -318,7 +308,7 @@ The following basic modbus types can be selected:
 * UDPIP - binary communication via UDP IP connection
 * UDPIP-ASCII - comunication via UDP IP connection using ASCII characters
 
-For **Modbus RTU** and **Modbus RTU-ASCII** the `<modbusInterfaceDescription>` element is structured as follows (sample for
+For **Modbus RTU** and **Modbus RTU-ASCII** the ``<modbusInterfaceDescription>`` element is structured as follows (sample for
 Modbus RTU):
 
 .. code-block:: xml
@@ -613,7 +603,6 @@ Example for a :ref:`<restApiBasic>` element:
     when loading and initializing the :term:`Communication Handler` libraries. See :ref:`<configurationList>`
 
 
-
 .. _<restApiServiceCall>:
 
 <restApiServiceCall>
@@ -790,7 +779,7 @@ The ``<functionalProfileList>`` is structured as follows:
   supported by the :term:`Functional Profile`.
 * ``<functionalProfile>`` : contains the identifaction and general description of the :term:`Functional Profile`. For
   details see :ref:`<functionalProfile>`.
-* ``<dataPointList>`` : container for all ``<dataPointListElement>`` 's supported by this :term:`Functional Profile`.
+* ``<dataPointList>`` : container for all :term:`Data Points` ( :ref:`<dataPointListElement>` ) supported by this :term:`Functional Profile`.
 
 
 .. _<functionalProfile>:
@@ -875,12 +864,570 @@ The ``<functionalProfile>`` element structure is independent of the interface ty
 <dataPointListElement>
 """"""""""""""""""""""
 
-TODO
+The ``<dataPointListElement>`` describes one :term:`Data Point` of a :term:`Functional Profile`.
+The ``<dataPointListElement>`` consists of two parts:
+
+* A generic part within the ``<dataPoint>`` element that describes the properties of the :term:`Data Point` towards
+  the generic interface.
+* A interface specific part that describes the properties of the :term:`Data Point` towards the device specific interface.
+  Depending on the type of the interface this element is of the type:
+
+  * ``<modbusDataPointConfiguration>`` :  see :ref:`<modbusDataPointConfiguration>`
+  * ``<restApiDataPointConfiguration>`` : see :ref:`<restApiDataPointConfiguration>`
+  * ``<messagingDataPointConfiguration>`` : see :ref:`<messagingDataPointConfiguration>`
+
+.. code-block:: xml
+
+    <dataPointListElement>
+        <dataPoint>
+            <dataPointName>ActivePowerACtot</dataPointName>
+            <dataDirection>R</dataDirection>
+            <dataType><float64 /></dataType>
+            <unit>KILOWATTS</unit>
+            <legibleDescription>
+              <textElement>Erfassung der gesamten Wirkleistung</textElement>
+              <language>de</language>
+            </legibleDescription>
+            <legibleDescription>
+              <textElement>Total active power measurement</textElement>
+              <language>en</language>
+            </legibleDescription>
+        </dataPoint>
+        <!-- begin one of: -->
+        <modbusDataPointConfiguration> ... </modbusDataPointConfiguration>
+        <restApiDataPointConfiguration> ... </restApiDataPointConfiguration>
+        <messagingDataPointConfiguration> ... </messagingDataPointConfiguration>
+        <!-- end one of: -->
+    </dataPointListElement>
+
+* ``<dataPoint>`` : container for the :term:`Data Point` description towards the generic interface.
+* ``<dataPointName`` : the name of the :term:`Data Point`. The the :term:`Data Point` can be accessed by the
+  generic API using this name. Example: ``meterDevice.getVal( [functionalProfileName], [dataPointName] )``
+* ``<dataDirection>`` : describes how the :term:`Data Point` can be accessed:
+
+    * ``R`` : read
+    * ``W`` : write
+    * ``RW`` : read and write
+    * ``RWP`` : read and write persistent
+    * ``C`` : constant value
+
+* ``<dataType>`` : the data type of the :term:`Data Point` 's value. For a list of supported data types
+  see :ref:`<dataType>`.
+* ``<unit>`` : the unit of the the :term:`Data Point` value
+* ``<legibleDescription>`` : multi language text describing the :term:`Data Point`.
+
+Following additional elements are valid withing the ``<dataPoint>`` element:
+
+* ``<arrayLength>`` if the :term:`Data Point` provides an array of values, the length of the array is
+  defined by the this element.
+* ``<minimumValue`` : the minimum value allowed for this :term:`Data Point`
+* ``<maximumValue`` : the maximum value allowed for this :term:`Data Point`
+* ``<unitConversionMultiplicator>`` : allows the conversion of the value if the value unit sent from the device does
+  not match the unit required by the generic interface. Example: device sends Watts and the generic interface reports
+  kWatts or HP. Another Example could be temperature in degrees F vs degrees C.
+* ``<parameterList`` : describes the dynamic parameters needed to query the the data point. This is mainly used
+  within REST API's that need dynamic parameters to read a value from a service endpoint. Example: reading tariffs
+  from a :term:`DSO` need a ``periodFrom`` and a ``periodTo`` parameter to define time period of interest.
+  See :ref:`dynamic_request_parameters` for further details.
+* ``<alternativeNames>`` : used to support different ontology used by different standards like EEBUS, IEC6850,
+  SAREF4ENER etc.
+
+
+.. _<modbusDataPointConfiguration>:
+
+<modbusDataPointConfiguration>
+""""""""""""""""""""""""""""""
+
+The ``<modbusDataPointConfiguration>`` element describes the properties needed to access the :term:`Data Point` wihtin
+Modbus device. The properties allow setting up the Modbus read or write command for the :term:`Data Point`.
+
+.. code-block:: xml
+
+    <modbusDataPointConfiguration>
+        <modbusDataType>
+            <float32 />
+        </modbusDataType>
+        <address>20494</address>
+        <registerType>HoldRegister</registerType>
+        <numberOfRegisters>2</numberOfRegisters>
+    </modbusDataPointConfiguration>
+
+* ``<modbusDataType>`` : defines the data type representation of the :term:`Data Point` value received via Modbus
+
+    .. table::
+
+        ========== =============================
+        type       description
+        ========== =============================
+        boolean     a boolean value
+        int8        8 bit signed integer
+        int16       16 bit signed integer
+        int32       32 bit signed integer
+        int64       64 bit signed integer
+        int8U       8 bit unsigned integer
+        int16U      16 bit unsigned integer
+        int32U      32 bit unsigned integer
+        int64U      64 bit unsigned integer
+        float32     32 bit floating point number (float)
+        float64     64 bit floating pount number (double)
+        dateTime    date/time format device specific
+        string      ASCII string
+        enum        enumerated values, mapping generic-device is defined in the data point configuration
+        bitmap      bitmap values, mapping generic-device is defined in the data point configuration
+        ========== =============================
+
+
+* ``<address>`` : this is the Modbus address to access the :term:`Data Point` on the device.
+* ``<bitRank>`` : Only used with `DiscreteInput` and `Coil` registers to determine the bit address.
+   The bit rank is used to define a bit address for coils and discreteInput (bitAddress = addr x 16 + bitRank),
+   minValue = 0, maxValue = 15.
+* ``<registerType>`` : the type of the modbus register. One of:
+
+    * Coil
+    * DiscreteInput
+    * InputRegister
+    * HoldRegister
+
+* ``<numberOfRegisters>`` : the number of registers to read (simultaneously) to get the value.
+
+
+.. _<restApiDataPointConfiguration>:
+
+<restApiDataPointConfiguration>
+"""""""""""""""""""""""""""""""
+
+The ``<restApiDataPoint>`` configuration defines the REST API service calls to read and write a :term:`Data Point`.
+The ``<restApiDataPoint>`` allows the following element arrangements:
+
+
+* Separate read and write ServiceCall element to access the :term:`Data Point`
+
+    .. code-block:: xml
+
+        <restApiDataPoint>
+            <restApiReadServiceCall>
+                ... Service Call definition for reading ...
+            </restApiReadServiceCall>
+            <restApiWriteServiceCall>
+                ... Service Call definition for writing ...
+        </restaApiDataPoint>
+* Deprecated formulation for a read or write only :term:`Data Point`
+
+    .. code-block:: xml
+
+        <restApiDataPoint>
+            <restApiServiceCall>
+                ... ServiceCall definition for either reading or writing  ...
+            </restApiServiceCall>
+        </restaApiDataPoint>
+
+Example ``<restApiDataPointConfiguration>``:
+
+.. code-block:: xml
+
+    <restApiDataPointConfiguration>
+        <dataType>JSON_number</dataType>
+        <restApiReadServiceCall>
+          <requestHeader>
+            <header>
+              <headerName>Accept</headerName>
+              <value>application/json</value>
+            </header>
+            <header>
+              <headerName>Authorization</headerName>
+              <value>ApiKey {{api_key}}</value>
+            </header>
+          </requestHeader>
+          <requestMethod>GET</requestMethod>
+          <requestPath>/v1/flex_management/setting</requestPath>
+          <responseQuery>
+            <queryType>JMESPathExpression</queryType>
+            <query>CurrentLimit</query>
+          </responseQuery>
+        </restApiReadServiceCall>
+        <restApiWriteServiceCall>
+          <requestHeader>
+            <header>
+              <headerName>Accept</headerName>
+              <value>application/json</value>
+            </header>
+            <header>
+              <headerName>Content-Type</headerName>
+              <value>application/json</value>
+            </header>
+          </requestHeader>
+          <requestMethod>POST</requestMethod>
+          <requestPath>/v1/flex_management/setting</requestPath>
+          <requestBody>{"CurrentLimit":[[value]]}</requestBody>
+        </restApiWriteServiceCall>
+    </restApiDataPointConfiguration>
+
+* ``<dataType>`` : the JSON data type of the data point represented towards the generic interface. One of:
+
+    .. table::
+
+        ============ =====================
+        data type    description
+        ============ =====================
+        null         no data type defined
+        JSON_number  primitive number
+        JSON_string  simple string
+        JSON_boolean true / false
+        JSON_object  an arbitrary structured JSON object
+        JSON_array   an array of similar JSON objects or primitive values
+        ============ =====================
+
+* ``<restApiReadServiceCall>`` : service call definition to read the :term:`Data Point`
+* ``<restApiWriteServiceCall>`` : service call definition to write the the :term:`Data Point`
+* ``<requestHeader>`` : container for HTTP header key/value pairs to add to the request header.
+  The example above will add the following lines to the HTTP header:
+
+  .. code-block:: text
+
+        Accept: application/json
+        Authorization: ApiKey {{api_key}}
+
+        where {{api_key}} is a placeholder value that is replaced by the correct configuration value during device
+        instantiation when loading the :term:`Product Description File` XML. See also :ref:`<configurationList>`.
+
+* ``<requestMethod>`` : the HTTP method used for the call, GET, PUT, POST, PATCH ...
+* ``<requestPath>`` : the request path after the base ``<restApiUri>`` element, as defined in the interface description.
+  See: :ref:`<restApiInterfaceDescription>` . The path can also contain configuration values using curly brackets
+  as ``{{someVal}}`` (see :ref:`<configurationList>`) or dynamic parameter values in square brackets
+  as ``[[someVal]]`` (see :ref:`dynamic_request_parameters`).
+* ``<requestBody>`` : Defines the text template for the request body. This can be any text and may also contain
+  placeholders for configuration values (see :ref:`<configurationList>` and dynamic parameter values
+  (see :ref:`dynamic_request_parameters`).
+* ``<responseQuery>`` : Defines the query to extract the :term:`Data Point` value from the HTTP response.
+* ``<queryType>`` : Defines the query language/type used for value extraction. See `data_query_expressions`_
+* ``<query>`` : An query expression in the language defined by ``queryType``.
+
+.. note::
+
+    If no ``<responseQuery>`` is defined, the HTTP response is transferred to the generic interface as is.
+
+In addition the ``restApiReadServiceCall`` supports the ``valueMapping`` element. This element allows the mapping
+of received values to values as required by the generic interface:
+
+Example:
+
+.. code-block:: xml
+
+     <valueMapping>
+        <mapping>
+          <genericValue>false</genericValue>
+          <deviceValue>off</deviceValue>
+        </mapping>
+        <mapping>
+          <genericValue>true</genericValue>
+          <deviceValue>on</deviceValue>
+        </mapping>
+     </valueMapping>
+
+
+
+.. _<messagingDataPointConfiguration>:
+
+<messagingDataPointConfiguration>
+"""""""""""""""""""""""""""""""""
+
+The ``<messagingDataPointConfiguration>`` element describes the messages needed to send commands to, or receive data from
+a messaging device.
+
+Example ``<restApiDataPointConfiguration>``:
+
+.. code-block:: xml
+
+        <messagingDataPointConfiguration>
+            <messagingDataType>
+                <number />
+            </messagingDataType>
+            <readCmdMessage>
+                <topic>command</topic>
+                <template>status_read</template>
+
+                ... optional data mapping from generic to device : one of <responseQuery> or <valueMapping> ...
+
+            </readCmdMessage>
+            <writeCmdMessage>
+                <topic>command</topic>
+                <template>status_update</template>
+
+                ... optional data mapping from generic to device: one of <responseQuery> or <valueMapping> ...
+
+            </writeCmdMessage>
+            <inMessage>
+                <topic>{{topic_prefix}}/status/switch:1</topic>
+                <responseQuery>
+                    <queryType>JMESPathExpression</queryType>
+                    <query>apower</query>
+                </responseQuery>
+            </inMessage>
+        </messagingDataPointConfiguration>
+
+
+* ``<messagingDataType>`` : Data type of the message
+
+    .. table::
+
+        ============== =====================
+        data type      description
+        ============== =====================
+        number         any numerical value
+        string         a simple string
+        JSON_array     an array of JSON objects
+        JSON_object    a single JSON object
+        ============== =====================
+
+* ``<writeCmdMessags>``   : Message definition to write a value to the device.
+* ``<readCmdMessage>``    : Message to trigger the device to send a message with a :term:`Data Point` value. The response message containing the :term:`Data Point` value is then received by the ``<inMessage>`` subscription.
+* ``<inMessage>``         : Message definition to receive a :term:`Data Point` value.
+* ``<topic>`` : The topic to send a message to (``<readCmdMessage>``, ``<writeCmdMessage>``) or subscribe to (``<inMessage>``).
+* ``<template>`` : Defines the message template for the message to be sent (``<readCmdMessage>``, ``<writeCmdMessage>``)
+* ... optional data mapping: Supported by ``<readCmdMessage>``, ``<writeCmdMessage>``. Allows data mapping from the generic to the device specific interface. For a detailed description see the blue boxes below.
+* ``<responseQuery>`` : Defines the query to retrieve the :term:`Data Point` value from the incoming message.
+* ``<queryType>`` : The type of the query
+* ``<query>`` : The query expression in the query language as defined by the ``<queryType>``
+
+.. admonition:: Data mapping with ``<readCmdMessage>`` using ``<templateQuery>``
+
+    A JSON value provided by the generic interface:
+
+    .. code-block:: json
+
+        {
+            "sensorId"  : 20
+        }
+
+    A JSON value to be sent to the device:
+
+    .. code-block:: json
+
+        {
+            "operation" : "read",
+            "sensorNumber" : 20
+        }
+
+    The ``<readCmdMessage>`` in the :term:`EID` then looks as follows.
+
+    .. code-block:: xml
+
+        <readCmdMessage>
+            <topic>command</command>
+            <template>{ "operation": "read", "sensorNumber" : [[value]] }
+            <templateQuery>
+                <queryType>JMESPathExpression</queryType>
+                <query>sensorId</query>
+            <templateQuery>
+        <readCmdMessage>
+
+
+.. admonition:: Data mapping with ``<writeCmdMessage>`` using ``<valueMapping>``
+
+    Settings provided by the generic interface: ``true`` ``false``
+
+    Values accepted by the device: ``{ "digitalOut" : "on" }`` |  ``{ "digitalOut" : "off" }``
+
+    The ``<writeCmdMessage>`` in the :term:`EID` then looks as follows.
+
+    .. code-block:: xml
+
+        <readCmdMessage>
+            <topic>command</command>
+            <template>{ "digitalOut": "[[value]]" }
+            <valueMapping>
+                <mapping>
+                    <genericValue>true<genericValue>
+                    <deviceValue>on<deviceValue>
+                </mapping>
+                <mapping>
+                    <genericValue>false<genericValue>
+                    <deviceValue>off<deviceValue>
+                </mapping>
+            <templateQuery>
+        <readCmdMessage>
+
+
+
+.. _<dataType>:
+
+Generic inteface <dataType>
+"""""""""""""""""""""""""""
+
+The following data type are defined for the generic interface:
+
+.. table::
+
+    ========== ==============================
+    type       description
+    ========== ==============================
+    boolean     a boolean value
+    int8        8 bit signed integer
+    int16       16 bit signed integer
+    int32       32 bit signed integer
+    int64       64 bit signed integer
+    int8U       8 bit unsigned integer
+    int16U      16 bit unsigned integer
+    int32U      32 bit unsigned integer
+    int64U      64 bit unsigned integer
+    float32     32 bit floating point number (float)
+    float64     64 bit floating pount number (double)
+    dateTime    date/time format device specific
+    string      ASCII string
+    enum        enumerated values, mapping generic-device is defined in the data point configuration
+    bitmap      bitmap values, mapping generic-device is defined in the data point configuration
+    json        a JSON object or a JSON array
+    ========== ==============================
+
+
+.. _data_query_expressions:
+
+Data query expressions
+""""""""""""""""""""""
+
+REST-API and Messaging interfaces allow extracting the :term:`Data Point` value from the API response or incoming
+messages unsing query expressions in several query languages. The query is defined by the following XML:
+
+.. code:: xml
+
+   <responseQuery>
+      <queryType>...see table below...</queryType>
+      <query>...query expression in the language defined by the qureyType</query>
+    </responseQuery>
+
+    <templateQuery>
+      <queryType>...see table below...</queryType>
+      <query>...query expression in the language defined by the qureyType</query>
+    </templateQuery>
+
+The table below shows the available query language expressions.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 75
+
+    * - ``<queryType>``
+      - description
+    * - JMESPathExpression
+      - Uses JMES path language to query a JSON object. See `JMES Path Org <https://jmespath.org/>`__ for a language description.
+    * - XPathExpression
+      - Uses XPath to query an XML response/message. See `W3C XPath <https://www.w3.org/TR/xpath/>`__ for the language specification.
+    * - RegularExpression
+      - Uses a regular expression to extract a value from the response/message. See `Wikipedia Regular Expressions <https://en.wikipedia.org/wiki/Regular_expression>`__
+    * - JMESPathMapping
+      - JMESPathMapping allows re-structure an array of JSON objects as received from the device, to a JSON object array
+        on the generic interface using JMESPath expressions. See `jmes_path_mapping`_ .
+    * - JSONataExpression
+      - Uses JSONata expressions to re-structure JSON objects as received from the device to a JSON object as defined in
+        the generic interface. See `JSONata <https://jsonata.org/>`__
 
 .. _jmes_path_mapping:
 
 JMESPathMapping
 """""""""""""""
+
+The JMESPath mapping allows re-structuring JSON data from on representation to another JSON representation by using
+JMESPath expressions.
+
+Example
+.......
+
+The JSON data on the device interface:
+
+.. code:: json
+
+     [
+        {
+            "start_timestamp": "2025-10-03T00:00:00+02:00",
+            "end_timestamp": "2025-10-03T00:15:00+02:00",
+            "vario_plus": 23.75,
+            "vario_grid": 5.86,
+            "dt_plus": 21.3,
+            "unit": "Rp./kWh"
+        },
+        {
+            "start_timestamp": "2025-10-03T00:15:00+02:00",
+            "end_timestamp": "2025-10-03T00:30:00+02:00",
+            "vario_plus": 23.04,
+            "vario_grid": 5.2,
+            "dt_plus": 21.3,
+            "unit": "Rp./kWh"
+        }
+    ]
+
+
+The JSON data required on the generic interface:
+
+.. code:: json
+
+    [
+      {
+        "start_timestamp": "2025-10-03T00:00:00+02:00",
+        "end_timestamp": "2025-10-03T00:15:00+02:00",
+        "integrated": [
+          {
+            "value": 23.75,
+            "unit": "Rp./kWh"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-10-03T00:15:00+02:00",
+        "end_timestamp": "2025-10-03T00:30:00+02:00",
+        "integrated": [
+          {
+            "value": 23.04,
+            "unit": "Rp./kWh"
+          }
+        ]
+      }
+    ]
+
+The JSONMapping is as follows:
+
+.. code:: xml
+
+  <responseQuery>
+    <queryType>JMESPathMapping</queryType>
+    <jmesPathMappings>
+      <mapping>
+        <from>[*].start_timestamp</from>
+        <to>[*].start_timestamp</to>
+      </mapping>
+      <mapping>
+        <from>[*].end_timestamp</from>
+        <to>[*].end_timestamp</to>
+      </mapping>
+      <mapping>
+        <from>[*].{{tariff_name}}</from>
+        <to>[*].integrated[*].value</to>
+      </mapping>
+      <mapping>
+        <from>[*].unit</from>
+        <to>[*].integrated[*].unit</to>
+      </mapping>
+    </jmesPathMappings>
+  </responseQuery>
+
+
+
+
+
+
+
+
+.. _dynamic_request_parameters:
+
+Dynamic Request Parameters
+""""""""""""""""""""""""""
+
+TODO
+
+
+.. _json_response_mapping:
+
+JSON Response Mapping
+"""""""""""""""""""""
 
 TODO
 

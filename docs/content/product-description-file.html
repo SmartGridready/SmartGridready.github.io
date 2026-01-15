@@ -189,12 +189,19 @@
 <li class="toctree-l4"><a class="reference internal" href="#functionalprofilelist">&lt;functionalProfileList&gt;</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#functionalprofile">&lt;functionalProfile&gt;</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#datapointlistelement">&lt;dataPointListElement&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modbusdatapointconfiguration">&lt;modbusDataPointConfiguration&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#restapidatapointconfiguration">&lt;restApiDataPointConfiguration&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#messagingdatapointconfiguration">&lt;messagingDataPointConfiguration&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#generic-inteface-datatype">Generic inteface &lt;dataType&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data-query-expressions">Data query expressions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#jmespathmapping">JMESPathMapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dynamic-request-parameters">Dynamic Request Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#json-response-mapping">JSON Response Mapping</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id23">SmartGridready <span class="xref std std-term">Product</span> Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id29">SmartGridready <span class="xref std std-term">Product</span> Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#product-ei-xml-documentation-on-github">Product EI-XML Documentation on GitHub</a><ul class="simple">
 </ul>
 </li>
@@ -256,16 +263,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <p>TODO</p>
-<ul class="simple">
-<li><p>detailed description of <a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a> XML’s</p></li>
-<li><p>data format XML, definition XSD</p></li>
-<li><p>howto create an EID</p></li>
-<li><p>examples of current EID’s</p></li>
-<li><p>external link to the EID library</p></li>
-<li><p>Link and desc to SGrLibrary</p></li>
-</ul>
-<section id="product-description-file">
+  <section id="product-description-file">
 <span id="product-description-eid"></span><h1><a class="reference internal" href="glossary.html#term-Product-Description-File"><span class="xref std std-term">Product Description File</span></a><a class="headerlink" href="#product-description-file" title="Permalink to this heading"></a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
@@ -289,10 +287,10 @@ interfaces/protocols are:</p>
 <li><p>The <a class="reference internal" href="glossary.html#term-Data-Points"><span class="xref std std-term">Data Points</span></a> that are provided by the <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a></p></li>
 </ul>
 <p><a class="reference internal" href="#figure-product-description-file-structure"><span class="std std-numref">Fig. 12</span></a> shows the structure of a <a class="reference internal" href="glossary.html#term-Product-Description-File"><span class="xref std std-term">Product Description File</span></a>:</p>
-<figure class="align-default" id="id25">
+<figure class="align-default" id="id31">
 <span id="figure-product-description-file-structure"></span><img alt=":term:`Product Description File` Structure" src="../_images/product.drawio.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text"><a class="reference internal" href="glossary.html#term-Product-Description-File"><span class="xref std std-term">Product Description File</span></a> Structure</span><a class="headerlink" href="#id25" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text"><a class="reference internal" href="glossary.html#term-Product-Description-File"><span class="xref std std-term">Product Description File</span></a> Structure</span><a class="headerlink" href="#id31" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>The <a class="reference internal" href="glossary.html#term-Product-Description-File"><span class="xref std std-term">Product Description File</span></a> is an XML file, defined by the SmartGridready XML Schema (XSD) which builds
@@ -526,7 +524,7 @@ one interface listed within the <code class="docutils literal notranslate"><span
 <li><p>UDPIP - binary communication via UDP IP connection</p></li>
 <li><p>UDPIP-ASCII - comunication via UDP IP connection using ASCII characters</p></li>
 </ul>
-<p>For <strong>Modbus RTU</strong> and <strong>Modbus RTU-ASCII</strong> the <cite>&lt;modbusInterfaceDescription&gt;</cite> element is structured as follows (sample for
+<p>For <strong>Modbus RTU</strong> and <strong>Modbus RTU-ASCII</strong> the <code class="docutils literal notranslate"><span class="pre">&lt;modbusInterfaceDescription&gt;</span></code> element is structured as follows (sample for
 Modbus RTU):</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;modbusInterfaceDescripion&gt;</span>
 <span class="w">    </span><span class="nt">&lt;modbusInterfaceSelection&gt;</span>RTU<span class="nt">&lt;/modbusInterfaceSelection&gt;</span>
@@ -973,7 +971,7 @@ through the interface that contains the <code class="docutils literal notranslat
 supported by the <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;functionalProfile&gt;</span></code> : contains the identifaction and general description of the <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a>. For
 details see <a class="reference internal" href="#functionalprofile"><span class="std std-ref">&lt;functionalProfile&gt;</span></a>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;dataPointList&gt;</span></code> : container for all <code class="docutils literal notranslate"><span class="pre">&lt;dataPointListElement&gt;</span></code> ‘s supported by this <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;dataPointList&gt;</span></code> : container for all <a class="reference internal" href="glossary.html#term-Data-Points"><span class="xref std std-term">Data Points</span></a> ( <a class="reference internal" href="#datapointlistelement"><span class="std std-ref">&lt;dataPointListElement&gt;</span></a> ) supported by this <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a>.</p></li>
 </ul>
 </section>
 <section id="functionalprofile">
@@ -1051,16 +1049,635 @@ Example: see <a class="reference external" href="https://library.smartgridready.
 </section>
 <section id="datapointlistelement">
 <span id="id22"></span><h4>&lt;dataPointListElement&gt;<a class="headerlink" href="#datapointlistelement" title="Permalink to this heading"></a></h4>
-<p>TODO</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;dataPointListElement&gt;</span></code> describes one <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> of a <a class="reference internal" href="glossary.html#term-Functional-Profile"><span class="xref std std-term">Functional Profile</span></a>.
+The <code class="docutils literal notranslate"><span class="pre">&lt;dataPointListElement&gt;</span></code> consists of two parts:</p>
+<ul class="simple">
+<li><p>A generic part within the <code class="docutils literal notranslate"><span class="pre">&lt;dataPoint&gt;</span></code> element that describes the properties of the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> towards
+the generic interface.</p></li>
+<li><p>A interface specific part that describes the properties of the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> towards the device specific interface.
+Depending on the type of the interface this element is of the type:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;modbusDataPointConfiguration&gt;</span></code> :  see <a class="reference internal" href="#modbusdatapointconfiguration"><span class="std std-ref">&lt;modbusDataPointConfiguration&gt;</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;restApiDataPointConfiguration&gt;</span></code> : see <a class="reference internal" href="#restapidatapointconfiguration"><span class="std std-ref">&lt;restApiDataPointConfiguration&gt;</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;messagingDataPointConfiguration&gt;</span></code> : see <a class="reference internal" href="#messagingdatapointconfiguration"><span class="std std-ref">&lt;messagingDataPointConfiguration&gt;</span></a></p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;dataPointListElement&gt;</span>
+<span class="w">    </span><span class="nt">&lt;dataPoint&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dataPointName&gt;</span>ActivePowerACtot<span class="nt">&lt;/dataPointName&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dataDirection&gt;</span>R<span class="nt">&lt;/dataDirection&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dataType&gt;&lt;float64</span><span class="w"> </span><span class="nt">/&gt;&lt;/dataType&gt;</span>
+<span class="w">        </span><span class="nt">&lt;unit&gt;</span>KILOWATTS<span class="nt">&lt;/unit&gt;</span>
+<span class="w">        </span><span class="nt">&lt;legibleDescription&gt;</span>
+<span class="w">          </span><span class="nt">&lt;textElement&gt;</span>Erfassung<span class="w"> </span>der<span class="w"> </span>gesamten<span class="w"> </span>Wirkleistung<span class="nt">&lt;/textElement&gt;</span>
+<span class="w">          </span><span class="nt">&lt;language&gt;</span>de<span class="nt">&lt;/language&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/legibleDescription&gt;</span>
+<span class="w">        </span><span class="nt">&lt;legibleDescription&gt;</span>
+<span class="w">          </span><span class="nt">&lt;textElement&gt;</span>Total<span class="w"> </span>active<span class="w"> </span>power<span class="w"> </span>measurement<span class="nt">&lt;/textElement&gt;</span>
+<span class="w">          </span><span class="nt">&lt;language&gt;</span>en<span class="nt">&lt;/language&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/legibleDescription&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/dataPoint&gt;</span>
+<span class="w">    </span><span class="cm">&lt;!-- begin one of: --&gt;</span>
+<span class="w">    </span><span class="nt">&lt;modbusDataPointConfiguration&gt;</span><span class="w"> </span>...<span class="w"> </span><span class="nt">&lt;/modbusDataPointConfiguration&gt;</span>
+<span class="w">    </span><span class="nt">&lt;restApiDataPointConfiguration&gt;</span><span class="w"> </span>...<span class="w"> </span><span class="nt">&lt;/restApiDataPointConfiguration&gt;</span>
+<span class="w">    </span><span class="nt">&lt;messagingDataPointConfiguration&gt;</span><span class="w"> </span>...<span class="w"> </span><span class="nt">&lt;/messagingDataPointConfiguration&gt;</span>
+<span class="w">    </span><span class="cm">&lt;!-- end one of: --&gt;</span>
+<span class="nt">&lt;/dataPointListElement&gt;</span>
+</pre></div>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;dataPoint&gt;</span></code> : container for the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> description towards the generic interface.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;dataPointName</span></code> : the name of the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a>. The the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> can be accessed by the
+generic API using this name. Example: <code class="docutils literal notranslate"><span class="pre">meterDevice.getVal(</span> <span class="pre">[functionalProfileName],</span> <span class="pre">[dataPointName]</span> <span class="pre">)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;dataDirection&gt;</span></code> : describes how the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> can be accessed:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">R</span></code> : read</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">W</span></code> : write</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RW</span></code> : read and write</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RWP</span></code> : read and write persistent</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C</span></code> : constant value</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;dataType&gt;</span></code> : the data type of the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> ‘s value. For a list of supported data types
+see <a class="reference internal" href="#datatype"><span class="std std-ref">Generic inteface &lt;dataType&gt;</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;unit&gt;</span></code> : the unit of the the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;legibleDescription&gt;</span></code> : multi language text describing the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a>.</p></li>
+</ul>
+<p>Following additional elements are valid withing the <code class="docutils literal notranslate"><span class="pre">&lt;dataPoint&gt;</span></code> element:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;arrayLength&gt;</span></code> if the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> provides an array of values, the length of the array is
+defined by the this element.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;minimumValue</span></code> : the minimum value allowed for this <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;maximumValue</span></code> : the maximum value allowed for this <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;unitConversionMultiplicator&gt;</span></code> : allows the conversion of the value if the value unit sent from the device does
+not match the unit required by the generic interface. Example: device sends Watts and the generic interface reports
+kWatts or HP. Another Example could be temperature in degrees F vs degrees C.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;parameterList</span></code> : describes the dynamic parameters needed to query the the data point. This is mainly used
+within REST API’s that need dynamic parameters to read a value from a service endpoint. Example: reading tariffs
+from a <a class="reference internal" href="glossary.html#term-DSO"><span class="xref std std-term">DSO</span></a> need a <code class="docutils literal notranslate"><span class="pre">periodFrom</span></code> and a <code class="docutils literal notranslate"><span class="pre">periodTo</span></code> parameter to define time period of interest.
+See <a class="reference internal" href="#dynamic-request-parameters"><span class="std std-ref">Dynamic Request Parameters</span></a> for further details.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;alternativeNames&gt;</span></code> : used to support different ontology used by different standards like EEBUS, IEC6850,
+SAREF4ENER etc.</p></li>
+</ul>
+</section>
+<section id="modbusdatapointconfiguration">
+<span id="id23"></span><h4>&lt;modbusDataPointConfiguration&gt;<a class="headerlink" href="#modbusdatapointconfiguration" title="Permalink to this heading"></a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;modbusDataPointConfiguration&gt;</span></code> element describes the properties needed to access the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> wihtin
+Modbus device. The properties allow setting up the Modbus read or write command for the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a>.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;modbusDataPointConfiguration&gt;</span>
+<span class="w">    </span><span class="nt">&lt;modbusDataType&gt;</span>
+<span class="w">        </span><span class="nt">&lt;float32</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/modbusDataType&gt;</span>
+<span class="w">    </span><span class="nt">&lt;address&gt;</span>20494<span class="nt">&lt;/address&gt;</span>
+<span class="w">    </span><span class="nt">&lt;registerType&gt;</span>HoldRegister<span class="nt">&lt;/registerType&gt;</span>
+<span class="w">    </span><span class="nt">&lt;numberOfRegisters&gt;</span>2<span class="nt">&lt;/numberOfRegisters&gt;</span>
+<span class="nt">&lt;/modbusDataPointConfiguration&gt;</span>
+</pre></div>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;modbusDataType&gt;</span></code> : defines the data type representation of the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> value received via Modbus</p>
+<blockquote>
+<div><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>type</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>boolean</p></td>
+<td><p>a boolean value</p></td>
+</tr>
+<tr class="row-odd"><td><p>int8</p></td>
+<td><p>8 bit signed integer</p></td>
+</tr>
+<tr class="row-even"><td><p>int16</p></td>
+<td><p>16 bit signed integer</p></td>
+</tr>
+<tr class="row-odd"><td><p>int32</p></td>
+<td><p>32 bit signed integer</p></td>
+</tr>
+<tr class="row-even"><td><p>int64</p></td>
+<td><p>64 bit signed integer</p></td>
+</tr>
+<tr class="row-odd"><td><p>int8U</p></td>
+<td><p>8 bit unsigned integer</p></td>
+</tr>
+<tr class="row-even"><td><p>int16U</p></td>
+<td><p>16 bit unsigned integer</p></td>
+</tr>
+<tr class="row-odd"><td><p>int32U</p></td>
+<td><p>32 bit unsigned integer</p></td>
+</tr>
+<tr class="row-even"><td><p>int64U</p></td>
+<td><p>64 bit unsigned integer</p></td>
+</tr>
+<tr class="row-odd"><td><p>float32</p></td>
+<td><p>32 bit floating point number (float)</p></td>
+</tr>
+<tr class="row-even"><td><p>float64</p></td>
+<td><p>64 bit floating pount number (double)</p></td>
+</tr>
+<tr class="row-odd"><td><p>dateTime</p></td>
+<td><p>date/time format device specific</p></td>
+</tr>
+<tr class="row-even"><td><p>string</p></td>
+<td><p>ASCII string</p></td>
+</tr>
+<tr class="row-odd"><td><p>enum</p></td>
+<td><p>enumerated values, mapping generic-device is defined in the data point configuration</p></td>
+</tr>
+<tr class="row-even"><td><p>bitmap</p></td>
+<td><p>bitmap values, mapping generic-device is defined in the data point configuration</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;address&gt;</span></code> : this is the Modbus address to access the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> on the device.</p></li>
+<li><dl>
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;bitRank&gt;</span></code><span class="classifier">Only used with <cite>DiscreteInput</cite> and <cite>Coil</cite> registers to determine the bit address.</span></dt><dd><p>The bit rank is used to define a bit address for coils and discreteInput (bitAddress = addr x 16 + bitRank),
+minValue = 0, maxValue = 15.</p>
+</dd>
+</dl>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;registerType&gt;</span></code> : the type of the modbus register. One of:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Coil</p></li>
+<li><p>DiscreteInput</p></li>
+<li><p>InputRegister</p></li>
+<li><p>HoldRegister</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;numberOfRegisters&gt;</span></code> : the number of registers to read (simultaneously) to get the value.</p></li>
+</ul>
+</section>
+<section id="restapidatapointconfiguration">
+<span id="id24"></span><h4>&lt;restApiDataPointConfiguration&gt;<a class="headerlink" href="#restapidatapointconfiguration" title="Permalink to this heading"></a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;restApiDataPoint&gt;</span></code> configuration defines the REST API service calls to read and write a <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a>.
+The <code class="docutils literal notranslate"><span class="pre">&lt;restApiDataPoint&gt;</span></code> allows the following element arrangements:</p>
+<ul>
+<li><p>Separate read and write ServiceCall element to access the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a></p>
+<blockquote>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;restApiDataPoint&gt;</span>
+<span class="w">    </span><span class="nt">&lt;restApiReadServiceCall&gt;</span>
+<span class="w">        </span>...<span class="w"> </span>Service<span class="w"> </span>Call<span class="w"> </span>definition<span class="w"> </span>for<span class="w"> </span>reading<span class="w"> </span>...
+<span class="w">    </span><span class="nt">&lt;/restApiReadServiceCall&gt;</span>
+<span class="w">    </span><span class="nt">&lt;restApiWriteServiceCall&gt;</span>
+<span class="w">        </span>...<span class="w"> </span>Service<span class="w"> </span>Call<span class="w"> </span>definition<span class="w"> </span>for<span class="w"> </span>writing<span class="w"> </span>...
+<span class="nt">&lt;/restaApiDataPoint&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Deprecated formulation for a read or write only <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a></p>
+<blockquote>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;restApiDataPoint&gt;</span>
+<span class="w">    </span><span class="nt">&lt;restApiServiceCall&gt;</span>
+<span class="w">        </span>...<span class="w"> </span>ServiceCall<span class="w"> </span>definition<span class="w"> </span>for<span class="w"> </span>either<span class="w"> </span>reading<span class="w"> </span>or<span class="w"> </span>writing<span class="w">  </span>...
+<span class="w">    </span><span class="nt">&lt;/restApiServiceCall&gt;</span>
+<span class="nt">&lt;/restaApiDataPoint&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<p>Example <code class="docutils literal notranslate"><span class="pre">&lt;restApiDataPointConfiguration&gt;</span></code>:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;restApiDataPointConfiguration&gt;</span>
+<span class="w">    </span><span class="nt">&lt;dataType&gt;</span>JSON_number<span class="nt">&lt;/dataType&gt;</span>
+<span class="w">    </span><span class="nt">&lt;restApiReadServiceCall&gt;</span>
+<span class="w">      </span><span class="nt">&lt;requestHeader&gt;</span>
+<span class="w">        </span><span class="nt">&lt;header&gt;</span>
+<span class="w">          </span><span class="nt">&lt;headerName&gt;</span>Accept<span class="nt">&lt;/headerName&gt;</span>
+<span class="w">          </span><span class="nt">&lt;value&gt;</span>application/json<span class="nt">&lt;/value&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/header&gt;</span>
+<span class="w">        </span><span class="nt">&lt;header&gt;</span>
+<span class="w">          </span><span class="nt">&lt;headerName&gt;</span>Authorization<span class="nt">&lt;/headerName&gt;</span>
+<span class="w">          </span><span class="nt">&lt;value&gt;</span>ApiKey<span class="w"> </span>{{api_key}}<span class="nt">&lt;/value&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/header&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/requestHeader&gt;</span>
+<span class="w">      </span><span class="nt">&lt;requestMethod&gt;</span>GET<span class="nt">&lt;/requestMethod&gt;</span>
+<span class="w">      </span><span class="nt">&lt;requestPath&gt;</span>/v1/flex_management/setting<span class="nt">&lt;/requestPath&gt;</span>
+<span class="w">      </span><span class="nt">&lt;responseQuery&gt;</span>
+<span class="w">        </span><span class="nt">&lt;queryType&gt;</span>JMESPathExpression<span class="nt">&lt;/queryType&gt;</span>
+<span class="w">        </span><span class="nt">&lt;query&gt;</span>CurrentLimit<span class="nt">&lt;/query&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/responseQuery&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/restApiReadServiceCall&gt;</span>
+<span class="w">    </span><span class="nt">&lt;restApiWriteServiceCall&gt;</span>
+<span class="w">      </span><span class="nt">&lt;requestHeader&gt;</span>
+<span class="w">        </span><span class="nt">&lt;header&gt;</span>
+<span class="w">          </span><span class="nt">&lt;headerName&gt;</span>Accept<span class="nt">&lt;/headerName&gt;</span>
+<span class="w">          </span><span class="nt">&lt;value&gt;</span>application/json<span class="nt">&lt;/value&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/header&gt;</span>
+<span class="w">        </span><span class="nt">&lt;header&gt;</span>
+<span class="w">          </span><span class="nt">&lt;headerName&gt;</span>Content-Type<span class="nt">&lt;/headerName&gt;</span>
+<span class="w">          </span><span class="nt">&lt;value&gt;</span>application/json<span class="nt">&lt;/value&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/header&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/requestHeader&gt;</span>
+<span class="w">      </span><span class="nt">&lt;requestMethod&gt;</span>POST<span class="nt">&lt;/requestMethod&gt;</span>
+<span class="w">      </span><span class="nt">&lt;requestPath&gt;</span>/v1/flex_management/setting<span class="nt">&lt;/requestPath&gt;</span>
+<span class="w">      </span><span class="nt">&lt;requestBody&gt;</span>{&quot;CurrentLimit&quot;:[[value]]}<span class="nt">&lt;/requestBody&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/restApiWriteServiceCall&gt;</span>
+<span class="nt">&lt;/restApiDataPointConfiguration&gt;</span>
+</pre></div>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;dataType&gt;</span></code> : the JSON data type of the data point represented towards the generic interface. One of:</p>
+<blockquote>
+<div><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>data type</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>null</p></td>
+<td><p>no data type defined</p></td>
+</tr>
+<tr class="row-odd"><td><p>JSON_number</p></td>
+<td><p>primitive number</p></td>
+</tr>
+<tr class="row-even"><td><p>JSON_string</p></td>
+<td><p>simple string</p></td>
+</tr>
+<tr class="row-odd"><td><p>JSON_boolean</p></td>
+<td><p>true / false</p></td>
+</tr>
+<tr class="row-even"><td><p>JSON_object</p></td>
+<td><p>an arbitrary structured JSON object</p></td>
+</tr>
+<tr class="row-odd"><td><p>JSON_array</p></td>
+<td><p>an array of similar JSON objects or primitive values</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;restApiReadServiceCall&gt;</span></code> : service call definition to read the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;restApiWriteServiceCall&gt;</span></code> : service call definition to write the the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;requestHeader&gt;</span></code> : container for HTTP header key/value pairs to add to the request header.
+The example above will add the following lines to the HTTP header:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Accept: application/json
+Authorization: ApiKey {{api_key}}
+
+where {{api_key}} is a placeholder value that is replaced by the correct configuration value during device
+instantiation when loading the :term:`Product Description File` XML. See also :ref:`&lt;configurationList&gt;`.
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;requestMethod&gt;</span></code> : the HTTP method used for the call, GET, PUT, POST, PATCH …</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;requestPath&gt;</span></code> : the request path after the base <code class="docutils literal notranslate"><span class="pre">&lt;restApiUri&gt;</span></code> element, as defined in the interface description.
+See: <a class="reference internal" href="#restapiinterfacedescription"><span class="std std-ref">&lt;restApiInterfaceDescription&gt;</span></a> . The path can also contain configuration values using curly brackets
+as <code class="docutils literal notranslate"><span class="pre">{{someVal}}</span></code> (see <a class="reference internal" href="#configurationlist"><span class="std std-ref">&lt;configurationList&gt;</span></a>) or dynamic parameter values in square brackets
+as <code class="docutils literal notranslate"><span class="pre">[[someVal]]</span></code> (see <a class="reference internal" href="#dynamic-request-parameters"><span class="std std-ref">Dynamic Request Parameters</span></a>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;requestBody&gt;</span></code> : Defines the text template for the request body. This can be any text and may also contain
+placeholders for configuration values (see <a class="reference internal" href="#configurationlist"><span class="std std-ref">&lt;configurationList&gt;</span></a> and dynamic parameter values
+(see <a class="reference internal" href="#dynamic-request-parameters"><span class="std std-ref">Dynamic Request Parameters</span></a>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;responseQuery&gt;</span></code> : Defines the query to extract the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> value from the HTTP response.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;queryType&gt;</span></code> : Defines the query language/type used for value extraction. See <a class="reference internal" href="#data-query-expressions">data_query_expressions</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;query&gt;</span></code> : An query expression in the language defined by <code class="docutils literal notranslate"><span class="pre">queryType</span></code>.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If no <code class="docutils literal notranslate"><span class="pre">&lt;responseQuery&gt;</span></code> is defined, the HTTP response is transferred to the generic interface as is.</p>
+</div>
+<p>In addition the <code class="docutils literal notranslate"><span class="pre">restApiReadServiceCall</span></code> supports the <code class="docutils literal notranslate"><span class="pre">valueMapping</span></code> element. This element allows the mapping
+of received values to values as required by the generic interface:</p>
+<p>Example:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;valueMapping&gt;</span>
+<span class="w">   </span><span class="nt">&lt;mapping&gt;</span>
+<span class="w">     </span><span class="nt">&lt;genericValue&gt;</span>false<span class="nt">&lt;/genericValue&gt;</span>
+<span class="w">     </span><span class="nt">&lt;deviceValue&gt;</span>off<span class="nt">&lt;/deviceValue&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/mapping&gt;</span>
+<span class="w">   </span><span class="nt">&lt;mapping&gt;</span>
+<span class="w">     </span><span class="nt">&lt;genericValue&gt;</span>true<span class="nt">&lt;/genericValue&gt;</span>
+<span class="w">     </span><span class="nt">&lt;deviceValue&gt;</span>on<span class="nt">&lt;/deviceValue&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/mapping&gt;</span>
+<span class="nt">&lt;/valueMapping&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="messagingdatapointconfiguration">
+<span id="id25"></span><h4>&lt;messagingDataPointConfiguration&gt;<a class="headerlink" href="#messagingdatapointconfiguration" title="Permalink to this heading"></a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;messagingDataPointConfiguration&gt;</span></code> element describes the messages needed to send commands to, or receive data from
+a messaging device.</p>
+<p>Example <code class="docutils literal notranslate"><span class="pre">&lt;restApiDataPointConfiguration&gt;</span></code>:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;messagingDataPointConfiguration&gt;</span>
+<span class="w">    </span><span class="nt">&lt;messagingDataType&gt;</span>
+<span class="w">        </span><span class="nt">&lt;number</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/messagingDataType&gt;</span>
+<span class="w">    </span><span class="nt">&lt;readCmdMessage&gt;</span>
+<span class="w">        </span><span class="nt">&lt;topic&gt;</span>command<span class="nt">&lt;/topic&gt;</span>
+<span class="w">        </span><span class="nt">&lt;template&gt;</span>status_read<span class="nt">&lt;/template&gt;</span>
+
+<span class="w">        </span>...<span class="w"> </span>optional<span class="w"> </span>data<span class="w"> </span>mapping<span class="w"> </span>from<span class="w"> </span>generic<span class="w"> </span>to<span class="w"> </span>device<span class="w"> </span>:<span class="w"> </span>one<span class="w"> </span>of<span class="w"> </span><span class="nt">&lt;responseQuery&gt;</span><span class="w"> </span>or<span class="w"> </span><span class="nt">&lt;valueMapping&gt;</span><span class="w"> </span>...
+
+<span class="w">    </span><span class="nt">&lt;/readCmdMessage&gt;</span>
+<span class="w">    </span><span class="nt">&lt;writeCmdMessage&gt;</span>
+<span class="w">        </span><span class="nt">&lt;topic&gt;</span>command<span class="nt">&lt;/topic&gt;</span>
+<span class="w">        </span><span class="nt">&lt;template&gt;</span>status_update<span class="nt">&lt;/template&gt;</span>
+
+<span class="w">        </span>...<span class="w"> </span>optional<span class="w"> </span>data<span class="w"> </span>mapping<span class="w"> </span>from<span class="w"> </span>generic<span class="w"> </span>to<span class="w"> </span>device:<span class="w"> </span>one<span class="w"> </span>of<span class="w"> </span><span class="nt">&lt;responseQuery&gt;</span><span class="w"> </span>or<span class="w"> </span><span class="nt">&lt;valueMapping&gt;</span><span class="w"> </span>...
+
+<span class="w">    </span><span class="nt">&lt;/writeCmdMessage&gt;</span>
+<span class="w">    </span><span class="nt">&lt;inMessage&gt;</span>
+<span class="w">        </span><span class="nt">&lt;topic&gt;</span>{{topic_prefix}}/status/switch:1<span class="nt">&lt;/topic&gt;</span>
+<span class="w">        </span><span class="nt">&lt;responseQuery&gt;</span>
+<span class="w">            </span><span class="nt">&lt;queryType&gt;</span>JMESPathExpression<span class="nt">&lt;/queryType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;query&gt;</span>apower<span class="nt">&lt;/query&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/responseQuery&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/inMessage&gt;</span>
+<span class="nt">&lt;/messagingDataPointConfiguration&gt;</span>
+</pre></div>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;messagingDataType&gt;</span></code> : Data type of the message</p>
+<blockquote>
+<div><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>data type</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>number</p></td>
+<td><p>any numerical value</p></td>
+</tr>
+<tr class="row-odd"><td><p>string</p></td>
+<td><p>a simple string</p></td>
+</tr>
+<tr class="row-even"><td><p>JSON_array</p></td>
+<td><p>an array of JSON objects</p></td>
+</tr>
+<tr class="row-odd"><td><p>JSON_object</p></td>
+<td><p>a single JSON object</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;writeCmdMessags&gt;</span></code>   : Message definition to write a value to the device.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;readCmdMessage&gt;</span></code>    : Message to trigger the device to send a message with a <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> value. The response message containing the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> value is then received by the <code class="docutils literal notranslate"><span class="pre">&lt;inMessage&gt;</span></code> subscription.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;inMessage&gt;</span></code>         : Message definition to receive a <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;topic&gt;</span></code> : The topic to send a message to (<code class="docutils literal notranslate"><span class="pre">&lt;readCmdMessage&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;writeCmdMessage&gt;</span></code>) or subscribe to (<code class="docutils literal notranslate"><span class="pre">&lt;inMessage&gt;</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;template&gt;</span></code> : Defines the message template for the message to be sent (<code class="docutils literal notranslate"><span class="pre">&lt;readCmdMessage&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;writeCmdMessage&gt;</span></code>)</p></li>
+<li><p>… optional data mapping: Supported by <code class="docutils literal notranslate"><span class="pre">&lt;readCmdMessage&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;writeCmdMessage&gt;</span></code>. Allows data mapping from the generic to the device specific interface. For a detailed description see the blue boxes below.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;responseQuery&gt;</span></code> : Defines the query to retrieve the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> value from the incoming message.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;queryType&gt;</span></code> : The type of the query</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;query&gt;</span></code> : The query expression in the query language as defined by the <code class="docutils literal notranslate"><span class="pre">&lt;queryType&gt;</span></code></p></li>
+</ul>
+<div class="admonition-data-mapping-with-readcmdmessage-using-templatequery admonition">
+<p class="admonition-title">Data mapping with <code class="docutils literal notranslate"><span class="pre">&lt;readCmdMessage&gt;</span></code> using <code class="docutils literal notranslate"><span class="pre">&lt;templateQuery&gt;</span></code></p>
+<p>A JSON value provided by the generic interface:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;sensorId&quot;</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="mi">20</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>A JSON value to be sent to the device:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;operation&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;read&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;sensorNumber&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">20</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;readCmdMessage&gt;</span></code> in the <a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a> then looks as follows.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;readCmdMessage&gt;</span>
+<span class="w">    </span><span class="nt">&lt;topic&gt;</span>command<span class="nt">&lt;/command&gt;</span>
+<span class="w">    </span><span class="nt">&lt;template&gt;</span>{<span class="w"> </span>&quot;operation&quot;:<span class="w"> </span>&quot;read&quot;,<span class="w"> </span>&quot;sensorNumber&quot;<span class="w"> </span>:<span class="w"> </span>[[value]]<span class="w"> </span>}
+<span class="w">    </span><span class="nt">&lt;templateQuery&gt;</span>
+<span class="w">        </span><span class="nt">&lt;queryType&gt;</span>JMESPathExpression<span class="nt">&lt;/queryType&gt;</span>
+<span class="w">        </span><span class="nt">&lt;query&gt;</span>sensorId<span class="nt">&lt;/query&gt;</span>
+<span class="w">    </span><span class="nt">&lt;templateQuery&gt;</span>
+<span class="nt">&lt;readCmdMessage&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-data-mapping-with-writecmdmessage-using-valuemapping admonition">
+<p class="admonition-title">Data mapping with <code class="docutils literal notranslate"><span class="pre">&lt;writeCmdMessage&gt;</span></code> using <code class="docutils literal notranslate"><span class="pre">&lt;valueMapping&gt;</span></code></p>
+<p>Settings provided by the generic interface: <code class="docutils literal notranslate"><span class="pre">true</span></code> <code class="docutils literal notranslate"><span class="pre">false</span></code></p>
+<p>Values accepted by the device: <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">&quot;digitalOut&quot;</span> <span class="pre">:</span> <span class="pre">&quot;on&quot;</span> <span class="pre">}</span></code> |  <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">&quot;digitalOut&quot;</span> <span class="pre">:</span> <span class="pre">&quot;off&quot;</span> <span class="pre">}</span></code></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;writeCmdMessage&gt;</span></code> in the <a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a> then looks as follows.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;readCmdMessage&gt;</span>
+<span class="w">    </span><span class="nt">&lt;topic&gt;</span>command<span class="nt">&lt;/command&gt;</span>
+<span class="w">    </span><span class="nt">&lt;template&gt;</span>{<span class="w"> </span>&quot;digitalOut&quot;:<span class="w"> </span>&quot;[[value]]&quot;<span class="w"> </span>}
+<span class="w">    </span><span class="nt">&lt;valueMapping&gt;</span>
+<span class="w">        </span><span class="nt">&lt;mapping&gt;</span>
+<span class="w">            </span><span class="nt">&lt;genericValue&gt;</span>true<span class="nt">&lt;genericValue&gt;</span>
+<span class="w">            </span><span class="nt">&lt;deviceValue&gt;</span>on<span class="nt">&lt;deviceValue&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/mapping&gt;</span>
+<span class="w">        </span><span class="nt">&lt;mapping&gt;</span>
+<span class="w">            </span><span class="nt">&lt;genericValue&gt;</span>false<span class="nt">&lt;genericValue&gt;</span>
+<span class="w">            </span><span class="nt">&lt;deviceValue&gt;</span>off<span class="nt">&lt;deviceValue&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/mapping&gt;</span>
+<span class="w">    </span><span class="nt">&lt;templateQuery&gt;</span>
+<span class="nt">&lt;readCmdMessage&gt;</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="generic-inteface-datatype">
+<span id="datatype"></span><h4>Generic inteface &lt;dataType&gt;<a class="headerlink" href="#generic-inteface-datatype" title="Permalink to this heading"></a></h4>
+<p>The following data type are defined for the generic interface:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>type</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>boolean</p></td>
+<td><p>a boolean value</p></td>
+</tr>
+<tr class="row-odd"><td><p>int8</p></td>
+<td><p>8 bit signed integer</p></td>
+</tr>
+<tr class="row-even"><td><p>int16</p></td>
+<td><p>16 bit signed integer</p></td>
+</tr>
+<tr class="row-odd"><td><p>int32</p></td>
+<td><p>32 bit signed integer</p></td>
+</tr>
+<tr class="row-even"><td><p>int64</p></td>
+<td><p>64 bit signed integer</p></td>
+</tr>
+<tr class="row-odd"><td><p>int8U</p></td>
+<td><p>8 bit unsigned integer</p></td>
+</tr>
+<tr class="row-even"><td><p>int16U</p></td>
+<td><p>16 bit unsigned integer</p></td>
+</tr>
+<tr class="row-odd"><td><p>int32U</p></td>
+<td><p>32 bit unsigned integer</p></td>
+</tr>
+<tr class="row-even"><td><p>int64U</p></td>
+<td><p>64 bit unsigned integer</p></td>
+</tr>
+<tr class="row-odd"><td><p>float32</p></td>
+<td><p>32 bit floating point number (float)</p></td>
+</tr>
+<tr class="row-even"><td><p>float64</p></td>
+<td><p>64 bit floating pount number (double)</p></td>
+</tr>
+<tr class="row-odd"><td><p>dateTime</p></td>
+<td><p>date/time format device specific</p></td>
+</tr>
+<tr class="row-even"><td><p>string</p></td>
+<td><p>ASCII string</p></td>
+</tr>
+<tr class="row-odd"><td><p>enum</p></td>
+<td><p>enumerated values, mapping generic-device is defined in the data point configuration</p></td>
+</tr>
+<tr class="row-even"><td><p>bitmap</p></td>
+<td><p>bitmap values, mapping generic-device is defined in the data point configuration</p></td>
+</tr>
+<tr class="row-odd"><td><p>json</p></td>
+<td><p>a JSON object or a JSON array</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="data-query-expressions">
+<span id="id26"></span><h4>Data query expressions<a class="headerlink" href="#data-query-expressions" title="Permalink to this heading"></a></h4>
+<p>REST-API and Messaging interfaces allow extracting the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> value from the API response or incoming
+messages unsing query expressions in several query languages. The query is defined by the following XML:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;responseQuery&gt;</span>
+<span class="w">   </span><span class="nt">&lt;queryType&gt;</span>...see<span class="w"> </span>table<span class="w"> </span>below...<span class="nt">&lt;/queryType&gt;</span>
+<span class="w">   </span><span class="nt">&lt;query&gt;</span>...query<span class="w"> </span>expression<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>language<span class="w"> </span>defined<span class="w"> </span>by<span class="w"> </span>the<span class="w"> </span>qureyType<span class="nt">&lt;/query&gt;</span>
+<span class="w"> </span><span class="nt">&lt;/responseQuery&gt;</span>
+
+<span class="w"> </span><span class="nt">&lt;templateQuery&gt;</span>
+<span class="w">   </span><span class="nt">&lt;queryType&gt;</span>...see<span class="w"> </span>table<span class="w"> </span>below...<span class="nt">&lt;/queryType&gt;</span>
+<span class="w">   </span><span class="nt">&lt;query&gt;</span>...query<span class="w"> </span>expression<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>language<span class="w"> </span>defined<span class="w"> </span>by<span class="w"> </span>the<span class="w"> </span>qureyType<span class="nt">&lt;/query&gt;</span>
+<span class="w"> </span><span class="nt">&lt;/templateQuery&gt;</span>
+</pre></div>
+</div>
+<p>The table below shows the available query language expressions.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">&lt;queryType&gt;</span></code></p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>JMESPathExpression</p></td>
+<td><p>Uses JMES path language to query a JSON object. See <a class="reference external" href="https://jmespath.org/">JMES Path Org</a> for a language description.</p></td>
+</tr>
+<tr class="row-odd"><td><p>XPathExpression</p></td>
+<td><p>Uses XPath to query an XML response/message. See <a class="reference external" href="https://www.w3.org/TR/xpath/">W3C XPath</a> for the language specification.</p></td>
+</tr>
+<tr class="row-even"><td><p>RegularExpression</p></td>
+<td><p>Uses a regular expression to extract a value from the response/message. See <a class="reference external" href="https://en.wikipedia.org/wiki/Regular_expression">Wikipedia Regular Expressions</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>JMESPathMapping</p></td>
+<td><p>JMESPathMapping allows re-structure an array of JSON objects as received from the device, to a JSON object array
+on the generic interface using JMESPath expressions. See <a class="reference internal" href="#jmes-path-mapping">jmes_path_mapping</a> .</p></td>
+</tr>
+<tr class="row-even"><td><p>JSONataExpression</p></td>
+<td><p>Uses JSONata expressions to re-structure JSON objects as received from the device to a JSON object as defined in
+the generic interface. See <a class="reference external" href="https://jsonata.org/">JSONata</a></p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="jmespathmapping">
 <span id="jmes-path-mapping"></span><h4>JMESPathMapping<a class="headerlink" href="#jmespathmapping" title="Permalink to this heading"></a></h4>
+<p>The JMESPath mapping allows re-structuring JSON data from on representation to another JSON representation by using
+JMESPath expressions.</p>
+<section id="example">
+<h5>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h5>
+<p>The JSON data on the device interface:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;start_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-10-03T00:00:00+02:00&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;end_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-10-03T00:15:00+02:00&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;vario_plus&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">23.75</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;vario_grid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">5.86</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;dt_plus&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">21.3</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rp./kWh&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;start_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-10-03T00:15:00+02:00&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;end_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-10-03T00:30:00+02:00&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;vario_plus&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">23.04</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;vario_grid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">5.2</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;dt_plus&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">21.3</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rp./kWh&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>The JSON data required on the generic interface:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;start_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-10-03T00:00:00+02:00&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;end_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-10-03T00:15:00+02:00&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;integrated&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">23.75</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rp./kWh&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;start_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-10-03T00:15:00+02:00&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;end_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-10-03T00:30:00+02:00&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;integrated&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">23.04</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rp./kWh&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>The JSONMapping is as follows:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;responseQuery&gt;</span>
+<span class="w">  </span><span class="nt">&lt;queryType&gt;</span>JMESPathMapping<span class="nt">&lt;/queryType&gt;</span>
+<span class="w">  </span><span class="nt">&lt;jmesPathMappings&gt;</span>
+<span class="w">    </span><span class="nt">&lt;mapping&gt;</span>
+<span class="w">      </span><span class="nt">&lt;from&gt;</span>[*].start_timestamp<span class="nt">&lt;/from&gt;</span>
+<span class="w">      </span><span class="nt">&lt;to&gt;</span>[*].start_timestamp<span class="nt">&lt;/to&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/mapping&gt;</span>
+<span class="w">    </span><span class="nt">&lt;mapping&gt;</span>
+<span class="w">      </span><span class="nt">&lt;from&gt;</span>[*].end_timestamp<span class="nt">&lt;/from&gt;</span>
+<span class="w">      </span><span class="nt">&lt;to&gt;</span>[*].end_timestamp<span class="nt">&lt;/to&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/mapping&gt;</span>
+<span class="w">    </span><span class="nt">&lt;mapping&gt;</span>
+<span class="w">      </span><span class="nt">&lt;from&gt;</span>[*].{{tariff_name}}<span class="nt">&lt;/from&gt;</span>
+<span class="w">      </span><span class="nt">&lt;to&gt;</span>[*].integrated[*].value<span class="nt">&lt;/to&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/mapping&gt;</span>
+<span class="w">    </span><span class="nt">&lt;mapping&gt;</span>
+<span class="w">      </span><span class="nt">&lt;from&gt;</span>[*].unit<span class="nt">&lt;/from&gt;</span>
+<span class="w">      </span><span class="nt">&lt;to&gt;</span>[*].integrated[*].unit<span class="nt">&lt;/to&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/mapping&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/jmesPathMappings&gt;</span>
+<span class="nt">&lt;/responseQuery&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="dynamic-request-parameters">
+<span id="id27"></span><h4>Dynamic Request Parameters<a class="headerlink" href="#dynamic-request-parameters" title="Permalink to this heading"></a></h4>
+<p>TODO</p>
+</section>
+<section id="json-response-mapping">
+<span id="id28"></span><h4>JSON Response Mapping<a class="headerlink" href="#json-response-mapping" title="Permalink to this heading"></a></h4>
 <p>TODO</p>
 </section>
 </section>
 </section>
-<section id="id23">
-<h2>SmartGridready <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> Library<a class="headerlink" href="#id23" title="Permalink to this heading"></a></h2>
+<section id="id29">
+<h2>SmartGridready <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> Library<a class="headerlink" href="#id29" title="Permalink to this heading"></a></h2>
 <p>The currently available Product Description Files (<a class="reference internal" href="glossary.html#term-EID"><span class="xref std std-term">EID</span></a>) are listed on the
 <a class="reference external" href="https://library.smartgridready.ch/Device">SmartGridready Product Library</a></p>
 <p>You can add a serach filter by modifying the base URL and adding query parameters.
