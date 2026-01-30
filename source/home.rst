@@ -3,6 +3,20 @@
 Documentation Overview
 ======================
 
+.. list-table:: Target audience icon explanation
+
+    * - Symbol
+      - Description
+    * - |planner|
+      - Planners & Architects
+    * - |supplier|
+      - :term:`Product` and :term:`Communicator` suppliers
+    * - |grid|
+      - Power Grid Operators
+    * - |dev|
+      - Developers (Communicator devices, SGr libraries)
+
+
 The following table gives you a documentation overview and the targeted audience for each section.
 
 .. list-table:: Documentation Overview
@@ -15,7 +29,7 @@ The following table gives you a documentation overview and the targeted audience
 
     *   - :ref:`introduction`
         - Describes the basic idea and concepts of SmartGridready.
-        - * Everybody
+        - * |planner| |supplier| |grid| |dev| Everybody
 
     *   - :ref:`getting-involved`
         - There are many ways to get involved and contribute to the SmartGridready project.

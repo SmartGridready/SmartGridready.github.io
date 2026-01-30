@@ -1,7 +1,7 @@
 .. _introduction:
 
-Introduction
-============
+|planner| |supplier| |grid| |dev| Introduction
+==============================================
 
 Smart Grids and Energy Management
 ---------------------------------

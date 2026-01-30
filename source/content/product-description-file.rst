@@ -1,7 +1,7 @@
 .. _product-description-eid:
 
-:term:`Product Description File`
-================================
+|planner| |supplier| |grid| |dev| :term:`Product Description File`
+==================================================================
 
 Introduction
 ------------

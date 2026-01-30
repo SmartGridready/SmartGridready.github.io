@@ -1,7 +1,7 @@
 .. _getting-involved:
 
-Getting Involved
-================
+|planner| |supplier| |grid| |dev| Getting Involved
+==================================================
 
 There are many ways to get involved and contribute to the SmartGridready project.
 This chapter outlines the steps to participate based on your interests and expertise.

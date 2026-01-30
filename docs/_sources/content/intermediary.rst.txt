@@ -1,7 +1,7 @@
 .. _intermediary:
 
-SmartGridready Intermediary
----------------------------
+|dev| SmartGridready Intermediary
+---------------------------------
 
 The SmartGridready Intermediary provides access to SmartGridready compliant devices through a WebService via REST-API.
 

@@ -63,3 +63,11 @@ numfig = True
 
 # sources that are not published yet
 exclude_patterns = ['content/communicator-description-file.rst']
+
+# icons for target audiences
+rst_epilog = """
+.. |planner| unicode:: U+1F3E2
+.. |supplier| unicode:: U+1F4DF
+.. |grid|    unicode:: U+1F5FC
+.. |dev|     unicode:: U+1F6E0
+"""

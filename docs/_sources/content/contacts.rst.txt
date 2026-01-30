@@ -1,7 +1,7 @@
 .. _contacts:
 
-Contacts
-========
+|planner| |supplier| |grid| |dev| Contacts
+==========================================
 
 
 .. toctree::

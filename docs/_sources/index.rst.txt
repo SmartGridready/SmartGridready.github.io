@@ -1,5 +1,5 @@
-Welcome to the SmartGridready Documentation
-===========================================
+|planner| |supplier| |grid| |dev| Welcome to the SmartGridready Documentation
+=============================================================================
 
 .. hint:: Click [Next] for a documentation overview or select a topic from the menu on the left.
 

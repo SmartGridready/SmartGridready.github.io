@@ -1,7 +1,7 @@
 .. _sgr-declaration:
 
-SmartGridready Declaration
-==========================
+|supplier| |grid| SmartGridready Declaration
+============================================
 
 Declaration labels for buildings
 --------------------------------

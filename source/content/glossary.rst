@@ -1,7 +1,7 @@
 .. _glossary:
 
-Glossary
-========
+|planner| |supplier| |grid| |dev| Glossary
+==========================================
 
 .. toctree::
     :caption: Contents
