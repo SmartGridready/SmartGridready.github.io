@@ -195,8 +195,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#generic-inteface-datatype">Generic inteface &lt;dataType&gt;</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#data-query-expressions">Data query expressions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#jmespathmapping">JMESPathMapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#value-mapping">Value Mapping</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#dynamic-request-parameters">Dynamic Request Parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#json-response-mapping">JSON Response Mapping</a></li>
 </ul>
 </li>
 </ul>
@@ -223,10 +223,9 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="code-samples.html">SmartGridready Code Samples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="device-driver-libraries.html">SmartGridready Device Driver Libraries</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="device-driver-libraries.html#python-default-implementations">Python Default Implementations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="device-driver-libraries.html#java-default-implentations">Java Default Implentations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="device-driver-libraries.html#java-default-device-driver-implementations">Java Default Device Driver Implementations</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="intermediary.html">SmartGridready Intermediary</a><ul class="simple">
@@ -1545,15 +1544,18 @@ a messaging device.</p>
 <span id="id26"></span><h4>Data query expressions<a class="headerlink" href="#data-query-expressions" title="Permalink to this heading"></a></h4>
 <p>REST-API and Messaging interfaces allow extracting the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> value from the API response or incoming
 messages unsing query expressions in several query languages. The query is defined by the following XML:</p>
+<p>For API responses from the device use <code class="docutils literal notranslate"><span class="pre">&lt;responseQuery&gt;</span></code>:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;responseQuery&gt;</span>
 <span class="w">   </span><span class="nt">&lt;queryType&gt;</span>...see<span class="w"> </span>table<span class="w"> </span>below...<span class="nt">&lt;/queryType&gt;</span>
 <span class="w">   </span><span class="nt">&lt;query&gt;</span>...query<span class="w"> </span>expression<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>language<span class="w"> </span>defined<span class="w"> </span>by<span class="w"> </span>the<span class="w"> </span>qureyType<span class="nt">&lt;/query&gt;</span>
 <span class="w"> </span><span class="nt">&lt;/responseQuery&gt;</span>
-
-<span class="w"> </span><span class="nt">&lt;templateQuery&gt;</span>
-<span class="w">   </span><span class="nt">&lt;queryType&gt;</span>...see<span class="w"> </span>table<span class="w"> </span>below...<span class="nt">&lt;/queryType&gt;</span>
-<span class="w">   </span><span class="nt">&lt;query&gt;</span>...query<span class="w"> </span>expression<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>language<span class="w"> </span>defined<span class="w"> </span>by<span class="w"> </span>the<span class="w"> </span>qureyType<span class="nt">&lt;/query&gt;</span>
-<span class="w"> </span><span class="nt">&lt;/templateQuery&gt;</span>
+</pre></div>
+</div>
+<p>To transform a generic API request to the format required by the device use <code class="docutils literal notranslate"><span class="pre">&lt;templateQuery&gt;</span></code></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;templateQuery&gt;</span>
+<span class="w">  </span><span class="nt">&lt;queryType&gt;</span>...see<span class="w"> </span>table<span class="w"> </span>below...<span class="nt">&lt;/queryType&gt;</span>
+<span class="w">  </span><span class="nt">&lt;query&gt;</span>...query<span class="w"> </span>expression<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>language<span class="w"> </span>defined<span class="w"> </span>by<span class="w"> </span>the<span class="w"> </span>qureyType<span class="nt">&lt;/query&gt;</span>
+<span class="nt">&lt;/templateQuery&gt;</span>
 </pre></div>
 </div>
 <p>The table below shows the available query language expressions.</p>
@@ -1666,13 +1668,114 @@ JMESPath expressions.</p>
 </div>
 </section>
 </section>
-<section id="dynamic-request-parameters">
-<span id="id27"></span><h4>Dynamic Request Parameters<a class="headerlink" href="#dynamic-request-parameters" title="Permalink to this heading"></a></h4>
-<p>TODO</p>
+<section id="value-mapping">
+<span id="id27"></span><h4>Value Mapping<a class="headerlink" href="#value-mapping" title="Permalink to this heading"></a></h4>
+<p>If the value representation of the generic API differs from the value representation of the <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> device use
+<code class="docutils literal notranslate"><span class="pre">&lt;valueMapping&gt;</span></code> to map the values.:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nt">&lt;valueMapping&gt;</span>
+<span class="w">  </span><span class="nt">&lt;mapping&gt;</span>
+<span class="w">    </span><span class="nt">&lt;genericValue&gt;</span>false<span class="nt">&lt;/genericValue&gt;</span>
+<span class="w">    </span><span class="nt">&lt;deviceValue&gt;</span>off<span class="nt">&lt;/deviceValue&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/mapping&gt;</span>
+<span class="w">  </span><span class="nt">&lt;mapping&gt;</span>
+<span class="w">    </span><span class="nt">&lt;genericValue&gt;</span>true<span class="nt">&lt;/genericValue&gt;</span>
+<span class="w">    </span><span class="nt">&lt;deviceValue&gt;</span>on<span class="nt">&lt;/deviceValue&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/mapping&gt;</span>
+<span class="nt">&lt;/valueMapping&gt;</span>
+</pre></div>
+</div>
 </section>
-<section id="json-response-mapping">
-<span id="id28"></span><h4>JSON Response Mapping<a class="headerlink" href="#json-response-mapping" title="Permalink to this heading"></a></h4>
-<p>TODO</p>
+<section id="dynamic-request-parameters">
+<span id="id28"></span><h4>Dynamic Request Parameters<a class="headerlink" href="#dynamic-request-parameters" title="Permalink to this heading"></a></h4>
+<p>If a (single) request execution needs parameters you can use square brackets <code class="docutils literal notranslate"><span class="pre">[[</span> <span class="pre">...some</span> <span class="pre">placeholder..</span> <span class="pre">]]</span></code>
+(not to be confused with configuration parameters in curly brackets <code class="docutils literal notranslate"><span class="pre">{{.}}</span></code>).</p>
+<p>There are two cases for dynamic parameters:</p>
+<ul class="simple">
+<li><p>Request to WRITE a value to the device.</p></li>
+<li><p>Request to READ data from the the device.</p></li>
+</ul>
+<p><strong>WRITE commands</strong></p>
+<p>WRITE requests need a mandatory <code class="docutils literal notranslate"><span class="pre">[[value]]</span></code> parameter that takes the value to be written to the device.</p>
+<p>Example setting the current limit of flex management device:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;restApiWriteServiceCall&gt;</span>
+<span class="w">  </span><span class="nt">&lt;requestHeader&gt;</span>
+<span class="w">    </span><span class="nt">&lt;header&gt;</span>
+<span class="w">      </span><span class="nt">&lt;headerName&gt;</span>Accept<span class="nt">&lt;/headerName&gt;</span>
+<span class="w">      </span><span class="nt">&lt;value&gt;</span>application/json<span class="nt">&lt;/value&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/header&gt;</span>
+<span class="w">    </span><span class="nt">&lt;header&gt;</span>
+<span class="w">      </span><span class="nt">&lt;headerName&gt;</span>Content-Type<span class="nt">&lt;/headerName&gt;</span>
+<span class="w">      </span><span class="nt">&lt;value&gt;</span>application/json<span class="nt">&lt;/value&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/header&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/requestHeader&gt;</span>
+<span class="w">  </span><span class="nt">&lt;requestMethod&gt;</span>POST<span class="nt">&lt;/requestMethod&gt;</span>
+<span class="w">  </span><span class="nt">&lt;requestPath&gt;</span>/v1/flex_management/setting<span class="nt">&lt;/requestPath&gt;</span>
+<span class="w">  </span><span class="nt">&lt;requestBody&gt;</span>{&quot;CurrentLimit&quot;:[[value]]}<span class="nt">&lt;/requestBody&gt;</span>
+<span class="nt">&lt;/restApiWriteServiceCall&gt;</span>
+</pre></div>
+</div>
+<p>The current limit given by the generic API command, e.g. the SGr Java library <code class="docutils literal notranslate"><span class="pre">setVal(&quot;&lt;profileName&gt;&quot;,</span> <span class="pre">&quot;&lt;dataPointName&gt;&quot;,</span> <span class="pre">realValue)</span></code>
+will replace the the dynamic parameter placeholder [[value]] with the ‘real’ value.</p>
+<p><strong>READ commands</strong></p>
+<p>READ commands can also have dynamic query parameters within the request.</p>
+<p>Example a dynamic tariff request needs start and end date/time:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;restApiDataPointConfiguration&gt;</span>
+<span class="w">  </span><span class="nt">&lt;dataType&gt;</span>JSON_object<span class="nt">&lt;/dataType&gt;</span>
+<span class="w">  </span><span class="nt">&lt;restApiReadServiceCall&gt;</span>
+<span class="w">    </span><span class="nt">&lt;requestHeader&gt;</span>
+<span class="w">      </span><span class="nt">&lt;header&gt;</span>
+<span class="w">        </span><span class="nt">&lt;headerName&gt;</span>Accept<span class="nt">&lt;/headerName&gt;</span>
+<span class="w">        </span><span class="nt">&lt;value&gt;</span>application/json<span class="nt">&lt;/value&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/header&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/requestHeader&gt;</span>
+<span class="w">    </span><span class="nt">&lt;requestMethod&gt;</span>GET<span class="nt">&lt;/requestMethod&gt;</span>
+<span class="w">    </span><span class="nt">&lt;requestPath&gt;</span>/tariffe<span class="nt">&lt;/requestPath&gt;</span>
+<span class="w">    </span><span class="nt">&lt;requestQuery&gt;</span>
+<span class="w">      </span><span class="nt">&lt;parameter&gt;</span>
+<span class="w">        </span><span class="nt">&lt;name&gt;</span>tariff_type<span class="nt">&lt;/name&gt;</span>
+<span class="w">        </span><span class="nt">&lt;value&gt;</span>total<span class="nt">&lt;/value&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/parameter&gt;</span>
+<span class="w">      </span><span class="nt">&lt;parameter&gt;</span>
+<span class="w">        </span><span class="nt">&lt;name&gt;</span>start<span class="nt">&lt;/name&gt;</span>
+<span class="w">        </span><span class="nt">&lt;value&gt;</span>[[start_timestamp]]<span class="nt">&lt;/value&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/parameter&gt;</span>
+<span class="w">      </span><span class="nt">&lt;parameter&gt;</span>
+<span class="w">        </span><span class="nt">&lt;name&gt;</span>end<span class="nt">&lt;/name&gt;</span>
+<span class="w">        </span><span class="nt">&lt;value&gt;</span>[[end_timestamp]]<span class="nt">&lt;/value&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/parameter&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/requestQuery&gt;</span>
+<span class="w">    </span><span class="nt">&lt;responseQuery&gt;</span>
+<span class="w">      </span><span class="nt">&lt;queryType&gt;</span>JSONataExpression<span class="nt">&lt;/queryType&gt;</span>
+<span class="w">      </span><span class="nt">&lt;query&gt;</span>
+<span class="w">        </span><span class="cp">&lt;![CDATA[</span>
+<span class="cp">          dynamic_prices[].{</span>
+<span class="cp">            &quot;start_timestamp&quot;: start_timestamp,</span>
+<span class="cp">            &quot;end_timestamp&quot;: end_timestamp,</span>
+<span class="cp">            &quot;integrated&quot;: total[].{</span>
+<span class="cp">              &quot;value&quot;: value,</span>
+<span class="cp">              &quot;unit&quot;: $replace(unit, &#39;_&#39;, &#39;/&#39;),</span>
+<span class="cp">              &quot;component&quot;: component</span>
+<span class="cp">            }</span>
+<span class="cp">          }</span>
+<span class="cp">        ]]&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/query&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/responseQuery&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/restApiReadServiceCall&gt;</span>
+<span class="nt">&lt;/restApiDataPointConfiguration&gt;</span>
+</pre></div>
+</div>
+<p>The example above uses [[start_timestamp]] and [[end_timestamp]] to request dynamic tariff records for a given
+period.  [[start_timestamp]] and [[end_timestamp]] are replaced by the values given in the generic API request.</p>
+<p>Example using the SGrJava commhandler libray:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="n">requestParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Properties</span><span class="p">();</span>
+<span class="n">requestParams</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;start_timestamp&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2026-01-01&quot;</span><span class="p">);</span>
+<span class="n">requestParams</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;end_timestamp&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2026-01-31&quot;</span><span class="p">);</span>
+
+<span class="n">getVal</span><span class="p">(</span><span class="s">&quot;&lt;functionalProfileName&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&lt;dataPointName&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">requestParams</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The SGrJava commhandler library will then replace <cite>start_timestamp</cite>/<cite>end_timestamp</cite> contained in <code class="docutils literal notranslate"><span class="pre">requestParams</span></code>
+with the corresponding timestamp values.</p>
 </section>
 </section>
 </section>

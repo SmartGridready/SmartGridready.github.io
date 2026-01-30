@@ -16,7 +16,6 @@ Welcome to the SmartGridready Documentation
     content/product-description-file
     content/sgr-declaration
     content/commhandler-libraries
-    content/code-samples
     content/device-driver-libraries
     content/intermediary
     content/glossary

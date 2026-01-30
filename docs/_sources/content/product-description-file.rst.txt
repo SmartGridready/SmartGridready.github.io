@@ -1288,12 +1288,18 @@ Data query expressions
 REST-API and Messaging interfaces allow extracting the :term:`Data Point` value from the API response or incoming
 messages unsing query expressions in several query languages. The query is defined by the following XML:
 
+For API responses from the device use ``<responseQuery>``:
+
 .. code:: xml
 
    <responseQuery>
       <queryType>...see table below...</queryType>
       <query>...query expression in the language defined by the qureyType</query>
     </responseQuery>
+
+To transform a generic API request to the format required by the device use ``<templateQuery>``
+
+.. code:: xml
 
     <templateQuery>
       <queryType>...see table below...</queryType>
@@ -1409,11 +1415,26 @@ The JSONMapping is as follows:
     </jmesPathMappings>
   </responseQuery>
 
+.. _value_mapping:
 
+Value Mapping
+"""""""""""""
 
+If the value representation of the generic API differs from the value representation of the :term:`Product` device use
+``<valueMapping>`` to map the values.:
 
+.. code:: xml
 
-
+   <valueMapping>
+    <mapping>
+      <genericValue>false</genericValue>
+      <deviceValue>off</deviceValue>
+    </mapping>
+    <mapping>
+      <genericValue>true</genericValue>
+      <deviceValue>on</deviceValue>
+    </mapping>
+  </valueMapping>
 
 
 .. _dynamic_request_parameters:
@@ -1421,15 +1442,109 @@ The JSONMapping is as follows:
 Dynamic Request Parameters
 """"""""""""""""""""""""""
 
-TODO
+If a (single) request execution needs parameters you can use square brackets ``[[ ...some placeholder.. ]]``
+(not to be confused with configuration parameters in curly brackets ``{{.}}``).
 
+There are two cases for dynamic parameters:
 
-.. _json_response_mapping:
+* Request to WRITE a value to the device.
+* Request to READ data from the the device.
 
-JSON Response Mapping
-"""""""""""""""""""""
+**WRITE commands**
 
-TODO
+WRITE requests need a mandatory ``[[value]]`` parameter that takes the value to be written to the device.
+
+Example setting the current limit of flex management device:
+
+.. code:: xml
+
+    <restApiWriteServiceCall>
+      <requestHeader>
+        <header>
+          <headerName>Accept</headerName>
+          <value>application/json</value>
+        </header>
+        <header>
+          <headerName>Content-Type</headerName>
+          <value>application/json</value>
+        </header>
+      </requestHeader>
+      <requestMethod>POST</requestMethod>
+      <requestPath>/v1/flex_management/setting</requestPath>
+      <requestBody>{"CurrentLimit":[[value]]}</requestBody>
+    </restApiWriteServiceCall>
+
+The current limit given by the generic API command, e.g. the SGr Java library ``setVal("<profileName>", "<dataPointName>", realValue)``
+will replace the the dynamic parameter placeholder [[value]] with the 'real' value.
+
+**READ commands**
+
+READ commands can also have dynamic query parameters within the request.
+
+Example a dynamic tariff request needs start and end date/time:
+
+.. code:: xml
+
+  <restApiDataPointConfiguration>
+    <dataType>JSON_object</dataType>
+    <restApiReadServiceCall>
+      <requestHeader>
+        <header>
+          <headerName>Accept</headerName>
+          <value>application/json</value>
+        </header>
+      </requestHeader>
+      <requestMethod>GET</requestMethod>
+      <requestPath>/tariffe</requestPath>
+      <requestQuery>
+        <parameter>
+          <name>tariff_type</name>
+          <value>total</value>
+        </parameter>
+        <parameter>
+          <name>start</name>
+          <value>[[start_timestamp]]</value>
+        </parameter>
+        <parameter>
+          <name>end</name>
+          <value>[[end_timestamp]]</value>
+        </parameter>
+      </requestQuery>
+      <responseQuery>
+        <queryType>JSONataExpression</queryType>
+        <query>
+          <![CDATA[
+            dynamic_prices[].{
+              "start_timestamp": start_timestamp,
+              "end_timestamp": end_timestamp,
+              "integrated": total[].{
+                "value": value,
+                "unit": $replace(unit, '_', '/'),
+                "component": component
+              }
+            }
+          ]]>
+        </query>
+      </responseQuery>
+    </restApiReadServiceCall>
+  </restApiDataPointConfiguration>
+
+The example above uses [[start_timestamp]] and [[end_timestamp]] to request dynamic tariff records for a given
+period.  [[start_timestamp]] and [[end_timestamp]] are replaced by the values given in the generic API request.
+
+Example using the SGrJava commhandler libray:
+
+.. code:: Java
+
+    var requestParams = new Properties();
+    requestParams.put("start_timestamp", "2026-01-01");
+    requestParams.put("end_timestamp", "2026-01-31");
+
+    getVal("<functionalProfileName>", "<dataPointName>", requestParams)
+
+The SGrJava commhandler library will then replace `start_timestamp`/`end_timestamp` contained in ``requestParams``
+with the corresponding timestamp values.
+
 
 
 SmartGridready :term:`Product` Library

@@ -67,10 +67,6 @@ The following table gives you a documentation overview and the targeted audience
         - * :term:`Communication Handler` Developers
           * :term:`Communicator` Developers
 
-    *   - :ref:`code-samples`
-        - Provides sample code to help you get started with integrating the :term:`Communication Handler` libraries into :term:`Communicator` code.
-        - * :term:`Communicator` Developers
-
     *   - :ref:`device-driver-libraries`
         - Describes the :term:`Device Driver Adapter` and the device driver adapter API in detail.
         - * :term:`Product` Suppliers

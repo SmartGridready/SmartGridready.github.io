@@ -24,7 +24,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="SmartGridready Code Samples" href="code-samples.html" />
+    <link rel="next" title="SmartGridready Device Driver Libraries" href="device-driver-libraries.html" />
     <link rel="prev" title="SmartGridready Declaration" href="sgr-declaration.html" /> 
 </head>
 
@@ -195,8 +195,8 @@
 <li class="toctree-l4"><a class="reference internal" href="product-description-file.html#generic-inteface-datatype">Generic inteface &lt;dataType&gt;</a></li>
 <li class="toctree-l4"><a class="reference internal" href="product-description-file.html#data-query-expressions">Data query expressions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="product-description-file.html#jmespathmapping">JMESPathMapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="product-description-file.html#value-mapping">Value Mapping</a></li>
 <li class="toctree-l4"><a class="reference internal" href="product-description-file.html#dynamic-request-parameters">Dynamic Request Parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="product-description-file.html#json-response-mapping">JSON Response Mapping</a></li>
 </ul>
 </li>
 </ul>
@@ -223,10 +223,9 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="code-samples.html">SmartGridready Code Samples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="device-driver-libraries.html">SmartGridready Device Driver Libraries</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="device-driver-libraries.html#python-default-implementations">Python Default Implementations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="device-driver-libraries.html#java-default-implentations">Java Default Implentations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="device-driver-libraries.html#java-default-device-driver-implementations">Java Default Device Driver Implementations</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="intermediary.html">SmartGridready Intermediary</a><ul class="simple">
@@ -265,31 +264,43 @@
              
   <section id="smartgridready-communication-handler-libraries">
 <span id="commhandler-libraries"></span><h1>SmartGridready Communication Handler Libraries<a class="headerlink" href="#smartgridready-communication-handler-libraries" title="Permalink to this heading"></a></h1>
+<p>The SmartGridready repositories on GitHub provide programming libraries in Java and Python that facilitate the
+implementation of SmartGridready-compliant <a class="reference internal" href="glossary.html#term-Communicator"><span class="xref std std-term">Communicator</span></a> devices, such as <a class="reference internal" href="glossary.html#term-Energy-Manager"><span class="xref std std-term">Energy Manager</span></a> devices.</p>
+<p>The main functionality of these libraries includes:</p>
 <ul class="simple">
-<li><p>Basic concepts</p></li>
-<li><p>Target audience: Communicator Developers</p></li>
-<li><p>Provide a generic API for the device communication</p></li>
-<li><p>Provides default device drivers for Modbus, Webservices and MQTT</p></li>
-<li><p>Provide an API integrate third party device drivers</p></li>
+<li><p>Loading :term:Product Description Files of SmartGridready-compliant devices.</p></li>
+<li><p>Using the information provided in the :term:Product Description Files to translate commands
+issued via the generic SmartGridready interface into device-specific commands understood by the :term:Product device.</p></li>
+<li><p>Sending commands to the device.</p></li>
+<li><p>Receiving device responses and converting them into the standardized representations defined by the generic
+SmartGridready API.</p></li>
 </ul>
+<p>The communication layer currently supports:</p>
+<ul class="simple">
+<li><p>Modbus devices</p></li>
+<li><p>REST-API devices</p></li>
+<li><p>MQTT devices</p></li>
+</ul>
+<p>The Communication Handlers make use of a device driver library to communicate with the devices.
+By default they use the ‘Device Driver’ libraries, provided by the SmartGridready device driver projects
+(see <a class="reference internal" href="device-driver-libraries.html#device-driver-libraries"><span class="std std-ref">SmartGridready Device Driver Libraries</span></a>). It is also possible to implement custom adapters to integrate 3rd party
+device drivers.</p>
 <section id="python-implementation">
 <h2>Python Implementation<a class="headerlink" href="#python-implementation" title="Permalink to this heading"></a></h2>
+<p>You find the Python ‘Communication Handler’ Library and API docs under the following links:</p>
 <ul class="simple">
-<li><p>Description</p></li>
-<li><p>Getting started instructions</p></li>
-<li><p>Basic implementation, code sample</p></li>
-<li><p>Link to the API Doc : <a class="reference external" href="https://smartgridready.github.io/SGrPython/docs/commhandler/">SGrCommHandler Python Doc</a></p></li>
-<li><p>Link to the GitHub Project : <a class="reference external" href="https://github.com/SmartGridready/SGrPython/">SGrPython Project Repository</a></p></li>
+<li><p><a class="reference external" href="https://smartgridready.github.io/SGrPython/docs/commhandler/">SGrPython Library API Doc</a></p></li>
+<li><p><a class="reference external" href="https://github.com/SmartGridready/SGrPython/">SGrPython Library Project</a></p></li>
+<li><p><a class="reference external" href="https://github.com/SmartGridready/SGrPythonSamples">SGePython Library Integration Code Samples</a></p></li>
 </ul>
 </section>
 <section id="java-implementation">
 <h2>Java Implementation<a class="headerlink" href="#java-implementation" title="Permalink to this heading"></a></h2>
+<p>You find the Java ‘Communication Handler’ Library and API docs under the following links:</p>
 <ul class="simple">
-<li><p>Description</p></li>
-<li><p>Getting started instructions</p></li>
-<li><p>Basic implementation, code sample</p></li>
-<li><p>Link to the API Doc : <a class="reference external" href="https://smartgridready.github.io/SGrJava/docs/commhandler/index.html">SGrCommHandler Java Doc</a></p></li>
-<li><p>Link to the GitHub Project : <a class="reference external" href="https://github.com/SmartGridready/SGrJava/">SGrJava Project Repository</a></p></li>
+<li><p><a class="reference external" href="https://smartgridready.github.io/SGrJava/docs/commhandler/index.html">SGrJava Library API Doc</a></p></li>
+<li><p><a class="reference external" href="https://github.com/SmartGridready/SGrJava/">SGrJava Library Project</a></p></li>
+<li><p><a class="reference external" href="https://github.com/SmartGridready/SGrJavaSamples">SGrJava Library Integration Code Samples</a></p></li>
 </ul>
 <div class="toctree-wrapper compound">
 </div>
@@ -301,7 +312,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="sgr-declaration.html" class="btn btn-neutral float-left" title="SmartGridready Declaration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="code-samples.html" class="btn btn-neutral float-right" title="SmartGridready Code Samples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="device-driver-libraries.html" class="btn btn-neutral float-right" title="SmartGridready Device Driver Libraries" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
