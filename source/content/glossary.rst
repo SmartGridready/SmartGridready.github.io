@@ -140,3 +140,6 @@
         high-voltage transmission networks from power producers to distribution networks or large industrial
         consumers. TSOs operate the backbone of the electrical power grid.
 
+    VSE
+        An abbreviation of *Verband Schweizer Elektrizitätsunternehmen*
+        (the organization of Swiss businesses in the electric sector)

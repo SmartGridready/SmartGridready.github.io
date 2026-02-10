@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🛠 SmartGridready Device Driver Libraries &mdash; SmartGridready Documentation 0.1 documentation</title>
+  <title>🛠 OpenAPI Specifications &mdash; SmartGridready Documentation 0.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
@@ -24,8 +24,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="🛠 SmartGridready Intermediary" href="intermediary.html" />
-    <link rel="prev" title="🛠 SmartGridready Communication Handler Libraries" href="commhandler-libraries.html" /> 
+    <link rel="next" title="🏢 📟 🗼 🛠 Contacts" href="contacts.html" />
+    <link rel="prev" title="🏢 📟 🗼 🛠 Glossary" href="glossary.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -223,9 +223,9 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">🛠 SmartGridready Device Driver Libraries</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#python-default-implementations">Python Default Implementations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#java-default-device-driver-implementations">Java Default Device Driver Implementations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-driver-libraries.html">🛠 SmartGridready Device Driver Libraries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="device-driver-libraries.html#python-default-implementations">Python Default Implementations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="device-driver-libraries.html#java-default-device-driver-implementations">Java Default Device Driver Implementations</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="intermediary.html">🛠 SmartGridready Intermediary</a><ul class="simple">
@@ -234,8 +234,8 @@
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">🏢 📟 🗼 🛠 Glossary</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="openapi-specifications.html">🛠 OpenAPI Specifications</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="openapi-specifications.html#dynamic-tariffs">Dynamic Tariffs</a><ul class="simple">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">🛠 OpenAPI Specifications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dynamic-tariffs">Dynamic Tariffs</a><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -259,7 +259,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">🛠 SmartGridready Device Driver Libraries</li>
+      <li class="breadcrumb-item active">🛠 OpenAPI Specifications</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -268,26 +268,19 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="dev-smartgridready-device-driver-libraries">
-<span id="device-driver-libraries"></span><h1>🛠 SmartGridready Device Driver Libraries<a class="headerlink" href="#dev-smartgridready-device-driver-libraries" title="Permalink to this heading"></a></h1>
-<p>SmartGridready hosts device driver libraries in Java and Python, used by the <a class="reference internal" href="commhandler-libraries.html#commhandler-libraries"><span class="std std-ref">🛠 SmartGridready Communication Handler Libraries</span></a> to
-communicate with the <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> devices. By default Communication Handlers use this device drivers out of the
-box. However, it is also possible to implement custom adapters to communicate via 3rd party device drivers.</p>
-<p>Device Drivers are available for the following <cite>protocols</cite> / technologies:</p>
+  <section id="dev-openapi-specifications">
+<span id="openapi-specifications"></span><h1>🛠 OpenAPI Specifications<a class="headerlink" href="#dev-openapi-specifications" title="Permalink to this heading"></a></h1>
+<p>SmartGridready provides OpenAPI specifications for specific use cases.</p>
+<section id="dynamic-tariffs">
+<h2>Dynamic Tariffs<a class="headerlink" href="#dynamic-tariffs" title="Permalink to this heading"></a></h2>
+<p>The <a class="reference internal" href="glossary.html#term-VSE"><span class="xref std std-term">VSE</span></a> has published a <a class="reference external" href="https://www.strom.ch/de/shop/dynamische-netznutzungstarife-im-verteilnetz-hdn-ch-2025">document</a> which describes the requirements of APIs that deliver dynamic tariff data.</p>
+<p>SmartGridready provides OpenAPI specification templates that help developers create a <a class="reference internal" href="glossary.html#term-VSE"><span class="xref std std-term">VSE</span></a>-compliant API.</p>
 <ul class="simple">
-<li><p>Modbus</p></li>
-<li><p>Web Services / REST</p></li>
-<li><p>MQTT</p></li>
+<li><p>Display the current OpenAPI specification for dynamic tariffs in <a class="reference external" href="../_static/swagger/dynamic-tariff.html">Swagger UI</a></p></li>
+<li><p>Download the specification and JSON schema on <a class="reference external" href="https://github.com/SmartGridready/SGrSpecifications/tree/openapi-for-dynamic-tariff/DynamicTariff">Github</a></p></li>
 </ul>
-<section id="python-default-implementations">
-<h2>Python Default Implementations<a class="headerlink" href="#python-default-implementations" title="Permalink to this heading"></a></h2>
-<p>The Python device drivers are part of the SGrPython library project:
-<a class="reference external" href="https://github.com/SmartGridready/SGrPython">SGrPython library including device drivers</a></p>
-</section>
-<section id="java-default-device-driver-implementations">
-<h2>Java Default Device Driver Implementations<a class="headerlink" href="#java-default-device-driver-implementations" title="Permalink to this heading"></a></h2>
-<p>The Java device drivers are hosted in a separate GitHub project:
-<a class="reference external" href="https://github.com/SmartGridready/SGrJavaDrivers">SGrJava Drivers</a></p>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 </section>
 
@@ -295,8 +288,8 @@ box. However, it is also possible to implement custom adapters to communicate vi
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="commhandler-libraries.html" class="btn btn-neutral float-left" title="🛠 SmartGridready Communication Handler Libraries" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="intermediary.html" class="btn btn-neutral float-right" title="🛠 SmartGridready Intermediary" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="glossary.html" class="btn btn-neutral float-left" title="🏢 📟 🗼 🛠 Glossary" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="contacts.html" class="btn btn-neutral float-right" title="🏢 📟 🗼 🛠 Contacts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
