@@ -232,9 +232,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">🛠 OpenAPI Specifications</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#dynamic-tariffs">Dynamic Tariffs</a><ul class="simple">
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#dynamic-tariffs">Dynamic Tariffs</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">🏢 📟 🗼 🛠 Glossary</a><ul class="simple">
@@ -270,18 +268,29 @@
              
   <section id="dev-openapi-specifications">
 <span id="openapi-specifications"></span><h1>🛠 OpenAPI Specifications<a class="headerlink" href="#dev-openapi-specifications" title="Permalink to this heading"></a></h1>
-<p>SmartGridready provides OpenAPI specifications for specific use cases.</p>
+<p>SmartGridready provides OpenAPI specifications for specific use cases:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#dynamic-tariffs"><span class="std std-ref">Dynamic Tariffs</span></a></p></li>
+</ul>
 <section id="dynamic-tariffs">
-<h2>Dynamic Tariffs<a class="headerlink" href="#dynamic-tariffs" title="Permalink to this heading"></a></h2>
+<span id="id1"></span><h2>Dynamic Tariffs<a class="headerlink" href="#dynamic-tariffs" title="Permalink to this heading"></a></h2>
 <p>The <a class="reference internal" href="glossary.html#term-VSE"><span class="xref std std-term">VSE</span></a> has published a <a class="reference external" href="https://www.strom.ch/de/shop/dynamische-netznutzungstarife-im-verteilnetz-hdn-ch-2025">document</a> which describes the requirements of APIs that deliver dynamic tariff data.</p>
 <p>SmartGridready provides OpenAPI specification templates that help developers create a <a class="reference internal" href="glossary.html#term-VSE"><span class="xref std std-term">VSE</span></a>-compliant API.</p>
 <ul class="simple">
 <li><p>Display the current OpenAPI specification for dynamic tariffs in <a class="reference external" href="../_static/swagger/dynamic-tariff.html">Swagger UI</a></p></li>
 <li><p>Download the specification and JSON schema on <a class="reference external" href="https://github.com/SmartGridready/SGrSpecifications/tree/openapi-for-dynamic-tariff/DynamicTariff">Github</a></p></li>
 </ul>
-<div class="toctree-wrapper compound">
-</div>
-</section>
+<link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5.11.0/swagger-ui.css" />
+<div id="swagger-ui-dynamic-tariff"></div>
+<script src="https://unpkg.com/swagger-ui-dist@5.11.0/swagger-ui-bundle.js" crossorigin></script>
+<script>
+  window.onload = () => {
+    window.ui = SwaggerUIBundle({
+      url: 'https://raw.githubusercontent.com/SmartGridready/SGrSpecifications/refs/heads/openapi-for-dynamic-tariff/DynamicTariff/OpenAPI/dynamic_tariff_vse_2026_openapi.yaml',
+      dom_id: '#swagger-ui-dynamic-tariff',
+    });
+  };
+</script></section>
 </section>
 
 
