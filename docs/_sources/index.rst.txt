@@ -18,6 +18,6 @@
     content/commhandler-libraries
     content/device-driver-libraries
     content/intermediary
-    content/glossary
     content/openapi-specifications
+    content/glossary
     content/contacts
