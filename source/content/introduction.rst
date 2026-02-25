@@ -1,7 +1,8 @@
 .. _introduction:
 
-|planner| |supplier| |grid| |dev| Introduction
+Introduction
 ==============================================
+**Target audience** |ta-info| **:** |planner| |supplier| |grid| |dev|
 
 Smart Grids and Energy Management
 ---------------------------------

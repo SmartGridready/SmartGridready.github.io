@@ -1,7 +1,8 @@
 .. _intermediary:
 
-|dev| SmartGridready Intermediary
+SmartGridready Intermediary
 ---------------------------------
+**Target audience** |ta-info| **:**  |dev|
 
 The SmartGridready Intermediary provides access to SmartGridready compliant devices through a WebService via REST-API.
 

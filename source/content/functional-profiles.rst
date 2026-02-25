@@ -1,7 +1,8 @@
 .. _functional-profiles:
 
-|planner| |supplier| |grid| |dev| Functional Profiles
+Functional Profiles
 =====================================================
+**Target audience** |ta-info| **:**  |planner| |supplier| |grid| |dev|
 
 A :term:`Functional Profile` describes a set of related functionalities provided by a :term:`Product`.
 It thereby focuses entirely on the functionality. Any transport-specific details are not part of the functional profile

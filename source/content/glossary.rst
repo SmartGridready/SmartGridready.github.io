@@ -1,7 +1,8 @@
 .. _glossary:
 
-|planner| |supplier| |grid| |dev| Glossary
+Glossary
 ==========================================
+**Target audience** |ta-info| **:**  |planner| |supplier| |grid| |dev|
 
 .. toctree::
     :caption: Contents

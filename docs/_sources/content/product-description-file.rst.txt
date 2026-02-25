@@ -1,7 +1,8 @@
 .. _product-description-eid:
 
-|planner| |supplier| |grid| |dev| :term:`Product Description File`
+:term:`Product Description File`
 ==================================================================
+**Target audience** |ta-info| **:**  |planner| |supplier| |grid| |dev|
 
 Introduction
 ------------
