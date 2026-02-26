@@ -35,6 +35,42 @@ a.icon.icon-home img {
     width: 60%;
 }
 
+.ta-info {
+  display: inline-block;
+  margin-left: 6px;
+  margin-right: 6px;
+  cursor: help;
+  color: #6b7280;
+  font-size: 0.9em;
+  position: relative;
+}
+
+.ta-info:hover {
+  color: #111827;
+}
+
+.ta-info:hover::after {
+  content: attr(data-tip);
+  position: absolute;
+  left: 0;
+  top: 140%;
+  white-space: pre;
+
+  background: #ffffff;
+  color: #1f2937;
+
+  padding: 8px 10px;
+  border-radius: 8px;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+
+  z-index: 9999;
+}
+
 .zoom-wrapper {
   position: relative;
   display: inline-block;

@@ -1,7 +1,8 @@
 .. _sgr-declaration:
 
-|supplier| |grid| SmartGridready Declaration
+SmartGridready Declaration
 ============================================
+**Target audience** |ta-info| **:**  |supplier| |grid|
 
 Declaration labels for buildings
 --------------------------------

@@ -1,7 +1,8 @@
 .. _communicator:
 
-|supplier| |grid| |dev| :term:`Communicator` Description File
+:term:`Communicator` Description File
 =============================================================
+**Target audience** |ta-info| **:**  |supplier| |grid| |dev|
 
 A :term:`Communicator` description file contains information about the :term:`Communicator` and the
 :term:`Functional Profiles` that the :term:`Communicator` is able to control.

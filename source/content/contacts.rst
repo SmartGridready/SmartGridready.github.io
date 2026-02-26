@@ -1,8 +1,8 @@
 .. _contacts:
 
-|planner| |supplier| |grid| |dev| Contacts
+Contacts
 ==========================================
-
+**Target audience** |ta-info| **:**  |planner| |supplier| |grid| |dev|
 
 .. toctree::
     :caption: Contents

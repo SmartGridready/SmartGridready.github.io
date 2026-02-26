@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SmartGridready Intermediary &mdash; SmartGridready Documentation 0.1 documentation</title>
+  <title>OpenAPI Specifications &mdash; SmartGridready Documentation 0.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
@@ -24,8 +24,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="OpenAPI Specifications" href="openapi-specifications.html" />
-    <link rel="prev" title="SmartGridready Device Driver Libraries" href="device-driver-libraries.html" /> 
+    <link rel="next" title="Glossary" href="glossary.html" />
+    <link rel="prev" title="SmartGridready Intermediary" href="intermediary.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -228,11 +228,11 @@
 <li class="toctree-l2"><a class="reference internal" href="device-driver-libraries.html#java-default-device-driver-implementations">Java Default Device Driver Implementations</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">SmartGridready Intermediary</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="intermediary.html">SmartGridready Intermediary</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="openapi-specifications.html">OpenAPI Specifications</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="openapi-specifications.html#dynamic-tariffs">Dynamic Tariffs</a><ul class="simple">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">OpenAPI Specifications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dynamic-tariffs">Dynamic Tariffs</a><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -259,7 +259,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">SmartGridready Intermediary</li>
+      <li class="breadcrumb-item active">OpenAPI Specifications</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -268,34 +268,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="smartgridready-intermediary">
-<span id="intermediary"></span><h1>SmartGridready Intermediary<a class="headerlink" href="#smartgridready-intermediary" title="Permalink to this heading"></a></h1>
+  <section id="openapi-specifications">
+<span id="id1"></span><h1>OpenAPI Specifications<a class="headerlink" href="#openapi-specifications" title="Permalink to this heading"></a></h1>
 <p><strong>Target audience</strong> <span class="ta-info" data-tip="📐 Planners and Architects&#10;📟 Product and Communicator suppliers&#10;⚡ Power Grid Operators&#10;🧑‍💻 Developers">ⓘ</span> <strong>:</strong>  🧑‍💻</p>
-<p>The SmartGridready Intermediary provides access to SmartGridready compliant devices through a WebService via REST-API.</p>
-<p>The Intermediary is the ideal solution whenever you want to communicate with SmartGridready <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> devices,
-but using one of the native Communication Handler libraries (<a class="reference internal" href="commhandler-libraries.html#commhandler-libraries"><span class="std std-ref">SmartGridready Communication Handler Libraries</span></a>) in not option.
-As an example if your client application is not written in a programming language where SmartGridready
-provides a native library (currently Python and Java only) you can resort to the Intermediary.</p>
-<p>You can run the SmartGridready Webservice as a standalone application or in a Docker container.</p>
-<p>The Intermediary allows you to:</p>
+<p>SmartGridready OpenAPI specifications provide standardized, machine readable descriptions of REST interfaces for selected use cases. They are based on established industry standards or defined SmartGridready models and facilitate consistent, interoperable integration across different systems and market participants.</p>
+<p>The following sections describe the available OpenAPI specifications per use case.</p>
+<section id="dynamic-tariffs">
+<h2>Dynamic Tariffs<a class="headerlink" href="#dynamic-tariffs" title="Permalink to this heading"></a></h2>
+<p>The <a class="reference internal" href="glossary.html#term-VSE"><span class="xref std std-term">VSE</span></a> has published a <a class="reference external" href="https://www.strom.ch/de/shop/dynamische-netznutzungstarife-im-verteilnetz-hdn-ch-2025">handbook</a> that establishes a common technical and conceptual foundation for dynamic network tariffs in distribution grids.</p>
+<p>SmartGridready provides a corresponding OpenAPI specification that translates these requirements into a standardized REST interface definition. The specification defines how dynamic tariff data must be structured, time referenced and published in a machine readable format.</p>
+<p><strong>Access the specification</strong></p>
 <ul class="simple">
-<li><p>Register multiple <a class="reference internal" href="glossary.html#term-Products"><span class="xref std std-term">Products</span></a> with their product description files (see <a class="reference internal" href="product-description-file.html#product-description-eid"><span class="std std-ref">Product Description File</span></a>)</p></li>
-<li><p>Add multiple <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> device instances together with instance specific configuration (e.g device address etc.).</p></li>
-<li><p>Adress a <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> device by name to communicate wit the device.</p></li>
-<li><p>Administer <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> descriptions and <a class="reference internal" href="glossary.html#term-Product"><span class="xref std std-term">Product</span></a> instances</p></li>
+<li><p>View the current OpenAPI specification for dynamic tariffs in <a class="reference external" href="../_static/swagger/dynamic-tariff.html">Swagger UI</a></p></li>
+<li><p>Download the OpenAPI specification and JSON schema on <a class="reference external" href="https://github.com/SmartGridready/SGrSpecifications/tree/master/DynamicTariff">Github</a></p></li>
 </ul>
-<p>The Intermediary is available as an open source project and hosted on GitHub:</p>
-<p><a class="reference external" href="https://github.com/SmartGridready/SGrJavaIntermediary">SGrIntermediary</a></p>
 <div class="toctree-wrapper compound">
 </div>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="device-driver-libraries.html" class="btn btn-neutral float-left" title="SmartGridready Device Driver Libraries" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="openapi-specifications.html" class="btn btn-neutral float-right" title="OpenAPI Specifications" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="intermediary.html" class="btn btn-neutral float-left" title="SmartGridready Intermediary" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="glossary.html" class="btn btn-neutral float-right" title="Glossary" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

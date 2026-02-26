@@ -64,10 +64,14 @@ numfig = True
 # sources that are not published yet
 exclude_patterns = ['content/communicator-description-file.rst']
 
-# icons for target audiences
+# Icons for target audiences
 rst_epilog = """
-.. |planner| unicode:: U+1F3E2
+.. |planner|  unicode:: U+1F4D0
 .. |supplier| unicode:: U+1F4DF
-.. |grid|    unicode:: U+1F5FC
-.. |dev|     unicode:: U+1F6E0
+.. |grid|     unicode:: U+26A1
+.. |dev|      unicode:: U+1F9D1 U+200D U+1F4BB
+
+.. |ta-info| raw:: html
+
+   <span class="ta-info" data-tip="📐 Planners and Architects&#10;📟 Product and Communicator suppliers&#10;⚡ Power Grid Operators&#10;🧑‍💻 Developers">ⓘ</span>
 """
