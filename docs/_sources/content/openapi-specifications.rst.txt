@@ -22,7 +22,7 @@ SmartGridready provides a corresponding OpenAPI specification that translates th
 **Access the specification**
 
 * View the current OpenAPI specification for dynamic tariffs in `Swagger UI <../_static/swagger/dynamic-tariff.html>`_
-* Download the OpenAPI specification and JSON schema on `Github <https://github.com/SmartGridready/SGrSpecifications/tree/openapi-for-dynamic-tariff/DynamicTariff>`_
+* Download the OpenAPI specification and JSON schema on `Github <https://github.com/SmartGridready/SGrSpecifications/tree/master/DynamicTariff>`_
 
 
 .. toctree::
