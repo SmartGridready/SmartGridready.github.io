@@ -8,12 +8,6 @@ Welcome to the SmartGridready documentation! This guide provides a comprehensive
 .. note::
    Each chapter in the documentation is labeled with icons representing the intended target audience. Refer to **Table 1** below for an explanation of these icons. This will help you quickly identify the sections most relevant to your interests and needs.
 
-.. |planner| replace:: 🧑‍💼
-.. |supplier| replace:: 🏭
-.. |grid| replace:: ⚡
-.. |dev| replace:: 🧑‍💻
-
-
 .. list-table:: Target audience icon explanation
     :name: table-1
 
