@@ -2,7 +2,7 @@
 
 SmartGridready Declaration
 ============================================
-**Target audience** |ta-info| **:**  |supplier| |grid| |dev|
+:ref:`Target audience : <table-1>` |supplier| |grid| |dev|
 
 Declaration labels for buildings
 --------------------------------

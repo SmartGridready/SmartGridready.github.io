@@ -3,7 +3,7 @@
 OpenAPI Specifications
 ====================================================
 
-**Target audience** |ta-info| **:**  |dev|
+:ref:`Target audience : <table-1>` |dev|
 
 SmartGridready OpenAPI specifications provide standardized, machine readable descriptions of REST interfaces for selected use cases. They are based on established industry standards or defined SmartGridready models and facilitate consistent, interoperable integration across different systems and market participants.
 

@@ -90,3 +90,5 @@ To help you navigate the documentation, the following overview **Table 2** lists
         - Provides OpenAPI specification templates for selected SmartGridready use cases.
           These specifications define standardized REST interfaces and machine-readable data models that support interoperable integration of services such as dynamic tariff APIs.
         - |dev|
+
+
