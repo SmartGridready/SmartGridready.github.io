@@ -2,7 +2,7 @@
 
 Glossary
 ==========================================
-**Target audience** |ta-info| **:**  |planner| |supplier| |grid| |dev|
+:ref:`Target audience : <table-1>` |planner| |supplier| |grid| |dev|
 
 .. toctree::
     :caption: Contents
@@ -49,8 +49,7 @@ Glossary
         See :term:`EID`
 
     EMS
-        Energy Management System. Device or application used for power management within an power-grid or building. Within
-        SmartGridready the :term:`EMS` acts usually as a :term:`Communicator`.
+        Energy Management System. Device or application used for power management within an power-grid or building. It usually provides a an interface to allow feed-in and load management by a power grid operator.
 
     EVSE
         Electric Vehicle Supply Equipment. Provides safe and managed electrical power to charge electric vehicles.
@@ -84,6 +83,12 @@ Glossary
 
     Functional Profile Categories
         Plural form of :term:`Functional Profile Category`
+
+    Grid Interface
+        The Grid Interface is the interface between the Energy Management System (:term:`EMS`) and the distribution grid operator (:term:`DSO`) or feed-in and load management, and for tariff information
+
+    Heat Pump
+        A heat pump is an energy-efficient device that provides heating and cooling by transferring heat between the indoor and outdoor environment. It can extract heat from the air, ground, or water, making it a sustainable solution for temperature regulation in buildings.
 
     Intermediary
         The :term:`Intermediary` is a microservice that exposes a REST API that allows seamless communication with

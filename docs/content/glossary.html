@@ -55,10 +55,11 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../home.html">Documentation Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#about-smartgridready-motivation-and-association">About SmartGridready – Motivation and Association</a></li>
 <li class="toctree-l2"><a class="reference internal" href="introduction.html#smart-grids-and-energy-management">Smart Grids and Energy Management</a></li>
 <li class="toctree-l2"><a class="reference internal" href="introduction.html#smartgridready-concept">SmartGridready Concept</a></li>
 <li class="toctree-l2"><a class="reference internal" href="introduction.html#architecture">Architecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#further-documentation">Further documentation</a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#resources">Resources</a><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -270,7 +271,7 @@
              
   <section id="glossary">
 <span id="id1"></span><h1>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading"></a></h1>
-<p><strong>Target audience</strong> <span class="ta-info" data-tip="📐 Planners and Architects&#10;📟 Product and Communicator suppliers&#10;⚡ Power Grid Operators&#10;🧑‍💻 Developers">ⓘ</span> <strong>:</strong>  📐 📟 ⚡ 🧑‍💻</p>
+<p><a class="reference internal" href="../home.html#table-1"><span class="std std-ref">Target audience :</span></a> <img alt="planner" src="../_images/planner.png" style="height: 1cm;" /> <img alt="supplier" src="../_images/supplier.png" style="height: 1cm;" /> <img alt="grid" src="../_images/grid.png" style="height: 1cm;" /> <img alt="dev" src="../_images/developer.png" style="height: 1cm;" /></p>
 <div class="toctree-wrapper compound">
 </div>
 <dl class="simple glossary">
@@ -304,8 +305,7 @@ with the conversion rules to adapt the <a class="reference internal" href="#term
 </dd>
 <dt id="term-External-Interface-Definition">External Interface Definition<a class="headerlink" href="#term-External-Interface-Definition" title="Permalink to this term"></a></dt><dd><p>See <a class="reference internal" href="#term-EID"><span class="xref std std-term">EID</span></a></p>
 </dd>
-<dt id="term-EMS">EMS<a class="headerlink" href="#term-EMS" title="Permalink to this term"></a></dt><dd><p>Energy Management System. Device or application used for power management within an power-grid or building. Within
-SmartGridready the <a class="reference internal" href="#term-EMS"><span class="xref std std-term">EMS</span></a> acts usually as a <a class="reference internal" href="#term-Communicator"><span class="xref std std-term">Communicator</span></a>.</p>
+<dt id="term-EMS">EMS<a class="headerlink" href="#term-EMS" title="Permalink to this term"></a></dt><dd><p>Energy Management System. Device or application used for power management within an power-grid or building. It usually provides a an interface to allow feed-in and load management by a power grid operator.</p>
 </dd>
 <dt id="term-EVSE">EVSE<a class="headerlink" href="#term-EVSE" title="Permalink to this term"></a></dt><dd><p>Electric Vehicle Supply Equipment. Provides safe and managed electrical power to charge electric vehicles.</p>
 </dd>
@@ -330,6 +330,10 @@ See <a class="reference internal" href="functional-profiles.html#functional-prof
 (for term:<cite>Smart Meter</cite>) or ‘HeatPumpControl`. See <a class="reference internal" href="functional-profiles.html#functional-profile-category"><span class="std std-ref">Functional Profile Category</span></a></p>
 </dd>
 <dt id="term-Functional-Profile-Categories">Functional Profile Categories<a class="headerlink" href="#term-Functional-Profile-Categories" title="Permalink to this term"></a></dt><dd><p>Plural form of <a class="reference internal" href="#term-Functional-Profile-Category"><span class="xref std std-term">Functional Profile Category</span></a></p>
+</dd>
+<dt id="term-Grid-Interface">Grid Interface<a class="headerlink" href="#term-Grid-Interface" title="Permalink to this term"></a></dt><dd><p>The Grid Interface is the interface between the Energy Management System (<a class="reference internal" href="#term-EMS"><span class="xref std std-term">EMS</span></a>) and the distribution grid operator (<a class="reference internal" href="#term-DSO"><span class="xref std std-term">DSO</span></a>) or feed-in and load management, and for tariff information</p>
+</dd>
+<dt id="term-Heat-Pump">Heat Pump<a class="headerlink" href="#term-Heat-Pump" title="Permalink to this term"></a></dt><dd><p>A heat pump is an energy-efficient device that provides heating and cooling by transferring heat between the indoor and outdoor environment. It can extract heat from the air, ground, or water, making it a sustainable solution for temperature regulation in buildings.</p>
 </dd>
 <dt id="term-Intermediary">Intermediary<a class="headerlink" href="#term-Intermediary" title="Permalink to this term"></a></dt><dd><p>The <a class="reference internal" href="#term-Intermediary"><span class="xref std std-term">Intermediary</span></a> is a microservice that exposes a REST API that allows seamless communication with
 SmartGridready compliant <a class="reference internal" href="#term-Product"><span class="xref std std-term">Product</span></a>. It can be deployed as a Docker container and is the ideal
