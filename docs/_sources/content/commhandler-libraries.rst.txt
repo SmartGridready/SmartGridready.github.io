@@ -2,7 +2,7 @@
 
 SmartGridready Communication Handler Libraries
 ====================================================
-**Target audience** |ta-info| **:**  |dev|
+:ref:`Target audience : <table-1>` |dev|
 
 The SmartGridready repositories on GitHub provide programming libraries in Java and Python that facilitate the
 implementation of SmartGridready-compliant :term:`Communicator` devices, such as :term:`Energy Manager` devices.

@@ -2,7 +2,7 @@
 
 :term:`Communicator` Description File
 =============================================================
-**Target audience** |ta-info| **:**  |supplier| |grid| |dev|
+:ref:`Target audience : <table-1>` |supplier| |grid| |dev|
 
 A :term:`Communicator` description file contains information about the :term:`Communicator` and the
 :term:`Functional Profiles` that the :term:`Communicator` is able to control.

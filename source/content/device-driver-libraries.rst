@@ -2,7 +2,7 @@
 
 SmartGridready Device Driver Libraries
 ============================================
-**Target audience** |ta-info| **:**  |dev|
+:ref:`Target audience : <table-1>` |dev|
 
 SmartGridready hosts device driver libraries in Java and Python, used by the :ref:`commhandler-libraries` to
 communicate with the :term:`Product` devices. By default Communication Handlers use this device drivers out of the

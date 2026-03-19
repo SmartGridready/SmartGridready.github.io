@@ -59,6 +59,9 @@ html_js_files = ['custom.js']
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
 
+# -- Options for HTML output
+html_scaled_image_link = False
+
 numfig = True
 
 # sources that are not published yet
@@ -66,12 +69,15 @@ exclude_patterns = ['content/communicator-description-file.rst']
 
 # Icons for target audiences
 rst_epilog = """
-.. |planner|  unicode:: U+1F4D0
-.. |supplier| unicode:: U+1F4DF
-.. |grid|     unicode:: U+26A1
-.. |dev|      unicode:: U+1F9D1 U+200D U+1F4BB
+.. |planner| image:: /_static/icons/planner.png
+   :height: 1cm
+   
+.. |supplier| image:: /_static/icons/supplier.png
+   :height: 1cm
 
-.. |ta-info| raw:: html
+.. |grid| image:: /_static/icons/grid.png
+   :height: 1cm
 
-   <span class="ta-info" data-tip="📐 Planners and Architects&#10;📟 Product and Communicator suppliers&#10;⚡ Power Grid Operators&#10;🧑‍💻 Developers">ⓘ</span>
+.. |dev| image:: /_static/icons/developer.png
+   :height: 1cm
 """

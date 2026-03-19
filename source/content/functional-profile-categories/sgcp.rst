@@ -10,7 +10,7 @@ within their network.
 The :term:`SGCP` is a crucial component within a the smart grid (or network) to intelligently
 monitor and manage the generation, distribution, and consumption of electricity.
 
-It allows a power grid operators (:term:`DSO`) managing the power consumption dynamically in response to
+It allows a distribution system operators (:term:`DSO`) managing the power consumption dynamically in response to
 supply and load conditions, as described in the following example:
 
  1. The :term:`DSO`/:term:`TSO` (grid operator) detects:

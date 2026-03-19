@@ -2,7 +2,7 @@
 
 :term:`Product Description File`
 ==================================================================
-**Target audience** |ta-info| **:**  |planner| |supplier| |grid| |dev|
+:ref:`Target audience : <table-1>` |planner| |supplier| |grid| |dev|
 
 Introduction
 ------------
