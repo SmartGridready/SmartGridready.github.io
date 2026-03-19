@@ -3,11 +3,11 @@
 # -- Project information
 
 project = 'SmartGridready Documentation'
-copyright = '2025, SmartGridready'
-author = 'Hans Furrer'
+copyright = '2026, SmartGridready'
+author = 'Hans Furrer, Kevin Arm, Matthias Krebs'
 
-release = '0.1'
-version = '0.1.0'
+release = '0.2'
+version = '0.2.0'
 
 # -- General configuration
 

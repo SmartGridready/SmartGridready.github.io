@@ -4,5 +4,9 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "SmartGridready"
-authors = [{name = "Hans Furrer", email = "hfurrer@ergonomics.ch"}]
+authors = [
+  {name = "Hans Furrer", email = "hfurrer@ergonomics.ch"},
+  {name = "Kevin Arm", email = "kevin.arm@zuehlke.com"},
+  {name = "Matthias Krebs", email = "matthias.krebs@fhnw.ch"},
+]
 dynamic = ["version", "description"]
