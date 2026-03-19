@@ -23,7 +23,7 @@ Browse by Audience
 
 - |planner| Planners & Architects: :ref:`introduction`, :ref:`functional-profiles`
 - |supplier| Product and Communicator suppliers: :ref:`introduction`, :ref:`getting-involved`, :ref:`functional-profiles`, :ref:`product-description-eid`, :ref:`sgr-declaration`
-- |grid| Power Grid Operators: :ref:`introduction`, :ref:`functional-profiles`, :ref:`sgr-declaration`, :ref:`openapi-specifications`
+- |grid| Distribution System Operators: :ref:`introduction`, :ref:`functional-profiles`, :ref:`sgr-declaration`, :ref:`openapi-specifications`
 - |dev| Developers: :ref:`introduction`, :ref:`getting-involved`, :ref:`functional-profiles`, :ref:`product-description-eid`, :ref:`device-driver-libraries`, :ref:`intermediary`, :ref:`openapi-specifications`
 
 Documentation Map

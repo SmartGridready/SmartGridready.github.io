@@ -3,7 +3,7 @@
 Documentation Overview
 ======================
 
-Welcome to the SmartGridready documentation! This guide provides a comprehensive overview of the SmartGridready ecosystem, its concepts, and available resources. The documentation is organized into chapters, each tailored to specific audiences such as planners, suppliers, grid operators, and developers.
+Welcome to the SmartGridready documentation. This guide provides a comprehensive overview of the SmartGridready ecosystem, its concepts, and available resources. The documentation is organized into chapters, each tailored to specific audiences such as planners, suppliers, grid operators, and developers.
 
 .. note::
    Each chapter in the documentation is labeled with icons representing the intended target audience. Refer to **Table 1** below for an explanation of these icons. This will help you quickly identify the sections most relevant to your interests and needs.
@@ -18,7 +18,7 @@ Welcome to the SmartGridready documentation! This guide provides a comprehensive
     * - |supplier|
       - :term:`Product` and :term:`Communicator` suppliers
     * - |grid|
-      - Power Grid Operators
+      - Distribution System Operators
     * - |dev|
       - Developers (Communicator devices, SGr libraries)
 

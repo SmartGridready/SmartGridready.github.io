@@ -79,9 +79,9 @@ SmartGridready distinguishes between:
 *   Controlling devices referred to as :term:`Communicator`
 
     Examples for :term:`Communicator` devices are Energy Management Systems (:term:`EMS`) and :term:`Flexibility Manager`
-    devices operated by power grid operators.
+    devices operated by distribution system operators.
 
-SmartGridready establishes a abstract common framework to enable interoperability between system components, allowing
+SmartGridready establishes an abstract common framework to enable interoperability between system components, allowing
 :term:`Communicator` devices to communicate with :term:`Product` devices in a unified manner,
 independent of the :term:`Product` suppliers and their proprietary communication interfaces.
 
