@@ -18,7 +18,8 @@ The :term:`VSE` has published a `handbook <https://www.strom.ch/de/shop/dynamisc
 
 SmartGridready provides a corresponding OpenAPI specification that translates these requirements into a standardized REST interface definition. The specification defines how dynamic tariff data must be structured, time referenced and published in a machine readable format.
 
-The currently published specification is Version 1 (valid for 2026). The handbook is being revised by the VSE AG *Dynamische Netznutzungstarife im Verteilnetz*. The new version will be published in the course of 2026, coming into effect on 1 January 2027.
+.. note::
+    The currently published specification is Version 1 (valid for 2026). The handbook is being revised by the VSE AG *Dynamische Netznutzungstarife im Verteilnetz*. The new version will be published in the course of 2026, coming into effect on 1 January 2027.
 
 
 **Access the specification**
