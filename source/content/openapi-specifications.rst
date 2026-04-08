@@ -28,6 +28,24 @@ SmartGridready provides a corresponding OpenAPI specification that translates th
 * Download the OpenAPI specification and JSON schema (Version 1, valid for 2026) on `Github <https://github.com/SmartGridready/SGrSpecifications/tree/master/DynamicTariff>`_
 
 
+
+SGCP Flexibility Management
+---------------------------
+
+SmartGridready has published the :term:`Functional Profile` `SGCP FlexMgmt 4m <https://library.smartgridready.ch/FP_SGr_SGCP_FlexMgmt_4m_1.0.xml?viewProfile>`_,
+which specifies the communication between a :term:`Flexibility Manager` and an :term:`EMS` to control flexible loads.
+An OpenAPI specification is also provided. It translates the :term:`Functional Profile` into a standardized REST interface definition. The specification also includes the JSON schemas of requests and responses.
+
+.. note::
+    The currently published specification is Version 1.
+
+
+**Access the specification**
+
+* View the current OpenAPI specification for flexibility management (Version 1) in `Swagger UI <../_static/swagger/sgcp-flexmgmt.html>`_
+* Download the OpenAPI specification and JSON schema (Version 1, valid for 2026) on `Github <https://github.com/SmartGridready/SGrSpecifications/tree/433-openapi-for-flexmgmt-v1/FlexibilityManagement>`_
+
+
 .. toctree::
     :caption: Contents
     :maxdepth: 3
