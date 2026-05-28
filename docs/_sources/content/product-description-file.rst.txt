@@ -953,6 +953,21 @@ Modbus device. The properties allow setting up the Modbus read or write command 
         <numberOfRegisters>2</numberOfRegisters>
     </modbusDataPointConfiguration>
 
+Since specification 2.3 Modbus supports separate register addresses for read-write data points:
+
+.. code-block:: xml
+
+    <modbusDataPointConfiguration>
+        <modbusDataType>
+            <float32 />
+        </modbusDataType>
+        <readAddress>20494</readAddress>
+        <writeAddress>20208</writeAddress>
+        <readRegisterType>InputRegister</readRegisterType>
+        <writeRegisterType>HoldRegister</writeRegisterType>
+        <numberOfRegisters>2</numberOfRegisters>
+    </modbusDataPointConfiguration>
+
 * ``<modbusDataType>`` : defines the data type representation of the :term:`Data Point` value received via Modbus
 
     .. table::
@@ -978,11 +993,13 @@ Modbus device. The properties allow setting up the Modbus read or write command 
         ========== =============================
 
 
-* ``<address>`` : this is the Modbus address to access the :term:`Data Point` on the device.
+* ``<address>`` : this is the Modbus address to read or write the :term:`Data Point` on the device.
+* ``<readAddress>`` : this is the Modbus address to read the :term:`Data Point` on the device.
+* ``<writeAddress>`` : this is the Modbus address to write the :term:`Data Point` on the device.
 * ``<bitRank>`` : Only used with `DiscreteInput` and `Coil` registers to determine the bit address.
    The bit rank is used to define a bit address for coils and discreteInput (bitAddress = addr x 16 + bitRank),
    minValue = 0, maxValue = 15.
-* ``<registerType>`` : the type of the modbus register. One of:
+* ``<registerType>`` : the type of the Modbus register (also applies to ``<readRegisterType>`` and ``<writeRegisterType>``). One of:
 
     * Coil
     * DiscreteInput
