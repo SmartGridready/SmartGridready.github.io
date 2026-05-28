@@ -6,8 +6,8 @@ project = 'SmartGridready Documentation'
 copyright = '2026, SmartGridready'
 author = 'Hans Furrer, Kevin Arm, Matthias Krebs'
 
-release = '0.2'
-version = '0.2.1'
+release = '0.3'
+version = '0.3.0'
 
 # -- General configuration
 

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Product Description File &mdash; SmartGridready Documentation 0.2 documentation</title>
+  <title>Product Description File &mdash; SmartGridready Documentation 0.3 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
@@ -15,7 +15,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=d7c963c3"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=73b1e7da"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -41,7 +41,7 @@
               <img src="../_static/SGr-Logo.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.2.1
+                0.3.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -1144,6 +1144,19 @@ Modbus device. The properties allow setting up the Modbus read or write command 
 <span class="nt">&lt;/modbusDataPointConfiguration&gt;</span>
 </pre></div>
 </div>
+<p>Since specification 2.3 Modbus supports separate register addresses for read-write data points:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;modbusDataPointConfiguration&gt;</span>
+<span class="w">    </span><span class="nt">&lt;modbusDataType&gt;</span>
+<span class="w">        </span><span class="nt">&lt;float32</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/modbusDataType&gt;</span>
+<span class="w">    </span><span class="nt">&lt;readAddress&gt;</span>20494<span class="nt">&lt;/readAddress&gt;</span>
+<span class="w">    </span><span class="nt">&lt;writeAddress&gt;</span>20208<span class="nt">&lt;/writeAddress&gt;</span>
+<span class="w">    </span><span class="nt">&lt;readRegisterType&gt;</span>InputRegister<span class="nt">&lt;/readRegisterType&gt;</span>
+<span class="w">    </span><span class="nt">&lt;writeRegisterType&gt;</span>HoldRegister<span class="nt">&lt;/writeRegisterType&gt;</span>
+<span class="w">    </span><span class="nt">&lt;numberOfRegisters&gt;</span>2<span class="nt">&lt;/numberOfRegisters&gt;</span>
+<span class="nt">&lt;/modbusDataPointConfiguration&gt;</span>
+</pre></div>
+</div>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;modbusDataType&gt;</span></code> : defines the data type representation of the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> value received via Modbus</p>
 <blockquote>
@@ -1203,14 +1216,16 @@ Modbus device. The properties allow setting up the Modbus read or write command 
 </table>
 </div></blockquote>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;address&gt;</span></code> : this is the Modbus address to access the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> on the device.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;address&gt;</span></code> : this is the Modbus address to read or write the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> on the device.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;readAddress&gt;</span></code> : this is the Modbus address to read the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> on the device.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;writeAddress&gt;</span></code> : this is the Modbus address to write the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> on the device.</p></li>
 <li><dl>
 <dt><code class="docutils literal notranslate"><span class="pre">&lt;bitRank&gt;</span></code><span class="classifier">Only used with <cite>DiscreteInput</cite> and <cite>Coil</cite> registers to determine the bit address.</span></dt><dd><p>The bit rank is used to define a bit address for coils and discreteInput (bitAddress = addr x 16 + bitRank),
 minValue = 0, maxValue = 15.</p>
 </dd>
 </dl>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;registerType&gt;</span></code> : the type of the modbus register. One of:</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;registerType&gt;</span></code> : the type of the Modbus register (also applies to <code class="docutils literal notranslate"><span class="pre">&lt;readRegisterType&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;writeRegisterType&gt;</span></code>). One of:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>Coil</p></li>
