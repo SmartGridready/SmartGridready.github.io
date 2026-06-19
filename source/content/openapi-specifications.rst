@@ -21,7 +21,7 @@ The specification defines how dynamic tariff data must be structured, time refer
 The provided specification can be used as template to implement the actual API.
 
 .. note::
-    The currently published specification is Version 1 (valid for 2026). The handbook is being revised by the VSE working group *Dynamische Netznutzungstarife im Verteilnetz*. The new version will be published in the course of 2026, coming into effect on 1 January 2027.
+    The currently published specification is Version 1 (valid for 2026). The handbook is being revised by the VSE working group *Dynamische Netznutzungstarife im Verteilnetz*. The new version has been published on 19 June 2026, coming into effect on 1 January 2027.
 
 
 **Access the specification**
