@@ -919,8 +919,14 @@ The ``<dataPointListElement>`` consists of two parts:
 
 Following additional elements are valid withing the ``<dataPoint>`` element:
 
-* ``<arrayLength>`` if the :term:`Data Point` provides an array of values, the length of the array is
-  defined by the this element.
+* ``<arrayLength>`` : if the :term:`Data Point` provides an array of values, this element defines its size:
+
+    * If the element is omitted, the :term:`Data Point` provides a single value.
+    * If the element is present, the following rules apply (as of August 2026):
+
+        * A value of zero or greater represents an array of fixed size.
+        * A value less than zero represents an array of variable size.
+
 * ``<minimumValue`` : the minimum value allowed for this :term:`Data Point`
 * ``<maximumValue`` : the maximum value allowed for this :term:`Data Point`
 * ``<unitConversionMultiplicator>`` : allows the conversion of the value if the value unit sent from the device does

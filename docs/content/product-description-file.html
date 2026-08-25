@@ -1114,9 +1114,22 @@ see <a class="reference internal" href="#datatype"><span class="std std-ref">Gen
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;legibleDescription&gt;</span></code> : multi language text describing the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a>.</p></li>
 </ul>
 <p>Following additional elements are valid withing the <code class="docutils literal notranslate"><span class="pre">&lt;dataPoint&gt;</span></code> element:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;arrayLength&gt;</span></code> if the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> provides an array of values, the length of the array is
-defined by the this element.</p></li>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;arrayLength&gt;</span></code> : if the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> provides an array of values, this element defines its size:</p>
+<blockquote>
+<div><ul>
+<li><p>If the element is omitted, the <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a> provides a single value.</p></li>
+<li><p>If the element is present, the following rules apply (as of August 2026):</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>A value of zero or greater represents an array of fixed size.</p></li>
+<li><p>A value less than zero represents an array of variable size.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;minimumValue</span></code> : the minimum value allowed for this <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;maximumValue</span></code> : the maximum value allowed for this <a class="reference internal" href="glossary.html#term-Data-Point"><span class="xref std std-term">Data Point</span></a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;unitConversionMultiplicator&gt;</span></code> : allows the conversion of the value if the value unit sent from the device does
